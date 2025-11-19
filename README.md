@@ -147,7 +147,15 @@ Powered by the genre intelligence of **GrowTheMusicTree** and integrated with th
   
   ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Andreas-Garcia&layout=compact&theme=radical&hide_border=true&langs_count=8)
   
-  ![GitHub Streak](https://github-readme-streak-stats.demolab.com/?user=Andreas-Garcia&theme=radical&hide_border=true)
+</div>
+
+<div align="center">
+  
+  ![GitHub Streak](https://streak-stats.demolab.com/?user=Andreas-Garcia&theme=radical&hide_border=true)
+  
+</div>
+
+<div align="center">
   
   ![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Andreas-Garcia&theme=radical&hide_border=true&area=true)
   
