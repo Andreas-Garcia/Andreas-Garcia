@@ -143,7 +143,7 @@ Powered by the genre intelligence of **GrowTheMusicTree** and integrated with th
 
 <div align="center">
   
-  ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Andreas-Garcia&show_icons=true&theme=radical&hide_border=true&count_private=true&include_all_commits=true)
+  ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Andreas-Garcia&show_icons=true&theme=radical&hide_border=true&count_private=true)
   
   ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Andreas-Garcia&layout=compact&theme=radical&hide_border=true&langs_count=8)
   
@@ -151,7 +151,7 @@ Powered by the genre intelligence of **GrowTheMusicTree** and integrated with th
 
 <div align="center">
   
-  ![GitHub Streak](https://github-readme-streak-stats.vercel.app/?user=Andreas-Garcia&theme=radical&hide_border=true)
+  ![GitHub Streak](https://github-readme-streak-stats.demolab.com/?user=Andreas-Garcia&theme=radical&hide_border=true)
   
 </div>
 
