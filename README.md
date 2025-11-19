@@ -6,6 +6,8 @@
   **Full-Stack Developer | Founder & Lead Developer | Music Technology Innovator | Open Source Contributor**
   
   [![GitHub followers](https://img.shields.io/github/followers/Andreas-Garcia?label=Follow&style=social)](https://github.com/Andreas-Garcia)
+[![GitHub stars](https://img.shields.io/github/stars/Andreas-Garcia?label=Total%20Stars&style=social)](https://github.com/Andreas-Garcia)
+[![GitHub contributions](https://img.shields.io/github/contributors/Andreas-Garcia/Andreas-Garcia?label=Contributions&style=social)](https://github.com/Andreas-Garcia)
 </div>
 
 ## 🎵 About Me
@@ -141,11 +143,13 @@ Powered by the genre intelligence of **GrowTheMusicTree** and integrated with th
 
 <div align="center">
   
-  ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Andreas-Garcia&show_icons=true&theme=radical&hide_border=true&count_private=true)
+  ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Andreas-Garcia&show_icons=true&theme=radical&hide_border=true&count_private=true&include_all_commits=true)
   
-  ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Andreas-Garcia&layout=compact&theme=radical&hide_border=true)
+  ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Andreas-Garcia&layout=compact&theme=radical&hide_border=true&langs_count=8)
   
   ![GitHub Streak](https://github-readme-streak-stats.demolab.com/?user=Andreas-Garcia&theme=radical&hide_border=true)
+  
+  ![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Andreas-Garcia&theme=radical&hide_border=true&area=true)
   
 </div>
 
@@ -194,6 +198,14 @@ I believe open-source software should be:
 
 <!--START_SECTION:activity-->
 <!--END_SECTION:activity-->
+
+## 🏆 GitHub Achievements
+
+<div align="center">
+  
+  ![GitHub Trophies](https://github-profile-trophy.vercel.app/?username=Andreas-Garcia&theme=radical&no-frame=true&no-bg=true&column=7)
+  
+</div>
 
 ## 🌍 A Global Vision for Music Culture
 
