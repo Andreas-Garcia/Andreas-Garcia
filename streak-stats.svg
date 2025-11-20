@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg width="495" height="195" xmlns="http://www.w3.org/2000/svg">
+  <rect width="495" height="195" fill="#0d1117" />
+  <text x="247" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#ff6e96">GitHub Streak Stats</text>
+  <text x="50" y="80" font-family="Segoe UI, sans-serif" font-size="14" fill="#e4e2e2">Current Streak:</text>
+  <text x="200" y="80" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#ff6e96">1 days</text>
+  <text x="50" y="110" font-family="Segoe UI, sans-serif" font-size="14" fill="#e4e2e2">Longest Streak:</text>
+  <text x="200" y="110" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#ff6e96">14 days</text>
+  <text x="50" y="140" font-family="Segoe UI, sans-serif" font-size="14" fill="#e4e2e2">Total Contributions:</text>
+  <text x="200" y="140" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#ff6e96">2,472</text>
+</svg>
