@@ -10,6 +10,80 @@ from datetime import datetime, timedelta
 from collections import defaultdict
 import xml.etree.ElementTree as ET
 
+def check_specific_repo_contributions(username, token, headers, repo_owner, repo_name, from_date, to_date):
+    """Check if a specific repository has contributions (diagnostic)"""
+    query = """
+    query($username: String!, $repoOwner: String!, $repoName: String!, $from: DateTime!, $to: DateTime!) {
+      user(login: $username) {
+        contributionsCollection(from: $from, to: $to) {
+          commitContributionsByRepository(maxRepositories: 100) {
+            repository {
+              nameWithOwner
+              owner {
+                login
+              }
+            }
+            contributions {
+              totalCount
+            }
+          }
+        }
+      }
+      repository(owner: $repoOwner, name: $repoName) {
+        nameWithOwner
+        isPrivate
+        defaultBranchRef {
+          name
+        }
+      }
+    }
+    """
+    
+    try:
+        response = requests.post(
+            "https://api.github.com/graphql",
+            json={
+                "query": query,
+                "variables": {
+                    "username": username,
+                    "repoOwner": repo_owner,
+                    "repoName": repo_name,
+                    "from": from_date,
+                    "to": to_date
+                }
+            },
+            headers=headers
+        )
+        response.raise_for_status()
+        data = response.json()
+        
+        if "errors" in data:
+            return {"error": data["errors"]}
+        
+        repo_info = data.get("data", {}).get("repository", {})
+        contributions_collection = data.get("data", {}).get("user", {}).get("contributionsCollection", {})
+        
+        # Check if repo appears in contributions
+        commit_repos = contributions_collection.get("commitContributionsByRepository", [])
+        found_in_breakdown = False
+        contribution_count = 0
+        
+        for repo_data in commit_repos:
+            if repo_data["repository"]["nameWithOwner"] == f"{repo_owner}/{repo_name}":
+                found_in_breakdown = True
+                contribution_count = repo_data["contributions"]["totalCount"]
+                break
+        
+        return {
+            "repo_exists": bool(repo_info),
+            "is_private": repo_info.get("isPrivate", False),
+            "found_in_breakdown": found_in_breakdown,
+            "contribution_count": contribution_count,
+            "total_repos_in_breakdown": len(commit_repos)
+        }
+    except Exception as e:
+        return {"error": str(e)}
+
 def get_contributions_per_repo(username, token, headers, from_date, to_date):
     """Get contributions per repository using GraphQL API"""
     query = """
@@ -81,29 +155,49 @@ def get_contributions_per_repo(username, token, headers, from_date, to_date):
         contributions_by_repo = defaultdict(int)
         collection = data["data"]["user"]["contributionsCollection"]
         
+        # Track counts per contribution type for diagnostics
+        type_counts = {
+            "commits": 0,
+            "issues": 0,
+            "pull_requests": 0,
+            "pr_reviews": 0
+        }
+        
         # Commits
-        for repo_data in collection.get("commitContributionsByRepository", []):
+        commit_repos = collection.get("commitContributionsByRepository", [])
+        for repo_data in commit_repos:
             repo_name = repo_data["repository"]["nameWithOwner"]
             count = repo_data["contributions"]["totalCount"]
             contributions_by_repo[repo_name] += count
+            type_counts["commits"] += count
         
         # Issues
-        for repo_data in collection.get("issueContributionsByRepository", []):
+        issue_repos = collection.get("issueContributionsByRepository", [])
+        for repo_data in issue_repos:
             repo_name = repo_data["repository"]["nameWithOwner"]
             count = repo_data["contributions"]["totalCount"]
             contributions_by_repo[repo_name] += count
+            type_counts["issues"] += count
         
         # Pull Requests
-        for repo_data in collection.get("pullRequestContributionsByRepository", []):
+        pr_repos = collection.get("pullRequestContributionsByRepository", [])
+        for repo_data in pr_repos:
             repo_name = repo_data["repository"]["nameWithOwner"]
             count = repo_data["contributions"]["totalCount"]
             contributions_by_repo[repo_name] += count
+            type_counts["pull_requests"] += count
         
         # PR Reviews
-        for repo_data in collection.get("pullRequestReviewContributionsByRepository", []):
+        review_repos = collection.get("pullRequestReviewContributionsByRepository", [])
+        for repo_data in review_repos:
             repo_name = repo_data["repository"]["nameWithOwner"]
             count = repo_data["contributions"]["totalCount"]
             contributions_by_repo[repo_name] += count
+            type_counts["pr_reviews"] += count
+        
+        # Check if we hit the 100 repository limit (API doesn't tell us, but we can warn)
+        if len(commit_repos) >= 100 or len(issue_repos) >= 100 or len(pr_repos) >= 100 or len(review_repos) >= 100:
+            print(f"    ⚠ Warning: Hit maxRepositories limit (100) - some repositories may be missing")
         
         return contributions_by_repo
     except requests.exceptions.HTTPError as e:
@@ -479,13 +573,58 @@ def main():
             count = repo_contributions.get(repo_name, 0)
             print(f"  {repo_name:50s}: {count:5,} contributions")
         
+        # Diagnostic: Check why specific repos show 0 contributions
+        print(f"\nDiagnostic: Why some repos show 0 contributions:")
+        now = datetime.now()
+        all_time_from = (now - timedelta(days=365 * 15)).isoformat() + "Z"
+        all_time_to = (now + timedelta(days=1)).isoformat() + "Z"
+        
+        for repo_full_name in ["Bodzify/bodzify-api-django", "Bodzify/bodzify-ultimate-music-guide-react"]:
+            parts = repo_full_name.split("/")
+            if len(parts) == 2:
+                owner, name = parts
+                diag = check_specific_repo_contributions(
+                    username, token, headers, owner, name, all_time_from, all_time_to
+                )
+                if "error" in diag:
+                    print(f"  {repo_full_name}: Error checking - {diag['error']}")
+                else:
+                    status_parts = []
+                    if diag.get("repo_exists"):
+                        status_parts.append("exists")
+                    if diag.get("is_private"):
+                        status_parts.append("private")
+                    if diag.get("found_in_breakdown"):
+                        status_parts.append(f"found ({diag['contribution_count']} contribs)")
+                    else:
+                        status_parts.append("NOT in breakdown")
+                    
+                    print(f"  {repo_full_name}: {', '.join(status_parts)}")
+                    if diag.get("repo_exists") and not diag.get("found_in_breakdown"):
+                        print(f"    → This repo exists and is accessible, but GitHub's API doesn't return it")
+                        print(f"    → in the contributionsCollection breakdown. This is a known limitation")
+                        print(f"    → for private organization repositories. Contributions ARE counted")
+                        print(f"    → in your calendar total, but won't appear in per-repo breakdown.")
+        
         # Show discrepancy
         print(f"\nComparison:")
         print(f"  Calendar total contributions: {total_contributions:,}")
         print(f"  Sum of repo contributions: {total_repo_contribs:,}")
         if total_repo_contribs != total_contributions:
             diff = total_contributions - total_repo_contribs
-            print(f"  Difference: {diff:,} (may include contributions not in repo breakdown)")
+            percentage = (total_repo_contribs / total_contributions * 100) if total_contributions > 0 else 0
+            print(f"  Difference: {diff:,} ({percentage:.1f}% accounted for)")
+            print(f"\n  Explanation of discrepancy:")
+            print(f"    • GitHub's contribution calendar includes ALL contributions from ALL repositories")
+            print(f"    • The per-repo breakdown API has limitations:")
+            print(f"      - Only returns up to 100 repositories per contribution type")
+            print(f"      - May not include all private/organization repositories")
+            print(f"      - Some contribution types may not be fully tracked")
+            print(f"    • The missing {diff:,} contributions are likely from:")
+            print(f"      - Private repositories not returned by the API")
+            print(f"      - Organization repositories with restricted visibility")
+            print(f"      - Repositories beyond the 100-repo limit per type")
+            print(f"      - Contributions in repositories you no longer have access to")
     else:
         print("  Could not retrieve per-repository breakdown")
 
