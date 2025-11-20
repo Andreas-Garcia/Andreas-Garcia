@@ -409,10 +409,10 @@ jobs:
 
           # Generate SVG with 3 columns - matching reference design
           svg_width = 700
-          svg_height = 220
+          svg_height = 200
           column_width = svg_width // 3
           column_center_x = [column_width // 2, column_width + column_width // 2, 2 * column_width + column_width // 2]
-          content_y_start = 80
+          content_y_start = 110
 
           svg = ET.Element("svg", {
               "width": str(svg_width),
@@ -428,18 +428,18 @@ jobs:
               "rx": "8"
           })
 
-          # Title with better styling
+          # Title with better styling - positioned higher to avoid overlap
           title = ET.SubElement(svg, "text", {
               "x": str(svg_width // 2),
-              "y": "24",
+              "y": "30",
               "text-anchor": "middle",
               "font-family": "Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif",
-              "font-size": "24",
+              "font-size": "28",
               "font-weight": "700",
               "fill": colors["title"],
               "letter-spacing": "0.5"
           })
-          title.text = "GitHub Streak Stats"
+          title.text = "GitHub Streak"
 
           # Vertical dividers between columns
           divider1 = ET.SubElement(svg, "line", {
@@ -499,7 +499,9 @@ jobs:
 
           # Column 2: Current Streak (middle) - with circular element and flame
           col2_x = column_center_x[1]
-          circle_center_y = content_y_start + 15
+          # Align circle center with the visual center of numbers in other columns
+          # For 48px font, visual center is approximately 20px above baseline
+          circle_center_y = content_y_start - 20
           circle_radius = 35
 
           # Draw circle for current streak
@@ -534,7 +536,7 @@ jobs:
 
           streak_label = ET.SubElement(svg, "text", {
               "x": str(col2_x),
-              "y": str(circle_center_y + circle_radius + 25),
+              "y": str(circle_center_y + circle_radius + 20),
               "text-anchor": "middle",
               "font-family": "Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif",
               "font-size": "14",
@@ -545,7 +547,7 @@ jobs:
 
           streak_date = ET.SubElement(svg, "text", {
               "x": str(col2_x),
-              "y": str(circle_center_y + circle_radius + 45),
+              "y": str(circle_center_y + circle_radius + 40),
               "text-anchor": "middle",
               "font-family": "Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif",
               "font-size": "11",
