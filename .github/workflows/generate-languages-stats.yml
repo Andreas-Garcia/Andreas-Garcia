@@ -1,0 +1,343 @@
+name: Generate Languages Stats
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # Run daily at midnight UTC
+  workflow_dispatch: # Allow manual trigger
+  push:
+    branches:
+      - main
+
+jobs:
+  generate-languages-stats:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Generate Languages Stats SVG
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          python3 << 'EOF'
+          import os
+          import requests
+          from collections import defaultdict
+          import xml.etree.ElementTree as ET
+
+          username = "Andreas-Garcia"
+          token = os.environ.get("GH_PAT") or os.environ.get("GITHUB_TOKEN")
+
+          headers = {
+              "Authorization": f"Bearer {token}",
+              "Accept": "application/vnd.github.v3+json"
+          }
+
+          # Fetch repository languages
+          languages_data = defaultdict(int)
+          processed_repos = set()  # Track repos we've already processed
+          
+          # First, fetch repositories owned by the user
+          print("Fetching owned repositories...")
+          page = 1
+          per_page = 100
+          while True:
+              repos_response = requests.get(
+                  f"https://api.github.com/users/{username}/repos?per_page={per_page}&page={page}&type=all",
+                  headers=headers
+              )
+              repos_response.raise_for_status()
+              repos = repos_response.json()
+
+              if not repos:
+                  break
+
+              for repo in repos:
+                  if repo.get("fork"):
+                      continue
+                  
+                  repo_full_name = repo["full_name"]
+                  if repo_full_name in processed_repos:
+                      continue
+                  processed_repos.add(repo_full_name)
+                  
+                  lang_response = requests.get(
+                      repo["languages_url"],
+                      headers=headers
+                  )
+                  if lang_response.status_code == 200:
+                      repo_langs = lang_response.json()
+                      for lang, bytes_count in repo_langs.items():
+                          languages_data[lang] += bytes_count
+                      print(f"  Processed: {repo_full_name}")
+
+              page += 1
+              if len(repos) < per_page:
+                  break
+
+          # Also fetch repositories where user has contributed (using Search API)
+          print("Fetching repositories with contributions...")
+          search_query = f"author:{username} type:pr"
+          search_headers = headers.copy()
+          search_headers["Accept"] = "application/vnd.github.v3+json"
+          
+          page = 1
+          while True:
+              search_response = requests.get(
+                  f"https://api.github.com/search/issues?q={search_query}&per_page={per_page}&page={page}",
+                  headers=search_headers
+              )
+              if search_response.status_code != 200:
+                  print(f"  Search API returned {search_response.status_code}, skipping contribution-based repos")
+                  break
+                  
+              search_data = search_response.json()
+              items = search_data.get("items", [])
+              
+              if not items:
+                  break
+              
+              for item in items:
+                  repo_url = item.get("repository_url", "")
+                  if not repo_url:
+                      continue
+                  
+                  # Extract repo full name from URL
+                  repo_full_name = repo_url.replace("https://api.github.com/repos/", "")
+                  if repo_full_name in processed_repos:
+                      continue
+                  
+                  # Skip if user owns this repo (already processed)
+                  if repo_full_name.startswith(f"{username}/"):
+                      continue
+                  
+                  processed_repos.add(repo_full_name)
+                  
+                  # Fetch language data for this repo
+                  lang_url = f"https://api.github.com/repos/{repo_full_name}/languages"
+                  lang_response = requests.get(lang_url, headers=headers)
+                  if lang_response.status_code == 200:
+                      repo_langs = lang_response.json()
+                      if repo_langs:  # Only count if repo has language data
+                          for lang, bytes_count in repo_langs.items():
+                              languages_data[lang] += bytes_count
+                          print(f"  Processed (contribution): {repo_full_name}")
+              
+              page += 1
+              if len(items) < per_page:
+                  break
+
+          # Check for specific repositories user might have contributed to
+          specific_repos = [
+              "Bodzify/bodzify-ultimate-music-guide-react"
+          ]
+          
+          print("Checking specific repositories...")
+          for repo_full_name in specific_repos:
+              if repo_full_name in processed_repos:
+                  continue
+              
+              lang_url = f"https://api.github.com/repos/{repo_full_name}/languages"
+              lang_response = requests.get(lang_url, headers=headers)
+              if lang_response.status_code == 200:
+                  repo_langs = lang_response.json()
+                  if repo_langs:
+                      processed_repos.add(repo_full_name)
+                      for lang, bytes_count in repo_langs.items():
+                          languages_data[lang] += bytes_count
+                      print(f"  Processed (specific): {repo_full_name}")
+              else:
+                  print(f"  Cannot access {repo_full_name} (status: {lang_response.status_code})")
+
+          # Calculate percentages
+          total_bytes = sum(languages_data.values())
+          if total_bytes == 0:
+              raise Exception("No language data found")
+
+          languages_percentages = {
+              lang: (bytes_count / total_bytes) * 100
+              for lang, bytes_count in languages_data.items()
+          }
+
+          # Sort by percentage and get top languages
+          sorted_languages = sorted(
+              languages_percentages.items(),
+              key=lambda x: x[1],
+              reverse=True
+          )
+
+          # Language colors (matching common GitHub language colors)
+          lang_colors = {
+              "Python": "#3776ab",
+              "Shell": "#89e051",
+              "PowerShell": "#012456",
+              "JavaScript": "#f7df1e",
+              "TypeScript": "#3178c6",
+              "Java": "#ed8b00",
+              "Go": "#00add8",
+              "Rust": "#000000",
+              "C++": "#00599c",
+              "C": "#a8b9cc",
+              "HTML": "#e34c26",
+              "CSS": "#1572b6",
+              "Dockerfile": "#384d54",
+              "Makefile": "#427819",
+          }
+
+          # Default color palette if language not in map
+          default_colors = ["#3776ab", "#89e051", "#012456", "#f7df1e", "#3178c6", "#ed8b00", "#00add8"]
+
+          # Theme colors (matching image design)
+          colors = {
+              "bg": "#0d1117",
+              "bg_card": "#161b22",
+              "title": "#ff6e96",
+              "text": "#c9d1d9",
+              "border": "#30363d"
+          }
+
+          # Generate SVG
+          svg_width = 495
+          svg_height = 195
+          bar_height = 10
+          bar_y = 60
+          bar_x_start = 20
+          bar_width = svg_width - 40
+          legend_y_start = 90
+          legend_item_height = 25
+
+          svg = ET.Element("svg", {
+              "width": str(svg_width),
+              "height": str(svg_height),
+              "xmlns": "http://www.w3.org/2000/svg"
+          })
+
+          # Background
+          bg = ET.SubElement(svg, "rect", {
+              "width": str(svg_width),
+              "height": str(svg_height),
+              "fill": colors["bg"],
+              "rx": "8"
+          })
+
+          # Card background
+          card = ET.SubElement(svg, "rect", {
+              "x": "10",
+              "y": "10",
+              "width": str(svg_width - 20),
+              "height": str(svg_height - 20),
+              "fill": colors["bg_card"],
+              "rx": "6",
+              "stroke": colors["border"],
+              "stroke-width": "1"
+          })
+
+          # Title
+          title = ET.SubElement(svg, "text", {
+              "x": str(svg_width // 2),
+              "y": "35",
+              "text-anchor": "middle",
+              "font-family": "Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif",
+              "font-size": "18",
+              "font-weight": "700",
+              "fill": colors["title"]
+          })
+          title.text = "Most Used Languages"
+
+          # Draw stacked bar
+          current_x = bar_x_start
+          color_index = 0
+
+          for lang, percentage in sorted_languages[:10]:  # Top 10 languages
+              segment_width = (bar_width * percentage) / 100
+              if segment_width < 1:  # Skip very small segments
+                  continue
+
+              lang_color = lang_colors.get(lang, default_colors[color_index % len(default_colors)])
+              
+              segment = ET.SubElement(svg, "rect", {
+                  "x": str(current_x),
+                  "y": str(bar_y),
+                  "width": str(segment_width),
+                  "height": str(bar_height),
+                  "fill": lang_color,
+                  "rx": "2"
+              })
+
+              current_x += segment_width
+              color_index += 1
+
+          # Draw legend
+          legend_x = bar_x_start
+          legend_y = legend_y_start
+          items_per_row = 3
+          item_width = bar_width / items_per_row
+          current_row = 0
+          current_col = 0
+
+          for lang, percentage in sorted_languages[:10]:
+              if percentage < 0.1:  # Skip languages with less than 0.1%
+                  continue
+
+              x_pos = legend_x + (current_col * item_width)
+              y_pos = legend_y + (current_row * legend_item_height)
+
+              # Color dot
+              lang_color = lang_colors.get(lang, default_colors[(current_row * items_per_row + current_col) % len(default_colors)])
+              dot = ET.SubElement(svg, "circle", {
+                  "cx": str(x_pos + 6),
+                  "cy": str(y_pos + 6),
+                  "r": "5",
+                  "fill": lang_color
+              })
+
+              # Language name and percentage
+              lang_text = ET.SubElement(svg, "text", {
+                  "x": str(x_pos + 18),
+                  "y": str(y_pos + 10),
+                  "font-family": "Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif",
+                  "font-size": "12",
+                  "fill": colors["text"]
+              })
+              lang_text.text = f"{lang} {percentage:.2f}%"
+
+              current_col += 1
+              if current_col >= items_per_row:
+                  current_col = 0
+                  current_row += 1
+
+          # Save SVG
+          tree = ET.ElementTree(svg)
+          ET.indent(tree, space="  ")
+          tree.write("languages-stats.svg", encoding="utf-8", xml_declaration=True)
+
+          print(f"Generated languages stats for {len(sorted_languages)} languages")
+          for lang, pct in sorted_languages[:5]:
+              print(f"  {lang}: {pct:.2f}%")
+          EOF
+
+      - name: Commit and push SVG
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add languages-stats.svg
+          git diff --staged --quiet || git commit -m "Update languages stats [skip ci]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+

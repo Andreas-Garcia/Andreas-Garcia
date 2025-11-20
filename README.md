@@ -159,6 +159,13 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 
 <div align="center">
   
+  <!-- Self-hosted Languages Stats - Generated via GitHub Actions -->
+  ![Most Used Languages](https://raw.githubusercontent.com/Andreas-Garcia/Andreas-Garcia/main/languages-stats.svg)
+  
+</div>
+
+<div align="center">
+  
   ![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Andreas-Garcia&theme=radical&hide_border=true&area=true)
   
 </div>
