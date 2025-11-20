@@ -32,9 +32,7 @@ I build with **Python**, **Django REST Framework**, **Next.js**, **TypeScript**,
 - 🔌 **GetTheMusicTree** - RESTful API providing access to genre hierarchy, metadata, and intelligent genre detection
 - 🎧 **InTheMusicTree** - Cloud-based music library manager with smart playlists and cross-platform sync
 
-The ecosystem includes:
-
-#### 🎵 AudioMeta Python: The Foundation for Audio Metadata Management
+### 🎵 AudioMeta Python: The Foundation for Audio Metadata Management
 
 [![GitHub stars](https://img.shields.io/github/stars/Andreas-Garcia/audiometa?style=social)](https://github.com/Andreas-Garcia/audiometa/stargazers)
 [![PyPI version](https://img.shields.io/pypi/v/audiometa-python)](https://pypi.org/project/audiometa-python/)
@@ -74,7 +72,7 @@ update_metadata("song.mp3", {
 
 **Technical Stack:** Python, pytest, mypy, ruff, GitHub Actions CI/CD
 
-#### 🌳 GrowTheMusicTree: Building the Ultimate Music Genre Reference
+### 🌳 GrowTheMusicTree: Building the Ultimate Music Genre Reference
 
 > 🔨 **Work in Progress** - Will be published open source soon! 🚀
 
@@ -91,7 +89,7 @@ By continuously evolving through **community-driven curation**, expert input, an
 
 **Technical Stack:** Next.js, TypeScript, React, JavaScript, Docker, GitFlow, GitHub Actions CI/CD
 
-#### 🔌 GetTheMusicTree: The Music Genre API
+### 🔌 GetTheMusicTree: The Music Genre API
 
 > 🔨 **Work in Progress** - Will be published open source soon! 🚀
 
@@ -99,7 +97,7 @@ By continuously evolving through **community-driven curation**, expert input, an
 
 **Technical Stack:** Python, Django REST Framework, PostgreSQL, Docker, GitHub Actions CI/CD
 
-#### 🎧 InTheMusicTree: A Smart Cloud-Based Music Library Manager
+### 🎧 InTheMusicTree: A Smart Cloud-Based Music Library Manager
 
 Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the **GetTheMusicTree API**, and built on **AudioMeta Python** for robust metadata handling, **InTheMusicTree** is a **cloud-based audio file manager** built for collectors, DJs, and music lovers who want full control over their libraries. It uses automatic genre detection, deep metadata analysis powered by AudioMeta Python, and real-time insights from the API to help users seamlessly organize, stream, and explore their collections—leveraging the **ultimate genre reference** to its fullest potential.
 
