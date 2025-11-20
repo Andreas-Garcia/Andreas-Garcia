@@ -3,9 +3,9 @@
   <rect width="495" height="195" fill="#0d1117" />
   <text x="247" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="20" font-weight="bold" fill="#ff6e96">GitHub Streak Stats</text>
   <text x="50" y="80" font-family="Segoe UI, sans-serif" font-size="14" fill="#e4e2e2">Current Streak:</text>
-  <text x="200" y="80" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#ff6e96">14 days</text>
+  <text x="200" y="80" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#ff6e96">0 days</text>
   <text x="50" y="110" font-family="Segoe UI, sans-serif" font-size="14" fill="#e4e2e2">Longest Streak:</text>
-  <text x="200" y="110" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#ff6e96">14 days</text>
+  <text x="200" y="110" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#ff6e96">19 days</text>
   <text x="50" y="140" font-family="Segoe UI, sans-serif" font-size="14" fill="#e4e2e2">Total Contributions:</text>
-  <text x="200" y="140" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#ff6e96">2,476</text>
+  <text x="200" y="140" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#ff6e96">7,440</text>
 </svg>
