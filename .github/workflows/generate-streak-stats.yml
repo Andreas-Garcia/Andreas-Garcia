@@ -376,22 +376,28 @@ jobs:
           longest_streak_date_str = f"{format_date(longest_streak_start)} - {format_date(longest_streak_end)}" if longest_streak_start and longest_streak_end else "N/A"
           most_recent_date_str = format_date(most_recent_date)
 
-          # Theme colors (radical theme)
+          # Theme colors (radical theme - enhanced)
           colors = {
               "bg": "#0d1117",
-              "border": "#e4e2e2",
-              "text": "#e4e2e2",
+              "bg_card": "#161b22",
+              "border": "#30363d",
+              "text": "#c9d1d9",
+              "text_secondary": "#8b949e",
               "title": "#ff6e96",
               "streak": "#ff6e96",
-              "total": "#ff6e96",
-              "date": "#9e9e9e"
+              "total": "#58a6ff",
+              "date": "#8b949e",
+              "accent": "#f85149"
           }
 
-          # Generate SVG with 3 columns
-          svg_width = 600
-          svg_height = 200
+          # Generate SVG with 3 columns - improved dimensions
+          svg_width = 650
+          svg_height = 220
           column_width = svg_width // 3
           column_center_x = [column_width // 2, column_width + column_width // 2, 2 * column_width + column_width // 2]
+          card_padding = 15
+          card_height = 160
+          card_y = 40
 
           svg = ET.Element("svg", {
               "width": str(svg_width),
@@ -399,124 +405,175 @@ jobs:
               "xmlns": "http://www.w3.org/2000/svg"
           })
 
-          # Background
+          # Background with subtle gradient effect
           bg = ET.SubElement(svg, "rect", {
               "width": str(svg_width),
               "height": str(svg_height),
-              "fill": colors["bg"]
+              "fill": colors["bg"],
+              "rx": "8"
           })
 
-          # Title
+          # Title with better styling
           title = ET.SubElement(svg, "text", {
               "x": str(svg_width // 2),
-              "y": "30",
+              "y": "28",
               "text-anchor": "middle",
-              "font-family": "Segoe UI, sans-serif",
-              "font-size": "20",
-              "font-weight": "bold",
-              "fill": colors["title"]
+              "font-family": "Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif",
+              "font-size": "18",
+              "font-weight": "600",
+              "fill": colors["title"],
+              "letter-spacing": "0.5"
           })
           title.text = "GitHub Streak Stats"
 
           # Column 1: Current Streak
           col1_x = column_center_x[0]
+          col1_left = col1_x - column_width // 2 + card_padding
+          col1_right = col1_x + column_width // 2 - card_padding
+
+          # Card background
+          card1 = ET.SubElement(svg, "rect", {
+              "x": str(col1_left),
+              "y": str(card_y),
+              "width": str(column_width - card_padding * 2),
+              "height": str(card_height),
+              "fill": colors["bg_card"],
+              "rx": "6",
+              "stroke": colors["border"],
+              "stroke-width": "1"
+          })
+
           streak_label = ET.SubElement(svg, "text", {
               "x": str(col1_x),
-              "y": "75",
+              "y": str(card_y + 25),
               "text-anchor": "middle",
-              "font-family": "Segoe UI, sans-serif",
-              "font-size": "12",
-              "fill": colors["text"]
+              "font-family": "Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif",
+              "font-size": "11",
+              "fill": colors["text_secondary"],
+              "font-weight": "500",
+              "letter-spacing": "0.3"
           })
           streak_label.text = "Current Streak"
 
           streak_value = ET.SubElement(svg, "text", {
               "x": str(col1_x),
-              "y": "100",
+              "y": str(card_y + 65),
               "text-anchor": "middle",
-              "font-family": "Segoe UI, sans-serif",
-              "font-size": "24",
-              "font-weight": "bold",
+              "font-family": "Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif",
+              "font-size": "32",
+              "font-weight": "700",
               "fill": colors["streak"]
           })
           streak_value.text = f"{current_streak}"
 
           streak_date = ET.SubElement(svg, "text", {
               "x": str(col1_x),
-              "y": "130",
+              "y": str(card_y + 95),
               "text-anchor": "middle",
-              "font-family": "Segoe UI, sans-serif",
-              "font-size": "10",
+              "font-family": "Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif",
+              "font-size": "9",
               "fill": colors["date"]
           })
           streak_date.text = current_streak_date_str
 
           # Column 2: Longest Streak
           col2_x = column_center_x[1]
+          col2_left = col2_x - column_width // 2 + card_padding
+
+          # Card background
+          card2 = ET.SubElement(svg, "rect", {
+              "x": str(col2_left),
+              "y": str(card_y),
+              "width": str(column_width - card_padding * 2),
+              "height": str(card_height),
+              "fill": colors["bg_card"],
+              "rx": "6",
+              "stroke": colors["border"],
+              "stroke-width": "1"
+          })
+
           longest_label = ET.SubElement(svg, "text", {
               "x": str(col2_x),
-              "y": "75",
+              "y": str(card_y + 25),
               "text-anchor": "middle",
-              "font-family": "Segoe UI, sans-serif",
-              "font-size": "12",
-              "fill": colors["text"]
+              "font-family": "Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif",
+              "font-size": "11",
+              "fill": colors["text_secondary"],
+              "font-weight": "500",
+              "letter-spacing": "0.3"
           })
           longest_label.text = "Longest Streak"
 
           longest_value = ET.SubElement(svg, "text", {
               "x": str(col2_x),
-              "y": "100",
+              "y": str(card_y + 65),
               "text-anchor": "middle",
-              "font-family": "Segoe UI, sans-serif",
-              "font-size": "24",
-              "font-weight": "bold",
+              "font-family": "Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif",
+              "font-size": "32",
+              "font-weight": "700",
               "fill": colors["streak"]
           })
           longest_value.text = f"{longest_streak}"
 
           longest_date = ET.SubElement(svg, "text", {
               "x": str(col2_x),
-              "y": "130",
+              "y": str(card_y + 95),
               "text-anchor": "middle",
-              "font-family": "Segoe UI, sans-serif",
-              "font-size": "10",
+              "font-family": "Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif",
+              "font-size": "9",
               "fill": colors["date"]
           })
           # Truncate long date ranges if needed
           date_text = longest_streak_date_str
-          if len(date_text) > 25:
-              date_text = longest_streak_date_str[:22] + "..."
+          if len(date_text) > 28:
+              date_text = longest_streak_date_str[:25] + "..."
           longest_date.text = date_text
 
           # Column 3: Total Contributions
           col3_x = column_center_x[2]
+          col3_left = col3_x - column_width // 2 + card_padding
+
+          # Card background
+          card3 = ET.SubElement(svg, "rect", {
+              "x": str(col3_left),
+              "y": str(card_y),
+              "width": str(column_width - card_padding * 2),
+              "height": str(card_height),
+              "fill": colors["bg_card"],
+              "rx": "6",
+              "stroke": colors["border"],
+              "stroke-width": "1"
+          })
+
           total_label = ET.SubElement(svg, "text", {
               "x": str(col3_x),
-              "y": "75",
+              "y": str(card_y + 25),
               "text-anchor": "middle",
-              "font-family": "Segoe UI, sans-serif",
-              "font-size": "12",
-              "fill": colors["text"]
+              "font-family": "Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif",
+              "font-size": "11",
+              "fill": colors["text_secondary"],
+              "font-weight": "500",
+              "letter-spacing": "0.3"
           })
           total_label.text = "Total Contributions"
 
           total_value = ET.SubElement(svg, "text", {
               "x": str(col3_x),
-              "y": "100",
+              "y": str(card_y + 65),
               "text-anchor": "middle",
-              "font-family": "Segoe UI, sans-serif",
-              "font-size": "24",
-              "font-weight": "bold",
+              "font-family": "Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif",
+              "font-size": "32",
+              "font-weight": "700",
               "fill": colors["total"]
           })
           total_value.text = f"{total_contributions:,}"
 
           total_date = ET.SubElement(svg, "text", {
               "x": str(col3_x),
-              "y": "130",
+              "y": str(card_y + 95),
               "text-anchor": "middle",
-              "font-family": "Segoe UI, sans-serif",
-              "font-size": "10",
+              "font-family": "Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif",
+              "font-size": "9",
               "fill": colors["date"]
           })
           total_date.text = f"Last: {most_recent_date_str}"
