@@ -8,8 +8,7 @@
   [![GitHub followers](https://img.shields.io/github/followers/Andreas-Garcia?label=Follow&style=social)](https://github.com/Andreas-Garcia)
 [![GitHub stars](https://img.shields.io/github/stars/Andreas-Garcia?label=Total%20Stars&style=social)](https://github.com/Andreas-Garcia)
 [![GitHub contributions](https://img.shields.io/github/contributors/Andreas-Garcia/Andreas-Garcia?label=Contributions&style=social)](https://github.com/Andreas-Garcia)
-  
-  <iframe src="https://github.com/sponsors/Andreas-Garcia/button" title="Sponsor Andreas-Garcia" height="32" width="114" style="border: 0; border-radius: 6px;"></iframe>
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/Andreas-Garcia?label=Sponsor&style=social)](https://github.com/sponsors/Andreas-Garcia)
 </div>
 
 ## 🎵 About Me
