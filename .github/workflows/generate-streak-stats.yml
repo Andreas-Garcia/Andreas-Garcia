@@ -332,6 +332,50 @@ jobs:
           print(f"Current streak: {current_streak} days")
           print(f"Longest streak: {longest_streak} days")
 
+          # Calculate dates for display
+          # Current streak start date
+          current_streak_start = None
+          if current_streak > 0:
+              # Find the start date of current streak
+              check_date = today
+              days_back = 0
+              while days_back < current_streak and check_date >= all_dates[0]:
+                  if check_date in contributions_by_date and contributions_by_date[check_date] > 0:
+                      current_streak_start = check_date
+                      check_date = check_date - timedelta(days=1)
+                      days_back += 1
+                  else:
+                      break
+            
+          # Longest streak dates (find the most recent longest streak)
+          longest_streak_start = None
+          longest_streak_end = None
+          if longest_streak > 0:
+              temp_streak = 0
+              temp_start = None
+              for date_obj in sorted(contributions_by_date.keys()):
+                  if contributions_by_date[date_obj] > 0:
+                      if temp_streak == 0:
+                          temp_start = date_obj
+                      temp_streak += 1
+                      # Update if this matches the longest streak (will get the most recent one)
+                      if temp_streak == longest_streak:
+                          longest_streak_start = temp_start
+                          longest_streak_end = date_obj
+                  else:
+                      temp_streak = 0
+                      temp_start = None
+
+          # Format dates for display
+          def format_date(date_obj):
+              if date_obj is None:
+                  return "N/A"
+              return date_obj.strftime("%b %d, %Y")
+
+          current_streak_date_str = format_date(current_streak_start)
+          longest_streak_date_str = f"{format_date(longest_streak_start)} - {format_date(longest_streak_end)}" if longest_streak_start and longest_streak_end else "N/A"
+          most_recent_date_str = format_date(most_recent_date)
+
           # Theme colors (radical theme)
           colors = {
               "bg": "#0d1117",
@@ -339,12 +383,15 @@ jobs:
               "text": "#e4e2e2",
               "title": "#ff6e96",
               "streak": "#ff6e96",
-              "total": "#ff6e96"
+              "total": "#ff6e96",
+              "date": "#9e9e9e"
           }
 
-          # Generate SVG
-          svg_width = 495
-          svg_height = 195
+          # Generate SVG with 3 columns
+          svg_width = 600
+          svg_height = 200
+          column_width = svg_width // 3
+          column_center_x = [column_width // 2, column_width + column_width // 2, 2 * column_width + column_width // 2]
 
           svg = ET.Element("svg", {
               "width": str(svg_width),
@@ -371,65 +418,128 @@ jobs:
           })
           title.text = "GitHub Streak Stats"
 
-          # Current Streak
-          streak_text = ET.SubElement(svg, "text", {
-              "x": "50",
-              "y": "80",
+          # Column 1: Current Streak
+          col1_x = column_center_x[0]
+          streak_label = ET.SubElement(svg, "text", {
+              "x": str(col1_x),
+              "y": "75",
+              "text-anchor": "middle",
               "font-family": "Segoe UI, sans-serif",
-              "font-size": "14",
+              "font-size": "12",
               "fill": colors["text"]
           })
-          streak_text.text = "Current Streak:"
+          streak_label.text = "Current Streak"
 
           streak_value = ET.SubElement(svg, "text", {
-              "x": "200",
-              "y": "80",
+              "x": str(col1_x),
+              "y": "100",
+              "text-anchor": "middle",
               "font-family": "Segoe UI, sans-serif",
-              "font-size": "14",
+              "font-size": "24",
               "font-weight": "bold",
               "fill": colors["streak"]
           })
-          streak_value.text = f"{current_streak} days"
+          streak_value.text = f"{current_streak}"
 
-          # Longest Streak
-          longest_text = ET.SubElement(svg, "text", {
-              "x": "50",
-              "y": "110",
+          streak_unit = ET.SubElement(svg, "text", {
+              "x": str(col1_x),
+              "y": "120",
+              "text-anchor": "middle",
               "font-family": "Segoe UI, sans-serif",
-              "font-size": "14",
+              "font-size": "12",
               "fill": colors["text"]
           })
-          longest_text.text = "Longest Streak:"
+          streak_unit.text = "days" if current_streak != 1 else "day"
+
+          streak_date = ET.SubElement(svg, "text", {
+              "x": str(col1_x),
+              "y": "145",
+              "text-anchor": "middle",
+              "font-family": "Segoe UI, sans-serif",
+              "font-size": "10",
+              "fill": colors["date"]
+          })
+          streak_date.text = current_streak_date_str
+
+          # Column 2: Longest Streak
+          col2_x = column_center_x[1]
+          longest_label = ET.SubElement(svg, "text", {
+              "x": str(col2_x),
+              "y": "75",
+              "text-anchor": "middle",
+              "font-family": "Segoe UI, sans-serif",
+              "font-size": "12",
+              "fill": colors["text"]
+          })
+          longest_label.text = "Longest Streak"
 
           longest_value = ET.SubElement(svg, "text", {
-              "x": "200",
-              "y": "110",
+              "x": str(col2_x),
+              "y": "100",
+              "text-anchor": "middle",
               "font-family": "Segoe UI, sans-serif",
-              "font-size": "14",
+              "font-size": "24",
               "font-weight": "bold",
               "fill": colors["streak"]
           })
-          longest_value.text = f"{longest_streak} days"
+          longest_value.text = f"{longest_streak}"
 
-          # Total Contributions
-          total_text = ET.SubElement(svg, "text", {
-              "x": "50",
-              "y": "140",
+          longest_unit = ET.SubElement(svg, "text", {
+              "x": str(col2_x),
+              "y": "120",
+              "text-anchor": "middle",
               "font-family": "Segoe UI, sans-serif",
-              "font-size": "14",
+              "font-size": "12",
               "fill": colors["text"]
           })
-          total_text.text = "Total Contributions:"
+          longest_unit.text = "days" if longest_streak != 1 else "day"
+
+          longest_date = ET.SubElement(svg, "text", {
+              "x": str(col2_x),
+              "y": "145",
+              "text-anchor": "middle",
+              "font-family": "Segoe UI, sans-serif",
+              "font-size": "10",
+              "fill": colors["date"]
+          })
+          # Truncate long date ranges if needed
+          date_text = longest_streak_date_str
+          if len(date_text) > 25:
+              date_text = longest_streak_date_str[:22] + "..."
+          longest_date.text = date_text
+
+          # Column 3: Total Contributions
+          col3_x = column_center_x[2]
+          total_label = ET.SubElement(svg, "text", {
+              "x": str(col3_x),
+              "y": "75",
+              "text-anchor": "middle",
+              "font-family": "Segoe UI, sans-serif",
+              "font-size": "12",
+              "fill": colors["text"]
+          })
+          total_label.text = "Total Contributions"
 
           total_value = ET.SubElement(svg, "text", {
-              "x": "200",
-              "y": "140",
+              "x": str(col3_x),
+              "y": "100",
+              "text-anchor": "middle",
               "font-family": "Segoe UI, sans-serif",
-              "font-size": "14",
+              "font-size": "24",
               "font-weight": "bold",
               "fill": colors["total"]
           })
           total_value.text = f"{total_contributions:,}"
+
+          total_date = ET.SubElement(svg, "text", {
+              "x": str(col3_x),
+              "y": "145",
+              "text-anchor": "middle",
+              "font-family": "Segoe UI, sans-serif",
+              "font-size": "10",
+              "fill": colors["date"]
+          })
+          total_date.text = f"Last: {most_recent_date_str}"
 
           # Save SVG
           tree = ET.ElementTree(svg)
