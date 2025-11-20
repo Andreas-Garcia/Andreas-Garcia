@@ -71,6 +71,11 @@ def get_contributions_per_repo(username, token, headers, from_date, to_date):
         data = response.json()
         
         if "errors" in data:
+            print(f"    ⚠ GraphQL errors in repo query: {data['errors']}")
+            return {}
+        
+        if "data" not in data or "user" not in data["data"]:
+            print(f"    ⚠ Unexpected response structure: {list(data.keys())}")
             return {}
         
         contributions_by_repo = defaultdict(int)
@@ -101,8 +106,15 @@ def get_contributions_per_repo(username, token, headers, from_date, to_date):
             contributions_by_repo[repo_name] += count
         
         return contributions_by_repo
+    except requests.exceptions.HTTPError as e:
+        print(f"    ⚠ HTTP error getting contributions per repo: {e}")
+        if hasattr(e.response, 'text'):
+            print(f"    Response: {e.response.text[:200]}")
+        return {}
     except Exception as e:
         print(f"    ⚠ Error getting contributions per repo: {e}")
+        import traceback
+        print(f"    Traceback: {traceback.format_exc()[:300]}")
         return {}
 
 def main():
@@ -420,20 +432,39 @@ def main():
     print(f"   merged PRs, issues, reviews), NOT total commits. Actual commit counts in")
     print(f"   repositories may be higher due to commits in branches, unmerged PRs, etc.")
     
-    # Get contributions per repository for all time (query without date restrictions)
+    # Get contributions per repository for all time (query per year range and combine)
     print(f"\n=== Contributions per Repository (all time) ===")
     
-    # Query without date restrictions to get all-time data
-    all_time_from = "2008-01-01T00:00:00Z"  # GitHub was founded in 2008
+    # Query per repository for each year range (same approach as calendar query)
+    repo_contributions = defaultdict(int)
     now = datetime.now()
-    all_time_to = (now + timedelta(days=1)).isoformat() + "Z"
     
-    repo_contributions = get_contributions_per_repo(username, token, headers, all_time_from, all_time_to)
+    print("Querying contributions per repository in 1-year ranges...")
+    for year_offset in range(max_years_back):
+        from_date_obj = now - timedelta(days=365 * (year_offset + 1))
+        from_date = from_date_obj.isoformat() + "Z"
+        
+        if year_offset == 0:
+            query_to_date = to_date
+        else:
+            query_to_date = (now - timedelta(days=365 * year_offset)).isoformat() + "Z"
+        
+        try:
+            year_repo_contribs = get_contributions_per_repo(username, token, headers, from_date, query_to_date)
+            if year_repo_contribs:
+                for repo_name, count in year_repo_contribs.items():
+                    repo_contributions[repo_name] += count
+                print(f"  Year {year_offset + 1}: Found contributions in {len(year_repo_contribs)} repositories")
+        except Exception as e:
+            print(f"  Year {year_offset + 1}: Error querying repo contributions: {e}")
+            # Continue with other years even if one fails
+    
     if repo_contributions:
         sorted_repos = sorted(repo_contributions.items(), key=lambda x: x[1], reverse=True)
         total_repo_contribs = sum(repo_contributions.values())
-        print(f"Total contributions from repositories: {total_repo_contribs:,}")
-        print(f"Top repositories by contributions (all time):")
+        print(f"\nTotal contributions from repositories: {total_repo_contribs:,}")
+        print(f"Number of repositories with contributions: {len(repo_contributions)}")
+        print(f"\nTop repositories by contributions (all time):")
         for repo_name, count in sorted_repos[:30]:  # Show top 30
             print(f"  {repo_name:50s}: {count:5,} contributions")
         
