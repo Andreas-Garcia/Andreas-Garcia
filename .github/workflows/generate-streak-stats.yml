@@ -1,5 +1,11 @@
 name: Generate Streak Stats
 
+# To include private organization contributions:
+# 1. Create a Personal Access Token (PAT) at https://github.com/settings/tokens
+# 2. Grant it access to private repositories (repo scope)
+# 3. Add it as a repository secret named "GH_PAT"
+# 4. The workflow will automatically use it if available, otherwise falls back to GITHUB_TOKEN
+
 on:
   schedule:
     - cron: "0 0 * * *" # Run daily at midnight UTC
@@ -18,7 +24,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -32,6 +38,7 @@ jobs:
       - name: Generate Streak Stats SVG
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           python3 << 'EOF'
           import os
@@ -42,13 +49,19 @@ jobs:
 
           username = "Andreas-Garcia"
           theme = "radical"
-          token = os.environ.get("GITHUB_TOKEN")
+          # Use PAT if available, otherwise fall back to GITHUB_TOKEN
+          token = os.environ.get("GH_PAT") or os.environ.get("GITHUB_TOKEN")
+          
+          # Calculate date range for the past year to ensure we get all contributions
+          from_date = (datetime.now() - timedelta(days=365)).isoformat() + "Z"
+          to_date = datetime.now().isoformat() + "Z"
 
-          # Fetch contribution data from GitHub API
+          # Fetch contribution data from GitHub API (includes private contributions if token has access)
           query = """
-          query($username: String!) {
+          query($username: String!, $from: DateTime!, $to: DateTime!) {
             user(login: $username) {
-              contributionsCollection {
+              contributionsCollection(from: $from, to: $to) {
+                totalContributions
                 contributionCalendar {
                   totalContributions
                   weeks {
@@ -68,7 +81,11 @@ jobs:
               "Content-Type": "application/json"
           }
 
-          variables = {"username": username}
+          variables = {
+              "username": username,
+              "from": from_date,
+              "to": to_date
+          }
           response = requests.post(
               "https://api.github.com/graphql",
               json={"query": query, "variables": variables},
@@ -81,9 +98,11 @@ jobs:
           if "errors" in data:
               raise Exception(f"GraphQL errors: {data['errors']}")
 
-          calendar = data["data"]["user"]["contributionsCollection"]["contributionCalendar"]
+          contributions_collection = data["data"]["user"]["contributionsCollection"]
+          calendar = contributions_collection["contributionCalendar"]
           weeks = calendar["weeks"]
-          total_contributions = calendar["totalContributions"]
+          # Use totalContributions from the collection (includes private) or fall back to calendar total
+          total_contributions = contributions_collection.get("totalContributions", calendar["totalContributions"])
 
           # Calculate current streak
           today = datetime.now().date()
@@ -224,4 +243,4 @@ jobs:
           git diff --staged --quiet || git commit -m "Update streak stats [skip ci]"
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
