@@ -234,9 +234,7 @@ def main():
         "width": str(svg_width - 20),
         "height": str(svg_height - 20),
         "fill": colors["bg_card"],
-        "rx": "6",
-        "stroke": colors["border"],
-        "stroke-width": "1"
+        "rx": "6"
     })
 
     # Title

@@ -25,6 +25,13 @@ I build with **Python**, **Django REST Framework**, **Next.js**, **TypeScript**,
 
 **BehindTheMusicTree** is an ecosystem that encompasses interconnected projects designed to transform how we explore, understand, and organize music. By blending community-driven intelligence, robust metadata management, and an evolving framework, these projects work together to provide a holistic music experience for music lovers, collectors, and professionals alike.
 
+**Projects:**
+
+- 🎵 **AudioMeta Python** - Unified Python library for reading and writing audio metadata across multiple formats
+- 🌳 **GrowTheMusicTree** - Community-driven platform for building the definitive interactive map of global music genres
+- 🔌 **GetTheMusicTree** - RESTful API providing access to genre hierarchy, metadata, and intelligent genre detection
+- 🎧 **InTheMusicTree** - Cloud-based music library manager with smart playlists and cross-platform sync
+
 The ecosystem includes:
 
 #### 🎵 AudioMeta Python: The Foundation for Audio Metadata Management
@@ -144,7 +151,7 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 
 <div align="center">
   
-  ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Andreas-Garcia&show_icons=true&theme=radical&hide_border=true&count_private=true)
+  ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Andreas-Garcia&show_icons=true&theme=radical&hide_border=true&count_private=true&hide_rank=true)
   
 </div>
 
