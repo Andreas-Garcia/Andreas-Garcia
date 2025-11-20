@@ -7,7 +7,11 @@ name: Generate Streak Stats
 #    - This is required to see contributions from private organization repositories
 # 3. Add it as a repository secret named "GH_PAT"
 #    - Go to: Repository → Settings → Secrets and variables → Actions → New repository secret
-# 4. The workflow will automatically use it if available, otherwise falls back to GITHUB_TOKEN
+# 4. IMPORTANT: Check organization settings if contributions are still missing:
+#    - Go to each organization → Settings → Third-party access
+#    - Ensure "Third-party application access policy" allows your PAT
+#    - Some organizations restrict third-party access even with a valid PAT
+# 5. The workflow will automatically use it if available, otherwise falls back to GITHUB_TOKEN
 #    - GITHUB_TOKEN only has access to public repositories
 
 on:
@@ -56,12 +60,16 @@ jobs:
           # Use PAT if available, otherwise fall back to GITHUB_TOKEN
           token = os.environ.get("GH_PAT") or os.environ.get("GITHUB_TOKEN")
           
-          # Query without date restrictions to get ALL contributions (GitHub's default is all-time)
-          # This ensures we capture contributions from all repositories, including private ones
+          # Query with explicit date range covering multiple years to ensure all contributions are included
+          # GitHub's contribution calendar typically shows the past year, but we want all-time data
+          from_date = (datetime.now() - timedelta(days=2000)).isoformat() + "Z"  # ~5.5 years
+          to_date = (datetime.now() + timedelta(days=1)).isoformat() + "Z"  # Include today
+          
+          # Query contributions with explicit date range
           query = """
-          query($username: String!) {
+          query($username: String!, $from: DateTime!, $to: DateTime!) {
             user(login: $username) {
-              contributionsCollection {
+              contributionsCollection(from: $from, to: $to) {
                 contributionCalendar {
                   totalContributions
                   weeks {
@@ -82,8 +90,12 @@ jobs:
           }
 
           variables = {
-              "username": username
+              "username": username,
+              "from": from_date,
+              "to": to_date
           }
+          
+          print(f"Querying contributions from {from_date} to {to_date}")
           response = requests.post(
               "https://api.github.com/graphql",
               json={"query": query, "variables": variables},
@@ -94,11 +106,53 @@ jobs:
           data = response.json()
 
           if "errors" in data:
-              raise Exception(f"GraphQL errors: {data['errors']}")
+              print(f"Warning: GraphQL errors with date range: {data['errors']}")
+              print("Trying query without date restrictions...")
+              # Fallback: Try without date restrictions
+              query_no_dates = """
+              query($username: String!) {
+                user(login: $username) {
+                  contributionsCollection {
+                    contributionCalendar {
+                      totalContributions
+                      weeks {
+                        contributionDays {
+                          date
+                          contributionCount
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              """
+              response2 = requests.post(
+                  "https://api.github.com/graphql",
+                  json={"query": query_no_dates, "variables": {"username": username}},
+                  headers=headers
+              )
+              response2.raise_for_status()
+              data = response2.json()
+              if "errors" in data:
+                  raise Exception(f"GraphQL errors: {data['errors']}")
+              print("Successfully queried without date restrictions")
 
           # Debug: Check which token is being used
           token_type = "PAT (GH_PAT)" if os.environ.get("GH_PAT") else "GITHUB_TOKEN (limited)"
           print(f"Using token type: {token_type}")
+          
+          # Verify token permissions by checking user info
+          try:
+              user_check = requests.get(
+                  "https://api.github.com/user",
+                  headers={"Authorization": f"Bearer {token}"}
+              )
+              user_check.raise_for_status()
+              user_data = user_check.json()
+              print(f"Authenticated as: {user_data.get('login', 'unknown')}")
+              print(f"Token has repo access: {'repo' in str(user_check.headers.get('X-OAuth-Scopes', ''))}")
+          except Exception as e:
+              print(f"Warning: Could not verify token permissions: {e}")
 
           contributions_collection = data["data"]["user"]["contributionsCollection"]
           calendar = contributions_collection["contributionCalendar"]
@@ -110,9 +164,24 @@ jobs:
           print(f"Total contributions retrieved: {total_contributions}")
           print(f"Number of weeks: {len(weeks)}")
           
-          # Count total days with contributions
-          total_days_with_contributions = sum(1 for week in weeks for day in week["contributionDays"] if day["contributionCount"] > 0)
+          # Count total days with contributions and sum all contributions manually
+          total_days_with_contributions = 0
+          manual_total = 0
+          for week in weeks:
+              for day in week["contributionDays"]:
+                  count = day["contributionCount"]
+                  if count > 0:
+                      total_days_with_contributions += 1
+                      manual_total += count
+          
           print(f"Days with contributions: {total_days_with_contributions}")
+          print(f"Manual sum of contributions: {manual_total}")
+          print(f"Calendar totalContributions: {total_contributions}")
+          
+          # Use manual total if it's higher (more accurate)
+          if manual_total > total_contributions:
+              print(f"Using manual total ({manual_total}) as it's higher than calendar total")
+              total_contributions = manual_total
 
           # Calculate current streak
           today = datetime.now().date()
