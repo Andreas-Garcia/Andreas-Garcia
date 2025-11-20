@@ -59,22 +59,18 @@ jobs:
           theme = "radical"
           # Use PAT if available, otherwise fall back to GITHUB_TOKEN
           token = os.environ.get("GH_PAT") or os.environ.get("GITHUB_TOKEN")
-          
-          # GitHub's contribution calendar API limitation:
-          # - The calendar weeks only show the past year of contributions
-          # - The totalContributions field may include all-time totals
-          # - To get all-time data, we'd need to query multiple 1-year ranges or use repository-level queries
-          # For now, we query without date restrictions to get the default view
+
+          # GitHub's contribution calendar API limitation: max 1 year per query
+          # To get all-time data, we query multiple 1-year ranges and combine them
           headers = {
               "Authorization": f"Bearer {token}",
               "Content-Type": "application/json"
           }
-          
-          # First, try querying without date restrictions (gets past year calendar + all-time total)
-          query_no_dates = """
-          query($username: String!) {
+
+          query_template = """
+          query($username: String!, $from: DateTime!, $to: DateTime!) {
             user(login: $username) {
-              contributionsCollection {
+              contributionsCollection(from: $from, to: $to) {
                 contributionCalendar {
                   totalContributions
                   weeks {
@@ -88,27 +84,171 @@ jobs:
             }
           }
           """
-          
-          print("Querying contributions without date restrictions (GitHub default: past year calendar)...")
-          # Query without date restrictions first (this is the most reliable)
-          response = requests.post(
-              "https://api.github.com/graphql",
-              json={"query": query_no_dates, "variables": {"username": username}},
-              headers=headers
-          )
 
-          response.raise_for_status()
-          data = response.json()
+          # Query multiple 1-year ranges going back in time
+          # Start from today and go back in 1-year increments
+          all_weeks = []
+          total_contributions = 0
+          max_years_back = 10  # Query up to 10 years back
 
-          if "errors" in data:
-              raise Exception(f"GraphQL errors: {data['errors']}")
-          
-          print("Successfully queried contributions")
+          now = datetime.now()
+          to_date = (now + timedelta(days=1)).isoformat() + "Z"
+
+          print(f"Querying contributions in 1-year ranges (going back up to {max_years_back} years)...")
+
+          for year_offset in range(max_years_back):
+              from_date_obj = now - timedelta(days=365 * (year_offset + 1))
+              from_date = from_date_obj.isoformat() + "Z"
+              
+              # For the first query (most recent year), use today as end date
+              # For older queries, use the start of the next year as end date
+              if year_offset == 0:
+                  query_to_date = to_date
+              else:
+                  query_to_date = (now - timedelta(days=365 * year_offset)).isoformat() + "Z"
+              
+              print(f"  Querying year {year_offset + 1}: {from_date[:10]} to {query_to_date[:10]}")
+              
+              try:
+                  response = requests.post(
+                      "https://api.github.com/graphql",
+                      json={
+                          "query": query_template,
+                          "variables": {
+                              "username": username,
+                              "from": from_date,
+                              "to": query_to_date
+                          }
+                      },
+                      headers=headers
+                  )
+                  
+                  response.raise_for_status()
+                  data = response.json()
+                  
+                  if "errors" in data:
+                      error_msg = data["errors"][0].get("message", "")
+                      if "must not exceed 1 year" in error_msg:
+                          print(f"    ⚠ Date range too large, skipping")
+                          continue
+                      print(f"    ⚠ GraphQL errors: {data['errors']}")
+                      continue
+                  
+                  contributions_collection = data["data"]["user"]["contributionsCollection"]
+                  calendar = contributions_collection["contributionCalendar"]
+                  year_weeks = calendar["weeks"]
+                  year_total = calendar["totalContributions"]
+                  
+                  if not year_weeks or year_total == 0:
+                      print(f"    No contributions found for this year, stopping")
+                      break
+                  
+                  all_weeks.extend(year_weeks)
+                  total_contributions = max(total_contributions, year_total)  # Use max as it might be cumulative
+                  print(f"    ✓ Found {year_total} contributions, {len(year_weeks)} weeks")
+                  
+              except Exception as e:
+                  print(f"    ⚠ Error querying year {year_offset + 1}: {e}")
+                  if year_offset == 0:
+                      # If the first query fails, fall back to query without dates
+                      print("    Falling back to query without date restrictions...")
+                      query_no_dates = """
+                      query($username: String!) {
+                        user(login: $username) {
+                          contributionsCollection {
+                            contributionCalendar {
+                              totalContributions
+                              weeks {
+                                contributionDays {
+                                  date
+                                  contributionCount
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                      """
+                      response2 = requests.post(
+                          "https://api.github.com/graphql",
+                          json={"query": query_no_dates, "variables": {"username": username}},
+                          headers=headers
+                      )
+                      response2.raise_for_status()
+                      data2 = response2.json()
+                      if "errors" not in data2:
+                          contributions_collection = data2["data"]["user"]["contributionsCollection"]
+                          calendar = contributions_collection["contributionCalendar"]
+                          all_weeks = calendar["weeks"]
+                          total_contributions = calendar["totalContributions"]
+                          print("    ✓ Fallback query successful")
+                      break
+                  else:
+                      # For older years, just skip if there's an error
+                      break
+
+          if not all_weeks:
+              raise Exception("No contribution data found")
+
+          print(f"Successfully queried contributions: {len(all_weeks)} total weeks")
+
+          # Combine all weeks and deduplicate by date (in case of overlaps)
+          contributions_by_date = {}
+          for week in all_weeks:
+              for day in week["contributionDays"]:
+                  date_str = day["date"]
+                  try:
+                      date_obj = datetime.strptime(date_str, "%Y-%m-%d").date()
+                  except:
+                      date_obj = datetime.fromisoformat(date_str.replace("Z", "")).date()
+                  count = day["contributionCount"]
+                  # If date already exists, use the maximum count (handles overlaps)
+                  if date_obj in contributions_by_date:
+                      contributions_by_date[date_obj] = max(contributions_by_date[date_obj], count)
+                  else:
+                      contributions_by_date[date_obj] = count
+
+          # Rebuild weeks structure from combined data
+          # Group by week (starting from Monday)
+          weeks = []
+          if contributions_by_date:
+              sorted_dates = sorted(contributions_by_date.keys())
+              first_date = sorted_dates[0]
+              # Find the Monday of the week containing the first date
+              days_since_monday = first_date.weekday()
+              week_start = first_date - timedelta(days=days_since_monday)
+              
+              current_week_start = week_start
+              current_week_days = []
+              
+              for date_obj in sorted_dates:
+                  # If this date is beyond the current week, start a new week
+                  while date_obj >= current_week_start + timedelta(days=7):
+                      if current_week_days:
+                          weeks.append({"contributionDays": current_week_days})
+                      current_week_start += timedelta(days=7)
+                      current_week_days = []
+                  
+                  # Add this day to the current week
+                  current_week_days.append({
+                      "date": date_obj.isoformat(),
+                      "contributionCount": contributions_by_date[date_obj]
+                  })
+              
+              # Add the last week
+              if current_week_days:
+                  weeks.append({"contributionDays": current_week_days})
+
+          # Recalculate total from combined data
+          manual_total = sum(contributions_by_date.values())
+          total_contributions = manual_total
+
+          print(f"Combined data: {len(contributions_by_date)} unique days, {manual_total} total contributions")
 
           # Debug: Check which token is being used
           token_type = "PAT (GH_PAT)" if os.environ.get("GH_PAT") else "GITHUB_TOKEN (limited)"
           print(f"Using token type: {token_type}")
-          
+
           # Verify token permissions by checking user info
           try:
               user_check = requests.get(
@@ -122,62 +262,26 @@ jobs:
           except Exception as e:
               print(f"Warning: Could not verify token permissions: {e}")
 
-          contributions_collection = data["data"]["user"]["contributionsCollection"]
-          calendar = contributions_collection["contributionCalendar"]
-          weeks = calendar["weeks"]
-          # totalContributions from calendar includes all contributions (public + private if token has access)
-          total_contributions = calendar["totalContributions"]
-          
           # Debug: Print contribution info
-          print(f"Total contributions retrieved: {total_contributions}")
+          print(f"Total contributions (combined): {total_contributions:,}")
           print(f"Number of weeks: {len(weeks)}")
-          
-          # Count total days with contributions and sum all contributions manually
-          total_days_with_contributions = 0
-          manual_total = 0
-          for week in weeks:
-              for day in week["contributionDays"]:
-                  count = day["contributionCount"]
-                  if count > 0:
-                      total_days_with_contributions += 1
-                      manual_total += count
-          
+
+          # Count total days with contributions
+          total_days_with_contributions = sum(1 for count in contributions_by_date.values() if count > 0)
           print(f"Days with contributions: {total_days_with_contributions}")
-          print(f"Manual sum of contributions: {manual_total}")
-          print(f"Calendar totalContributions: {total_contributions}")
-          
-          # Use manual total if it's higher (more accurate)
-          if manual_total > total_contributions:
-              print(f"Using manual total ({manual_total}) as it's higher than calendar total")
-              total_contributions = manual_total
 
           # Calculate current streak
           today = datetime.now().date()
           current_streak = 0
           longest_streak = 0
-          temp_streak = 0
 
-          # Build a dictionary of dates to contribution counts for easier lookup
-          contributions_by_date = {}
-          all_dates = []
-          for week in weeks:
-              for day in week["contributionDays"]:
-                  date_str = day["date"]
-                  # Parse date string (format: "YYYY-MM-DD")
-                  try:
-                      date_obj = datetime.strptime(date_str, "%Y-%m-%d").date()
-                  except:
-                      # Fallback: try ISO format
-                      date_obj = datetime.fromisoformat(date_str.replace("Z", "")).date()
-                  count = day["contributionCount"]
-                  contributions_by_date[date_obj] = count
-                  all_dates.append(date_obj)
+          # contributions_by_date is already built from combined data
+          all_dates = sorted(contributions_by_date.keys())
 
           if not all_dates:
               raise Exception("No contribution data found")
 
-          # Sort dates to ensure chronological order
-          all_dates.sort()
+          # all_dates is already sorted from the combined data
           most_recent_date = all_dates[-1]
 
           # Calculate current streak: count backwards from most recent date
