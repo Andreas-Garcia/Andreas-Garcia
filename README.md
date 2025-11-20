@@ -146,7 +146,12 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
   
   ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Andreas-Garcia&show_icons=true&theme=radical&hide_border=true&count_private=true)
   
-  ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Andreas-Garcia&layout=compact&theme=radical&hide_border=true&langs_count=8)
+</div>
+
+<div align="center">
+  
+  <!-- Self-hosted Languages Stats - Generated via GitHub Actions -->
+  ![Most Used Languages](https://raw.githubusercontent.com/Andreas-Garcia/Andreas-Garcia/main/languages-stats.svg)
   
 </div>
 
@@ -154,13 +159,6 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
   
   <!-- Self-hosted GitHub Streak Stats - Generated via GitHub Actions -->
   ![GitHub Streak](https://raw.githubusercontent.com/Andreas-Garcia/Andreas-Garcia/main/streak-stats.svg)
-  
-</div>
-
-<div align="center">
-  
-  <!-- Self-hosted Languages Stats - Generated via GitHub Actions -->
-  ![Most Used Languages](https://raw.githubusercontent.com/Andreas-Garcia/Andreas-Garcia/main/languages-stats.svg)
   
 </div>
 
