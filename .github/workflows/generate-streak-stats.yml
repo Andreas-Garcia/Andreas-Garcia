@@ -1,0 +1,223 @@
+name: Generate Streak Stats
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # Run daily at midnight UTC
+  workflow_dispatch: # Allow manual trigger
+  push:
+    branches:
+      - main
+
+jobs:
+  generate-streak-stats:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate Streak Stats SVG
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 << 'EOF'
+          import os
+          import requests
+          import json
+          from datetime import datetime, timedelta
+          import xml.etree.ElementTree as ET
+
+          username = "Andreas-Garcia"
+          theme = "radical"
+          token = os.environ.get("GITHUB_TOKEN")
+
+          # Fetch contribution data from GitHub API
+          query = """
+          query($username: String!) {
+            user(login: $username) {
+              contributionsCollection {
+                contributionCalendar {
+                  totalContributions
+                  weeks {
+                    contributionDays {
+                      date
+                      contributionCount
+                    }
+                  }
+                }
+              }
+            }
+          }
+          """
+
+          headers = {
+              "Authorization": f"Bearer {token}",
+              "Content-Type": "application/json"
+          }
+
+          variables = {"username": username}
+          response = requests.post(
+              "https://api.github.com/graphql",
+              json={"query": query, "variables": variables},
+              headers=headers
+          )
+
+          response.raise_for_status()
+          data = response.json()
+
+          if "errors" in data:
+              raise Exception(f"GraphQL errors: {data['errors']}")
+
+          calendar = data["data"]["user"]["contributionsCollection"]["contributionCalendar"]
+          weeks = calendar["weeks"]
+          total_contributions = calendar["totalContributions"]
+
+          # Calculate current streak
+          today = datetime.now().date()
+          current_streak = 0
+          longest_streak = 0
+          temp_streak = 0
+
+          all_days = []
+          for week in weeks:
+              for day in week["contributionDays"]:
+                  date_str = day["date"]
+                  count = day["contributionCount"]
+                  all_days.append((date_str, count))
+
+          # Calculate streaks
+          for i in range(len(all_days) - 1, -1, -1):
+              date_str, count = all_days[i]
+              if count > 0:
+                  temp_streak += 1
+                  if i == len(all_days) - 1:
+                      current_streak = temp_streak
+                  longest_streak = max(longest_streak, temp_streak)
+              else:
+                  temp_streak = 0
+
+          # Theme colors (radical theme)
+          colors = {
+              "bg": "#0d1117",
+              "border": "#e4e2e2",
+              "text": "#e4e2e2",
+              "title": "#ff6e96",
+              "streak": "#ff6e96",
+              "total": "#ff6e96"
+          }
+
+          # Generate SVG
+          svg_width = 495
+          svg_height = 195
+
+          svg = ET.Element("svg", {
+              "width": str(svg_width),
+              "height": str(svg_height),
+              "xmlns": "http://www.w3.org/2000/svg"
+          })
+
+          # Background
+          bg = ET.SubElement(svg, "rect", {
+              "width": str(svg_width),
+              "height": str(svg_height),
+              "fill": colors["bg"]
+          })
+
+          # Title
+          title = ET.SubElement(svg, "text", {
+              "x": str(svg_width // 2),
+              "y": "30",
+              "text-anchor": "middle",
+              "font-family": "Segoe UI, sans-serif",
+              "font-size": "20",
+              "font-weight": "bold",
+              "fill": colors["title"]
+          })
+          title.text = "GitHub Streak Stats"
+
+          # Current Streak
+          streak_text = ET.SubElement(svg, "text", {
+              "x": "50",
+              "y": "80",
+              "font-family": "Segoe UI, sans-serif",
+              "font-size": "14",
+              "fill": colors["text"]
+          })
+          streak_text.text = "Current Streak:"
+
+          streak_value = ET.SubElement(svg, "text", {
+              "x": "200",
+              "y": "80",
+              "font-family": "Segoe UI, sans-serif",
+              "font-size": "14",
+              "font-weight": "bold",
+              "fill": colors["streak"]
+          })
+          streak_value.text = f"{current_streak} days"
+
+          # Longest Streak
+          longest_text = ET.SubElement(svg, "text", {
+              "x": "50",
+              "y": "110",
+              "font-family": "Segoe UI, sans-serif",
+              "font-size": "14",
+              "fill": colors["text"]
+          })
+          longest_text.text = "Longest Streak:"
+
+          longest_value = ET.SubElement(svg, "text", {
+              "x": "200",
+              "y": "110",
+              "font-family": "Segoe UI, sans-serif",
+              "font-size": "14",
+              "font-weight": "bold",
+              "fill": colors["streak"]
+          })
+          longest_value.text = f"{longest_streak} days"
+
+          # Total Contributions
+          total_text = ET.SubElement(svg, "text", {
+              "x": "50",
+              "y": "140",
+              "font-family": "Segoe UI, sans-serif",
+              "font-size": "14",
+              "fill": colors["text"]
+          })
+          total_text.text = "Total Contributions:"
+
+          total_value = ET.SubElement(svg, "text", {
+              "x": "200",
+              "y": "140",
+              "font-family": "Segoe UI, sans-serif",
+              "font-size": "14",
+              "font-weight": "bold",
+              "fill": colors["total"]
+          })
+          total_value.text = f"{total_contributions:,}"
+
+          # Save SVG
+          tree = ET.ElementTree(svg)
+          ET.indent(tree, space="  ")
+          tree.write("streak-stats.svg", encoding="utf-8", xml_declaration=True)
+
+          print(f"Generated streak stats: {current_streak} day streak, {longest_streak} longest, {total_contributions} total")
+          EOF
+
+      - name: Commit and push SVG
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add streak-stats.svg
+          git diff --staged --quiet || git commit -m "Update streak stats [skip ci]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

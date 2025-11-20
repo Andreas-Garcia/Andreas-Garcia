@@ -158,7 +158,20 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 
 <div align="center">
   
+  <!-- Self-hosted GitHub Streak Stats - Generated via GitHub Actions -->
+  ![GitHub Streak](https://raw.githubusercontent.com/Andreas-Garcia/Andreas-Garcia/main/streak-stats.svg)
+  
+</div>
+
+<div align="center">
+  
   ![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Andreas-Garcia&theme=radical&hide_border=true&area=true)
+  
+</div>
+
+<div align="center">
+  
+  <img src="https://github-contributions.vercel.app/api/v1/Andreas-Garcia?format=svg&theme=radical" alt="GitHub Contribution Calendar" width="100%"/>
   
 </div>
 
