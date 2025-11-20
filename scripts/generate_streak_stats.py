@@ -420,21 +420,25 @@ def main():
     print(f"   merged PRs, issues, reviews), NOT total commits. Actual commit counts in")
     print(f"   repositories may be higher due to commits in branches, unmerged PRs, etc.")
     
-    # Get contributions per repository for the most recent year
-    print(f"\n=== Contributions per Repository (most recent year) ===")
-    now = datetime.now()
-    recent_from = (now - timedelta(days=365)).isoformat() + "Z"
-    recent_to = (now + timedelta(days=1)).isoformat() + "Z"
+    # Get contributions per repository for all time (query without date restrictions)
+    print(f"\n=== Contributions per Repository (all time) ===")
     
-    repo_contributions = get_contributions_per_repo(username, token, headers, recent_from, recent_to)
+    # Query without date restrictions to get all-time data
+    all_time_from = "2008-01-01T00:00:00Z"  # GitHub was founded in 2008
+    now = datetime.now()
+    all_time_to = (now + timedelta(days=1)).isoformat() + "Z"
+    
+    repo_contributions = get_contributions_per_repo(username, token, headers, all_time_from, all_time_to)
     if repo_contributions:
         sorted_repos = sorted(repo_contributions.items(), key=lambda x: x[1], reverse=True)
-        print(f"Top repositories by contributions (last year):")
-        for repo_name, count in sorted_repos[:20]:  # Show top 20
+        total_repo_contribs = sum(repo_contributions.values())
+        print(f"Total contributions from repositories: {total_repo_contribs:,}")
+        print(f"Top repositories by contributions (all time):")
+        for repo_name, count in sorted_repos[:30]:  # Show top 30
             print(f"  {repo_name:50s}: {count:5,} contributions")
         
         # Check specific repos mentioned by user
-        print(f"\nSpecific repositories check:")
+        print(f"\nSpecific repositories check (all time):")
         check_repos = [
             "Bodzify/bodzify-api-django",
             "Bodzify/bodzify-ultimate-music-guide-react",
@@ -443,6 +447,14 @@ def main():
         for repo_name in check_repos:
             count = repo_contributions.get(repo_name, 0)
             print(f"  {repo_name:50s}: {count:5,} contributions")
+        
+        # Show discrepancy
+        print(f"\nComparison:")
+        print(f"  Calendar total contributions: {total_contributions:,}")
+        print(f"  Sum of repo contributions: {total_repo_contribs:,}")
+        if total_repo_contribs != total_contributions:
+            diff = total_contributions - total_repo_contribs
+            print(f"  Difference: {diff:,} (may include contributions not in repo breakdown)")
     else:
         print("  Could not retrieve per-repository breakdown")
 
