@@ -441,19 +441,9 @@ jobs:
           })
           streak_value.text = f"{current_streak}"
 
-          streak_unit = ET.SubElement(svg, "text", {
-              "x": str(col1_x),
-              "y": "120",
-              "text-anchor": "middle",
-              "font-family": "Segoe UI, sans-serif",
-              "font-size": "12",
-              "fill": colors["text"]
-          })
-          streak_unit.text = "days" if current_streak != 1 else "day"
-
           streak_date = ET.SubElement(svg, "text", {
               "x": str(col1_x),
-              "y": "145",
+              "y": "130",
               "text-anchor": "middle",
               "font-family": "Segoe UI, sans-serif",
               "font-size": "10",
@@ -484,19 +474,9 @@ jobs:
           })
           longest_value.text = f"{longest_streak}"
 
-          longest_unit = ET.SubElement(svg, "text", {
-              "x": str(col2_x),
-              "y": "120",
-              "text-anchor": "middle",
-              "font-family": "Segoe UI, sans-serif",
-              "font-size": "12",
-              "fill": colors["text"]
-          })
-          longest_unit.text = "days" if longest_streak != 1 else "day"
-
           longest_date = ET.SubElement(svg, "text", {
               "x": str(col2_x),
-              "y": "145",
+              "y": "130",
               "text-anchor": "middle",
               "font-family": "Segoe UI, sans-serif",
               "font-size": "10",
@@ -533,7 +513,7 @@ jobs:
 
           total_date = ET.SubElement(svg, "text", {
               "x": str(col3_x),
-              "y": "145",
+              "y": "130",
               "text-anchor": "middle",
               "font-family": "Segoe UI, sans-serif",
               "font-size": "10",
