@@ -47,7 +47,9 @@ def main():
             break
 
         for repo in repos:
+            repo_full_name = repo["full_name"]
             if repo.get("fork"):
+                print(f"  ⊘ Skipped fork: {repo_full_name}")
                 continue
             
             repo_full_name = repo["full_name"]
@@ -61,9 +63,15 @@ def main():
             )
             if lang_response.status_code == 200:
                 repo_langs = lang_response.json()
-                for lang, bytes_count in repo_langs.items():
-                    languages_data[lang] += bytes_count
-                print(f"  Processed: {repo_full_name}")
+                if repo_langs:
+                    total_bytes = sum(repo_langs.values())
+                    for lang, bytes_count in repo_langs.items():
+                        languages_data[lang] += bytes_count
+                    print(f"  ✓ Processed: {repo_full_name} ({total_bytes:,} bytes)")
+                else:
+                    print(f"  ⚠ Skipped {repo_full_name} (no language data)")
+            else:
+                print(f"  ✗ Failed to fetch languages for {repo_full_name} (status: {lang_response.status_code})")
 
         page += 1
         if len(repos) < per_page:
@@ -123,9 +131,10 @@ def main():
 
     # Check for additional repositories user might have contributed to
     if additional_repos:
-        print("Checking additional repositories...")
+        print(f"Checking {len(additional_repos)} additional repositories...")
         for repo_full_name in additional_repos:
             if repo_full_name in processed_repos:
+                print(f"  Skipping {repo_full_name} (already processed)")
                 continue
             
             lang_url = f"https://api.github.com/repos/{repo_full_name}/languages"
@@ -134,11 +143,18 @@ def main():
                 repo_langs = lang_response.json()
                 if repo_langs:
                     processed_repos.add(repo_full_name)
+                    total_bytes = sum(repo_langs.values())
                     for lang, bytes_count in repo_langs.items():
                         languages_data[lang] += bytes_count
-                    print(f"  Processed (additional): {repo_full_name}")
+                    print(f"  ✓ Processed (additional): {repo_full_name} ({total_bytes:,} bytes)")
+                else:
+                    print(f"  ⚠ {repo_full_name} has no language data")
             else:
-                print(f"  Cannot access {repo_full_name} (status: {lang_response.status_code})")
+                print(f"  ✗ Cannot access {repo_full_name} (status: {lang_response.status_code})")
+                if lang_response.status_code == 404:
+                    print(f"    Repository not found or not accessible with current token")
+                elif lang_response.status_code == 403:
+                    print(f"    Access forbidden - token may need 'repo' scope")
 
     # Calculate percentages
     total_bytes = sum(languages_data.values())
@@ -302,9 +318,13 @@ def main():
     ET.indent(tree, space="  ")
     tree.write("languages-stats.svg", encoding="utf-8", xml_declaration=True)
 
+    print(f"\n=== Summary ===")
+    print(f"Total repositories processed: {len(processed_repos)}")
+    print(f"Total language bytes: {total_bytes:,}")
     print(f"Generated languages stats for {len(sorted_languages)} languages")
-    for lang, pct in sorted_languages[:5]:
-        print(f"  {lang}: {pct:.2f}%")
+    for lang, pct in sorted_languages[:10]:
+        bytes_count = languages_data[lang]
+        print(f"  {lang:15s}: {pct:6.2f}% ({bytes_count:,} bytes)")
 
 if __name__ == "__main__":
     main()

@@ -263,7 +263,27 @@ def main():
         user_check.raise_for_status()
         user_data = user_check.json()
         print(f"Authenticated as: {user_data.get('login', 'unknown')}")
-        print(f"Token has repo access: {'repo' in str(user_check.headers.get('X-OAuth-Scopes', ''))}")
+        scopes = user_check.headers.get('X-OAuth-Scopes', '')
+        print(f"Token scopes: {scopes}")
+        print(f"Token has repo access: {'repo' in str(scopes)}")
+        
+        # Check if we can access specific private repos mentioned by user
+        test_repos = [
+            "Bodzify/bodzify-api-django",
+            "Bodzify/bodzify-ultimate-music-guide-react",
+            "Andreas-Garcia/audiometa"
+        ]
+        print("\nChecking access to specific repositories:")
+        for repo_name in test_repos:
+            repo_check = requests.get(
+                f"https://api.github.com/repos/{repo_name}",
+                headers={"Authorization": f"Bearer {token}"}
+            )
+            if repo_check.status_code == 200:
+                repo_data = repo_check.json()
+                print(f"  ✓ {repo_name}: accessible (private: {repo_data.get('private', False)})")
+            else:
+                print(f"  ✗ {repo_name}: not accessible (status: {repo_check.status_code})")
     except Exception as e:
         print(f"Warning: Could not verify token permissions: {e}")
 
