@@ -153,7 +153,7 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 
 <div align="center">
   
-  ![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=Andreas-Garcia&theme=radical&hide_border=true)
+  ![GitHub Streak](https://github-readme-streak-stats-1.vercel.app/?user=Andreas-Garcia&theme=radical&hide_border=true)
   
 </div>
 
