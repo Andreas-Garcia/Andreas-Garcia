@@ -30,14 +30,14 @@ longest_streak_date_str = f"{format_date(longest_streak_start, include_year=Fals
 earliest_date_str = format_date(earliest_date)
 total_contributions_date_str = f"{earliest_date_str} - Present"
 
-# Theme colors (GitHub design)
+# Theme colors (matching image design)
 colors = {
     "bg": "#0d1117",
-    "text": "#c9d1d9",
-    "text_yellow": "#238636",
+    "text": "#ff6e96",
+    "text_yellow": "#ffd700",
     "text_blue": "#58a6ff",
-    "date": "#8b949e",
-    "title": "#c9d1d9"
+    "date": "#58a6ff",
+    "title": "#ff6e96"
 }
 
 # Generate SVG with 3 columns - matching reference design

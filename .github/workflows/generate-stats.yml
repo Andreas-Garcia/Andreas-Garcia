@@ -1,0 +1,77 @@
+name: Generate GitHub Stats
+
+# To include private organization contributions:
+# 1. Create a Personal Access Token (PAT) at https://github.com/settings/tokens/new
+# 2. IMPORTANT: Select the "repo" scope (or at minimum: "read:org" and "read:user")
+#    - "repo" scope gives access to all repositories (public and private)
+#    - This is required to see contributions from private organization repositories
+# 3. Add it as a repository secret named "GH_PAT"
+#    - Go to: Repository → Settings → Secrets and variables → Actions → New repository secret
+# 4. IMPORTANT: Check organization settings if contributions are still missing:
+#    - Go to each organization → Settings → Third-party access
+#    - Ensure "Third-party application access policy" allows your PAT
+#    - Some organizations restrict third-party access even with a valid PAT
+# 5. The workflow will automatically use it if available, otherwise falls back to GITHUB_TOKEN
+#    - GITHUB_TOKEN only has access to public repositories
+#
+# To include additional repositories in language stats:
+# 6. Add a repository secret named "ADDITIONAL_REPOS" (optional)
+#    - Format: Comma-separated list of repository full names (e.g., "owner/repo1,owner/repo2")
+#    - Example: "Bodzify/bodzify-api-django,Bodzify/bodzify-ultimate-music-guide-react"
+#    - If not set, only repositories owned by the user will be included
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # Run daily at midnight UTC
+  workflow_dispatch: # Allow manual trigger
+  push:
+    branches:
+      - main
+
+jobs:
+  generate-stats:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Generate Streak Stats SVG
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_USERNAME: "Andreas-Garcia"
+        run: |
+          python3 scripts/generate_streak_stats.py
+
+      - name: Generate Languages Stats SVG
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_USERNAME: "Andreas-Garcia"
+          ADDITIONAL_REPOS: ${{ secrets.ADDITIONAL_REPOS }}
+        run: |
+          python3 scripts/generate_languages_stats.py
+
+      - name: Commit and push SVGs
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add streak-stats.svg languages-stats.svg
+          git diff --staged --quiet || git commit -m "Update stats [skip ci]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
