@@ -26,7 +26,7 @@ def format_date(date_obj, include_year=True):
 
 # Calculate date ranges
 current_streak_date_str = f"{format_date(current_streak_start, include_year=False)} - {format_date(most_recent_date, include_year=False)}"
-longest_streak_date_str = f"{format_date(longest_streak_start, include_year=False)} - {format_date(longest_streak_end, include_year=False)}"
+longest_streak_date_str = f"{format_date(longest_streak_start, include_year=False)} - {format_date(longest_streak_end, include_year=True)}"
 earliest_date_str = format_date(earliest_date)
 total_contributions_date_str = f"{earliest_date_str} - Present"
 

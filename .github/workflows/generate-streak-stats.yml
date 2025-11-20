@@ -391,7 +391,7 @@ jobs:
                   else:
                       temp_streak = 0
 
-          longest_streak_date_str = f"{format_date(longest_streak_start, include_year=False)} - {format_date(longest_streak_end_date, include_year=False)}" if longest_streak_start and longest_streak_end_date else format_date(longest_streak_start) if longest_streak_start else "N/A"
+          longest_streak_date_str = f"{format_date(longest_streak_start, include_year=False)} - {format_date(longest_streak_end_date, include_year=True)}" if longest_streak_start and longest_streak_end_date else format_date(longest_streak_start) if longest_streak_start else "N/A"
 
           # Get earliest contribution date for total contributions range
           earliest_date_str = format_date(all_dates[0]) if all_dates else "N/A"
