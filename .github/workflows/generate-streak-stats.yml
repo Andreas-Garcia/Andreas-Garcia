@@ -1,10 +1,14 @@
 name: Generate Streak Stats
 
 # To include private organization contributions:
-# 1. Create a Personal Access Token (PAT) at https://github.com/settings/tokens
-# 2. Grant it access to private repositories (repo scope)
+# 1. Create a Personal Access Token (PAT) at https://github.com/settings/tokens/new
+# 2. IMPORTANT: Select the "repo" scope (or at minimum: "read:org" and "read:user")
+#    - "repo" scope gives access to all repositories (public and private)
+#    - This is required to see contributions from private organization repositories
 # 3. Add it as a repository secret named "GH_PAT"
+#    - Go to: Repository → Settings → Secrets and variables → Actions → New repository secret
 # 4. The workflow will automatically use it if available, otherwise falls back to GITHUB_TOKEN
+#    - GITHUB_TOKEN only has access to public repositories
 
 on:
   schedule:
@@ -52,15 +56,12 @@ jobs:
           # Use PAT if available, otherwise fall back to GITHUB_TOKEN
           token = os.environ.get("GH_PAT") or os.environ.get("GITHUB_TOKEN")
           
-          # Calculate date range for the past year to ensure we get all contributions
-          from_date = (datetime.now() - timedelta(days=365)).isoformat() + "Z"
-          to_date = datetime.now().isoformat() + "Z"
-
-          # Fetch contribution data from GitHub API (includes private contributions if token has access)
+          # Query without date restrictions to get ALL contributions (GitHub's default is all-time)
+          # This ensures we capture contributions from all repositories, including private ones
           query = """
-          query($username: String!, $from: DateTime!, $to: DateTime!) {
+          query($username: String!) {
             user(login: $username) {
-              contributionsCollection(from: $from, to: $to) {
+              contributionsCollection {
                 contributionCalendar {
                   totalContributions
                   weeks {
@@ -81,9 +82,7 @@ jobs:
           }
 
           variables = {
-              "username": username,
-              "from": from_date,
-              "to": to_date
+              "username": username
           }
           response = requests.post(
               "https://api.github.com/graphql",
@@ -97,11 +96,23 @@ jobs:
           if "errors" in data:
               raise Exception(f"GraphQL errors: {data['errors']}")
 
+          # Debug: Check which token is being used
+          token_type = "PAT (GH_PAT)" if os.environ.get("GH_PAT") else "GITHUB_TOKEN (limited)"
+          print(f"Using token type: {token_type}")
+
           contributions_collection = data["data"]["user"]["contributionsCollection"]
           calendar = contributions_collection["contributionCalendar"]
           weeks = calendar["weeks"]
           # totalContributions from calendar includes all contributions (public + private if token has access)
           total_contributions = calendar["totalContributions"]
+          
+          # Debug: Print contribution info
+          print(f"Total contributions retrieved: {total_contributions}")
+          print(f"Number of weeks: {len(weeks)}")
+          
+          # Count total days with contributions
+          total_days_with_contributions = sum(1 for week in weeks for day in week["contributionDays"] if day["contributionCount"] > 0)
+          print(f"Days with contributions: {total_days_with_contributions}")
 
           # Calculate current streak
           today = datetime.now().date()
