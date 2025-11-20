@@ -61,7 +61,6 @@ jobs:
           query($username: String!, $from: DateTime!, $to: DateTime!) {
             user(login: $username) {
               contributionsCollection(from: $from, to: $to) {
-                totalContributions
                 contributionCalendar {
                   totalContributions
                   weeks {
@@ -101,8 +100,8 @@ jobs:
           contributions_collection = data["data"]["user"]["contributionsCollection"]
           calendar = contributions_collection["contributionCalendar"]
           weeks = calendar["weeks"]
-          # Use totalContributions from the collection (includes private) or fall back to calendar total
-          total_contributions = contributions_collection.get("totalContributions", calendar["totalContributions"])
+          # totalContributions from calendar includes all contributions (public + private if token has access)
+          total_contributions = calendar["totalContributions"]
 
           # Calculate current streak
           today = datetime.now().date()
