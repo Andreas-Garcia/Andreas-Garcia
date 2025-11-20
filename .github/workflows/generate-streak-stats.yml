@@ -60,16 +60,21 @@ jobs:
           # Use PAT if available, otherwise fall back to GITHUB_TOKEN
           token = os.environ.get("GH_PAT") or os.environ.get("GITHUB_TOKEN")
           
-          # Query with explicit date range covering multiple years to ensure all contributions are included
-          # GitHub's contribution calendar typically shows the past year, but we want all-time data
-          from_date = (datetime.now() - timedelta(days=2000)).isoformat() + "Z"  # ~5.5 years
-          to_date = (datetime.now() + timedelta(days=1)).isoformat() + "Z"  # Include today
+          # GitHub's contribution calendar API limitation:
+          # - The calendar weeks only show the past year of contributions
+          # - The totalContributions field may include all-time totals
+          # - To get all-time data, we'd need to query multiple 1-year ranges or use repository-level queries
+          # For now, we query without date restrictions to get the default view
+          headers = {
+              "Authorization": f"Bearer {token}",
+              "Content-Type": "application/json"
+          }
           
-          # Query contributions with explicit date range
-          query = """
-          query($username: String!, $from: DateTime!, $to: DateTime!) {
+          # First, try querying without date restrictions (gets past year calendar + all-time total)
+          query_no_dates = """
+          query($username: String!) {
             user(login: $username) {
-              contributionsCollection(from: $from, to: $to) {
+              contributionsCollection {
                 contributionCalendar {
                   totalContributions
                   weeks {
@@ -83,22 +88,12 @@ jobs:
             }
           }
           """
-
-          headers = {
-              "Authorization": f"Bearer {token}",
-              "Content-Type": "application/json"
-          }
-
-          variables = {
-              "username": username,
-              "from": from_date,
-              "to": to_date
-          }
           
-          print(f"Querying contributions from {from_date} to {to_date}")
+          print("Querying contributions without date restrictions (GitHub default: past year calendar)...")
+          # Query without date restrictions first (this is the most reliable)
           response = requests.post(
               "https://api.github.com/graphql",
-              json={"query": query, "variables": variables},
+              json={"query": query_no_dates, "variables": {"username": username}},
               headers=headers
           )
 
@@ -106,36 +101,9 @@ jobs:
           data = response.json()
 
           if "errors" in data:
-              print(f"Warning: GraphQL errors with date range: {data['errors']}")
-              print("Trying query without date restrictions...")
-              # Fallback: Try without date restrictions
-              query_no_dates = """
-              query($username: String!) {
-                user(login: $username) {
-                  contributionsCollection {
-                    contributionCalendar {
-                      totalContributions
-                      weeks {
-                        contributionDays {
-                          date
-                          contributionCount
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-              """
-              response2 = requests.post(
-                  "https://api.github.com/graphql",
-                  json={"query": query_no_dates, "variables": {"username": username}},
-                  headers=headers
-              )
-              response2.raise_for_status()
-              data = response2.json()
-              if "errors" in data:
-                  raise Exception(f"GraphQL errors: {data['errors']}")
-              print("Successfully queried without date restrictions")
+              raise Exception(f"GraphQL errors: {data['errors']}")
+          
+          print("Successfully queried contributions")
 
           # Debug: Check which token is being used
           token_type = "PAT (GH_PAT)" if os.environ.get("GH_PAT") else "GITHUB_TOKEN (limited)"
