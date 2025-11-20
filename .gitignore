@@ -1,1 +1,12 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
 
+# Test files (optional - uncomment if you want to ignore them)
+# test_svg.py
+# test-streak-stats.svg
+# test_languages_svg.py
+# test-languages-stats.svg
