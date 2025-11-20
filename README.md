@@ -70,7 +70,18 @@ update_metadata("song.mp3", {
 })
 ```
 
-**Technical Stack:** Python, pytest, mypy, ruff, GitHub Actions CI/CD
+![Python](https://img.shields.io/badge/Python-3.12+-3776AB?style=flat-square&logo=python&logoColor=white)
+![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
+![mypy](https://img.shields.io/badge/mypy-000000?style=flat-square&logo=python&logoColor=white)
+![ruff](https://img.shields.io/badge/ruff-000000?style=flat-square&logo=ruff&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
+![Light Git Flow](https://img.shields.io/badge/Light%20Git%20Flow-6DB33F?style=flat-square&logo=git&logoColor=white)
+![ID3v1](https://img.shields.io/badge/ID3v1-000000?style=flat-square)
+![ID3v2](https://img.shields.io/badge/ID3v2-000000?style=flat-square)
+![Vorbis](https://img.shields.io/badge/Vorbis-FC60A8?style=flat-square)
+![FLAC](https://img.shields.io/badge/FLAC-000000?style=flat-square)
+![WAV](https://img.shields.io/badge/WAV-000000?style=flat-square)
+![MP3](https://img.shields.io/badge/MP3-000000?style=flat-square)
 
 ### 🌳 GrowTheMusicTree: Building the Ultimate Music Genre Reference
 
@@ -87,7 +98,14 @@ By continuously evolving through **community-driven curation**, expert input, an
 - **Intelligent genre detection** that accurately categorizes any track, even those outside mainstream genres
 - **API access** through **GetTheMusicTree** allows developers and professionals to integrate genre intelligence into their platforms
 
-**Technical Stack:** Next.js, TypeScript, React, JavaScript, Docker, GitFlow, GitHub Actions CI/CD
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Docker Hub](https://img.shields.io/badge/Docker%20Hub-2496ED?style=flat-square&logo=dockerhub&logoColor=white)
+![GitFlow](https://img.shields.io/badge/GitFlow-F05032?style=flat-square&logo=git&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
 
 ### 🔌 GetTheMusicTree: The Music Genre API
 
@@ -95,7 +113,12 @@ By continuously evolving through **community-driven curation**, expert input, an
 
 **GetTheMusicTree** is the API companion to **GrowTheMusicTree**, giving developers, researchers, and music platforms access to the full genre hierarchy, detailed metadata, and intelligent genre detection. Built with **Django REST Framework** and **PostgreSQL**, it enables personalized user profiling based on listening habits, delivers accurate track and artist classifications, and provides data-driven recommendations. Perfect for powering music discovery, streaming personalization, event recommendations, and listener analytics, **GetTheMusicTree** brings the intelligence of the genre tree to any app or service.
 
-**Technical Stack:** Python, Django REST Framework, PostgreSQL, Docker, GitHub Actions CI/CD
+![Python](https://img.shields.io/badge/Python-3.12+-3776AB?style=flat-square&logo=python&logoColor=white)
+![Django](https://img.shields.io/badge/Django_REST_Framework-092E20?style=flat-square&logo=django&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Docker Hub](https://img.shields.io/badge/Docker%20Hub-2496ED?style=flat-square&logo=dockerhub&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
 
 ### 🎧 InTheMusicTree: A Smart Cloud-Based Music Library Manager
 
@@ -108,6 +131,14 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 - **Secure cloud storage** for backup and access across all your devices
 - **Discover and purchase new music** via links to Bandcamp, Beatport, and JunoDownload
 - **Cross-platform sync** and **export** to streaming and DJ/production software for creative workflows
+
+![Python](https://img.shields.io/badge/Python-3.12+-3776AB?style=flat-square&logo=python&logoColor=white)
+![Django](https://img.shields.io/badge/Django_REST_Framework-092E20?style=flat-square&logo=django&logoColor=white)
+![FLAC](https://img.shields.io/badge/FLAC-000000?style=flat-square&logo=flac&logoColor=white)
+![WAV](https://img.shields.io/badge/WAV-000000?style=flat-square&logo=wav&logoColor=white)
+![MP3](https://img.shields.io/badge/MP3-000000?style=flat-square&logo=mp3&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Docker Hub](https://img.shields.io/badge/Docker%20Hub-2496ED?style=flat-square&logo=dockerhub&logoColor=white)
 
 ## 🛠️ Technologies & Tools
 
@@ -173,11 +204,12 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
   
 </div>
 
-<div align="center">
-  
-  <img src="https://github-contributions.vercel.app/api/v1/Andreas-Garcia?format=svg&theme=radical" alt="GitHub Contribution Calendar" width="100%"/>
-  
-</div>
+<!-- GitHub Contribution Calendar service may have display issues -->
+<!-- <div align="center">
+
+  <img src="https://github-contributions.vercel.app/api/v1/Andreas-Garcia?format=svg&theme=radical" alt="GitHub Contribution Calendar" />
+
+</div> -->
 
 ## 🤝 Open Source Contributions
 
@@ -221,11 +253,12 @@ I believe open-source software should be:
 
 ## 🏆 GitHub Achievements
 
-<div align="center">
-  
-  ![GitHub Trophies](https://github-profile-trophy.vercel.app/?username=Andreas-Garcia&theme=radical&no-frame=true&no-bg=true&column=7)
-  
-</div>
+<!-- GitHub Trophies service is currently unavailable (503 error) -->
+<!-- <div align="center">
+
+  ![GitHub Trophies](https://github-profile-trophy.vercel.app/?username=Andreas-Garcia&theme=radical)
+
+</div> -->
 
 ## 🌍 A Global Vision for Music Culture
 
