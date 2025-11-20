@@ -19,6 +19,15 @@ def main():
         print("Error: No GitHub token found. Set GH_PAT or GITHUB_TOKEN environment variable.")
         sys.exit(1)
 
+    # Note: The GitHub contributionsCollection API automatically includes contributions
+    # from ALL repositories the user has access to (based on token permissions),
+    # including private organization repos. No need to specify additional repos here.
+    # 
+    # IMPORTANT: GitHub's contribution calendar typically does NOT count contributions
+    # to forked repositories unless they are merged into the upstream repository.
+    # If you have contributions in forks that aren't showing up, they may not be
+    # included in the contribution calendar.
+    #
     # GitHub's contribution calendar API limitation: max 1 year per query
     # To get all-time data, we query multiple 1-year ranges and combine them
     headers = {
@@ -48,7 +57,9 @@ def main():
     # Start from today and go back in 1-year increments
     all_weeks = []
     total_contributions = 0
-    max_years_back = 10  # Query up to 10 years back
+    max_years_back = 15  # Query up to 15 years back (increased to catch older contributions)
+    consecutive_empty_years = 0  # Track consecutive years with no contributions
+    max_consecutive_empty = 2  # Stop after 2 consecutive empty years
 
     now = datetime.now()
     to_date = (now + timedelta(days=1)).isoformat() + "Z"
@@ -89,8 +100,16 @@ def main():
                 error_msg = data["errors"][0].get("message", "")
                 if "must not exceed 1 year" in error_msg:
                     print(f"    ⚠ Date range too large, skipping")
+                    consecutive_empty_years += 1
+                    if consecutive_empty_years >= max_consecutive_empty:
+                        print(f"    Stopping after {max_consecutive_empty} consecutive empty years")
+                        break
                     continue
                 print(f"    ⚠ GraphQL errors: {data['errors']}")
+                consecutive_empty_years += 1
+                if consecutive_empty_years >= max_consecutive_empty:
+                    print(f"    Stopping after {max_consecutive_empty} consecutive empty years")
+                    break
                 continue
             
             contributions_collection = data["data"]["user"]["contributionsCollection"]
@@ -99,8 +118,15 @@ def main():
             year_total = calendar["totalContributions"]
             
             if not year_weeks or year_total == 0:
-                print(f"    No contributions found for this year, stopping")
-                break
+                print(f"    No contributions found for this year")
+                consecutive_empty_years += 1
+                if consecutive_empty_years >= max_consecutive_empty:
+                    print(f"    Stopping after {max_consecutive_empty} consecutive empty years")
+                    break
+                continue
+            
+            # Reset consecutive empty years counter if we found contributions
+            consecutive_empty_years = 0
             
             all_weeks.extend(year_weeks)
             total_contributions = max(total_contributions, year_total)  # Use max as it might be cumulative
