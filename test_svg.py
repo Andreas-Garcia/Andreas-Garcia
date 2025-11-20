@@ -169,7 +169,7 @@ streak_value.text = f"{current_streak}"
 
 streak_label = ET.SubElement(svg, "text", {
     "x": str(col2_x),
-    "y": str(circle_center_y + circle_radius + 20),
+    "y": str(circle_center_y + circle_radius + 28),
     "text-anchor": "middle",
     "font-family": "Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif",
     "font-size": "14",
@@ -180,7 +180,7 @@ streak_label.text = "Current Streak"
 
 streak_date = ET.SubElement(svg, "text", {
     "x": str(col2_x),
-    "y": str(circle_center_y + circle_radius + 40),
+    "y": str(circle_center_y + circle_radius + 48),
     "text-anchor": "middle",
     "font-family": "Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif",
     "font-size": "11",
