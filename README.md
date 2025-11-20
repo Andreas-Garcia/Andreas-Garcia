@@ -151,7 +151,7 @@ Powered by the genre intelligence of **GrowTheMusicTree** and integrated with th
 
 <div align="center">
   
-  ![GitHub Streak](https://github-readme-streak-stats.demolab.com/?user=Andreas-Garcia&theme=radical&hide_border=true)
+  ![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=Andreas-Garcia&theme=radical&hide_border=true)
   
 </div>
 
@@ -169,7 +169,7 @@ I'm passionate about open-source development and believe in building tools that 
 
 - **[AudioMeta Python](https://github.com/Andreas-Garcia/audiometa)** - Maintainer and primary contributor
 
-  - Production-ready library with 500+ tests
+  - Production-ready library with 1000+ tests
   - Comprehensive documentation and examples
   - Active issue triage and community support
   - Regular releases and feature updates
