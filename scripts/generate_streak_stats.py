@@ -587,6 +587,9 @@ def main():
                 total_contribs = 0
                 repo_exists = False
                 is_private = False
+                is_fork = False
+                default_branch = "unknown"
+                owner_type = "unknown"
                 
                 # Check repo info first (one query without date restrictions)
                 try:
@@ -595,8 +598,13 @@ def main():
                       repository(owner: $repoOwner, name: $repoName) {
                         nameWithOwner
                         isPrivate
+                        isFork
                         defaultBranchRef {
                           name
+                        }
+                        owner {
+                          login
+                          __typename
                         }
                       }
                     }
@@ -615,8 +623,11 @@ def main():
                         repo_info = repo_data["data"]["repository"]
                         repo_exists = bool(repo_info)
                         is_private = repo_info.get("isPrivate", False)
-                except:
-                    pass
+                        is_fork = repo_info.get("isFork", False)
+                        default_branch = repo_info.get("defaultBranchRef", {}).get("name", "unknown")
+                        owner_type = repo_info.get("owner", {}).get("__typename", "unknown")
+                except Exception as e:
+                    pass  # Variables already initialized above
                 
                 # Check year-by-year for contributions
                 for year_offset in range(max_years_back):
@@ -639,19 +650,36 @@ def main():
                 status_parts = []
                 if repo_exists:
                     status_parts.append("exists")
-                if is_private:
-                    status_parts.append("private")
+                    status_parts.append("public" if not is_private else "private")
+                    if is_fork:
+                        status_parts.append("fork")
+                    if owner_type == "Organization":
+                        status_parts.append("org")
                 if found_anywhere:
                     status_parts.append(f"found ({total_contribs} contribs)")
                 else:
                     status_parts.append("NOT in breakdown")
                 
                 print(f"  {repo_full_name}: {', '.join(status_parts)}")
+                if repo_exists:
+                    if default_branch != "unknown":
+                        print(f"    → Default branch: {default_branch}")
                 if repo_exists and not found_anywhere:
+                    reasons = []
+                    if is_private and owner_type == "Organization":
+                        reasons.append("private organization repositories")
+                    if is_fork:
+                        reasons.append("forks (contributions in forks may not appear)")
+                    if default_branch and default_branch not in ["main", "master"]:
+                        reasons.append(f"default branch is '{default_branch}' (contributions may be on other branches)")
+                    if not reasons:
+                        reasons.append("unknown reasons (may be beyond 100-repo limit or contributions don't meet GitHub's criteria)")
+                    
                     print(f"    → This repo exists and is accessible, but GitHub's API doesn't return it")
-                    print(f"    → in the contributionsCollection breakdown. This is a known limitation")
-                    print(f"    → for private organization repositories. Contributions ARE counted")
-                    print(f"    → in your calendar total, but won't appear in per-repo breakdown.")
+                    print(f"    → in the contributionsCollection breakdown. Possible reasons:")
+                    for reason in reasons:
+                        print(f"    →   - {reason}")
+                    print(f"    → Contributions ARE counted in your calendar total, but won't appear in per-repo breakdown.")
         
         # Show discrepancy
         print(f"\nComparison:")
