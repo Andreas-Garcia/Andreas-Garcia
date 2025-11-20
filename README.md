@@ -144,7 +144,8 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 
 <div align="center">
   
-  ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Andreas-Garcia&show_icons=true&theme=radical&hide_border=true&count_private=true)
+  <!-- Self-hosted GitHub Stats - Generated via GitHub Actions -->
+  ![GitHub Stats](https://raw.githubusercontent.com/Andreas-Garcia/Andreas-Garcia/main/github-stats.svg)
   
 </div>
 

@@ -66,11 +66,19 @@ jobs:
         run: |
           python3 scripts/generate_languages_stats.py
 
+      - name: Generate GitHub Stats SVG
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_USERNAME: "Andreas-Garcia"
+        run: |
+          python3 scripts/generate_github_stats.py
+
       - name: Commit and push SVGs
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add streak-stats.svg languages-stats.svg
+          git add streak-stats.svg languages-stats.svg github-stats.svg
           git diff --staged --quiet || git commit -m "Update stats [skip ci]"
           git push
         env:
