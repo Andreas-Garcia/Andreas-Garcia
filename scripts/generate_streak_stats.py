@@ -130,7 +130,22 @@ def main():
             
             all_weeks.extend(year_weeks)
             total_contributions = max(total_contributions, year_total)  # Use max as it might be cumulative
-            print(f"    ✓ Found {year_total} contributions, {len(year_weeks)} weeks")
+            
+            # Debug: Check the date range of this year's data
+            if year_weeks:
+                first_day = None
+                last_day = None
+                for week in year_weeks:
+                    for day in week.get("contributionDays", []):
+                        day_date = day.get("date", "")
+                        if day_date:
+                            if first_day is None or day_date < first_day:
+                                first_day = day_date
+                            if last_day is None or day_date > last_day:
+                                last_day = day_date
+                print(f"    ✓ Found {year_total} contributions, {len(year_weeks)} weeks (dates: {first_day[:10] if first_day else 'N/A'} to {last_day[:10] if last_day else 'N/A'})")
+            else:
+                print(f"    ✓ Found {year_total} contributions, {len(year_weeks)} weeks")
             
         except Exception as e:
             print(f"    ⚠ Error querying year {year_offset + 1}: {e}")
@@ -229,6 +244,11 @@ def main():
     total_contributions = manual_total
 
     print(f"Combined data: {len(contributions_by_date)} unique days, {manual_total} total contributions")
+    if contributions_by_date:
+        sorted_dates = sorted(contributions_by_date.keys())
+        earliest_date = sorted_dates[0]
+        latest_date = sorted_dates[-1]
+        print(f"Date range: {earliest_date} to {latest_date}")
 
     # Debug: Check which token is being used
     token_type = "PAT (GH_PAT)" if os.environ.get("GH_PAT") else "GITHUB_TOKEN (limited)"
