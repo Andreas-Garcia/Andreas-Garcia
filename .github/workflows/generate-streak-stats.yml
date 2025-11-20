@@ -283,15 +283,40 @@ jobs:
 
           # all_dates is already sorted from the combined data
           most_recent_date = all_dates[-1]
+          today = datetime.now().date()
 
-          # Calculate current streak: count backwards from most recent date
+          # Calculate current streak: count backwards from today
           # A streak continues as long as there are contributions on consecutive days
-          check_date = most_recent_date
-          while check_date in contributions_by_date:
-              if contributions_by_date[check_date] > 0:
-                  current_streak += 1
-                  check_date = check_date - timedelta(days=1)
+          # Start from today and go backwards day by day
+          check_date = today
+
+          # Count backwards from today
+          # Stop if we go too far back (more than a reasonable time) or hit a day with no contributions
+          max_days_back = 1000  # Safety limit
+          days_checked = 0
+
+          while days_checked < max_days_back:
+              # If date is in our data
+              if check_date in contributions_by_date:
+                  if contributions_by_date[check_date] > 0:
+                      # This day has contributions, add to streak and continue
+                      current_streak += 1
+                      check_date = check_date - timedelta(days=1)
+                      days_checked += 1
+                  else:
+                      # This day has 0 contributions, streak is broken
+                      break
               else:
+                  # Date is not in our data
+                  # If it's before our earliest date, stop
+                  if check_date < all_dates[0]:
+                      break
+                  # If it's today and not in data, it might be too early (check yesterday)
+                  if check_date == today:
+                      check_date = check_date - timedelta(days=1)
+                      days_checked += 1
+                      continue
+                  # Otherwise, this day had no contributions (not in our data), streak is broken
                   break
 
           # Calculate longest streak: go through all dates chronologically
