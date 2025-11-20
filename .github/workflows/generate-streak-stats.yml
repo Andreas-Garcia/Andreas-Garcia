@@ -367,13 +367,16 @@ jobs:
                       temp_start = None
 
           # Format dates for display
-          def format_date(date_obj):
+          def format_date(date_obj, include_year=True):
               if date_obj is None:
                   return "N/A"
-              return date_obj.strftime("%b %d, %Y")
+              if include_year:
+                  return date_obj.strftime("%b %d, %Y")
+              else:
+                  return date_obj.strftime("%b %d")
 
-          current_streak_date_str = format_date(current_streak_start)
-          longest_streak_date_str = f"{format_date(longest_streak_start)} - {format_date(longest_streak_end)}" if longest_streak_start and longest_streak_end else "N/A"
+          current_streak_date_str = format_date(current_streak_start, include_year=False)
+          longest_streak_date_str = format_date(longest_streak_start) if longest_streak_start else "N/A"
           most_recent_date_str = format_date(most_recent_date)
 
           # Theme colors (radical theme - enhanced)
@@ -523,11 +526,7 @@ jobs:
               "font-size": "9",
               "fill": colors["date"]
           })
-          # Truncate long date ranges if needed
-          date_text = longest_streak_date_str
-          if len(date_text) > 28:
-              date_text = longest_streak_date_str[:25] + "..."
-          longest_date.text = date_text
+          longest_date.text = longest_streak_date_str
 
           # Column 3: Total Contributions
           col3_x = column_center_x[2]
