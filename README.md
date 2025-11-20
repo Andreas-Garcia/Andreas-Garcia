@@ -152,12 +152,6 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 
 <div align="center">
   
-  ![GitHub Streak](https://github-readme-streak-stats-1.vercel.app/?user=Andreas-Garcia&theme=radical&hide_border=true)
-  
-</div>
-
-<div align="center">
-  
   <!-- Self-hosted GitHub Streak Stats - Generated via GitHub Actions -->
   ![GitHub Streak](https://raw.githubusercontent.com/Andreas-Garcia/Andreas-Garcia/main/streak-stats.svg)
   
