@@ -30,14 +30,14 @@ longest_streak_date_str = f"{format_date(longest_streak_start, include_year=Fals
 earliest_date_str = format_date(earliest_date)
 total_contributions_date_str = f"{earliest_date_str} - Present"
 
-# Theme colors (matching the reference design)
+# Theme colors (GitHub design)
 colors = {
     "bg": "#0d1117",
-    "text": "#ff6e96",
-    "text_yellow": "#ffd700",
+    "text": "#c9d1d9",
+    "text_yellow": "#238636",
     "text_blue": "#58a6ff",
-    "date": "#58a6ff",
-    "title": "#ff6e96"
+    "date": "#8b949e",
+    "title": "#c9d1d9"
 }
 
 # Generate SVG with 3 columns - matching reference design
@@ -45,7 +45,7 @@ svg_width = 700
 svg_height = 200
 column_width = svg_width // 3
 column_center_x = [column_width // 2, column_width + column_width // 2, 2 * column_width + column_width // 2]
-content_y_start = 110
+content_y_start = 115
 
 svg = ET.Element("svg", {
     "width": str(svg_width),
@@ -64,7 +64,7 @@ bg = ET.SubElement(svg, "rect", {
 # Title with better styling - positioned higher to avoid overlap
 title = ET.SubElement(svg, "text", {
     "x": str(svg_width // 2),
-    "y": "30",
+    "y": "35",
     "text-anchor": "middle",
     "font-family": "Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif",
     "font-size": "28",
