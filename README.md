@@ -8,6 +8,8 @@
   [![GitHub followers](https://img.shields.io/github/followers/Andreas-Garcia?label=Follow&style=social)](https://github.com/Andreas-Garcia)
 [![GitHub stars](https://img.shields.io/github/stars/Andreas-Garcia?label=Total%20Stars&style=social)](https://github.com/Andreas-Garcia)
 [![GitHub contributions](https://img.shields.io/github/contributors/Andreas-Garcia/Andreas-Garcia?label=Contributions&style=social)](https://github.com/Andreas-Garcia)
+  
+  <iframe src="https://github.com/sponsors/Andreas-Garcia/button" title="Sponsor Andreas-Garcia" height="32" width="114" style="border: 0; border-radius: 6px;"></iframe>
 </div>
 
 ## 🎵 About Me
@@ -20,13 +22,19 @@ I build with **Python**, **Django REST Framework**, **Next.js**, **TypeScript**,
 
 ## 🚀 Featured Projects
 
-### [AudioMeta Python](https://github.com/Andreas-Garcia/audiometa)
+### 🎶 BehindTheMusicTree: Empowering Music Discovery and Organization
 
-A powerful, unified Python library for reading and writing audio metadata across multiple formats. Supports ID3v1, ID3v2, Vorbis, and RIFF metadata formats through a single, consistent API.
+**BehindTheMusicTree** is an ecosystem that encompasses interconnected projects designed to transform how we explore, understand, and organize music. By blending community-driven intelligence, robust metadata management, and an evolving framework, these projects work together to provide a holistic music experience for music lovers, collectors, and professionals alike.
+
+The ecosystem includes:
+
+#### 🎵 AudioMeta Python: The Foundation for Audio Metadata Management
 
 [![GitHub stars](https://img.shields.io/github/stars/Andreas-Garcia/audiometa?style=social)](https://github.com/Andreas-Garcia/audiometa/stargazers)
 [![PyPI version](https://img.shields.io/pypi/v/audiometa-python)](https://pypi.org/project/audiometa-python/)
 [![Downloads](https://img.shields.io/pepy/dt/audiometa-python)](https://pepy.tech/project/audiometa-python)
+
+**AudioMeta Python** is a powerful, unified Python library for reading and writing audio metadata across multiple formats. As the foundational library of the ecosystem, it provides the core metadata management capabilities that power the other projects. Supports ID3v1, ID3v2, Vorbis, and RIFF metadata formats through a single, consistent API.
 
 **Key Features:**
 
@@ -58,13 +66,7 @@ update_metadata("song.mp3", {
 })
 ```
 
----
-
-### 🎶 BehindTheMusicTree: Empowering Music Discovery and Organization
-
-**BehindTheMusicTree** is an ecosystem that encompasses three interconnected projects designed to revolutionize how we explore, understand, and organize music. By blending cutting-edge AI, community-driven intelligence, and a robust, evolving framework, these projects work together to provide a holistic music experience for music lovers, collectors, and professionals alike.
-
-The ecosystem includes:
+**Technical Stack:** Python, pytest, mypy, ruff, GitHub Actions CI/CD
 
 #### 🌳 GrowTheMusicTree: Building the Ultimate Music Genre Reference
 
@@ -72,13 +74,13 @@ The ecosystem includes:
 
 At the core of **BehindTheMusicTree** lies **GrowTheMusicTree**, a groundbreaking platform focused on **building the definitive, interactive map of global music genres**. This ambitious project aims to become the **ultimate reference** for understanding music genres—past, present, and future—by constructing an ever-evolving, tree-shaped framework that organizes genres, subgenres, and microgenres based on their musical characteristics, historical context, and cultural relevance.
 
-By continuously evolving through **community-driven curation**, expert input, and AI-powered tools, this platform offers the most comprehensive and dynamic structure for exploring music genres. The goal is to create a shared, credible, and universally accessible reference that helps anyone—from casual listeners to professionals—navigate and understand the world of music.
+By continuously evolving through **community-driven curation**, expert input, and advanced tools, this platform offers the most comprehensive and dynamic structure for exploring music genres. The goal is to create a shared, credible, and universally accessible reference that helps anyone—from casual listeners to professionals—navigate and understand the world of music.
 
 **Key features:**
 
 - **A dynamic, evolving genre tree**, collaboratively built by users and experts
 - **Personalized music journeys** that visually map users' listening habits within the genre tree, enabling niche genres discovery
-- **AI-powered genre detection** that accurately categorizes any track, even those outside mainstream genres
+- **Intelligent genre detection** that accurately categorizes any track, even those outside mainstream genres
 - **API access** through **GetTheMusicTree** allows developers and professionals to integrate genre intelligence into their platforms
 
 **Technical Stack:** Next.js, TypeScript, React, JavaScript, Docker, GitFlow, GitHub Actions CI/CD
@@ -87,13 +89,13 @@ By continuously evolving through **community-driven curation**, expert input, an
 
 > 🔨 **Work in Progress** - Will be published open source soon! 🚀
 
-**GetTheMusicTree** is the API companion to **GrowTheMusicTree**, giving developers, researchers, and music platforms access to the full genre hierarchy, detailed metadata, and AI-powered genre detection. Built with **Django REST Framework** and **PostgreSQL**, it enables personalized user profiling based on listening habits, delivers accurate track and artist classifications, and provides data-driven recommendations. Perfect for powering music discovery, streaming personalization, event recommendations, and listener analytics, **GetTheMusicTree** brings the intelligence of the genre tree to any app or service.
+**GetTheMusicTree** is the API companion to **GrowTheMusicTree**, giving developers, researchers, and music platforms access to the full genre hierarchy, detailed metadata, and intelligent genre detection. Built with **Django REST Framework** and **PostgreSQL**, it enables personalized user profiling based on listening habits, delivers accurate track and artist classifications, and provides data-driven recommendations. Perfect for powering music discovery, streaming personalization, event recommendations, and listener analytics, **GetTheMusicTree** brings the intelligence of the genre tree to any app or service.
 
 **Technical Stack:** Python, Django REST Framework, PostgreSQL, Docker, GitHub Actions CI/CD
 
 #### 🎧 InTheMusicTree: A Smart Cloud-Based Music Library Manager
 
-Powered by the genre intelligence of **GrowTheMusicTree** and integrated with the **GetTheMusicTree API**, **InTheMusicTree** is a **cloud-based audio file manager** built for collectors, DJs, and music lovers who want full control over their libraries. It uses automatic genre detection, deep metadata analysis, and real-time insights from the API to help users seamlessly organize, stream, and explore their collections—leveraging the **ultimate genre reference** to its fullest potential.
+Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the **GetTheMusicTree API**, and built on **AudioMeta Python** for robust metadata handling, **InTheMusicTree** is a **cloud-based audio file manager** built for collectors, DJs, and music lovers who want full control over their libraries. It uses automatic genre detection, deep metadata analysis powered by AudioMeta Python, and real-time insights from the API to help users seamlessly organize, stream, and explore their collections—leveraging the **ultimate genre reference** to its fullest potential.
 
 **Key features:**
 
@@ -167,14 +169,8 @@ I'm passionate about open-source development and believe in building tools that 
 
 ### 🎯 Active Projects
 
-- **[AudioMeta Python](https://github.com/Andreas-Garcia/audiometa)** - Maintainer and primary contributor
-
-  - Production-ready library with 1000+ tests
-  - Comprehensive documentation and examples
-  - Active issue triage and community support
-  - Regular releases and feature updates
-
-- **BehindTheMusicTree** - Ecosystem Founder & Lead Developer
+- **BehindTheMusicTree Ecosystem** - Founder & Lead Developer
+  - **[AudioMeta Python](https://github.com/Andreas-Garcia/audiometa)**: Foundational metadata library - Production-ready with 1000+ tests, comprehensive documentation, active maintenance
   - **GrowTheMusicTree**: Community-driven genre classification platform (coming soon)
   - **GetTheMusicTree**: API for developers and researchers (coming soon)
   - **InTheMusicTree**: Cloud-based music library manager (coming soon)
@@ -217,9 +213,9 @@ I believe open-source software should be:
 
 ## 🌍 A Global Vision for Music Culture
 
-The **BehindTheMusicTree** ecosystem is committed to creating a **global, authoritative reference** that serves as the foundation for music discovery, exploration, and understanding. Through **GrowTheMusicTree**, **InTheMusicTree**, and **GetTheMusicTree**, we offer a comprehensive framework that reflects the full diversity of global music culture.
+The **BehindTheMusicTree** ecosystem is committed to creating a **global, authoritative reference** that serves as the foundation for music discovery, exploration, and understanding. Through **AudioMeta Python**, **GrowTheMusicTree**, **InTheMusicTree**, and **GetTheMusicTree**, we offer a comprehensive framework that reflects the full diversity of global music culture.
 
-Through the combined power of **AI, expert curation, developer tools, and community collaboration**, we're building a future where everyone—from casual listeners to creators to engineers—can connect more deeply with music.
+Through the combined power of **robust metadata management, expert curation, developer tools, and community collaboration**, we're building a future where everyone—from casual listeners to creators to engineers—can connect more deeply with music.
 
 **Join us in building the ultimate music genre reference and transforming the way the world navigates and understands music—where your journey, your collection, and your community thrive.**
 
@@ -272,6 +268,7 @@ For **AudioMeta Python**, see the [Contributing Guidelines](https://github.com/A
 
 Open-source projects thrive with community support! Here's how you can help:
 
+- 💖 **Sponsor my work** - Support the development of open-source music technology tools
 - ⭐ **Star repositories** you find useful - helps others discover them
 - 🐛 **Report bugs** - your feedback makes projects better
 - 💡 **Suggest features** - share your ideas and use cases
