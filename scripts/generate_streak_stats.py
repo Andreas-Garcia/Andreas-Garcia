@@ -576,35 +576,82 @@ def main():
         # Diagnostic: Check why specific repos show 0 contributions
         print(f"\nDiagnostic: Why some repos show 0 contributions:")
         now = datetime.now()
-        all_time_from = (now - timedelta(days=365 * 15)).isoformat() + "Z"
-        all_time_to = (now + timedelta(days=1)).isoformat() + "Z"
+        to_date_diag = (now + timedelta(days=1)).isoformat() + "Z"
         
         for repo_full_name in ["Bodzify/bodzify-api-django", "Bodzify/bodzify-ultimate-music-guide-react"]:
             parts = repo_full_name.split("/")
             if len(parts) == 2:
                 owner, name = parts
-                diag = check_specific_repo_contributions(
-                    username, token, headers, owner, name, all_time_from, all_time_to
-                )
-                if "error" in diag:
-                    print(f"  {repo_full_name}: Error checking - {diag['error']}")
-                else:
-                    status_parts = []
-                    if diag.get("repo_exists"):
-                        status_parts.append("exists")
-                    if diag.get("is_private"):
-                        status_parts.append("private")
-                    if diag.get("found_in_breakdown"):
-                        status_parts.append(f"found ({diag['contribution_count']} contribs)")
-                    else:
-                        status_parts.append("NOT in breakdown")
+                # Query year-by-year (same as main query)
+                found_anywhere = False
+                total_contribs = 0
+                repo_exists = False
+                is_private = False
+                
+                # Check repo info first (one query without date restrictions)
+                try:
+                    repo_query = """
+                    query($repoOwner: String!, $repoName: String!) {
+                      repository(owner: $repoOwner, name: $repoName) {
+                        nameWithOwner
+                        isPrivate
+                        defaultBranchRef {
+                          name
+                        }
+                      }
+                    }
+                    """
+                    repo_response = requests.post(
+                        "https://api.github.com/graphql",
+                        json={
+                            "query": repo_query,
+                            "variables": {"repoOwner": owner, "repoName": name}
+                        },
+                        headers=headers
+                    )
+                    repo_response.raise_for_status()
+                    repo_data = repo_response.json()
+                    if "data" in repo_data and "repository" in repo_data["data"]:
+                        repo_info = repo_data["data"]["repository"]
+                        repo_exists = bool(repo_info)
+                        is_private = repo_info.get("isPrivate", False)
+                except:
+                    pass
+                
+                # Check year-by-year for contributions
+                for year_offset in range(max_years_back):
+                    from_date_obj = now - timedelta(days=365 * (year_offset + 1))
+                    from_date = from_date_obj.isoformat() + "Z"
                     
-                    print(f"  {repo_full_name}: {', '.join(status_parts)}")
-                    if diag.get("repo_exists") and not diag.get("found_in_breakdown"):
-                        print(f"    → This repo exists and is accessible, but GitHub's API doesn't return it")
-                        print(f"    → in the contributionsCollection breakdown. This is a known limitation")
-                        print(f"    → for private organization repositories. Contributions ARE counted")
-                        print(f"    → in your calendar total, but won't appear in per-repo breakdown.")
+                    if year_offset == 0:
+                        query_to_date = to_date_diag
+                    else:
+                        query_to_date = (now - timedelta(days=365 * year_offset)).isoformat() + "Z"
+                    
+                    diag = check_specific_repo_contributions(
+                        username, token, headers, owner, name, from_date, query_to_date
+                    )
+                    if "error" not in diag and diag.get("found_in_breakdown"):
+                        found_anywhere = True
+                        total_contribs += diag.get("contribution_count", 0)
+                
+                # Print results
+                status_parts = []
+                if repo_exists:
+                    status_parts.append("exists")
+                if is_private:
+                    status_parts.append("private")
+                if found_anywhere:
+                    status_parts.append(f"found ({total_contribs} contribs)")
+                else:
+                    status_parts.append("NOT in breakdown")
+                
+                print(f"  {repo_full_name}: {', '.join(status_parts)}")
+                if repo_exists and not found_anywhere:
+                    print(f"    → This repo exists and is accessible, but GitHub's API doesn't return it")
+                    print(f"    → in the contributionsCollection breakdown. This is a known limitation")
+                    print(f"    → for private organization repositories. Contributions ARE counted")
+                    print(f"    → in your calendar total, but won't appear in per-repo breakdown.")
         
         # Show discrepancy
         print(f"\nComparison:")
