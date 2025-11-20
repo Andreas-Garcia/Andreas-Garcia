@@ -7,7 +7,103 @@ import os
 import sys
 import requests
 from datetime import datetime, timedelta
+from collections import defaultdict
 import xml.etree.ElementTree as ET
+
+def get_contributions_per_repo(username, token, headers, from_date, to_date):
+    """Get contributions per repository using GraphQL API"""
+    query = """
+    query($username: String!, $from: DateTime!, $to: DateTime!) {
+      user(login: $username) {
+        contributionsCollection(from: $from, to: $to) {
+          commitContributionsByRepository(maxRepositories: 100) {
+            repository {
+              nameWithOwner
+              isPrivate
+            }
+            contributions {
+              totalCount
+            }
+          }
+          issueContributionsByRepository(maxRepositories: 100) {
+            repository {
+              nameWithOwner
+            }
+            contributions {
+              totalCount
+            }
+          }
+          pullRequestContributionsByRepository(maxRepositories: 100) {
+            repository {
+              nameWithOwner
+            }
+            contributions {
+              totalCount
+            }
+          }
+          pullRequestReviewContributionsByRepository(maxRepositories: 100) {
+            repository {
+              nameWithOwner
+            }
+            contributions {
+              totalCount
+            }
+          }
+        }
+      }
+    }
+    """
+    
+    try:
+        response = requests.post(
+            "https://api.github.com/graphql",
+            json={
+                "query": query,
+                "variables": {
+                    "username": username,
+                    "from": from_date,
+                    "to": to_date
+                }
+            },
+            headers=headers
+        )
+        response.raise_for_status()
+        data = response.json()
+        
+        if "errors" in data:
+            return {}
+        
+        contributions_by_repo = defaultdict(int)
+        collection = data["data"]["user"]["contributionsCollection"]
+        
+        # Commits
+        for repo_data in collection.get("commitContributionsByRepository", []):
+            repo_name = repo_data["repository"]["nameWithOwner"]
+            count = repo_data["contributions"]["totalCount"]
+            contributions_by_repo[repo_name] += count
+        
+        # Issues
+        for repo_data in collection.get("issueContributionsByRepository", []):
+            repo_name = repo_data["repository"]["nameWithOwner"]
+            count = repo_data["contributions"]["totalCount"]
+            contributions_by_repo[repo_name] += count
+        
+        # Pull Requests
+        for repo_data in collection.get("pullRequestContributionsByRepository", []):
+            repo_name = repo_data["repository"]["nameWithOwner"]
+            count = repo_data["contributions"]["totalCount"]
+            contributions_by_repo[repo_name] += count
+        
+        # PR Reviews
+        for repo_data in collection.get("pullRequestReviewContributionsByRepository", []):
+            repo_name = repo_data["repository"]["nameWithOwner"]
+            count = repo_data["contributions"]["totalCount"]
+            contributions_by_repo[repo_name] += count
+        
+        return contributions_by_repo
+    except Exception as e:
+        print(f"    ⚠ Error getting contributions per repo: {e}")
+        return {}
 
 def main():
     # Get username from environment variable or use default
@@ -23,10 +119,21 @@ def main():
     # from ALL repositories the user has access to (based on token permissions),
     # including private organization repos. No need to specify additional repos here.
     # 
-    # IMPORTANT: GitHub's contribution calendar typically does NOT count contributions
-    # to forked repositories unless they are merged into the upstream repository.
-    # If you have contributions in forks that aren't showing up, they may not be
-    # included in the contribution calendar.
+    # IMPORTANT LIMITATIONS of GitHub's Contribution Calendar API:
+    # 1. It does NOT count ALL commits - only "contributions" which include:
+    #    - Commits to the default branch (usually main/master)
+    #    - Commits that are part of merged pull requests
+    #    - Issues and pull requests opened
+    #    - Pull request reviews
+    # 2. It does NOT count:
+    #    - Commits in branches that aren't merged to default
+    #    - Commits in forks that aren't merged upstream
+    #    - Commits in branches that are later deleted
+    #    - Some commits in private repos (depending on settings)
+    # 
+    # This means the total contributions count will be LOWER than the actual commit count
+    # in repositories. The contribution calendar is designed to show "meaningful" contributions,
+    # not every single commit.
     #
     # GitHub's contribution calendar API limitation: max 1 year per query
     # To get all-time data, we query multiple 1-year ranges and combine them
@@ -248,7 +355,19 @@ def main():
         sorted_dates = sorted(contributions_by_date.keys())
         earliest_date = sorted_dates[0]
         latest_date = sorted_dates[-1]
-        print(f"Date range: {earliest_date} to {latest_date}")
+        print(f"Calendar date range: {earliest_date} to {latest_date}")
+        
+        # Find earliest date with actual contributions (> 0)
+        earliest_with_contributions = None
+        for date_obj in sorted_dates:
+            if contributions_by_date[date_obj] > 0:
+                earliest_with_contributions = date_obj
+                break
+        
+        if earliest_with_contributions:
+            print(f"Earliest date with contributions: {earliest_with_contributions}")
+        else:
+            print(f"Warning: No dates with contributions > 0 found!")
 
     # Debug: Check which token is being used
     token_type = "PAT (GH_PAT)" if os.environ.get("GH_PAT") else "GITHUB_TOKEN (limited)"
@@ -288,12 +407,44 @@ def main():
         print(f"Warning: Could not verify token permissions: {e}")
 
     # Debug: Print contribution info
+    print(f"\n=== Contribution Statistics ===")
     print(f"Total contributions (combined): {total_contributions:,}")
     print(f"Number of weeks: {len(weeks)}")
 
     # Count total days with contributions
     total_days_with_contributions = sum(1 for count in contributions_by_date.values() if count > 0)
     print(f"Days with contributions: {total_days_with_contributions}")
+    
+    # Note about missing commits
+    print(f"\n⚠️  NOTE: This count reflects GitHub's 'contributions' (commits to default branch,")
+    print(f"   merged PRs, issues, reviews), NOT total commits. Actual commit counts in")
+    print(f"   repositories may be higher due to commits in branches, unmerged PRs, etc.")
+    
+    # Get contributions per repository for the most recent year
+    print(f"\n=== Contributions per Repository (most recent year) ===")
+    now = datetime.now()
+    recent_from = (now - timedelta(days=365)).isoformat() + "Z"
+    recent_to = (now + timedelta(days=1)).isoformat() + "Z"
+    
+    repo_contributions = get_contributions_per_repo(username, token, headers, recent_from, recent_to)
+    if repo_contributions:
+        sorted_repos = sorted(repo_contributions.items(), key=lambda x: x[1], reverse=True)
+        print(f"Top repositories by contributions (last year):")
+        for repo_name, count in sorted_repos[:20]:  # Show top 20
+            print(f"  {repo_name:50s}: {count:5,} contributions")
+        
+        # Check specific repos mentioned by user
+        print(f"\nSpecific repositories check:")
+        check_repos = [
+            "Bodzify/bodzify-api-django",
+            "Bodzify/bodzify-ultimate-music-guide-react",
+            "Andreas-Garcia/audiometa"
+        ]
+        for repo_name in check_repos:
+            count = repo_contributions.get(repo_name, 0)
+            print(f"  {repo_name:50s}: {count:5,} contributions")
+    else:
+        print("  Could not retrieve per-repository breakdown")
 
     # Calculate current streak
     today = datetime.now().date()
@@ -419,7 +570,14 @@ def main():
     longest_streak_date_str = f"{format_date(longest_streak_start, include_year=False)} - {format_date(longest_streak_end_date, include_year=True)}" if longest_streak_start and longest_streak_end_date else format_date(longest_streak_start) if longest_streak_start else "N/A"
 
     # Get earliest contribution date for total contributions range
-    earliest_date_str = format_date(all_dates[0]) if all_dates else "N/A"
+    # Use the earliest date with actual contributions (> 0), not just the calendar start
+    earliest_with_contribs = None
+    for date_obj in all_dates:
+        if contributions_by_date[date_obj] > 0:
+            earliest_with_contribs = date_obj
+            break
+    
+    earliest_date_str = format_date(earliest_with_contribs if earliest_with_contribs else all_dates[0]) if all_dates else "N/A"
     total_contributions_date_str = f"{earliest_date_str} - Present"
 
     # Theme colors (matching image design)
