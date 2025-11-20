@@ -409,10 +409,10 @@ jobs:
 
           # Generate SVG with 3 columns - matching reference design
           svg_width = 700
-          svg_height = 200
+          svg_height = 220
           column_width = svg_width // 3
           column_center_x = [column_width // 2, column_width + column_width // 2, 2 * column_width + column_width // 2]
-          content_y_start = 60
+          content_y_start = 80
 
           svg = ET.Element("svg", {
               "width": str(svg_width),
@@ -431,7 +431,7 @@ jobs:
           # Title with better styling
           title = ET.SubElement(svg, "text", {
               "x": str(svg_width // 2),
-              "y": "32",
+              "y": "24",
               "text-anchor": "middle",
               "font-family": "Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif",
               "font-size": "24",
@@ -519,11 +519,12 @@ jobs:
               "fill": colors["text"]
           })
 
-          # Number inside circle (yellow)
+          # Number inside circle (yellow) - centered vertically
           streak_value = ET.SubElement(svg, "text", {
               "x": str(col2_x),
-              "y": str(circle_center_y + 8),
+              "y": str(circle_center_y),
               "text-anchor": "middle",
+              "dominant-baseline": "central",
               "font-family": "Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif",
               "font-size": "36",
               "font-weight": "700",
