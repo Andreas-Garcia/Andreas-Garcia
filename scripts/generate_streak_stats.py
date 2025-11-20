@@ -71,12 +71,10 @@ def get_contributions_per_repo(username, token, headers, from_date, to_date):
         data = response.json()
         
         if "errors" in data:
-            print(f"    ⚠ GraphQL errors in repo query: {data['errors']}")
-            return {}
+            return {}, {"commits": 0, "issues": 0, "pull_requests": 0, "pr_reviews": 0}
         
         if "data" not in data or "user" not in data["data"]:
-            print(f"    ⚠ Unexpected response structure: {list(data.keys())}")
-            return {}
+            return {}, {"commits": 0, "issues": 0, "pull_requests": 0, "pr_reviews": 0}
         
         contributions_by_repo = defaultdict(int)
         collection = data["data"]["user"]["contributionsCollection"]
@@ -121,21 +119,11 @@ def get_contributions_per_repo(username, token, headers, from_date, to_date):
             contributions_by_repo[repo_name] += count
             type_counts["pr_reviews"] += count
         
-        # Check if we hit the 100 repository limit (API doesn't tell us, but we can warn)
-        if len(commit_repos) >= 100 or len(issue_repos) >= 100 or len(pr_repos) >= 100 or len(review_repos) >= 100:
-            print(f"    ⚠ Warning: Hit maxRepositories limit (100) - some repositories may be missing")
-        
-        return contributions_by_repo
+        return contributions_by_repo, type_counts
     except requests.exceptions.HTTPError as e:
-        print(f"    ⚠ HTTP error getting contributions per repo: {e}")
-        if hasattr(e.response, 'text'):
-            print(f"    Response: {e.response.text[:200]}")
-        return {}
+        return {}, {"commits": 0, "issues": 0, "pull_requests": 0, "pr_reviews": 0}
     except Exception as e:
-        print(f"    ⚠ Error getting contributions per repo: {e}")
-        import traceback
-        print(f"    Traceback: {traceback.format_exc()[:300]}")
-        return {}
+        return {}, {"commits": 0, "issues": 0, "pull_requests": 0, "pr_reviews": 0}
 
 def main():
     # Get username from environment variable or use default
@@ -203,8 +191,6 @@ def main():
     now = datetime.now()
     to_date = (now + timedelta(days=1)).isoformat() + "Z"
 
-    print(f"Querying contributions in 1-year ranges (going back up to {max_years_back} years)...")
-
     for year_offset in range(max_years_back):
         from_date_obj = now - timedelta(days=365 * (year_offset + 1))
         from_date = from_date_obj.isoformat() + "Z"
@@ -215,8 +201,6 @@ def main():
             query_to_date = to_date
         else:
             query_to_date = (now - timedelta(days=365 * year_offset)).isoformat() + "Z"
-        
-        print(f"  Querying year {year_offset + 1}: {from_date[:10]} to {query_to_date[:10]}")
         
         try:
             response = requests.post(
@@ -238,16 +222,12 @@ def main():
             if "errors" in data:
                 error_msg = data["errors"][0].get("message", "")
                 if "must not exceed 1 year" in error_msg:
-                    print(f"    ⚠ Date range too large, skipping")
                     consecutive_empty_years += 1
                     if consecutive_empty_years >= max_consecutive_empty:
-                        print(f"    Stopping after {max_consecutive_empty} consecutive empty years")
                         break
                     continue
-                print(f"    ⚠ GraphQL errors: {data['errors']}")
                 consecutive_empty_years += 1
                 if consecutive_empty_years >= max_consecutive_empty:
-                    print(f"    Stopping after {max_consecutive_empty} consecutive empty years")
                     break
                 continue
             
@@ -257,10 +237,8 @@ def main():
             year_total = calendar["totalContributions"]
             
             if not year_weeks or year_total == 0:
-                print(f"    No contributions found for this year")
                 consecutive_empty_years += 1
                 if consecutive_empty_years >= max_consecutive_empty:
-                    print(f"    Stopping after {max_consecutive_empty} consecutive empty years")
                     break
                 continue
             
@@ -270,27 +248,9 @@ def main():
             all_weeks.extend(year_weeks)
             total_contributions = max(total_contributions, year_total)  # Use max as it might be cumulative
             
-            # Debug: Check the date range of this year's data
-            if year_weeks:
-                first_day = None
-                last_day = None
-                for week in year_weeks:
-                    for day in week.get("contributionDays", []):
-                        day_date = day.get("date", "")
-                        if day_date:
-                            if first_day is None or day_date < first_day:
-                                first_day = day_date
-                            if last_day is None or day_date > last_day:
-                                last_day = day_date
-                print(f"    ✓ Found {year_total} contributions, {len(year_weeks)} weeks (dates: {first_day[:10] if first_day else 'N/A'} to {last_day[:10] if last_day else 'N/A'})")
-            else:
-                print(f"    ✓ Found {year_total} contributions, {len(year_weeks)} weeks")
-            
         except Exception as e:
-            print(f"    ⚠ Error querying year {year_offset + 1}: {e}")
             if year_offset == 0:
                 # If the first query fails, fall back to query without dates
-                print("    Falling back to query without date restrictions...")
                 query_no_dates = """
                 query($username: String!) {
                   user(login: $username) {
@@ -320,7 +280,6 @@ def main():
                     calendar = contributions_collection["contributionCalendar"]
                     all_weeks = calendar["weeks"]
                     total_contributions = calendar["totalContributions"]
-                    print("    ✓ Fallback query successful")
                 break
             else:
                 # For older years, just skip if there's an error
@@ -328,8 +287,6 @@ def main():
 
     if not all_weeks:
         raise Exception("No contribution data found")
-
-    print(f"Successfully queried contributions: {len(all_weeks)} total weeks")
 
     # Combine all weeks and deduplicate by date (in case of overlaps)
     contributions_by_date = {}
@@ -382,67 +339,18 @@ def main():
     manual_total = sum(contributions_by_date.values())
     total_contributions = manual_total
 
-    print(f"Combined data: {len(contributions_by_date)} unique days, {manual_total} total contributions")
-    if contributions_by_date:
-        sorted_dates = sorted(contributions_by_date.keys())
-        earliest_date = sorted_dates[0]
-        latest_date = sorted_dates[-1]
-        print(f"Calendar date range: {earliest_date} to {latest_date}")
-        
-        # Find earliest date with actual contributions (> 0)
-        earliest_with_contributions = None
-        for date_obj in sorted_dates:
-            if contributions_by_date[date_obj] > 0:
-                earliest_with_contributions = date_obj
-                break
-        
-        if earliest_with_contributions:
-            print(f"Earliest date with contributions: {earliest_with_contributions}")
-        else:
-            print(f"Warning: No dates with contributions > 0 found!")
-
-    # Debug: Check which token is being used
-    token_type = "PAT (GH_PAT)" if os.environ.get("GH_PAT") else "GITHUB_TOKEN (limited)"
-    print(f"Using token type: {token_type}")
-
-    # Verify token permissions by checking user info
-    try:
-        user_check = requests.get(
-            "https://api.github.com/user",
-            headers={"Authorization": f"Bearer {token}"}
-        )
-        user_check.raise_for_status()
-        user_data = user_check.json()
-        print(f"Authenticated as: {user_data.get('login', 'unknown')}")
-        scopes = user_check.headers.get('X-OAuth-Scopes', '')
-        print(f"Token scopes: {scopes}")
-        print(f"Token has repo access: {'repo' in str(scopes)}")
-        
-    except Exception as e:
-        print(f"Warning: Could not verify token permissions: {e}")
-
-    # Debug: Print contribution info
-    print(f"\n=== Contribution Statistics ===")
-    print(f"Total contributions (combined): {total_contributions:,}")
-    print(f"Number of weeks: {len(weeks)}")
-
-    # Count total days with contributions
-    total_days_with_contributions = sum(1 for count in contributions_by_date.values() if count > 0)
-    print(f"Days with contributions: {total_days_with_contributions}")
-    
-    # Note about missing commits
-    print(f"\n⚠️  NOTE: This count reflects GitHub's 'contributions' (commits to default branch,")
-    print(f"   merged PRs, issues, reviews), NOT total commits. Actual commit counts in")
-    print(f"   repositories may be higher due to commits in branches, unmerged PRs, etc.")
-    
     # Get contributions per repository for all time (query per year range and combine)
-    print(f"\n=== Contributions per Repository (all time) ===")
     
     # Query per repository for each year range (same approach as calendar query)
     repo_contributions = defaultdict(int)
+    total_type_counts = {
+        "commits": 0,
+        "issues": 0,
+        "pull_requests": 0,
+        "pr_reviews": 0
+    }
     now = datetime.now()
     
-    print("Querying contributions per repository in 1-year ranges...")
     for year_offset in range(max_years_back):
         from_date_obj = now - timedelta(days=365 * (year_offset + 1))
         from_date = from_date_obj.isoformat() + "Z"
@@ -453,56 +361,22 @@ def main():
             query_to_date = (now - timedelta(days=365 * year_offset)).isoformat() + "Z"
         
         try:
-            year_repo_contribs = get_contributions_per_repo(username, token, headers, from_date, query_to_date)
-            if year_repo_contribs:
-                for repo_name, count in year_repo_contribs.items():
-                    repo_contributions[repo_name] += count
-                print(f"  Year {year_offset + 1}: Found contributions in {len(year_repo_contribs)} repositories")
+            result = get_contributions_per_repo(username, token, headers, from_date, query_to_date)
+            if result:
+                year_repo_contribs, year_type_counts = result
+                if year_repo_contribs:
+                    for repo_name, count in year_repo_contribs.items():
+                        repo_contributions[repo_name] += count
+                    # Aggregate type counts
+                    for contrib_type, count in year_type_counts.items():
+                        total_type_counts[contrib_type] += count
         except Exception as e:
-            print(f"  Year {year_offset + 1}: Error querying repo contributions: {e}")
             # Continue with other years even if one fails
+            pass
     
     if repo_contributions:
-        sorted_repos = sorted(repo_contributions.items(), key=lambda x: x[1], reverse=True)
-        total_repo_contribs = sum(repo_contributions.values())
-        print(f"\nTotal contributions from repositories: {total_repo_contribs:,}")
-        print(f"Number of repositories with contributions: {len(repo_contributions)}")
-        print(f"\nTop repositories by contributions (all time):")
-        for repo_name, count in sorted_repos[:30]:  # Show top 30
-            print(f"  {repo_name:50s}: {count:5,} contributions")
-        
-        # Check specific repos mentioned by user
-        print(f"\nSpecific repositories check (all time):")
-        check_repos = [
-            "Bodzify/bodzify-api-django",
-            "Bodzify/bodzify-ultimate-music-guide-react",
-            "Andreas-Garcia/audiometa"
-        ]
-        for repo_name in check_repos:
-            count = repo_contributions.get(repo_name, 0)
-            print(f"  {repo_name:50s}: {count:5,} contributions")
-        
-        # Show discrepancy
-        print(f"\nComparison:")
-        print(f"  Calendar total contributions: {total_contributions:,}")
-        print(f"  Sum of repo contributions: {total_repo_contribs:,}")
-        if total_repo_contribs != total_contributions:
-            diff = total_contributions - total_repo_contribs
-            percentage = (total_repo_contribs / total_contributions * 100) if total_contributions > 0 else 0
-            print(f"  Difference: {diff:,} ({percentage:.1f}% accounted for)")
-            print(f"\n  Explanation of discrepancy:")
-            print(f"    • GitHub's contribution calendar includes ALL contributions from ALL repositories")
-            print(f"    • The per-repo breakdown API has limitations:")
-            print(f"      - Only returns up to 100 repositories per contribution type")
-            print(f"      - May not include all private/organization repositories")
-            print(f"      - Some contribution types may not be fully tracked")
-            print(f"    • The missing {diff:,} contributions are likely from:")
-            print(f"      - Private repositories not returned by the API")
-            print(f"      - Organization repositories with restricted visibility")
-            print(f"      - Repositories beyond the 100-repo limit per type")
-            print(f"      - Contributions in repositories you no longer have access to")
-    else:
-        print("  Could not retrieve per-repository breakdown")
+        # repo_contributions is used for internal processing
+        pass
 
     # Calculate current streak
     today = datetime.now().date()
@@ -562,9 +436,6 @@ def main():
         else:
             temp_streak = 0
 
-    print(f"Most recent contribution date: {most_recent_date}")
-    print(f"Current streak: {current_streak} days")
-    print(f"Longest streak: {longest_streak} days")
 
     # Calculate dates for display
     # Current streak start date
