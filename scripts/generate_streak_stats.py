@@ -391,50 +391,60 @@ def main():
 
     # all_dates is already sorted from the combined data
     most_recent_date = all_dates[-1]
-    today = datetime.now().date()
-
-    # Calculate current streak: count backwards from today
-    # A streak continues as long as there are contributions on consecutive days
-    # Start from today and go backwards day by day
-    check_date = today
-
-    # Count backwards from today
-    # Stop if we go too far back (more than a reasonable time) or hit a day with no contributions
-    max_days_back = 1000  # Safety limit
-    days_checked = 0
-
-    while days_checked < max_days_back:
-        # If date is in our data
-        if check_date in contributions_by_date:
-            if contributions_by_date[check_date] > 0:
-                # This day has contributions, add to streak and continue
-                current_streak += 1
-                check_date = check_date - timedelta(days=1)
-                days_checked += 1
-            else:
-                # This day has 0 contributions, streak is broken
-                break
-        else:
-            # Date is not in our data
-            # If it's before our earliest date, stop
-            if check_date < all_dates[0]:
-                break
-            # If it's today and not in data, it might be too early (check yesterday)
-            if check_date == today:
-                check_date = check_date - timedelta(days=1)
-                days_checked += 1
-                continue
-            # Otherwise, this day had no contributions (not in our data), streak is broken
+    
+    # Find the most recent day with contributions
+    most_recent_contrib_date = None
+    for date_obj in reversed(all_dates):
+        if contributions_by_date[date_obj] > 0:
+            most_recent_contrib_date = date_obj
             break
+    
+    if most_recent_contrib_date:
+        # Calculate current streak starting from the most recent contribution date
+        # Only consider it a "current" streak if it's within the last 2 days (today or yesterday)
+        days_since_last_contrib = (today - most_recent_contrib_date).days
+        
+        if days_since_last_contrib <= 1:
+            # There's an active streak - count backwards from most recent contribution
+            check_date = most_recent_contrib_date
+            current_streak = 0
+            
+            while check_date >= all_dates[0]:
+                if check_date in contributions_by_date and contributions_by_date[check_date] > 0:
+                    current_streak += 1
+                    check_date = check_date - timedelta(days=1)
+                else:
+                    # Check if this is just a missing date in our data (weekend gap, etc.)
+                    # Allow up to 1 day gap
+                    next_check = check_date - timedelta(days=1)
+                    if next_check in contributions_by_date and contributions_by_date[next_check] > 0:
+                        # There's a contribution the day after this gap, but this specific day has none
+                        # This breaks the streak
+                        break
+                    else:
+                        # This date is not in our data at all, treat as no contribution and break
+                        break
 
     # Calculate longest streak: go through all dates chronologically
-    temp_streak = 0
-    for date_obj in sorted(contributions_by_date.keys()):
-        if contributions_by_date[date_obj] > 0:
-            temp_streak += 1
-            longest_streak = max(longest_streak, temp_streak)
-        else:
-            temp_streak = 0
+    # Build a list of all dates with contributions
+    contrib_dates = [d for d in sorted(contributions_by_date.keys()) if contributions_by_date[d] > 0]
+    
+    if contrib_dates:
+        temp_streak = 1  # Start with 1 for the first contribution
+        longest_streak = 1
+        
+        for i in range(1, len(contrib_dates)):
+            prev_date = contrib_dates[i - 1]
+            curr_date = contrib_dates[i]
+            days_diff = (curr_date - prev_date).days
+            
+            if days_diff == 1:
+                # Consecutive day
+                temp_streak += 1
+                longest_streak = max(longest_streak, temp_streak)
+            else:
+                # Gap in streak
+                temp_streak = 1
 
 
     # Calculate dates for display
