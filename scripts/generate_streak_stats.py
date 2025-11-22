@@ -491,7 +491,8 @@ def main():
             return date_obj.strftime("%b %d")
 
     # Calculate date ranges
-    current_streak_end = most_recent_date if current_streak > 0 else None
+    # Use the most recent contribution date, not the API's last date (which might be tomorrow)
+    current_streak_end = most_recent_contrib_date if current_streak > 0 and most_recent_contrib_date else None
     current_streak_date_str = f"{format_date(current_streak_start, include_year=False)} - {format_date(current_streak_end, include_year=False)}" if current_streak_start and current_streak_end else "N/A"
 
     longest_streak_end_date = None
