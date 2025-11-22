@@ -7,7 +7,7 @@
   
   [![GitHub followers](https://img.shields.io/github/followers/Andreas-Garcia?label=Follow&style=social)](https://github.com/Andreas-Garcia)
 [![GitHub stars](https://img.shields.io/github/stars/Andreas-Garcia?label=Total%20Stars&style=social)](https://github.com/Andreas-Garcia)
-[![GitHub contributions](https://img.shields.io/github/contributors/Andreas-Garcia/Andreas-Garcia?label=Contributions&style=social)](https://github.com/Andreas-Garcia)
+[![Public Repos](https://img.shields.io/badge/dynamic/json?url=https://api.github.com/users/Andreas-Garcia&query=$.public_repos&label=Public%20Repos&style=social&logo=github)](https://github.com/Andreas-Garcia?tab=repositories)
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/Andreas-Garcia?label=Sponsor&style=social)](https://github.com/sponsors/Andreas-Garcia)
 </div>
 
