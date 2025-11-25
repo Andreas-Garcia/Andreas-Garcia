@@ -1,0 +1,32 @@
+Développeur Full-Stack | Fondateur & Lead Developer | Innovateur en Technologie Musicale | Contributeur Open Source
+
+Je suis un développeur full-stack passionné par la création d'outils et plateformes open-source combinant excellence technique et impact concret, engagé pour les dimensions environnementale, sociale et culturelle.
+
+**🌍 Impact Environnemental & Social :** Recherche en agrivoltaïsme à l'INRAE, combinant agriculture et photovoltaïque pour lutter contre le changement climatique. Contribution aux initiatives de science ouverte (données FAIR). Expériences en agriculture durable (WWOOFing) et projets d'éco-construction. Expérience dans l'aide à domicile et le service public. Projets open-source pour démocratiser l'accès à la culture musicale et au savoir.
+
+**🎵 Impact Culturel :** Mon travail sur la technologie musicale contribue à préserver et organiser notre patrimoine musical mondial. L'écosystème BehindTheMusicTree vise à devenir une référence définitive reflétant toute la diversité de la culture musicale mondiale. Co-organisation d'un micro-festival de musique (80+ personnes).
+
+**Réalisations et projets :**
+
+J'ai développé des outils, bibliothèques, plateformes et services dans différents contextes :
+
+- **BehindTheMusicTree** (Fondateur & Lead Developer) :
+  - **AudioMeta Python** : bibliothèque métadonnées audio, 1000+ tests, 1500+ téléchargements
+  - **GrowTheMusicTree** : plateforme communautaire de classification de genres musicaux (Next.js, TypeScript, React)
+  - **GetTheMusicTree** : API REST pour l'accès à la hiérarchie de genres et métadonnées (Django REST Framework, PostgreSQL)
+  - **InTheMusicTree** : gestionnaire bibliothèque musicale cloud
+- **OpenSILEX** (INRAE) : système d'information open-source données FAIR (Java Spring Boot, RDF4J), backend API REST et frontend (PHP, JavaScript)
+
+**Stack technique :**
+
+- **Backend** : Python, Django REST Framework, Java Spring Boot
+- **Frontend** : Next.js, TypeScript, React
+- **Base de données** : PostgreSQL
+- **DevOps & Outils** : Docker, GitFlow, CI/CD (GitHub Actions)
+- **Méthodologies** : SCRUM, développement piloté par les tests (TDD)
+
+🎓 Formation : Diplôme d'ingénieur en Informatique de l'INSA Lyon (2014) | Programme d'entrepreneuriat à La Ruche (2025)
+
+Langues : 🇫🇷 Français (Natif) | 🇬🇧 Anglais (Avancé) | 🇪🇸 Espagnol (Avancé) | 🇩🇪 Allemand (Bases)
+
+Ouvert à : Opportunités d'emploi, collaborations, conseil, et échanges avec développeurs et passionnés de technologie musicale.

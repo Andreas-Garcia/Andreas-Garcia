@@ -1,0 +1,43 @@
+**🎵 Founder & Lead Developer - BehindTheMusicTree**
+
+**📅 Dec. 2022 – Present**
+
+**💼 Job Description:**
+
+As Founder & Lead Developer of BehindTheMusicTree, I lead the development of an ecosystem of interconnected projects that transform how we explore and organize music. I define the vision, mission, and strategic direction of the company.
+
+**🔑 Key Responsibilities:**
+
+- 🎯 Definition of vision, mission, and strategic direction
+- 🚀 Design and development of open-source tools, libraries, platforms, and services
+- 👥 Technical leadership on an ecosystem of 4 interconnected projects
+- 🔄 End-to-end project management: architecture, development, testing, deployment
+- 💡 Entrepreneurship programs (La Ruche, 2025): market research and persona creation
+- 🔌 Integration of external APIs (Spotify, MusicBrainz) to enrich metadata
+- 🐳 Docker, GitFlow, CI/CD (GitHub Actions)
+
+**🚀 Projects Developed:**
+
+- 🎵 **AudioMeta Python**: Audio metadata library (ID3v1, ID3v2, Vorbis, RIFF), 1000+ tests, 1500+ PyPI downloads
+- 🌳 **GrowTheMusicTree**: Community music genre classification platform (Next.js, TypeScript, React)
+- 🔌 **GetTheMusicTree**: REST API for genre hierarchy and metadata (Django REST Framework, PostgreSQL)
+- 🎧 **InTheMusicTree**: Cloud music library manager with intelligent playlists
+
+**⭐ Key Competencies:**
+
+- 🎯 Technical leadership and strategic vision
+- 💻 Full-stack development
+- 🏗️ Software architecture and system design
+- ⚡ Agile project management (SCRUM, TDD)
+- 🚀 Entrepreneurship and product development
+
+**🛠️ Technologies Used:**
+
+Backend: Python, Django REST Framework | Frontend: Next.js, TypeScript, React | Database: PostgreSQL | DevOps: Docker, GitFlow, CI/CD (GitHub Actions) | Methodologies: SCRUM, TDD
+
+**🌍 Impact:**
+
+- 🌐 Open-source ecosystem democratizing access to music culture
+- 🎵 Preservation and organization of global musical heritage
+- 🌍 Definitive reference reflecting the diversity of global music culture
+
