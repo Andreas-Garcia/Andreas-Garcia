@@ -200,9 +200,10 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 - Defined the vision, mission, and strategic direction of the company to guide product development
 - Participated in a 3-month entrepreneurship program by La Ruche, conducting market research and creating personas
 - Developed [**AudioMeta Python**](https://github.com/Andreas-Garcia/audiometa), a production-ready open-source library for unified audio metadata management across multiple formats (ID3v1, ID3v2, Vorbis, RIFF), with 1000+ tests and comprehensive documentation
-- Developed a collaborative music genre reference platform powered by community contributions (JavaScript, Next.js, TypeScript)
-- Created a RESTful Django API in Python with PostgreSQL for genre classification and metadata integration
-- Integrated external APIs (Spotify, MusicBrainz) to enrich metadata and improve user experience
+- Developed **GrowTheMusicTree**, a collaborative music genre reference platform powered by community contributions (JavaScript, Next.js, TypeScript)
+- Created **GetTheMusicTree**, a RESTful Django API in Python with PostgreSQL for genre classification and metadata integration
+- Integrated external APIs (Spotify, MusicBrainz) into **GetTheMusicTree** to enrich metadata and improve user experience
+- Developed **InTheMusicTree**, a cloud-based music library manager with smart playlists, cross-platform sync, and intelligent genre detection powered by AudioMeta Python and GetTheMusicTree API
 - Containerized with Docker, managed versioning with GitFlow, automated CI/CD with integration testing and GitHub Actions
 
 ### Major Music Events Company - Consultant
