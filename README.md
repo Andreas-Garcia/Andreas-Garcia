@@ -385,6 +385,8 @@ For **AudioMeta Python**, see the [Contributing Guidelines](https://github.com/A
 - 🐛 **Issues**: [Report bugs or suggest features](https://github.com/Andreas-Garcia/audiometa/issues)
 - 💬 **Discussions**: [Join the conversation](https://github.com/Andreas-Garcia/audiometa/discussions)
 
+**Open to:** Job opportunities, collaborations, consulting opportunities, and connecting with fellow developers and music technology enthusiasts.
+
 ## ⭐ Show Your Support
 
 Open-source projects thrive with community support! Here's how you can help:
