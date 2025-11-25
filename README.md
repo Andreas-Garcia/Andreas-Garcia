@@ -15,7 +15,15 @@
 
 I'm a **full-stack developer** passionate about building open-source tools and platforms that empower music lovers, developers, and creators. I love creating solutions that combine technical excellence with real-world impact, focusing on music technology, metadata management, and community-driven innovation.
 
-I build with **Python**, **Django REST Framework**, **Next.js**, **TypeScript**, and **React**, always following clean code principles and best practices. When I'm not coding, I'm contributing to open-source projects, collaborating with communities, or working on music-related initiatives that make a difference.
+With solid expertise in software development, I'm capable of designing robust web solutions in both backend and frontend. My approach allows me to manage complex projects, combining technical mastery with a deep understanding of business needs. I have expertise in **Python** and **Django REST Framework**, enabling me to develop high-performance Python web backends, as well as experience with **Java Spring Boot**. My frontend skills include creating dynamic interfaces with **Next.js**, **TypeScript**, and **React**. My familiarity with **SCRUM** methodologies allows me to collaborate effectively within agile teams.
+
+**I'm particularly motivated to create positive impact across culture, social, and environmental dimensions.** This drive shapes how I approach my work and the projects I choose to pursue.
+
+**🌍 Environmental Impact:** I've worked on impactful projects like agrivoltaism research at INRAE, combining agriculture and photovoltaics to combat climate change. I'm passionate about finding technical solutions to environmental challenges and contributing to open science initiatives that make research data FAIR (Findable, Accessible, Interoperable, and Reusable). My engagement extends beyond work through hands-on experiences with sustainable agriculture via WWOOFing (World Wide Opportunities on Organic Farms), where I've learned about organic farming practices and sustainable living, as well as eco-construction projects that promote environmentally responsible building methods.
+
+**🤝 Social Impact:** Through my work on open-source projects and community-driven platforms like BehindTheMusicTree, I aim to democratize access to music culture and knowledge. I've contributed to making research more accessible and collaborated on projects that serve the public good. I've worked in home care, providing direct assistance and support to individuals in need, which has given me firsthand experience with social challenges and the importance of community support. My experience also includes public service work, reflecting my commitment to social causes and contributing to the well-being of others.
+
+**🎵 Cultural Impact:** My work on music technology and metadata management contributes to preserving and organizing our global musical heritage. By building tools that help people discover, understand, and connect with diverse music cultures worldwide, I'm helping create a more inclusive and accessible cultural landscape. The BehindTheMusicTree ecosystem aims to become a definitive reference that reflects the full diversity of global music culture, empowering communities to share and celebrate their musical traditions. Beyond technology, I've co-organized a micro music festival that brought together 80+ people, creating a space for community connection and cultural exchange through live music experiences.
 
 **Languages:** 🇫🇷 French (Native) | 🇬🇧 English (Advanced) | 🇪🇸 Spanish (Advanced) | 🇩🇪 German (Basic)
 
@@ -175,6 +183,68 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 
 ![SCRUM](https://img.shields.io/badge/SCRUM-6DB33F?style=flat-square&logo=scrumalliance&logoColor=white)
 ![Clean Code](https://img.shields.io/badge/Clean_Code-000000?style=flat-square&logo=code&logoColor=white)
+
+## 🎓 Education
+
+- **INSA Lyon** - 2014
+  - Engineering degree in Computer Science
+- **La Ruche** - 2025
+  - Entrepreneurship program
+
+## 💼 Professional Experience
+
+### BehindTheMusicTree - Founder & Lead Developer
+
+**Dec. 2022 – Present**
+
+- Defined the vision, mission, and strategic direction of the company to guide product development
+- Participated in a 3-month entrepreneurship program by La Ruche, conducting market research and creating personas
+- Developed a collaborative music genre reference platform powered by community contributions (JavaScript, Next.js, TypeScript)
+- Created a RESTful Django API in Python with PostgreSQL for genre classification and metadata integration
+- Integrated external APIs (Spotify, MusicBrainz) to enrich metadata and improve user experience
+- Containerized with Docker, managed versioning with GitFlow, automated CI/CD with integration testing and GitHub Actions
+
+### Major Music Events Company - Consultant
+
+**Dec. 2024 – Jan. 2025**
+
+- Organized and classified over 1300 music genres for the company's user/concert matching tool
+
+### INRAE - Research Engineer
+
+**Oct. 2018 – Jan. 2020 | Montpellier**
+
+- Assisted researchers in sharing their data using a common vocabulary and structure within a promising agrivoltaism research project combining agriculture and photovoltaics
+- Contributed to an open-source information system to make research data FAIR (Findable, Accessible, Interoperable, and Reusable)
+- Manipulated data within the RDF4J graph database, improving ontologies (graph structures)
+- Implemented new backend services in Java Spring Boot for a REST API using the DTO (Data Transfer Object) pattern, and frontend in PHP and JavaScript
+- Worked on impactful topics: finding solutions against climate change and making science more open
+
+### Cleversys (acquired by Deloitte) - BI/ERP Consultant
+
+**Apr. 2015 – Oct. 2017 | Paris**
+
+- Collaborated at every stage of BI projects, from conception (client exchanges) to completion (dashboard presentations in Tableau), in addition to managing data transfers in data warehouses with SSIS and SQL Server
+- Technical development on ERP projects as an ETL expert, specifying and implementing 62 critical accounting interfaces
+- Technical point of contact for the client (annual revenue > €4B), leading specification workshops and training developers
+
+### Sopra Steria - Developer
+
+**Nov. 2014 – Apr. 2015 | Paris**
+
+- Development on a maintenance application for a railway company (C#)
+
+### Sogeti High Tech – Developer
+
+**Apr. 2014 – Oct. 2014 | Aix-en-Provence** (Internship)
+
+- Development of a web portal in ASP.NET based on the Umbraco CMS and features for Onlymoov', an Android mobility assistant application
+
+### Kreactive Digital Studio - Developer
+
+**2013 | Lyon** (Internship)
+
+- Development of iOS applications for various clients (Eurosport)
 
 ## 📊 GitHub Stats
 
