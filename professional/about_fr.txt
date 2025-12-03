@@ -13,8 +13,8 @@ J'ai développé des outils, bibliothèques, plateformes et services dans diffé
 - **BehindTheMusicTree** (Fondateur & Lead Developer) :
   - **AudioMeta Python** : bibliothèque métadonnées audio, 1000+ tests, 1500+ téléchargements
   - **GrowTheMusicTree** : plateforme communautaire de classification de genres musicaux (Next.js, TypeScript, React)
-  - **GetTheMusicTree** : API REST pour l'accès à la hiérarchie de genres et métadonnées (Django REST Framework, PostgreSQL)
-  - **InTheMusicTree** : gestionnaire bibliothèque musicale cloud
+  - **TheMusicTreeAPI** : API REST pour l'accès à la hiérarchie de genres et métadonnées (Django REST Framework, PostgreSQL)
+  - **HearTheMusicTree** : gestionnaire bibliothèque musicale cloud
 - **OpenSILEX** (INRAE) : système d'information open-source données FAIR (Java Spring Boot, RDF4J), backend API REST et frontend (PHP, JavaScript)
 
 **Stack technique :**
