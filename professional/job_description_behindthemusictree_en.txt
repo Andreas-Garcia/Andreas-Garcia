@@ -1,43 +1,43 @@
-**🎵 Founder & Lead Developer - BehindTheMusicTree**
 
-**📅 Dec. 2022 – Present**
 
-**💼 Job Description:**
+🎵 FOUNDER & LEAD DEVELOPER - BehindTheMusicTree
 
-As Founder & Lead Developer of BehindTheMusicTree, I lead the development of an ecosystem of interconnected projects that transform how we explore and organize music. I define the vision, mission, and strategic direction of the company.
+📅 DATE: Dec. 2022 – Present
 
-**🔑 Key Responsibilities:**
+💼 JOB DESCRIPTION:
+Lead the development of an ecosystem of interconnected projects transforming music exploration and organization. Responsible for defining the company’s vision, mission, and strategic direction.
 
-- 🎯 Definition of vision, mission, and strategic direction
-- 🚀 Design and development of open-source tools, libraries, platforms, and services
-- 👥 Technical leadership on an ecosystem of 4 interconnected projects
-- 🔄 End-to-end project management: architecture, development, testing, deployment
-- 💡 Entrepreneurship programs (La Ruche, 2025): market research and persona creation
-- 🔌 Integration of external APIs (Spotify, MusicBrainz) to enrich metadata
-- 🐳 Docker, GitFlow, CI/CD (GitHub Actions)
+🔑 KEY RESPONSIBILITIES:
+    🎯 Definition of vision, mission, and strategy
+    🚀 Design and development of open-source tools, libraries, platforms, and services
+    👥 Technical leadership across 4 interconnected projects
+    🔄 End-to-end project management: architecture, development, testing, deployment
+    💡 Participation in entrepreneurship programs (La Ruche, 2025): market research and persona creation
+    🔌 Integration of external APIs (Spotify, MusicBrainz) to enrich metadata
+    🐳 DevOps: Docker, GitFlow, CI/CD (GitHub Actions)
 
-**🚀 Projects Developed:**
+🚀 PROJECTS DEVELOPED:
+    🎵 AudioMeta Python: Audio metadata library (ID3v1, ID3v2, Vorbis, RIFF), 1000+ tests, 3500+ PyPI downloads
+    🌳 GrowTheMusicTree: Community music genre classification platform (Next.js, TypeScript, React)
+    🎧 HearTheMusicTree: Cloud music library manager with intelligent playlists
+    🔌 TheMusicTreeAPI: REST API for genre hierarchy and metadata (Django REST Framework, PostgreSQL)
 
-- 🎵 **AudioMeta Python**: Audio metadata library (ID3v1, ID3v2, Vorbis, RIFF), 1000+ tests, 3500+ PyPI downloads
-- 🌳 **GrowTheMusicTree**: Community music genre classification platform (Next.js, TypeScript, React)
-- 🔌 **TheMusicTreeAPI**: REST API for genre hierarchy and metadata (Django REST Framework, PostgreSQL)
-- 🎧 **HearTheMusicTree**: Cloud music library manager with intelligent playlists
+⭐ KEY COMPETENCIES:
+    🎯 Technical leadership and strategic vision
+    💻 Full-stack development
+    🏗️ Software architecture and system design
+    ⚡ Agile project management (SCRUM, TDD)
+    🚀 Entrepreneurship and product development
 
-**⭐ Key Competencies:**
+🛠️ TECHNOLOGIES USED:
+    Backend: Python, Django REST Framework
+    Frontend: Next.js, TypeScript, React
+    Database: PostgreSQL
+    DevOps: Docker, GitFlow, CI/CD (GitHub Actions)
+    Methodologies: SCRUM, TDD
 
-- 🎯 Technical leadership and strategic vision
-- 💻 Full-stack development
-- 🏗️ Software architecture and system design
-- ⚡ Agile project management (SCRUM, TDD)
-- 🚀 Entrepreneurship and product development
-
-**🛠️ Technologies Used:**
-
-Backend: Python, Django REST Framework | Frontend: Next.js, TypeScript, React | Database: PostgreSQL | DevOps: Docker, GitFlow, CI/CD (GitHub Actions) | Methodologies: SCRUM, TDD
-
-**🌍 Impact:**
-
-- 🌐 Open-source ecosystem democratizing access to music culture
-- 🎵 Preservation and organization of global musical heritage
-- 🌍 Definitive reference reflecting the diversity of global music culture
+🌍 IMPACT:
+    🌐 Open-source ecosystem democratizing access to music culture
+    🎵 Preservation and organization of global musical heritage
+    🌍 Definitive reference reflecting the diversity of global music culture
 
