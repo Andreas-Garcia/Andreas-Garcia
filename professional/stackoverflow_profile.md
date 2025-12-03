@@ -1,1 +1,12 @@
-Full-Stack Developer and Founder of [BehindTheMusicTree](https://github.com/behindthemusictree), an open-source ecosystem transforming music discovery and organization. Key projects include [AudioMeta Python](https://github.com/BehindTheMusicTree/audiometa) (unified audio metadata library), [GrowTheMusicTree](https://github.com/BehindTheMusicTree/grow-the-music-tree) (community-driven music genre platform), and [TheMusicTreeApi](https://github.com/BehindTheMusicTree/the-music-tree-api) (REST API for genre hierarchy). Expertise in Python, Django REST Framework, Next.js, TypeScript, and React. Passionate about democratizing access to music culture while contributing to environmental and social impact. Languages: French (Native), English (Advanced), Spanish (Advanced).
+Full-Stack Developer and Founder of [BehindTheMusicTree](https://github.com/behindthemusictree), an open-source ecosystem transforming music discovery and organization.
+
+**Key Projects:**
+
+- **[AudioMeta Python](https://github.com/BehindTheMusicTree/audiometa)**: Unified Python library for reading/writing audio metadata across formats (ID3v1, ID3v2, Vorbis, RIFF). Features 1000+ tests, extensive documentation, and cross-platform support.
+- **[GrowTheMusicTree](https://github.com/BehindTheMusicTree/grow-the-music-tree)**: Community-driven platform building the definitive interactive map of global music genres, with intelligent genre detection and personalized music journeys.
+- **[TheMusicTreeApi](https://github.com/BehindTheMusicTree/the-music-tree-api)**: RESTful API for genre hierarchy, metadata integration, and data-driven recommendations, built with Django REST Framework and PostgreSQL.
+- **[InTheMusicTree](https://github.com/BehindTheMusicTree/in-the-music-tree)**: Cloud-based music library manager with smart playlists, cross-platform sync, and universal format support.
+
+Expertise in Python, Django REST Framework, Next.js, TypeScript, and React. Passionate about democratizing access to music culture while contributing to environmental and social impact.
+
+Languages: French (Native), English (Advanced), Spanish (Advanced).
