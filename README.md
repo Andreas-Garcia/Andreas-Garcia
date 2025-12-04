@@ -21,8 +21,9 @@
   - [🔌 TheMusicTreeAPI: The Music Genre API](#themusictreeapi-the-music-genre-api)
   - [🎧 HearTheMusicTree: A Smart Cloud-Based Music Library Manager](#hearthemusictree-a-smart-cloud-based-music-library-manager)
 - [🛠️ Technologies & Tools](#technologies-and-tools)
-- [🎓 Education](#education)
-- [💼 Professional Experience](#professional-experience)
+- [📚 Curriculum](#curriculum)
+  - [🎓 Education](#education)
+  - [💼 Professional Experience](#professional-experience)
 - [📊 GitHub Stats](#github-stats)
 - [🤝 Open Source Contributions](#open-source-contributions)
 - [📝 Recent Activity](#recent-activity)
@@ -50,6 +51,8 @@ With solid expertise in software development, I'm capable of designing robust we
 
 ## 🚀 Featured Projects
 
+<a id="behindthemusictree-empowering-music-discovery-and-organization"></a>
+
 ### 🎶 BehindTheMusicTree: Empowering Music Discovery and Organization
 
 **BehindTheMusicTree** is an ecosystem that encompasses interconnected projects designed to transform how we explore, understand, and organize music. by blending community-driven intelligence, robust metadata management, and an evolving framework, these projects work together to provide a holistic music experience for music lovers, collectors, and professionals alike.
@@ -60,6 +63,8 @@ With solid expertise in software development, I'm capable of designing robust we
 - 🌳 [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree) - Community-driven platform for building the definitive interactive map of global music genres
 - 🔌 **TheMusicTreeAPI** - RESTful API providing access to genre hierarchy, metadata, and intelligent genre detection
 - 🎧 **HearTheMusicTree** - Cloud-based music library manager with smart playlists and cross-platform sync
+
+<a id="audiometa-python-the-foundation-for-audio-metadata-management"></a>
 
 ### 🎵 AudioMeta Python: The Foundation for Audio Metadata Management
 
@@ -110,6 +115,8 @@ print(f"Title: {metadata.get(UnifiedMetadataKey.TITLE)}")
 ![WAV](https://img.shields.io/badge/WAV-000000?style=flat-square)
 ![MP3](https://img.shields.io/badge/MP3-000000?style=flat-square)
 
+<a id="growthemusictree-building-the-ultimate-music-genre-reference"></a>
+
 ### 🌳 GrowTheMusicTree: Building the Ultimate Music Genre Reference
 
 At the core of **BehindTheMusicTree** lies [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree), a groundbreaking platform focused on **building the definitive, interactive map of global music genres**. This ambitious project aims to become the **ultimate reference** for understanding music genres—past, present, and future—by constructing an ever-evolving, tree-shaped framework that organizes genres, subgenres, and microgenres based on their musical characteristics, historical context, and cultural relevance.
@@ -132,6 +139,8 @@ By continuously evolving through **community-driven curation**, expert input, an
 ![GitFlow](https://img.shields.io/badge/GitFlow-F05032?style=flat-square&logo=git&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
 
+<a id="themusictreeapi-the-music-genre-api"></a>
+
 ### 🔌 TheMusicTreeAPI: The Music Genre API
 
 > 🔨 **Work in Progress** - Will be published open source soon! 🚀
@@ -144,6 +153,8 @@ By continuously evolving through **community-driven curation**, expert input, an
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![Docker Hub](https://img.shields.io/badge/Docker%20Hub-2496ED?style=flat-square&logo=dockerhub&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
+
+<a id="hearthemusictree-a-smart-cloud-based-music-library-manager"></a>
 
 ### 🎧 HearTheMusicTree: A Smart Cloud-Based Music Library Manager
 
@@ -203,14 +214,22 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 ![SCRUM](https://img.shields.io/badge/SCRUM-6DB33F?style=flat-square&logo=scrumalliance&logoColor=white)
 ![Clean Code](https://img.shields.io/badge/Clean_Code-000000?style=flat-square&logo=code&logoColor=white)
 
-## 🎓 Education
+<a id="curriculum"></a>
+
+## 📚 Curriculum
+
+<a id="education"></a>
+
+### 🎓 Education
 
 - **INSA Lyon** - 2014
   - Engineering degree in Computer Science
 - **La Ruche** - 2025
   - Entrepreneurship program
 
-## 💼 Professional Experience
+<a id="professional-experience"></a>
+
+### 💼 Professional Experience
 
 ### [BehindTheMusicTree](https://github.com/behindthemusictree) - Founder & Lead Developer
 
