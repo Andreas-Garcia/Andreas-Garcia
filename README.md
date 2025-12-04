@@ -34,6 +34,8 @@
 - [📫 Connect With Me](#-connect-with-me)
 - [⭐ Show Your Support](#-show-your-support)
 
+## 🎵 About Me
+
 I'm a **full-stack developer** passionate about building open-source tools and platforms that empower music lovers, developers, and creators. I love creating solutions that combine technical excellence with real-world impact, focusing on music technology, metadata management, and community-driven innovation.
 
 With solid expertise in software development, I'm capable of designing robust web solutions in both backend and frontend. My approach allows me to manage complex projects, combining technical mastery with a deep understanding of business needs. I have expertise in **Python** and **Django REST Framework**, enabling me to develop high-performance Python web backends, as well as experience with **Java Spring Boot**. My frontend skills include creating dynamic interfaces with **Next.js**, **TypeScript**, and **React**. My familiarity with **SCRUM** methodologies allows me to collaborate effectively within agile teams.
