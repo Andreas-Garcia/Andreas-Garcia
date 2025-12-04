@@ -11,6 +11,27 @@
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/Andreas-Garcia?label=Sponsor&style=social)](https://github.com/sponsors/Andreas-Garcia)
 </div>
 
+## Table of Contents
+
+- [🎵 About Me](#about-me)
+- [🚀 Featured Projects](#featured-projects)
+  - [🎶 BehindTheMusicTree: Empowering Music Discovery and Organization](#behindthemusictree-empowering-music-discovery-and-organization)
+  - [🎵 AudioMeta Python: The Foundation for Audio Metadata Management](#audiometa-python-the-foundation-for-audio-metadata-management)
+  - [🌳 GrowTheMusicTree: Building the Ultimate Music Genre Reference](#growthemusictree-building-the-ultimate-music-genre-reference)
+  - [🔌 TheMusicTreeAPI: The Music Genre API](#themusictreeapi-the-music-genre-api)
+  - [🎧 HearTheMusicTree: A Smart Cloud-Based Music Library Manager](#hearthemusictree-a-smart-cloud-based-music-library-manager)
+- [🛠️ Technologies & Tools](#technologies-and-tools)
+- [🎓 Education](#education)
+- [💼 Professional Experience](#professional-experience)
+- [📊 GitHub Stats](#github-stats)
+- [🤝 Open Source Contributions](#open-source-contributions)
+- [📝 Recent Activity](#recent-activity)
+- [🏆 GitHub Achievements](#github-achievements)
+- [🌍 A Global Vision for Music Culture](#a-global-vision-for-music-culture)
+- [🤝 Contributing & Collaboration](#contributing-and-collaboration)
+- [📫 Connect With Me](#connect-with-me)
+- [⭐ Show Your Support](#show-your-support)
+
 ## 🎵 About Me
 
 I'm a **full-stack developer** passionate about building open-source tools and platforms that empower music lovers, developers, and creators. I love creating solutions that combine technical excellence with real-world impact, focusing on music technology, metadata management, and community-driven innovation.
@@ -315,28 +336,6 @@ I believe open-source software should be:
 - **Well-documented** - Clear documentation helps everyone succeed
 - **Community-driven** - Built with and for the community
 - **Production-ready** - Tools that people can trust in real projects
-
-## 📝 Recent Activity
-
-<!--START_SECTION:activity-->
-<!--END_SECTION:activity-->
-
-## 🏆 GitHub Achievements
-
-<!-- GitHub Trophies service is currently unavailable (503 error) -->
-<!-- <div align="center">
-
-  ![GitHub Trophies](https://github-profile-trophy.vercel.app/?username=Andreas-Garcia&theme=radical)
-
-</div> -->
-
-## 🌍 A Global Vision for Music Culture
-
-The **BehindTheMusicTree** ecosystem is committed to creating a **global, authoritative reference** that serves as the foundation for music discovery, exploration, and understanding. Through **AudioMeta Python**, **GrowTheMusicTree**, **HearTheMusicTree**, and **TheMusicTreeAPI**, we offer a comprehensive framework that reflects the full diversity of global music culture.
-
-Through the combined power of **robust metadata management, expert curation, developer tools, and community collaboration**, we're building a future where everyone—from casual listeners to creators to engineers—can connect more deeply with music.
-
-**Join us in building the ultimate music genre reference and transforming the way the world navigates and understands music—where your journey, your collection, and your community thrive.**
 
 ## 🤝 Contributing & Collaboration
 
