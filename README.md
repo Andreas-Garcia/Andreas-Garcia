@@ -20,8 +20,8 @@
   - [🌳 GrowTheMusicTree: Building the Ultimate Music Genre Reference](#-growthemusictree-building-the-ultimate-music-genre-reference)
   - [🔌 TheMusicTreeAPI: The Music Genre API](#-themusictreeapi-the-music-genre-api)
   - [🎧 HearTheMusicTree: A Smart Cloud-Based Music Library Manager](#-hearthemusictree-a-smart-cloud-based-music-library-manager)
-- [🛠️ Technologies & Tools](#-technologies-and-tools)
 - [📚 Curriculum](#-curriculum)
+  - [🛠️ Technologies & Tools](#-technologies-and-tools)
   - [🌱 My Impacts](#-my-impacts)
   - [🎓 Education](#-education)
   - [💼 Professional Experience](#-professional-experience)
@@ -33,8 +33,6 @@
 - [🤝 Contributing & Collaboration](#-contributing-and-collaboration)
 - [📫 Connect With Me](#-connect-with-me)
 - [⭐ Show Your Support](#-show-your-support)
-
-## 🎵 About Me
 
 I'm a **full-stack developer** passionate about building open-source tools and platforms that empower music lovers, developers, and creators. I love creating solutions that combine technical excellence with real-world impact, focusing on music technology, metadata management, and community-driven innovation.
 
@@ -159,9 +157,11 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![Docker Hub](https://img.shields.io/badge/Docker%20Hub-2496ED?style=flat-square&logo=dockerhub&logoColor=white)
 
-## 🛠️ Technologies & Tools
+## 📚 Curriculum
 
-### Backend
+### 🛠️ Technologies & Tools
+
+#### Backend
 
 ![Python](https://img.shields.io/badge/Python-3.12+-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Django](https://img.shields.io/badge/Django_REST_Framework-092E20?style=flat-square&logo=django&logoColor=white)
@@ -169,14 +169,14 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
 
-### Frontend
+#### Frontend
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
 
-### DevOps & Tools
+#### DevOps & Tools
 
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
@@ -184,18 +184,16 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 ![GitFlow](https://img.shields.io/badge/GitFlow-F05032?style=flat-square&logo=git&logoColor=white)
 ![PyPI](https://img.shields.io/badge/PyPI-3775A9?style=flat-square&logo=pypi&logoColor=white)
 
-### Testing & Quality
+#### Testing & Quality
 
 ![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
 ![mypy](https://img.shields.io/badge/mypy-000000?style=flat-square&logo=python&logoColor=white)
 ![ruff](https://img.shields.io/badge/ruff-000000?style=flat-square&logo=ruff&logoColor=white)
 
-### Methodologies
+#### Methodologies
 
 ![SCRUM](https://img.shields.io/badge/SCRUM-6DB33F?style=flat-square&logo=scrumalliance&logoColor=white)
 ![Clean Code](https://img.shields.io/badge/Clean_Code-000000?style=flat-square&logo=code&logoColor=white)
-
-## 📚 Curriculum
 
 ### 🌱 My Impacts
 
