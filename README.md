@@ -248,13 +248,15 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 
 ### INRAE - Research Engineer
 
-**Oct. 2018 – Jan. 2020 | Montpellier**
+**Oct. 2018 – Dec. 2019 | Montpellier, France**
 
-- Assisted researchers in sharing their data using a common vocabulary and structure within a promising agrivoltaism research project combining agriculture and photovoltaics
+- Led researchers to efficiently share their data using a common vocabulary and structure for a cross-disciplinary agrivoltaism research project combining agriculture and photovoltaics
 - Contributed to an open-source information system to make research data FAIR (Findable, Accessible, Interoperable, and Reusable)
-- Manipulated data within the RDF4J graph database, improving ontologies (graph structures)
-- Implemented new backend services in Java Spring Boot for a REST API using the DTO (Data Transfer Object) pattern, and frontend in PHP and JavaScript
-- Worked on impactful topics: finding solutions against climate change and making science more open
+- Collaborated within a SCRUM team on an open-source program hosted on GitHub
+- Manipulated complex data structures within the RDF4J graph database and improved ontologies (graph structures)
+- Implemented new event-handling services in Java (REST API) using the Data Transfer Object (DTO) pattern
+- Added event handling in PHP and JavaScript on the website layer (three-tier architecture) using API calls
+- Worked on topics I remain passionate about: climate change mitigation and open science
 
 ### Cleversys (acquired by Deloitte) - BI/ERP Consultant
 
