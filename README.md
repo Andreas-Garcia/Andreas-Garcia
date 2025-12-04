@@ -22,6 +22,7 @@
   - [🎧 HearTheMusicTree: A Smart Cloud-Based Music Library Manager](#-hearthemusictree-a-smart-cloud-based-music-library-manager)
 - [🛠️ Technologies & Tools](#-technologies-and-tools)
 - [📚 Curriculum](#-curriculum)
+  - [🌱 My Impacts](#-my-impacts)
   - [🎓 Education](#-education)
   - [💼 Professional Experience](#-professional-experience)
 - [📊 GitHub Stats](#-github-stats)
@@ -41,17 +42,7 @@ With solid expertise in software development, I'm capable of designing robust we
 
 **I'm particularly motivated to create positive impact across culture, social, and environmental dimensions.** This drive shapes how I approach my work and the projects I choose to pursue.
 
-**🌍 Environmental Impact:** I've worked on impactful projects like agrivoltaism research at INRAE, combining agriculture and photovoltaics to combat climate change. I'm passionate about finding technical solutions to environmental challenges and contributing to open science initiatives that make research data FAIR (Findable, Accessible, Interoperable, and Reusable). My engagement extends beyond work through hands-on experiences with sustainable agriculture via WWOOFing (World Wide Opportunities on Organic Farms), where I've learned about organic farming practices and sustainable living, as well as eco-construction projects that promote environmentally responsible building methods.
-
-**🤝 Social Impact:** Through my work on open-source projects and community-driven platforms like BehindTheMusicTree, I aim to democratize access to music culture and knowledge. I've contributed to making research more accessible and collaborated on projects that serve the public good. I've worked in home care, providing direct assistance and support to individuals in need, which has given me firsthand experience with social challenges and the importance of community support. My experience also includes public service work, reflecting my commitment to social causes and contributing to the well-being of others.
-
-**🎵 Cultural Impact:** My work on music technology and metadata management contributes to preserving and organizing our global musical heritage. By building tools that help people discover, understand, and connect with diverse music cultures worldwide, I'm helping create a more inclusive and accessible cultural landscape. The BehindTheMusicTree ecosystem aims to become a definitive reference that reflects the full diversity of global music culture, empowering communities to share and celebrate their musical traditions. Beyond technology, I've co-organized a micro music festival that brought together 80+ people, creating a space for community connection and cultural exchange through live music experiences.
-
-**Languages:** 🇫🇷 French (Native) | 🇬🇧 English (Advanced) | 🇪🇸 Spanish (Advanced) | 🇩🇪 German (Basic)
-
 ## 🚀 Featured Projects
-
-<a id="behindthemusictree-empowering-music-discovery-and-organization"></a>
 
 ### 🎶 BehindTheMusicTree: Empowering Music Discovery and Organization
 
@@ -63,8 +54,6 @@ With solid expertise in software development, I'm capable of designing robust we
 - 🌳 [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree) - Community-driven platform for building the definitive interactive map of global music genres
 - 🔌 **TheMusicTreeAPI** - RESTful API providing access to genre hierarchy, metadata, and intelligent genre detection
 - 🎧 **HearTheMusicTree** - Cloud-based music library manager with smart playlists and cross-platform sync
-
-<a id="audiometa-python-the-foundation-for-audio-metadata-management"></a>
 
 ### 🎵 AudioMeta Python: The Foundation for Audio Metadata Management
 
@@ -115,8 +104,6 @@ print(f"Title: {metadata.get(UnifiedMetadataKey.TITLE)}")
 ![WAV](https://img.shields.io/badge/WAV-000000?style=flat-square)
 ![MP3](https://img.shields.io/badge/MP3-000000?style=flat-square)
 
-<a id="growthemusictree-building-the-ultimate-music-genre-reference"></a>
-
 ### 🌳 GrowTheMusicTree: Building the Ultimate Music Genre Reference
 
 At the core of **BehindTheMusicTree** lies [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree), a groundbreaking platform focused on **building the definitive, interactive map of global music genres**. This ambitious project aims to become the **ultimate reference** for understanding music genres—past, present, and future—by constructing an ever-evolving, tree-shaped framework that organizes genres, subgenres, and microgenres based on their musical characteristics, historical context, and cultural relevance.
@@ -139,8 +126,6 @@ By continuously evolving through **community-driven curation**, expert input, an
 ![GitFlow](https://img.shields.io/badge/GitFlow-F05032?style=flat-square&logo=git&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
 
-<a id="themusictreeapi-the-music-genre-api"></a>
-
 ### 🔌 TheMusicTreeAPI: The Music Genre API
 
 > 🔨 **Work in Progress** - Will be published open source soon! 🚀
@@ -153,8 +138,6 @@ By continuously evolving through **community-driven curation**, expert input, an
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![Docker Hub](https://img.shields.io/badge/Docker%20Hub-2496ED?style=flat-square&logo=dockerhub&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
-
-<a id="hearthemusictree-a-smart-cloud-based-music-library-manager"></a>
 
 ### 🎧 HearTheMusicTree: A Smart Cloud-Based Music Library Manager
 
@@ -175,8 +158,6 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 ![MP3](https://img.shields.io/badge/MP3-000000?style=flat-square&logo=mp3&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![Docker Hub](https://img.shields.io/badge/Docker%20Hub-2496ED?style=flat-square&logo=dockerhub&logoColor=white)
-
-<a id="technologies-and-tools"></a>
 
 ## 🛠️ Technologies & Tools
 
@@ -214,11 +195,17 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 ![SCRUM](https://img.shields.io/badge/SCRUM-6DB33F?style=flat-square&logo=scrumalliance&logoColor=white)
 ![Clean Code](https://img.shields.io/badge/Clean_Code-000000?style=flat-square&logo=code&logoColor=white)
 
-<a id="curriculum"></a>
-
 ## 📚 Curriculum
 
-<a id="education"></a>
+### 🌱 My Impacts
+
+**🌍 Environmental Impact:** I've worked on impactful projects like agrivoltaism research at INRAE, combining agriculture and photovoltaics to combat climate change. I'm passionate about finding technical solutions to environmental challenges and contributing to open science initiatives that make research data FAIR (Findable, Accessible, Interoperable, and Reusable). My engagement extends beyond work through hands-on experiences with sustainable agriculture via WWOOFing (World Wide Opportunities on Organic Farms), where I've learned about organic farming practices and sustainable living, as well as eco-construction projects that promote environmentally responsible building methods.
+
+**🤝 Social Impact:** Through my work on open-source projects and community-driven platforms like BehindTheMusicTree, I aim to democratize access to music culture and knowledge. I've contributed to making research more accessible and collaborated on projects that serve the public good. I've worked in home care, providing direct assistance and support to individuals in need, which has given me firsthand experience with social challenges and the importance of community support. My experience also includes public service work, reflecting my commitment to social causes and contributing to the well-being of others.
+
+**🎵 Cultural Impact:** My work on music technology and metadata management contributes to preserving and organizing our global musical heritage. By building tools that help people discover, understand, and connect with diverse music cultures worldwide, I'm helping create a more inclusive and accessible cultural landscape. The BehindTheMusicTree ecosystem aims to become a definitive reference that reflects the full diversity of global music culture, empowering communities to share and celebrate their musical traditions. Beyond technology, I've co-organized a micro music festival that brought together 80+ people, creating a space for community connection and cultural exchange through live music experiences.
+
+**Languages:** 🇫🇷 French (Native) | 🇬🇧 English (Advanced) | 🇪🇸 Spanish (Advanced) | 🇩🇪 German (Basic)
 
 ### 🎓 Education
 
@@ -226,8 +213,6 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
   - Engineering degree in Computer Science
 - **La Ruche** - 2025
   - Entrepreneurship program
-
-<a id="professional-experience"></a>
 
 ### 💼 Professional Experience
 
@@ -286,8 +271,6 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 
 - Development of iOS applications for various clients (Eurosport)
 
-<a id="github-stats"></a>
-
 ## 📊 GitHub Stats
 
 <div align="center">
@@ -322,8 +305,6 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
   <img src="https://github-contributions.vercel.app/api/v1/Andreas-Garcia?format=svg&theme=radical" alt="GitHub Contribution Calendar" />
 
 </div> -->
-
-<a id="open-source-contributions"></a>
 
 ## 🤝 Open Source Contributions
 
@@ -360,14 +341,10 @@ I believe open-source software should be:
 - **Community-driven** - Built with and for the community
 - **Production-ready** - Tools that people can trust in real projects
 
-<a id="recent-activity"></a>
-
 ## 📝 Recent Activity
 
 <!--START_SECTION:activity-->
 <!--END_SECTION:activity-->
-
-<a id="github-achievements"></a>
 
 ## 🏆 GitHub Achievements
 
@@ -378,15 +355,11 @@ I believe open-source software should be:
 
 </div> -->
 
-<a id="a-global-vision-for-music-culture"></a>
-
 ## 🌍 A Global Vision for Music Culture
 
 The **BehindTheMusicTree** ecosystem is committed to creating a **global, authoritative reference** that serves as the foundation for music discovery, exploration, and understanding. Through **AudioMeta Python**, **GrowTheMusicTree**, **InTheMusicTree**, and **TheMusicTreeApi**, we offer a comprehensive framework that reflects the full diversity of global music culture.
 
 Through the combined power of **robust metadata management, expert curation, developer tools, and community collaboration**, we're building a future where everyone—from casual listeners to creators to engineers—can connect more deeply with music.
-
-<a id="contributing-and-collaboration"></a>
 
 ## 🤝 Contributing & Collaboration
 
@@ -426,8 +399,6 @@ For **AudioMeta Python**, see the [Contributing Guidelines](https://github.com/A
 
 **Every contribution matters**, no matter how small! 🎉
 
-<a id="connect-with-me"></a>
-
 ## 📫 Connect With Me
 
 - 💼 **LinkedIn**: [Connect on LinkedIn](https://www.linkedin.com/in/andreas-garcia/)
@@ -437,8 +408,6 @@ For **AudioMeta Python**, see the [Contributing Guidelines](https://github.com/A
 - 💬 **Discussions**: [Join the conversation](https://github.com/Andreas-Garcia/audiometa/discussions)
 
 **Open to:** Job opportunities, collaborations, consulting opportunities, and connecting with fellow developers and music technology enthusiasts.
-
-<a id="show-your-support"></a>
 
 ## ⭐ Show Your Support
 
