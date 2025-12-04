@@ -36,11 +36,17 @@
 
 ## 🎵 About Me
 
-I'm a **full-stack developer** passionate about building open-source tools and platforms that empower music lovers, developers, and creators. I love creating solutions that combine technical excellence with real-world impact, focusing on music technology, metadata management, and community-driven innovation.
+I'm a full-stack engineer, founder, and open-source maintainer focused on music technology and metadata systems. I build production-ready software that combines strong engineering practices, careful metadata modeling, and accessible tools for creators and developers.
 
-With solid expertise in software development, I'm capable of designing robust web solutions in both backend and frontend. My approach allows me to manage complex projects, combining technical mastery with a deep understanding of business needs. I have expertise in **Python** and **Django REST Framework**, enabling me to develop high-performance Python web backends, as well as experience with **Java Spring Boot**. My frontend skills include creating dynamic interfaces with **Next.js**, **TypeScript**, and **React**. My familiarity with **SCRUM** methodologies allows me to collaborate effectively within agile teams.
+Core strengths:
 
-**I'm particularly motivated to create positive impact across culture, social, and environmental dimensions.** This drive shapes how I approach my work and the projects I choose to pursue.
+- Technical: Python (Django REST Framework), Java (Spring Boot), Next.js, TypeScript, React, PostgreSQL
+- Dev practices: robust test suites (pytest), type-checking (mypy), linting (ruff), CI/CD, Docker, GitFlow
+- Product: API design, metadata systems, containerised deployments, and user-centered products
+
+Notable work: I founded the BehindTheMusicTree ecosystem including AudioMeta Python (unified audio metadata), GrowTheMusicTree (genre classification), TheMusicTreeAPI (Django REST API), and HearTheMusicTree (cloud library manager). I also collaborate on open-source projects and programs that emphasize sustainability, reproducibility, and community-driven curation.
+
+I’m driven by real-world impact—building tools that are well-tested, documented, and ready for production. I’m open to collaborations, sponsorship, and opportunities that align with music culture, sustainability, and accessible software.
 
 ## 🚀 Featured Projects
 
