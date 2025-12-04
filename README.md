@@ -36,7 +36,7 @@
 
 ## 🎵 About Me
 
-I'm a full-stack engineer, founder, and open-source maintainer focused on music technology and metadata systems. I build production-ready software that combines strong engineering practices, careful metadata modeling, and accessible tools for creators and developers.
+I'm a full-stack engineer, founder, and open-source maintainer focused on music technology and metadata systems 🎵. I build production-ready software that combines strong engineering practices, careful metadata modeling, and accessible tools for creators and developers.
 
 Core strengths:
 
@@ -44,9 +44,9 @@ Core strengths:
 - Dev practices: robust test suites (pytest), type-checking (mypy), linting (ruff), CI/CD, Docker, GitFlow
 - Product: API design, metadata systems, containerised deployments, and user-centered products
 
-Notable work: I founded the BehindTheMusicTree ecosystem including AudioMeta Python (unified audio metadata), GrowTheMusicTree (genre classification), TheMusicTreeAPI (Django REST API), and HearTheMusicTree (cloud library manager). I also collaborate on open-source projects and programs that emphasize sustainability, reproducibility, and community-driven curation.
+Notable work: I founded the [BehindTheMusicTree](https://github.com/behindthemusictree) ecosystem including [AudioMeta Python](https://github.com/BehindTheMusicTree/audiometa) (unified audio metadata) 🎶, [GrowTheMusicTree](https://github.com/BehindTheMusicTree/grow-the-music-tree) (genre classification) 🌳, [TheMusicTreeAPI](https://github.com/behindthemusictree) (Django REST API) 🔌, and HearTheMusicTree (cloud library manager) 🎧. I also collaborate on open-source projects and programs that emphasize sustainability 🌍, reproducibility, and community-driven curation.
 
-I’m driven by real-world impact—building tools that are well-tested, documented, and ready for production. I’m open to collaborations, sponsorship, and opportunities that align with music culture, sustainability, and accessible software.
+I’m driven by real-world impact—building tools that are well-tested, documented, and ready for production ✅. I’m open to collaborations, sponsorship, and opportunities that align with music culture, sustainability, and accessible software 🤝.
 
 ## 🚀 Featured Projects
 
