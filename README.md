@@ -44,7 +44,7 @@ Core strengths:
 - Dev practices: robust test suites (pytest), type-checking (mypy), linting (ruff), CI/CD, Docker, GitFlow
 - Product: API design, metadata systems, containerised deployments, and user-centered products
 
-Notable work: I founded the [BehindTheMusicTree](https://github.com/behindthemusictree) ecosystem including [AudioMeta Python](https://github.com/BehindTheMusicTree/audiometa) (unified audio metadata) 🎶, [GrowTheMusicTree](https://github.com/BehindTheMusicTree/grow-the-music-tree) (genre classification) 🌳, [TheMusicTreeAPI](https://github.com/behindthemusictree) (Django REST API) 🔌, and HearTheMusicTree (cloud library manager) 🎧. I also collaborate on open-source projects and programs that emphasize sustainability 🌍, reproducibility, and community-driven curation.
+Notable work: I founded the [BehindTheMusicTree](https://github.com/behindthemusictree) ecosystem including [AudioMeta Python](https://github.com/BehindTheMusicTree/audiometa) (unified audio metadata) 🎶, [GrowTheMusicTree](https://github.com/BehindTheMusicTree/grow-the-music-tree) (crowd sourced genre classification) 🌳, [TheMusicTreeAPI](https://github.com/behindthemusictree) (Django REST API) 🔌, and HearTheMusicTree (cloud library manager) 🎧. I also collaborate on open-source projects and programs that emphasize sustainability 🌍, reproducibility, and community-driven curation.
 
 I’m driven by real-world impact—building tools that are well-tested, documented, and ready for production ✅. I’m open to collaborations, sponsorship, and opportunities that align with music culture, sustainability, and accessible software 🤝.
 
@@ -57,7 +57,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 **Projects:**
 
 - 🎵 [**AudioMeta Python**](https://github.com/BehindTheMusicTree/audiometa) - Unified Python library for reading and writing audio metadata across multiple formats
-- 🌳 [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree) - Community-driven platform for building the definitive interactive map of global music genres
+- 🌳 [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree) - Crowd-sourced platform for building the definitive interactive map of global music genres
 - 🔌 **TheMusicTreeAPI** - RESTful API providing access to genre hierarchy, metadata, and intelligent genre detection
 - 🎧 **HearTheMusicTree** - Cloud-based music library manager with smart playlists and cross-platform sync
 
@@ -114,7 +114,7 @@ print(f"Title: {metadata.get(UnifiedMetadataKey.TITLE)}")
 
 At the core of **BehindTheMusicTree** lies [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree), a groundbreaking platform focused on **building the definitive, interactive map of global music genres**. This ambitious project aims to become the **ultimate reference** for understanding music genres—past, present, and future—by constructing an ever-evolving, tree-shaped framework that organizes genres, subgenres, and microgenres based on their musical characteristics, historical context, and cultural relevance.
 
-By continuously evolving through **community-driven curation**, expert input, and advanced tools, this platform offers the most comprehensive and dynamic structure for exploring music genres. The goal is to create a shared, credible, and universally accessible reference that helps anyone—from casual listeners to professionals—navigate and understand the world of music.
+By continuously evolving through **crowd-sourced curation**, expert input, and advanced tools, this platform offers the most comprehensive and dynamic structure for exploring music genres. The goal is to create a shared, credible, and universally accessible reference that helps anyone—from casual listeners to professionals—navigate and understand the world of music.
 
 **Key features:**
 
