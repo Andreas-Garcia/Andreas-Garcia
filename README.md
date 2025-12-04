@@ -339,6 +339,20 @@ I believe open-source software should be:
 
 ## 🤝 Contributing & Collaboration
 
+## 📝 Recent Activity
+
+<!--START_SECTION:activity-->
+<!--END_SECTION:activity-->
+
+## 🏆 GitHub Achievements
+
+<!-- GitHub Trophies service is currently unavailable (503 error) -->
+<!-- <div align="center">
+
+  ![GitHub Trophies](https://github-profile-trophy.vercel.app/?username=Andreas-Garcia&theme=radical)
+
+</div> -->
+
 I **love** collaborating with the community! Contributions make projects better for everyone.
 
 ### How You Can Contribute
