@@ -44,7 +44,9 @@ Core strengths:
 - Dev practices: robust test suites (pytest), type-checking (mypy), linting (ruff), CI/CD, Docker, GitFlow — Adheres to Robert C. Martin's "Clean Code" principles
 - Product: API design, metadata systems, containerised deployments, and user-centered products
 
-Notable work: I founded the [BehindTheMusicTree](https://github.com/behindthemusictree) ecosystem including [AudioMeta Python](https://github.com/BehindTheMusicTree/audiometa) (unified audio metadata manager) 🎶, [GrowTheMusicTree](https://github.com/BehindTheMusicTree/grow-the-music-tree) (crowd sourced genre classification) 🌳, [TheMusicTreeAPI](https://github.com/behindthemusictree) (Django REST API) 🔌, and HearTheMusicTree (cloud library manager) 🎧. I also collaborate on open-source projects and programs (e.g., [OpenSILEX](https://github.com/OpenSILEX/opensilex)) that emphasize sustainability 🌍, reproducibility, and community-driven curation.
+I founded the [BehindTheMusicTree](https://github.com/behindthemusictree) ecosystem including [AudioMeta Python](https://github.com/BehindTheMusicTree/audiometa) (unified audio metadata manager, 5000+ downloads) 🎶, [GrowTheMusicTree](https://github.com/BehindTheMusicTree/grow-the-music-tree) (crowd sourced genre classification) 🌳, [TheMusicTreeAPI](https://github.com/behindthemusictree) (Django REST API) 🔌, and HearTheMusicTree (cloud library manager) 🎧.
+
+I also collaborate on open-source projects and programs (e.g., [OpenSILEX](https://github.com/OpenSILEX/opensilex)) that emphasize sustainability 🌍, reproducibility, and community-driven curation.
 
 I’m driven by real-world impact—building tools that are well-tested, documented, and ready for production ✅. I’m open to collaborations, sponsorship, and opportunities that align with music culture, sustainability, and accessible software 🤝.
 
@@ -228,7 +230,7 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 
 - Defined the vision, mission, and strategic direction of the company to guide product development
 - Participated in a 3-month entrepreneurship program by La Ruche, conducting market research and creating personas
-- Developed [**AudioMeta Python**](https://github.com/BehindTheMusicTree/audiometa), a production-ready open-source library for unified audio metadata management across multiple formats ([ID3v1, ID3v2, Vorbis, RIFF](https://github.com/BehindTheMusicTree/audiometa)), with 1000+ tests and comprehensive documentation
+- Developed [**AudioMeta Python**](https://github.com/BehindTheMusicTree/audiometa), a production-ready open-source library for unified audio metadata management across multiple formats ([ID3v1, ID3v2, Vorbis, RIFF](https://github.com/BehindTheMusicTree/audiometa)), with 1500+ tests and comprehensive documentation
 - Developed [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree), a collaborative music genre reference platform powered by community contributions (JavaScript, Next.js, TypeScript)
 - Created **TheMusicTreeAPI**, a RESTful Django API in Python with PostgreSQL for genre classification and metadata integration
 - Integrated external APIs (Spotify, MusicBrainz) into **TheMusicTreeAPI** to enrich metadata and improve user experience
@@ -319,7 +321,7 @@ I'm passionate about open-source development and believe in building tools that 
 ### 🎯 Active Projects
 
 - **[BehindTheMusicTree Ecosystem](https://github.com/behindthemusictree)** - Founder & Lead Developer
-  - [**AudioMeta Python**](https://github.com/BehindTheMusicTree/audiometa): Foundational metadata library - Production-ready with 1000+ tests, comprehensive documentation, active maintenance
+  - [**AudioMeta Python**](https://github.com/BehindTheMusicTree/audiometa): Foundational metadata library - Production-ready with 1500+ tests, comprehensive documentation, active maintenance
   - [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree): Community-driven genre classification platform (coming soon)
   - **TheMusicTreeAPI**: API for developers and researchers (coming soon)
   - **HearTheMusicTree**: Cloud-based music library manager (coming soon)

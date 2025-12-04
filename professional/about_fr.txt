@@ -11,7 +11,7 @@ Je suis un développeur full-stack passionné par la création d'outils et plate
 J'ai développé des outils, bibliothèques, plateformes et services dans différents contextes :
 
 - **BehindTheMusicTree** (Fondateur & Lead Developer) :
-  - **AudioMeta Python** : bibliothèque métadonnées audio, 1000+ tests, 3500+ téléchargements
+  - **AudioMeta Python** : bibliothèque métadonnées audio, 1500+ tests, 5000+ téléchargements
   - **GrowTheMusicTree** : plateforme communautaire de classification de genres musicaux (Next.js, TypeScript, React)
   - **TheMusicTreeAPI** : API REST pour l'accès à la hiérarchie de genres et métadonnées (Django REST Framework, PostgreSQL)
   - **HearTheMusicTree** : gestionnaire bibliothèque musicale cloud
