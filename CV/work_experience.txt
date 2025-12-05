@@ -39,117 +39,135 @@ Développeur Full-Stack — Projets personnels / Freelance (2016 – 2018)
 BACKEND VERSION (EN)
 1st Experience
 EN:
-
-EN:
+Backend Developer — HearTheMusicTree (2021 – 2022) — https://hear.themusictree.example.com/
 - Built search and aggregation endpoints; optimized database indices and query performance for large taxonomies.
 - Coordinated with data engineers to align ETL pipeline outputs with API expectations.
 
 FR:
+Développeur Backend — HearTheMusicTree (2021 – 2022) — https://hear.themusictree.example.com/
 - Conception d'endpoints de recherche et d'agrégation; optimisation des index de base de données et des performances de requêtes.
 - Coordination avec les ingénieurs data pour aligner les sorties des pipelines ETL avec les attentes de l'API.
 
 2nd Experience
 EN:
+Backend Engineer — AudioMeta Python / Projects (2019 – 2021) — https://github.com/user/audiometadata
 - Implemented extraction tools and metadata normalization routines for audio files; wrote parsers and format converters.
 - Added automated tests and standardized data schemas for reproducible extraction.
 
 FR:
+Ingénieur Backend — AudioMeta Python / Projets (2019 – 2021) — https://github.com/user/audiometadata
 - Création d'outils d'extraction et routines de normalisation de métadonnées pour fichiers audio; développement de parseurs et convertisseurs.
 - Ajout de tests automatisés et schémas de données standardisés pour des extractions reproductibles.
 
 3rd Experience
 EN:
+Backend Developer — INRAE / OpenSILEX (Oct 2018 – Dec 2019) — https://www.inrae.fr/
 - Implemented DTOs and backend services to support data ingestion and transformation into RDF using standard vocabularies.
 - Introduced logging and unit tests to ensure service stability and easier debugging for dev teams.
 
 FR:
+Développeur Backend — INRAE / OpenSILEX (Oct 2018 – Dec 2019) — https://www.inrae.fr/
 - Implémentation de DTOs et services backend pour l'ingestion et la transformation des données en RDF en utilisant des vocabulaires standards.
 - Ajout de logs et de tests unitaires pour assurer la stabilité et faciliter le débogage.
 
-4th Experience
-EN:
+-4th Experience
+-EN:
+Backend Developer — Personal Projects (2016 – 2018)
 - Built REST APIs and background job workers to handle ETL tasks and asynchronous processing.
 - Instrumented systems with logs and metrics to monitor pipeline health and performance.
 
 FR:
+Développeur Backend — Projets personnels (2016 – 2018)
 - Conception d'APIs REST et worker jobs pour gérer les tâches ETL et le traitement asynchrone.
 - Instrumentation des systèmes avec logs et metrics pour surveiller la santé et les performances des pipelines.
 
 ERP/BI VERSION (EN)
-1st Experience
-EN:
-
-EN:
+-1st Experience
+-EN:
+ERP/BI Engineer — INRAE / OpenSILEX (Oct 2018 – Dec 2019)
 - Designed ETL components to align external datasets with BI dashboards and to centralize insights.
 - Built SQL views and materialized aggregations to support fast dashboarding.
 
 FR:
+Ingénieur ERP/BI — INRAE / OpenSILEX (Oct 2018 – Dec 2019)
 - Conception de composants ETL pour aligner des datasets externes aux tableaux de bord BI et centraliser les insights.
 - Création de vues SQL et agrégations matérialisées pour accélérer les dashboards.
 
-2nd Experience
-EN:
+-2nd Experience
+-EN:
+ERP/BI Developer — Atos / Client Project (2014 – 2016) — https://atos.net/
 - Implemented custom reports and dashboards; integrated data sources into centralized BI views for stakeholders.
 - Collaborated with domain experts to transform raw data into actionable KPIs.
 
 FR:
+Développeur ERP/BI — Atos / Client (2014 – 2016) — https://atos.net/
 - Réalisation de rapports et tableaux de bord personnalisés; intégration de sources de données dans des vues BI centralisées.
 - Collaboration avec des experts métier pour convertir des données brutes en KPIs exploitables.
 
-3rd Experience
-EN:
+-3rd Experience
+-EN:
+BI Analyst — Small Business Projects (2014 – 2016)
 - Built dashboards and provided data-driven recommendations to stakeholders to inform business decisions.
 - Converted unstructured logs and CSVs into clean datasets for reporting.
 
 FR:
+Analyste BI — Petits projets (2014 – 2016)
 - Création de dashboards et recommandations basées sur les données pour aider la prise de décisions métier.
 - Conversion de logs et CSV non structurés en datasets propres pour reporting.
 
-4th Experience
-EN:
+-4th Experience
+-EN:
+ERP Developer — Freelance (2012 – 2014)
 - Integrated third-party ERPs and performed data migrations to consolidate financial reports.
 - Documented the integration steps and created repeatable migration procedures for future rollouts.
 
 FR:
+Développeur ERP — Freelance (2012 – 2014)
 - Intégration d'ERPs tiers et migrations de données pour consolider les rapports financiers.
 - Documentation des étapes d'intégration et création de procédures de migration répétables.
 
 DATA/ETL VERSION (EN)
-1st Experience
-EN:
-
-EN:
+-1st Experience
+-EN:
+Data Engineer — TheMusicTreeAPI / GrowTheMusicTree (2020 – 2022)
 - Built mapping and normalization scripts to standardize genre labels and metadata across different inputs.
 - Designed batch and real-time ingestion strategies that improved data quality and consistency across services.
 
 FR:
+Ingénieur Data — TheMusicTreeAPI / GrowTheMusicTree (2020 – 2022)
 - Développement de scripts de mapping et normalisation pour uniformiser les labels de genres et les métadonnées à travers différentes sources.
 - Conception de stratégies d'ingestion batch et temps réel pour améliorer la qualité et la cohérence des données.
 
-2nd Experience
-EN:
+-2nd Experience
+-EN:
+Data Engineer — INRAE / OpenSILEX (Oct 2018 – Dec 2019)
 - Developed ETL pipelines to ingest sensor and experimental datasets, normalize them, and export into RDF using standardized vocabularies.
 - Implemented tests and monitoring to validate data quality and ensure pipeline reliability.
 
 FR:
+Ingénieur Data — INRAE / OpenSILEX (Oct 2018 – Dec 2019)
 - Développement de pipelines ETL pour ingérer des données capteurs et expérimentales, normaliser et exporter en RDF avec vocabulaires standard.
 - Mise en place de tests et monitoring pour valider la qualité des données et assurer la fiabilité du pipeline.
 
-3rd Experience
-EN:
+-3rd Experience
+-EN:
+Data Engineer — Freelance / Personal Projects (2016 – 2019)
 - Built data pipelines to extract, normalize, and load datasets for analytics and dashboards.
 - Implemented unit tests and data validation steps to maintain quality.
 
 FR:
+Ingénieur Data — Freelance / Projets personnels (2016 – 2019)
 - Création de pipelines de données pour extraire, normaliser et charger des datasets pour l'analytics et les dashboards.
 - Mise en place de tests unitaires et étapes de validation de données pour maintenir la qualité.
 
 4th Experience
 EN:
+Data/ETL Developer — Contract Work (2014 – 2016)
 - Designed migration scripts and ETL jobs to consolidate multiple client datasets into reporting schemas.
 - Performed schema transformations and deduplication to reduce noise and improve downstream analytics.
 
 FR:
+Développeur Data/ETL — Missions (2014 – 2016)
 - Conception de scripts de migration et jobs ETL pour consolider plusieurs datasets clients dans des schémas de reporting.
 - Transformation de schémas et déduplication pour réduire le bruit et améliorer l'analytics en aval.
 
@@ -157,6 +175,8 @@ FR:
 Full-Stack Developer Variant
 
 EN:
+EN:
+Founder & Lead Developer — BehindTheMusicTree (Dec. 2022 – Present)
 - Built and maintained a full-stack ecosystem (Next.js + Django REST + PostgreSQL) with a focus on metadata-driven features and scalable services.
 - Developed AudioMeta Python (metadata library) and integrated it into product flows; established CI/CD and Docker-based deployments.
 - Led feature design, technical vision, and coordinated community-driven contributions.
@@ -167,6 +187,7 @@ FR:
 - Direction technique, conception de fonctionnalités et coordination des contributions communautaires.
 
 EN:
+Product Lead — HearTheMusicTree (part of BehindTheMusicTree) (2023)
 - Implemented a cloud-based music library manager, smart playlists, and cross-platform sync; aligned front- and back-end features to product needs.
 - Emphasized UX, performance and maintainability while shipping features to production.
 
@@ -175,6 +196,7 @@ FR:
 - Accent sur l’UX, la performance et la maintenabilité lors du déploiement en production.
 
 EN:
+Consultant — Major Music Events Company (Dec. 2024 – Jan. 2025)
 - Built integrations and classification tools to support venue/artist matching; refined genre- and metadata-driven features for matching logic.
 - Contributed to data normalization and front-end integration for a matching product.
 
@@ -183,6 +205,7 @@ FR:
 - Contribution à la normalisation de données et à l’intégration front-end du produit de matching.
 
 EN:
+Developer — Sopra Steria (Nov. 2014 – Apr. 2015)
 - Delivered maintenance and features for a web portal used by railway clients, focusing on robust front-end and API interactions.
 - Collaborated with cross-functional teams to maintain standards and deliver stable releases.
 
@@ -194,6 +217,8 @@ FR:
 Backend Developer Variant
 
 EN:
+EN:
+Backend Lead — TheMusicTreeAPI (Dec. 2022 – Present)
 - Designed and implemented RESTful APIs with Django REST Framework and PostgreSQL for classification and metadata services.
 - Implemented DTO patterns and event-driven features for background processing and integration with external services.
 
@@ -202,6 +227,7 @@ FR:
 - Mise en place de patterns DTO et de traitements événementiels pour le traitement asynchrone et l’intégration de services externes.
 
 EN:
+Research Engineer — INRAE (Oct. 2018 – Dec. 2019) — Montpellier, France
 - Built backend services for an agrivoltaism research project; contributed to an open-source FAIR data information system.
 - Implemented REST endpoints and event handlers in Java, handled API-based integrations.
 
@@ -210,6 +236,7 @@ FR:
 - Implémentation d’endpoints REST et de gestionnaires d’événements en Java ; intégrations via API.
 
 EN:
+BI/ERP Developer — Cleversys (Apr. 2015 – Oct. 2017)
 - Delivered backend integrations and ETL interfaces for ERP systems and reporting tools using SQL and ETL best practices.
 - Implemented robust data pipelines and API endpoints supporting reporting and analytics.
 
@@ -218,6 +245,7 @@ FR:
 - Mise en place de pipelines de données robustes et de endpoints API pour le reporting et l’analyse.
 
 EN:
+Developer — Sogeti High Tech or similar (Apr. 2014 – Oct. 2014)
 - Engaged in backend development and integration tasks for web portals (Umbraco, PHP or C# based stacks).
 - Ensured maintainable backend code and coordinated with frontend teams.
 
@@ -229,14 +257,16 @@ FR:
 ERP / BI Variant
 
 EN:
+BI/ERP Consultant — Cleversys (Apr. 2015 – Oct. 2017)
 - Implemented 62 accounting interfaces and managed ETL flows and SSIS packages for high-value clients.
 - Built reporting dashboards and automated monthly data transfers for financial reconciliation.
 
 FR:
-- Implémentation de 62 interfaces comptables et gestion des flux ETL/SSIS pour des clients importants.
-- Création de tableaux de bord de reporting et automatisation des transferts de données pour la réconciliation financière.
+-- Implémentation de 62 interfaces comptables et gestion des flux ETL/SSIS pour des clients importants.
+-- Création de tableaux de bord de reporting et automatisation des transferts de données pour la réconciliation financière.
 
 EN:
+Consultant — BehindTheMusicTree / TheMusicTreeAPI (Dec. 2022 – Present)
 - Designed data models and business logic that supports product features and reporting needs for a music catalog and classification product.
 - Implemented ETL patterns to keep catalogs and analytics synchronized and reproducible.
 
@@ -245,6 +275,7 @@ FR:
 - Mise en place de patterns ETL pour synchroniser et rendre reproductibles les catalogues et analyses.
 
 EN:
+Developer / Consultant — Major Music Events Company (Dec. 2024 – Jan. 2025)
 - Designed classification and data normalization flows (1300+ genres → 15/120 taxonomy) to inform matching engines and business dashboards.
 - Ensured traceability and auditability for genre mappings and business rules used by downstream analytics.
 
@@ -253,6 +284,7 @@ FR:
 - Garantie de la traçabilité et de l’auditabilité des mappings de genres et des règles métier utilisées par l’analyse en aval.
 
 EN:
+Developer — Sopra Steria / Other (Nov. 2014 – Apr. 2015)
 - Contributed to system interfaces and data handling for enterprise systems, ensuring correct transactions and logging.
 - Focused on maintainable integrations with ERP and external services.
 
@@ -264,6 +296,7 @@ FR:
 Data / ETL Variant
 
 EN:
+Data Engineer — BehindTheMusicTree / GrowTheMusicTree (Dec. 2022 – Present)
 - Built processes to normalize and aggregate genre and metadata at scale; cleaned and standardized disparate labels from multiple sources.
 - Implemented reproducible pipelines and data contracts for product analytics and classification features.
 
@@ -272,6 +305,7 @@ FR:
 - Déploiement de pipelines reproductibles et de contrats de données pour l’analyse produit et les fonctionnalités de classification.
 
 EN:
+Research Engineer — INRAE (Oct. 2018 – Dec. 2019)
 - Handled RDF-based graph data (RDF4J), improved ontologies, and applied FAIR principles to research datasets.
 - Built ETL processes and REST services to expose and manage datasets in an open, reproducible manner.
 
@@ -280,6 +314,7 @@ FR:
 - Développement de processus ETL et de services REST pour exposer et gérer des jeux de données de façon ouverte et reproductible.
 
 EN:
+BI/ETL Developer — Cleversys (Apr. 2015 – Oct. 2017)
 - Designed and maintained ETL pipelines, supported reporting needs and ensured data quality for financial systems.
 - Coordinated with analysts to align pipelines with business rules and dashboards.
 
@@ -288,6 +323,7 @@ FR:
 - Coordination avec les analystes pour aligner les pipelines sur les règles métier et les tableaux de bord.
 
 EN:
+Consultant — Major Music Events Company (Dec. 2024 – Jan. 2025)
 - Normalised 1,300+ raw genre labels into a curated taxonomy to power matching algorithms and analytics. This included mapping, deduplication, and naming standardization steps.
 - Documented transformations and assured reproducibility for future updates.
 
