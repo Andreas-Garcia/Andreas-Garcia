@@ -44,7 +44,7 @@ Core strengths:
 - Dev practices: robust test suites (pytest), type-checking (mypy), linting (ruff), CI/CD, Docker, GitFlow — Adheres to Robert C. Martin's "Clean Code" principles
 - Product: API design, metadata systems, containerised deployments, and user-centered products
 
-I founded the [BehindTheMusicTree](https://github.com/behindthemusictree) ecosystem including [AudioMeta Python](https://github.com/BehindTheMusicTree/audiometa) (unified audio metadata manager, 5000+ downloads) 🎶, [GrowTheMusicTree](https://github.com/BehindTheMusicTree/grow-the-music-tree) (crowd sourced genre classification) 🌳, [TheMusicTreeAPI](https://github.com/behindthemusictree) (Django REST API) 🔌, and HearTheMusicTree (cloud library manager) 🎧.
+I founded the [BehindTheMusicTree](https://github.com/behindthemusictree) ecosystem including [AudioMeta Python](https://github.com/BehindTheMusicTree/audiometa) (unified audio metadata manager, 5000+ downloads) 🎶, [GrowTheMusicTree](https://github.com/BehindTheMusicTree/grow-the-music-tree) (crowd sourced genre classification) 🌳, [TheMusicTreeAPI](https://github.com/BehindTheMusicTree/the-music-tree-api) (Django REST API) 🔌, and HearTheMusicTree (cloud library manager) 🎧.
 
 I also collaborate on open-source projects and programs (e.g., [OpenSILEX](https://github.com/OpenSILEX/opensilex)) that emphasize sustainability 🌍, reproducibility, and community-driven curation.
 
@@ -328,7 +328,7 @@ I'm passionate about open-source development and believe in building tools that 
 - **[BehindTheMusicTree Ecosystem](https://github.com/behindthemusictree)** - Founder & Lead Developer
   - [**AudioMeta Python**](https://github.com/BehindTheMusicTree/audiometa): Foundational metadata library - Production-ready with 1500+ tests, comprehensive documentation, active maintenance
   - [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree): Community-driven genre classification platform (coming soon)
-  - **TheMusicTreeAPI**: API for developers and researchers (coming soon)
+  - [**TheMusicTreeAPI**](https://github.com/BehindTheMusicTree/the-music-tree-api): API for developers and researchers (coming soon)
   - **HearTheMusicTree**: Cloud-based music library manager (coming soon)
 
 ### 🌿 Contributions to Other Projects
