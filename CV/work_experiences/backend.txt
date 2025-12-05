@@ -1,0 +1,44 @@
+BACKEND VERSION
+1st Experience
+EN:
+Backend Developer — HearTheMusicTree (2021 – 2022) — https://hear.themusictree.example.com/
+- Built search and aggregation endpoints; optimized database indices and query performance for large taxonomies.
+- Coordinated with data engineers to align ETL pipeline outputs with API expectations.
+
+FR:
+Développeur Backend — HearTheMusicTree (2021 – 2022) — https://hear.themusictree.example.com/
+- Conception d'endpoints de recherche et d'agrégation; optimisation des index de base de données et des performances de requêtes.
+- Coordination avec les ingénieurs data pour aligner les sorties des pipelines ETL avec les attentes de l'API.
+
+2nd Experience
+EN:
+Backend Engineer — AudioMeta Python / Projects (2019 – 2021) — https://github.com/user/audiometadata
+- Implemented extraction tools and metadata normalization routines for audio files; wrote parsers and format converters.
+- Added automated tests and standardized data schemas for reproducible extraction.
+
+FR:
+Ingénieur Backend — AudioMeta Python / Projets (2019 – 2021) — https://github.com/user/audiometadata
+- Création d'outils d'extraction et routines de normalisation de métadonnées pour fichiers audio; développement de parseurs et convertisseurs.
+- Ajout de tests automatisés et schémas de données standardisés pour des extractions reproductibles.
+
+3rd Experience
+EN:
+Backend Developer — INRAE / OpenSILEX (Oct 2018 – Dec 2019) — https://www.inrae.fr/
+- Implemented DTOs and backend services to support data ingestion and transformation into RDF using standard vocabularies.
+- Introduced logging and unit tests to ensure service stability and easier debugging for dev teams.
+
+FR:
+Développeur Backend — INRAE / OpenSILEX (Oct 2018 – Dec 2019) — https://www.inrae.fr/
+- Implémentation de DTOs et services backend pour l'ingestion et la transformation des données en RDF en utilisant des vocabulaires standards.
+- Ajout de logs et de tests unitaires pour assurer la stabilité et faciliter le débogage.
+
+4th Experience
+EN:
+Backend Developer — Personal Projects (2016 – 2018)
+- Built REST APIs and background job workers to handle ETL tasks and asynchronous processing.
+- Instrumented systems with logs and metrics to monitor pipeline health and performance.
+
+FR:
+Développeur Backend — Projets personnels (2016 – 2018)
+- Conception d'APIs REST et worker jobs pour gérer les tâches ETL et le traitement asynchrone.
+- Instrumentation des systèmes avec logs et metrics pour surveiller la santé et les performances des pipelines.

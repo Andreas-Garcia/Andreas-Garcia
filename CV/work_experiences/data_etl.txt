@@ -1,0 +1,44 @@
+DATA/ETL VERSION
+1st Experience
+EN:
+Data Engineer — TheMusicTreeAPI / GrowTheMusicTree (2020 – 2022)
+- Built mapping and normalization scripts to standardize genre labels and metadata across different inputs.
+- Designed batch and real-time ingestion strategies that improved data quality and consistency across services.
+
+FR:
+Ingénieur Data — TheMusicTreeAPI / GrowTheMusicTree (2020 – 2022)
+- Développement de scripts de mapping et normalisation pour uniformiser les labels de genres et les métadonnées à travers différentes sources.
+- Conception de stratégies d'ingestion batch et temps réel pour améliorer la qualité et la cohérence des données.
+
+2nd Experience
+EN:
+Data Engineer — INRAE / OpenSILEX (Oct 2018 – Dec 2019)
+- Developed ETL pipelines to ingest sensor and experimental datasets, normalize them, and export into RDF using standardized vocabularies.
+- Implemented tests and monitoring to validate data quality and ensure pipeline reliability.
+
+FR:
+Ingénieur Data — INRAE / OpenSILEX (Oct 2018 – Dec 2019)
+- Développement de pipelines ETL pour ingérer des données capteurs et expérimentales, normaliser et exporter en RDF avec vocabulaires standard.
+- Mise en place de tests et monitoring pour valider la qualité des données et assurer la fiabilité du pipeline.
+
+3rd Experience
+EN:
+Data Engineer — Freelance / Personal Projects (2016 – 2019)
+- Built data pipelines to extract, normalize, and load datasets for analytics and dashboards.
+- Implemented unit tests and data validation steps to maintain quality.
+
+FR:
+Ingénieur Data — Freelance / Projets personnels (2016 – 2019)
+- Création de pipelines de données pour extraire, normaliser et charger des datasets pour l'analytics et les dashboards.
+- Mise en place de tests unitaires et étapes de validation de données pour maintenir la qualité.
+
+4th Experience
+EN:
+Data/ETL Developer — Contract Work (2014 – 2016)
+- Designed migration scripts and ETL jobs to consolidate multiple client datasets into reporting schemas.
+- Performed schema transformations and deduplication to reduce noise and improve downstream analytics.
+
+FR:
+Développeur Data/ETL — Missions (2014 – 2016)
+- Conception de scripts de migration et jobs ETL pour consolider plusieurs datasets clients dans des schémas de reporting.
+- Transformation de schémas et déduplication pour réduire le bruit et améliorer l'analytics en aval.
