@@ -230,7 +230,7 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 
 - Defined the vision, mission, and strategic direction of the company to guide product development
 - Participated in a 3-month entrepreneurship program by La Ruche, conducting market research and creating personas
-- Developed [**AudioMeta Python**](https://github.com/BehindTheMusicTree/audiometa), a production-ready open-source library for unified audio metadata management across multiple formats ([ID3v1, ID3v2, Vorbis, RIFF](https://github.com/BehindTheMusicTree/audiometa)), with 1500+ tests and comprehensive documentation
+- Developed [**AudioMeta Python**](https://github.com/BehindTheMusicTree/audiometa) ([PyPI](https://pypi.org/project/audiometa-python/)), a production-ready open-source library for unified audio metadata management across multiple formats ([ID3v1, ID3v2, Vorbis, RIFF](https://github.com/BehindTheMusicTree/audiometa)), with 1500+ tests, comprehensive documentation, and 5000+ downloads
 - Developed [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree), a collaborative music genre reference platform powered by community contributions (JavaScript, Next.js, TypeScript)
 - Created **TheMusicTreeAPI**, a RESTful Django API in Python with PostgreSQL for genre classification and metadata integration
 - Integrated external APIs (Spotify, MusicBrainz) into **TheMusicTreeAPI** to enrich metadata and improve user experience
