@@ -21,8 +21,8 @@
   - [🔌 TheMusicTreeAPI: The Music Genre API](#-themusictreeapi-the-music-genre-api)
   - [🎧 HearTheMusicTree: A Smart Cloud-Based Music Library Manager](#-hearthemusictree-a-smart-cloud-based-music-library-manager)
 - [📚 Curriculum](#-curriculum)
-  - [🛠️ Technologies & Tools](#-technologies-and-tools)
   - [🌱 My Impacts](#-my-impacts)
+  - [🛠️ Technologies & Tools](#technologies-and-tools)
   - [🎓 Education](#-education)
   - [💼 Professional Experience](#-professional-experience)
 - [📊 GitHub Stats](#-github-stats)
@@ -169,7 +169,17 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 
 ## 📚 Curriculum
 
-### 🛠️ Technologies & Tools
+### 🌱 My Impacts
+
+**🌍 Environmental Impact:** I've worked on impactful projects like agrivoltaism research at INRAE, combining agriculture and photovoltaics to combat climate change. I'm passionate about finding technical solutions to environmental challenges and contributing to open science initiatives that make research data FAIR (Findable, Accessible, Interoperable, and Reusable). My engagement extends beyond work through hands-on experiences with sustainable agriculture via WWOOFing (World Wide Opportunities on Organic Farms), where I've learned about organic farming practices and sustainable living, as well as eco-construction projects that promote environmentally responsible building methods.
+
+**🤝 Social Impact:** Through my work on open-source projects and community-driven platforms like BehindTheMusicTree, I aim to democratize access to music culture and knowledge. I've contributed to making research more accessible and collaborated on projects that serve the public good. I've worked in home care, providing direct assistance and support to individuals in need, which has given me firsthand experience with social challenges and the importance of community support. My experience also includes public service work, reflecting my commitment to social causes and contributing to the well-being of others.
+
+**🎵 Cultural Impact:** My work on music technology and metadata management contributes to preserving and organizing our global musical heritage. By building tools that help people discover, understand, and connect with diverse music cultures worldwide, I'm helping create a more inclusive and accessible cultural landscape. The BehindTheMusicTree ecosystem aims to become a definitive reference that reflects the full diversity of global music culture, empowering communities to share and celebrate their musical traditions. Beyond technology, I've co-organized a micro music festival that brought together 80+ people, creating a space for community connection and cultural exchange through live music experiences.
+
+**Languages:** 🇫🇷 French (Native) | 🇬🇧 English (Advanced) | 🇪🇸 Spanish (Advanced) | 🇩🇪 German (Basic)
+
+### Technologies and Tools
 
 #### Backend
 
@@ -204,16 +214,6 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 
 ![SCRUM](https://img.shields.io/badge/SCRUM-6DB33F?style=flat-square&logo=scrumalliance&logoColor=white)
 ![Clean Code](https://img.shields.io/badge/Clean_Code-000000?style=flat-square&logo=code&logoColor=white)
-
-### 🌱 My Impacts
-
-**🌍 Environmental Impact:** I've worked on impactful projects like agrivoltaism research at INRAE, combining agriculture and photovoltaics to combat climate change. I'm passionate about finding technical solutions to environmental challenges and contributing to open science initiatives that make research data FAIR (Findable, Accessible, Interoperable, and Reusable). My engagement extends beyond work through hands-on experiences with sustainable agriculture via WWOOFing (World Wide Opportunities on Organic Farms), where I've learned about organic farming practices and sustainable living, as well as eco-construction projects that promote environmentally responsible building methods.
-
-**🤝 Social Impact:** Through my work on open-source projects and community-driven platforms like BehindTheMusicTree, I aim to democratize access to music culture and knowledge. I've contributed to making research more accessible and collaborated on projects that serve the public good. I've worked in home care, providing direct assistance and support to individuals in need, which has given me firsthand experience with social challenges and the importance of community support. My experience also includes public service work, reflecting my commitment to social causes and contributing to the well-being of others.
-
-**🎵 Cultural Impact:** My work on music technology and metadata management contributes to preserving and organizing our global musical heritage. By building tools that help people discover, understand, and connect with diverse music cultures worldwide, I'm helping create a more inclusive and accessible cultural landscape. The BehindTheMusicTree ecosystem aims to become a definitive reference that reflects the full diversity of global music culture, empowering communities to share and celebrate their musical traditions. Beyond technology, I've co-organized a micro music festival that brought together 80+ people, creating a space for community connection and cultural exchange through live music experiences.
-
-**Languages:** 🇫🇷 French (Native) | 🇬🇧 English (Advanced) | 🇪🇸 Spanish (Advanced) | 🇩🇪 German (Basic)
 
 ### 🎓 Education
 
