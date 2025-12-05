@@ -42,7 +42,7 @@ Core strengths:
 
 - Technical: Python (Django REST Framework), Java (Spring Boot), Next.js, TypeScript, React, PostgreSQL
 - Dev practices: robust test suites (pytest), type-checking (mypy), linting (ruff), CI/CD, Docker, GitFlow — Adheres to Robert C. Martin's "Clean Code" principles
-- Product: API design, metadata systems, containerised deployments, and user-centered products
+- Product: API design, metadata systems, containerised deployments (Docker, Docker Hub), and user-centered products
 
 I founded the [BehindTheMusicTree](https://github.com/behindthemusictree) ecosystem including [AudioMeta Python](https://github.com/BehindTheMusicTree/audiometa) (unified audio metadata manager, 5000+ downloads) 🎶, [GrowTheMusicTree](https://github.com/BehindTheMusicTree/grow-the-music-tree) (crowd sourced genre classification) 🌳, [TheMusicTreeAPI](https://github.com/BehindTheMusicTree/the-music-tree-api) (Django REST API) 🔌, and HearTheMusicTree (cloud library manager) 🎧.
 
@@ -202,6 +202,7 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
 ![GitFlow](https://img.shields.io/badge/GitFlow-F05032?style=flat-square&logo=git&logoColor=white)
+![Light Git Flow](https://img.shields.io/badge/Light%20Git%20Flow-6DB33F?style=flat-square&logo=git&logoColor=white)
 ![PyPI](https://img.shields.io/badge/PyPI-3775A9?style=flat-square&logo=pypi&logoColor=white)
 
 #### Testing & Quality
@@ -243,6 +244,7 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 
 - Built a collaborative platform for music genre classification using Next.js, TypeScript, and React
 - Designed interactive genre tree visualization enabling users to explore and navigate music genres
+- Implemented community contribution system for submitting, validating, and curating genre data
 - Integrated with TheMusicTreeAPI and Spotify for real-time genre data, intelligent recommendations, and music discovery
 - Deployed with Docker containerization and automated CI/CD pipelines using GitHub Actions
 
@@ -258,9 +260,8 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 
 - Developed cloud-based music library manager using Django REST Framework and PostgreSQL
 - Implemented smart playlist generation algorithms based on genre intelligence and user preferences
-- Added cross-platform synchronization capabilities for seamless access across devices
-- Integrated AudioMeta Python for robust audio metadata processing and format support
-- Built secure cloud storage solutions with Docker containerization and GitFlow version management
+- Implemented microservices architecture with audio fingerprinting via Dockerized Flask API for automatic track
+- Integrated MusicBrainz API for metadata enrichment and accurate tagging
 - Automated CI/CD pipelines with integration testing to ensure deployment reliability
 
 ### Major Music Events Company - Consultant
