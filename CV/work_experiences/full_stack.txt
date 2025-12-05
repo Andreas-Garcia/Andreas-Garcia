@@ -27,13 +27,13 @@ Développeur Full-Stack — TheMusicTreeAPI (2021 – 2022) — [GitHub Icon](ht
 
 3rd Experience
 EN:
-Full-Stack Developer — OpenSILEX / INRAE (Oct 2018 – Dec 2019, Montpellier, France) — https://www.inrae.fr/
+Full-Stack Developer — OpenSILEX / INRAE (Oct 2018 – Dec 2019, Montpellier, France) — https://github.com/OpenSILEX/opensilex
 - Designed and developed API endpoints and integrated front-end components to add environmental data visualizations.
 - Improved data ingestion pipelines to standardize experimental data processing.
 - Implemented tests and documented service contracts to enable repeatable deployments and clearer integration with partner systems.
 
 FR:
-Développeur Full-Stack — OpenSILEX / INRAE (Oct 2018 – Dec 2019, Montpellier, France) — https://www.inrae.fr/
+Développeur Full-Stack — OpenSILEX / INRAE (Oct 2018 – Dec 2019, Montpellier, France) — https://github.com/OpenSILEX/opensilex
 - Conception et développement d'API et d'interfaces pour visualiser des données environnementales.
 - Amélioration des pipelines d'ingestion pour standardiser le traitement des données expérimentales.
 - Mise en place de tests et documentation des contrats de service pour des déploiements répétables et l'intégration avec des systèmes partenaires.

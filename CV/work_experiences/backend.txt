@@ -15,12 +15,12 @@ Ingénieur Backend — AudioMeta Python / Projets (2019 – 2021) — [GitHub Ic
 
 3rd Experience
 EN:
-Backend Developer — INRAE / OpenSILEX (Oct 2018 – Dec 2019) — https://www.inrae.fr/
+Backend Developer — INRAE / OpenSILEX (Oct 2018 – Dec 2019) — https://github.com/OpenSILEX/opensilex
 - Implemented DTOs and backend services to support data ingestion and transformation into RDF using standard vocabularies.
 - Introduced logging and unit tests to ensure service stability and easier debugging for dev teams.
 
 FR:
-Développeur Backend — INRAE / OpenSILEX (Oct 2018 – Dec 2019) — https://www.inrae.fr/
+Développeur Backend — INRAE / OpenSILEX (Oct 2018 – Dec 2019) — https://github.com/OpenSILEX/opensilex
 - Implémentation de DTOs et services backend pour l'ingestion et la transformation des données en RDF en utilisant des vocabulaires standards.
 - Ajout de logs et de tests unitaires pour assurer la stabilité et faciliter le débogage.
 
