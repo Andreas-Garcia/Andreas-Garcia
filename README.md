@@ -312,6 +312,14 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 
 - Development of iOS applications for various clients (Eurosport)
 
+### Music Micro Festival - Organizer & DJ
+
+**2021**
+
+- Organized a music micro festival that brought together 80+ people
+- DJ'd at the event, providing live music experiences
+- Managed activities to provide a themed and engaging atmosphere for attendees (treasure hunt, workshops, games, interconnections)
+
 ## 📊 GitHub Stats
 
 <div align="center">
