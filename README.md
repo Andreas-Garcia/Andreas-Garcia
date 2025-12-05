@@ -270,9 +270,9 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 **Dec. 2024 – Jan. 2025**
 
 - Organized and classified 1,300+ music genres for the company's user/concert matching tool
-  - Mapped 1,300+ raw genre labels (sourced from Soundcharts) to a scalable, curated taxonomy: 15 top-level genres and ~120 subgenres.
-  - Normalized and consolidated inconsistent labels, resolved duplicates, and standardized naming conventions to support accurate matching and classification.
-  - Combined domain expertise in music history, sonic feature analysis, and trend detection to ensure meaningful genre grouping and improve recommendation and matching precision.
+- Mapped 1,300+ raw genre labels (sourced from Soundcharts) to a scalable, curated taxonomy: 15 top-level genres and ~120 subgenres.
+- Normalized and consolidated inconsistent labels, resolved duplicates, and standardized naming conventions to support accurate matching and classification.
+- Combined domain expertise in music history, sonic feature analysis, and trend detection to ensure meaningful genre grouping and improve recommendation and matching precision.
 
 ### INRAE - Research Engineer
 
