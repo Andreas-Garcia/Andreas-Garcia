@@ -233,7 +233,7 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 - Defined the vision, mission, and strategic direction of the company to guide product development
 - Participated in a 3-month entrepreneurship program by La Ruche, conducting market research and creating personas
 
-#### [**AudioMeta Python**](https://github.com/BehindTheMusicTree/audiometa)
+#### 🎵 [**AudioMeta Python**](https://github.com/BehindTheMusicTree/audiometa)
 
 - Developed a unified Python library for reading and writing audio metadata across multiple formats (ID3v1, ID3v2, Vorbis, RIFF)
 - Implemented comprehensive test suite with 1500+ unit tests ensuring reliability and edge case coverage
@@ -241,7 +241,7 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 - Published on [PyPI](https://pypi.org/project/audiometa-python/) achieving 5000+ downloads, establishing it as a production-ready tool
 - Maintained active development with community contributions, issue tracking, and continuous improvements
 
-#### [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree)
+#### 🌳 [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree)
 
 - Built a collaborative platform for music genre classification using Next.js, TypeScript, and React
 - Designed interactive genre tree visualization enabling users to explore and navigate music genres
@@ -249,7 +249,7 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 - Integrated with TheMusicTreeAPI and Spotify for real-time genre data, intelligent recommendations, and music discovery
 - Deployed with Docker containerization and automated CI/CD pipelines using GitHub Actions
 
-#### [**TheMusicTreeAPI**](https://github.com/BehindTheMusicTree/the-music-tree-api)
+#### 🔌 [**TheMusicTreeAPI**](https://github.com/BehindTheMusicTree/the-music-tree-api)
 
 - Created RESTful Django API providing access to genre hierarchy, metadata, and intelligent genre detection
 - Developed PostgreSQL database schema optimized for efficient storage and querying of genre relationships
@@ -257,7 +257,7 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 - Implemented advanced genre detection algorithms leveraging machine learning and music analysis
 - Ensured API scalability, security, and performance through comprehensive testing and monitoring
 
-#### HearTheMusicTree
+#### 🎧 HearTheMusicTree
 
 - Developed cloud-based music library manager using Django REST Framework and PostgreSQL
 - Implemented smart playlist generation algorithms based on genre intelligence and user preferences
