@@ -13,12 +13,14 @@ Ingénieur ERP/BI — INRAE / OpenSILEX (Oct 2018 – Dec 2019)
 2nd Experience
 EN:
 ERP/BI Developer — Atos / Client Project (2014 – 2016) — https://atos.net/
-- Implemented custom reports and dashboards; integrated data sources into centralized BI views for stakeholders.
+- Implemented custom reports and dashboards for operational teams and executives.
+- Integrated multiple data sources into centralized BI views to provide a single source of truth.
 - Collaborated with domain experts to transform raw data into actionable KPIs.
 
 FR:
 Développeur ERP/BI — Atos / Client (2014 – 2016) — https://atos.net/
-- Réalisation de rapports et tableaux de bord personnalisés; intégration de sources de données dans des vues BI centralisées.
+- Réalisation de rapports et tableaux de bord personnalisés pour les équipes opérationnelles et la direction.
+- Intégration de sources de données multiples dans des vues BI centralisées pour fournir une source de vérité unique.
 - Collaboration avec des experts métier pour convertir des données brutes en KPIs exploitables.
 
 3rd Experience

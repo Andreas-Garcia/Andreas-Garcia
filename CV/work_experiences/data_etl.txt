@@ -13,12 +13,14 @@ Ingénieur Data — TheMusicTreeAPI / GrowTheMusicTree (2020 – 2022)
 2nd Experience
 EN:
 Data Engineer — INRAE / OpenSILEX (Oct 2018 – Dec 2019)
-- Developed ETL pipelines to ingest sensor and experimental datasets, normalize them, and export into RDF using standardized vocabularies.
+- Developed ETL pipelines to ingest sensor and experimental datasets and normalize them.
+- Exported normalized datasets into RDF using standardized vocabularies to support semantic integration.
 - Implemented tests and monitoring to validate data quality and ensure pipeline reliability.
 
 FR:
 Ingénieur Data — INRAE / OpenSILEX (Oct 2018 – Dec 2019)
-- Développement de pipelines ETL pour ingérer des données capteurs et expérimentales, normaliser et exporter en RDF avec vocabulaires standard.
+- Développement de pipelines ETL pour ingérer des données capteurs et expérimentales et les normaliser.
+- Export des jeux de données normalisés en RDF en utilisant des vocabulaires standardisés pour soutenir l'intégration sémantique.
 - Mise en place de tests et monitoring pour valider la qualité des données et assurer la fiabilité du pipeline.
 
 3rd Experience
