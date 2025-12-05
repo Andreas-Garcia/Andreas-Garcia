@@ -156,6 +156,7 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 - **Smart, adaptive playlists** generated based on style, subgenre, era, and more
 - **Universal format and tag support** for seamless integration with all your tools and devices
 - **Secure cloud storage** for backup and access across all your devices
+- **Spotify integration** for enriched metadata and music discovery
 - **Discover and purchase new music** via links to Bandcamp, Beatport, and JunoDownload
 - **Cross-platform sync** and **export** to streaming and DJ/production software for creative workflows
 
@@ -243,11 +244,11 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 
 #### 🌳 [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree)
 
-- Built a collaborative platform for music genre classification using Next.js, TypeScript, and React
-- Designed interactive genre tree visualization enabling users to explore and navigate music genres
-- Implemented community contribution system for submitting, validating, and curating genre data
-- Integrated with TheMusicTreeAPI and Spotify for real-time genre data, intelligent recommendations, and music discovery
-- Deployed with Docker containerization and automated CI/CD pipelines using GitHub Actions
+- Building a collaborative platform for music genre classification using Next.js, TypeScript, and React
+- Designed interactive genre tree visualization enabling users to build and explore music genres
+- Implementing community contribution system for submitting, validating, and curating genre data
+- Integrated with TheMusicTreeAPI, MusicBrainz, and Spotify for real-time genre data, intelligent recommendations, and music discovery
+- Deployed with Docker containerization and automated CI/CD pipelines using GitHub Actions and Docker Hub
 
 #### 🔌 [**TheMusicTreeAPI**](https://github.com/BehindTheMusicTree/the-music-tree-api)
 
@@ -256,6 +257,7 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 - Integrated external APIs (Spotify, MusicBrainz) to enrich metadata and enhance user experience
 - Implemented advanced genre detection algorithms leveraging machine learning and music analysis
 - Ensured API scalability, security, and performance through comprehensive testing and monitoring
+- Deployed with Docker containerization and automated CI/CD pipelines using GitHub Actions
 
 #### 🎧 HearTheMusicTree
 
@@ -263,7 +265,7 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 - Implemented smart playlist generation algorithms based on genre intelligence and user preferences
 - Implemented microservices architecture with audio fingerprinting via Dockerized Flask API for automatic track
 - Integrated MusicBrainz API for metadata enrichment and accurate tagging
-- Automated CI/CD pipelines with integration testing to ensure deployment reliability
+- Deployed with Docker containerization and automated CI/CD pipelines using GitHub Actions and Docker Hub
 
 ### Major Music Events Company - Consultant
 
