@@ -18,8 +18,8 @@ Format rules (English)
   1st Experience
   EN:
   Role — Company (Dates) — link (optional)
-  - Short bullet describing responsibilities or achievements (1–2 lines max)
-  - Another short bullet if needed
+  - Short bullet describing responsibilities or achievements (2–3 bullets recommended; 1–2 lines each)
+  - Additional short bullets (2–3 total recommended)
     FR:
     Rôle — Entreprise (Dates) — lien (si disponible)
   - Bullets translated to French
