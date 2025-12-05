@@ -1,17 +1,17 @@
 BACKEND VERSION
 1st Experience
 EN:
-Backend Developer — HearTheMusicTree (2021 – 2022) — https://github.com/BehindTheMusicTree/in-the-music-tree
+Backend Developer — HearTheMusicTree (2021 – 2022) — [GitHub Icon](https://github.com/BehindTheMusicTree/in-the-music-tree)
 
 FR:
-Développeur Backend — HearTheMusicTree (2021 – 2022) — https://github.com/BehindTheMusicTree/in-the-music-tree
+Développeur Backend — HearTheMusicTree (2021 – 2022) — [GitHub Icon](https://github.com/BehindTheMusicTree/in-the-music-tree)
 
 2nd Experience
 EN:
-Backend Engineer — AudioMeta Python / Projects (2019 – 2021) — https://github.com/BehindTheMusicTree/audiometa
+Backend Engineer — AudioMeta Python / Projects (2019 – 2021) — [GitHub Icon](https://github.com/BehindTheMusicTree/audiometa)
 
 FR:
-Ingénieur Backend — AudioMeta Python / Projets (2019 – 2021) — https://github.com/BehindTheMusicTree/audiometa
+Ingénieur Backend — AudioMeta Python / Projets (2019 – 2021) — [GitHub Icon](https://github.com/BehindTheMusicTree/audiometa)
 
 3rd Experience
 EN:

@@ -30,6 +30,29 @@ Formatting constraints and best practices
 - Dates: Prefer "YYYY" or "Mon YYYY" formats (e.g., Dec. 2022 – Present, Oct 2018 – Dec 2019).
 - Order: Experiences should be listed from most recent (1st Experience) to oldest (4th Experience).
 - Links: Add a link next to the role when relevant (company or repo). Canva can render clickable links in designs.
+  - Use a placeholder for GitHub repo links: [GitHub Icon](https://github.com/BehindTheMusicTree/audiometa) — replace "[GitHub Icon]" with an actual icon in Canva.
+  - If you prefer a badge instead of an icon, use shields.io (example):
+    [![GitHub](https://img.shields.io/badge/GitHub-BehindTheMusicTree-181717?style=flat&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audiometa)
+
+Canva-specific: adding a clickable GitHub icon and export behavior
+
+- Steps to add a clickable GitHub icon in Canva (replacing the [GitHub Icon] placeholder):
+
+  1. Copy the text from the CV variant file into Canva (paste as plain text).
+  2. Where you see "[GitHub Icon](https://github.com/...)", select the "[GitHub Icon]" text.
+  3. Replace it with an icon: Use Canva's Elements library (search for "GitHub" or "code") or upload an official GitHub mark (PNG/SVG from https://github.com/logos).
+  4. Select the new icon/image, click the "Link" (chain) icon in the top toolbar, and paste the URL from the parentheses (e.g., https://github.com/BehindTheMusicTree/audiometa).
+  5. Press Enter to apply. Test in "Present" or "Preview" mode.
+
+- Export notes and limitations:
+
+  - Links are preserved when exporting to PDF (both "PDF Standard" and "PDF Print") — PDF preserves clickable hyperlinks.
+  - Links won't be clickable in exported JPG/PNG image formats because they are flattened images.
+  - When sharing the Canva design as a web link or embedding a design, links are preserved and clickable in the published output.
+
+- Branding & legal:
+  - Use GitHub logos according to the official guidelines: https://github.com/logos. Do not modify GitHub’s mark or claim endorsement.
+  - If you prefer a non-branded option, use shields.io badges or create a generic icon that's linked to the repo.
 - Remove numeric prefixes (like "1)") — keep the ordinal chapter titles ("1st Experience") but do not number the role lines.
 - Align EN and FR sections: for each EN block, provide a directly corresponding FR block beneath.
 - Keep language markers (EN: / FR:) in place to help translators or scripts parse the document.
