@@ -2,16 +2,28 @@ BACKEND VERSION
 1st Experience
 EN:
 Backend Developer — HearTheMusicTree (2021 – 2022) — [GitHub Icon](https://github.com/BehindTheMusicTree/in-the-music-tree)
+- Designed and implemented RESTful APIs for music library management, metadata processing, and playlist generation.
+- Engineered Django REST Framework APIs for robust metadata processing and dynamic playlist generation.
+- Deployed cloud-based solutions with Docker containerization and CI/CD pipelines using GitHub Actions.
 
 FR:
 Développeur Backend — HearTheMusicTree (2021 – 2022) — [GitHub Icon](https://github.com/BehindTheMusicTree/in-the-music-tree)
+- Conception et implémentation d'APIs REST pour la gestion de bibliothèques musicales, le traitement des métadonnées et la génération de playlists.
+- Développement d'APIs Django REST Framework pour un traitement robuste des métadonnées et une génération dynamique de playlists.
+- Déploiement de solutions cloud avec conteneurisation Docker et pipelines CI/CD utilisant GitHub Actions.
 
 2nd Experience
 EN:
 Backend Engineer — AudioMeta Python / Projects (2019 – 2021) — [GitHub Icon](https://github.com/BehindTheMusicTree/audiometa)
+- Developed a unified Python library for audio metadata management across multiple formats (ID3v1, ID3v2, Vorbis, RIFF).
+- Implemented comprehensive test suite with 1500+ tests and detailed documentation.
+- Published on PyPI with 5000+ downloads, providing production-ready audio metadata tools.
 
 FR:
 Ingénieur Backend — AudioMeta Python / Projets (2019 – 2021) — [GitHub Icon](https://github.com/BehindTheMusicTree/audiometa)
+- Développement d'une bibliothèque Python unifiée pour la gestion des métadonnées audio sur plusieurs formats (ID3v1, ID3v2, Vorbis, RIFF).
+- Implémentation d'une suite de tests complète avec plus de 1500 tests et documentation détaillée.
+- Publication sur PyPI avec plus de 5000 téléchargements, fournissant des outils de métadonnées audio prêts pour la production.
 
 3rd Experience
 EN:
