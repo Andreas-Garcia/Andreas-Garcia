@@ -230,12 +230,38 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 
 - Defined the vision, mission, and strategic direction of the company to guide product development
 - Participated in a 3-month entrepreneurship program by La Ruche, conducting market research and creating personas
-- Developed [**AudioMeta Python**](https://github.com/BehindTheMusicTree/audiometa) ([PyPI](https://pypi.org/project/audiometa-python/)), a production-ready open-source library for unified audio metadata management across multiple formats ([ID3v1, ID3v2, Vorbis, RIFF](https://github.com/BehindTheMusicTree/audiometa)), with 1500+ tests, comprehensive documentation, and 5000+ downloads
-- Developed [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree), a collaborative music genre reference platform powered by community contributions (JavaScript, Next.js, TypeScript)
-- Created **TheMusicTreeAPI**, a RESTful Django API in Python with PostgreSQL for genre classification and metadata integration
-- Integrated external APIs (Spotify, MusicBrainz) into **TheMusicTreeAPI** to enrich metadata and improve user experience
-- Developed **HearTheMusicTree**, a cloud-based music library manager with smart playlists, cross-platform sync, and intelligent genre detection powered by AudioMeta Python and TheMusicTreeAPI
-- Containerized with Docker, managed versioning with GitFlow, automated CI/CD with integration testing and GitHub Actions
+
+#### [**AudioMeta Python**](https://github.com/BehindTheMusicTree/audiometa)
+
+- Developed a unified Python library for reading and writing audio metadata across multiple formats (ID3v1, ID3v2, Vorbis, RIFF)
+- Implemented comprehensive test suite with 1500+ unit tests ensuring reliability and edge case coverage
+- Created extensive documentation and usage examples to facilitate developer adoption
+- Published on [PyPI](https://pypi.org/project/audiometa-python/) achieving 5000+ downloads, establishing it as a production-ready tool
+- Maintained active development with community contributions, issue tracking, and continuous improvements
+
+#### [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree)
+
+- Built a collaborative platform for music genre classification using Next.js, TypeScript, and React
+- Designed interactive genre tree visualization enabling users to explore and navigate music genres
+- Integrated with TheMusicTreeAPI and Spotify for real-time genre data, intelligent recommendations, and music discovery
+- Deployed with Docker containerization and automated CI/CD pipelines using GitHub Actions
+
+#### [**TheMusicTreeAPI**](https://github.com/BehindTheMusicTree/the-music-tree-api)
+
+- Created RESTful Django API providing access to genre hierarchy, metadata, and intelligent genre detection
+- Developed PostgreSQL database schema optimized for efficient storage and querying of genre relationships
+- Integrated external APIs (Spotify, MusicBrainz) to enrich metadata and enhance user experience
+- Implemented advanced genre detection algorithms leveraging machine learning and music analysis
+- Ensured API scalability, security, and performance through comprehensive testing and monitoring
+
+#### HearTheMusicTree
+
+- Developed cloud-based music library manager using Django REST Framework and PostgreSQL
+- Implemented smart playlist generation algorithms based on genre intelligence and user preferences
+- Added cross-platform synchronization capabilities for seamless access across devices
+- Integrated AudioMeta Python for robust audio metadata processing and format support
+- Built secure cloud storage solutions with Docker containerization and GitFlow version management
+- Automated CI/CD pipelines with integration testing to ensure deployment reliability
 
 ### Major Music Events Company - Consultant
 
