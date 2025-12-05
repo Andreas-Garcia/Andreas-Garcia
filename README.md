@@ -261,10 +261,10 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 
 #### 🎧 HearTheMusicTree
 
-- Developed cloud-based music library manager using Django REST Framework and PostgreSQL
+- Developing cloud-based music library manager using Django REST Framework and PostgreSQL
 - Implemented smart playlist generation algorithms based on genre intelligence and user preferences
-- Implemented microservices architecture with audio fingerprinting via Dockerized Flask API for automatic track
-- Integrated MusicBrainz API for metadata enrichment and accurate tagging
+- Implemented microservices architecture with audio fingerprinting via Dockerized Flask API
+- Integrated MusicBrainz API for automatic track identification and metadata enrichment
 - Deployed with Docker containerization and automated CI/CD pipelines using GitHub Actions and Docker Hub
 
 ### Major Music Events Company - Consultant
