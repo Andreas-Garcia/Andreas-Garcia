@@ -1,25 +1,17 @@
 BACKEND VERSION
 1st Experience
 EN:
-Backend Developer — HearTheMusicTree (2021 – 2022) — https://hear.themusictree.example.com/
-- Built search and aggregation endpoints; optimized database indices and query performance for large taxonomies.
-- Coordinated with data engineers to align ETL pipeline outputs with API expectations.
+Backend Developer — HearTheMusicTree (2021 – 2022) — https://github.com/BehindTheMusicTree/in-the-music-tree
 
 FR:
-Développeur Backend — HearTheMusicTree (2021 – 2022) — https://hear.themusictree.example.com/
-- Conception d'endpoints de recherche et d'agrégation; optimisation des index de base de données et des performances de requêtes.
-- Coordination avec les ingénieurs data pour aligner les sorties des pipelines ETL avec les attentes de l'API.
+Développeur Backend — HearTheMusicTree (2021 – 2022) — https://github.com/BehindTheMusicTree/in-the-music-tree
 
 2nd Experience
 EN:
-Backend Engineer — AudioMeta Python / Projects (2019 – 2021) — https://github.com/user/audiometadata
-- Implemented extraction tools and metadata normalization routines for audio files; wrote parsers and format converters.
-- Added automated tests and standardized data schemas for reproducible extraction.
+Backend Engineer — AudioMeta Python / Projects (2019 – 2021) — https://github.com/BehindTheMusicTree/audiometa
 
 FR:
-Ingénieur Backend — AudioMeta Python / Projets (2019 – 2021) — https://github.com/user/audiometadata
-- Création d'outils d'extraction et routines de normalisation de métadonnées pour fichiers audio; développement de parseurs et convertisseurs.
-- Ajout de tests automatisés et schémas de données standardisés pour des extractions reproductibles.
+Ingénieur Backend — AudioMeta Python / Projets (2019 – 2021) — https://github.com/BehindTheMusicTree/audiometa
 
 3rd Experience
 EN:
