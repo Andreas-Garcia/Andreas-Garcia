@@ -60,7 +60,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 - 🎵 [**AudioMeta Python**](https://github.com/BehindTheMusicTree/audiometa) - Unified Python library for reading and writing audio metadata across multiple formats
 - 🌳 [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree) - Crowd-sourced platform for building the definitive interactive map of global music genres
-- 🔌 **TheMusicTreeAPI** - RESTful API providing access to genre hierarchy, metadata, and intelligent genre detection
+- 🔌 [**TheMusicTreeAPI**](https://github.com/BehindTheMusicTree/the-music-tree-api) - RESTful API providing access to genre hierarchy, metadata, and intelligent genre detection
 - 🎧 **HearTheMusicTree** - Cloud-based music library manager with smart playlists and cross-platform sync
 
 ### 🎵 AudioMeta Python: The Foundation for Audio Metadata Management
