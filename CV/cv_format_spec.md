@@ -17,7 +17,7 @@ Given a job description located at `CV/[job title]/Description.txt`, follow the 
    - Must connect experiences from README.md to job requirements
 
 3. **Validation step** - After generating cv.txt:
-   - Verify that all bullet points in the job experiences section are approximately 75 characters in length
+   - Verify that all bullet points in the job experiences section are approximately 75 characters in length (excluding project links in parentheses)
    - Verify that the intro section is a maximum of 300 characters in length
    - Adjust any bullet points or intro section that do not meet these requirements
 
@@ -62,9 +62,11 @@ Format:
 
 **Important:** Do not use "-" as a bullet point marker. Write bullet points as plain text sentences without any bullet markers.
 
+**Project links:** When mentioning specific projects (e.g., AudioMeta Python, TheMusicTreeAPI, OpenSILEX, GrowTheMusicTree), include the project link in parentheses immediately after the project name: `ProjectName (https://url.com)`. **Note:** Links in parentheses do not count toward the character limit.
+
 **Links:** After the job experiences section, include a "Links" subsection listing all URLs in the format: `Project/Company Name: https://url.com`
 
-**Important:** Each bullet point sentence should be approximately 75 characters in length.
+**Important:** Each bullet point sentence should be approximately 75 characters in length (excluding project links in parentheses).
 
 Example:
 
