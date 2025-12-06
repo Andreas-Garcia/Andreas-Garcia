@@ -1,0 +1,74 @@
+Développeur Fullstack Senior | Python & React | Fondateur Open Source
+
+Ingénieur full-stack avec plus de 5 ans d'expérience, je me spécialise dans Python/Django et React/Next.js. Je conçois des applications robustes et scalables, en privilégiant la qualité du code et les déploiements Docker/CI/CD.
+
+J'ai créé AudioMeta Python (https://pypi.org/project/audiometa-python/) avec plus de 5000 téléchargements PyPI. Je suis le fondateur de l'écosystème BehindTheMusicTree (https://github.com/behindthemusictree), incluant plusieurs projets open-source en production. Passionné par les bonnes pratiques et les outils modernes pour accélérer le développement.
+
+---
+
+## Expériences Professionnelles
+
+### [ICON] BehindTheMusicTree - Fondateur & Lead Developer
+
+Déc. 2022 – Présent
+
+Développé applications full-stack Django/PostgreSQL et Next.js/React/TypeScript.
+Créé AudioMeta Python (https://pypi.org/project/audiometa-python/) avec 1500+ tests pytest, 5000+ téléchargements PyPI.
+Implémenté TheMusicTreeAPI Django REST avec PostgreSQL et intégrations APIs.
+
+### [ICON] Major Music Events Company - Consultant
+
+Déc. 2024 – Jan. 2025
+
+Classifié 1300+ genres musicaux pour outil matching utilisateur/concert.
+Créé taxonomie scalable : 15 genres principaux, ~120 sous-genres normalisés.
+Normalisé labels inconsistants pour améliorer précision classification.
+
+### [ICON] INRAE - Ingénieur de Recherche
+
+Oct. 2018 – Déc. 2019 | Montpellier, France
+
+Implémenté APIs REST Java/Spring Boot avec patterns DTO en équipe SCRUM.
+Contribué OpenSILEX (https://github.com/OpenSILEX/opensilex), manipulant bases graphe RDF4J en projet agrivoltaïsme.
+Développé services événements Java/JavaScript sur architecture trois niveaux.
+
+**Liens:**
+BehindTheMusicTree: https://github.com/behindthemusictree
+AudioMeta Python: https://pypi.org/project/audiometa-python/
+GrowTheMusicTree: https://github.com/BehindTheMusicTree/grow-the-music-tree
+TheMusicTreeAPI: https://github.com/BehindTheMusicTree/the-music-tree-api
+OpenSILEX: https://github.com/OpenSILEX/opensilex
+
+---
+
+## Informations Complémentaires
+
+### Stack Technique
+
+**Backend :** Python (3.12+), Django REST Framework, Java (Spring Boot), PostgreSQL, SQL, Node.js, GraphQL
+
+**Frontend :** TypeScript, JavaScript, Next.js, React, HTML, CSS
+
+**DevOps & Outils :** Docker, Docker Hub, Git, GitHub Actions, GitFlow, PyPI, Lambda
+
+**Tests & Qualité :** pytest (1500+ tests), mypy (vérification de types), ruff (linting), CI/CD automatisé
+
+**Méthodologies :** SCRUM, principes Clean Code (Robert C. Martin), développement Agile
+
+### Formation
+
+**INSA Lyon** - 2014
+Diplôme d'ingénieur en Informatique
+
+**La Ruche - Programme Itinéraire** - 2025
+Programme d'entrepreneuriat de 3 mois
+Complété 5 ateliers thématiques : recherche de marché, ciblage client, stratégie marketing, coûts de projet, pitch business
+Développé Business Plan pour le projet BehindTheMusicTree
+
+### Langues
+
+🇫🇷 Français (Natif) | 🇬🇧 Anglais (Avancé) | 🇪🇸 Espagnol (Avancé) | 🇩🇪 Allemand (Base)
+
+### Ouvert aux Opportunités
+
+Postes à temps plein, opportunités de consulting et collaborations en développement full-stack, technologie musicale et solutions logicielles durables. Basé en France, ouvert au travail sur site à Marseille.
