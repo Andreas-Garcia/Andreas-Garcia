@@ -10,3 +10,4 @@ __pycache__/
 # test-streak-stats.svg
 # test_languages_svg.py
 # test-languages-stats.svg
+.DS_Store
