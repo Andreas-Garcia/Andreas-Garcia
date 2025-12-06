@@ -31,7 +31,7 @@ Format:
 - 3 sentences about your professional identity
 - Optional: Brief mention of key achievements
 
-**Important:** The intro section should be a maximum of 200 characters in length.
+**Important:** The intro section should be a maximum of 300 characters in length.
 
 Example:
 Results-oriented Engineering Executive with a proven track record of optimizing project outcomes. Skilled in strategic project management and team leadership. Seeking a challenging executive role to leverage technical skills and drive engineering excellence.

@@ -16,7 +16,7 @@ When the user asks to generate a CV and/or motivation letter for a job applicati
 
    - Create `CV/[job title]/cv.txt` in the same directory as the job description
    - Follow the format specified in `CV/cv_format_spec.md`:
-     - **Intro Section**: Opening line with title/role tags, 3 sentences about professional identity, optional key achievements
+     - **Intro Section**: Opening line with title/role tags, 3 sentences about professional identity, optional key achievements. 300 characters max.
      - **Job Experiences Section**: Maximum 3 job experiences selected from README.md "Professional Experience" section. Each with:
        - Company/Project Name - Role Title (include links when available: website/PyPI preferred, or GitHub)
        - Date Range
