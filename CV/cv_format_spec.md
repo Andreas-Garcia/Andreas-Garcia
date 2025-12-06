@@ -25,7 +25,6 @@ Format:
 
 - Opening line with title/role tags
 - 3 sentences about your professional identity
-- Key impact areas (Environmental, Social, Cultural) with brief descriptions
 - Optional: Brief mention of key achievements
 
 Example:
