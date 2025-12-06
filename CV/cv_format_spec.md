@@ -18,7 +18,7 @@ Given a job description located at `CV/[job title]/Description.txt`, follow the 
 
 3. **Validation step** - After generating cv.txt:
    - Verify that all bullet points in the job experiences section are approximately 75 characters in length (excluding project links in parentheses)
-   - Verify that the intro section is a maximum of 300 characters in length
+   - Verify that the intro section is a maximum of 600 characters in length and consists of 2 paragraphs
    - Adjust any bullet points or intro section that do not meet these requirements
 
 Both files should be created in the same directory as the job description: `CV/[job title]/`
@@ -36,13 +36,15 @@ Both files should be created in the same directory as the job description: `CV/[
 Format:
 
 - Opening line with title/role tags
-- 3 sentences about your professional identity
+- 2 paragraphs about your professional identity
 - Optional: Brief mention of key achievements
 
-**Important:** The intro section should be a maximum of 300 characters in length.
+**Important:** The intro section should be a maximum of 600 characters in length.
 
 Example:
-Results-oriented Engineering Executive with a proven track record of optimizing project outcomes. Skilled in strategic project management and team leadership. Seeking a challenging executive role to leverage technical skills and drive engineering excellence.
+Results-oriented Engineering Executive with a proven track record of optimizing project outcomes. Skilled in strategic project management and team leadership.
+
+Seeking a challenging executive role to leverage technical skills and drive engineering excellence. Experienced in leading cross-functional teams and delivering complex projects on time and within budget.
 
 ## JOB EXPERIENCES SECTION
 
