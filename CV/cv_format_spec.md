@@ -18,7 +18,7 @@ Given a job description located at `CV/[job title]/Description.txt`, follow the 
 
 3. **Validation step** - After generating cv.txt:
    - Verify that all bullet points in the job experiences section are approximately 75 characters in length (excluding project links in parentheses)
-   - Verify that the intro section is between 570 and 580 characters in length (excluding project links in parentheses) and consists of 2 paragraphs
+   - Verify that the intro section is between 570 and 580 characters in length (excluding all project links in parentheses) and consists of 2 paragraphs
    - Adjust any bullet points or intro section that do not meet these requirements
 
 Both files should be created in the same directory as the job description: `CV/[job title]/`
@@ -39,7 +39,7 @@ Format:
 - 2 paragraphs about your professional identity
 - Optional: Brief mention of key achievements
 
-**Important:** The intro section should be between 570 and 580 characters in length (excluding project links in parentheses). **Multiple projects can be mentioned, but only one link per project should be included** (priority order: website > PyPI > GitHub).
+**Important:** The intro section should be between 570 and 580 characters in length (excluding project links in parentheses). **Multiple projects can be mentioned, but only one link per project should be included** (priority order: website > PyPI > GitHub). The character count should be verified excluding all links in parentheses.
 
 Example:
 Results-oriented Engineering Executive with a proven track record of optimizing project outcomes. Skilled in strategic project management and team leadership.
