@@ -60,6 +60,8 @@ Format:
   - Impact/Results (with metrics when possible)
   - Technologies used (if relevant)
 
+**Important:** Do not use "-" as a bullet point marker. Write bullet points as plain text sentences without any bullet markers.
+
 **Links:** After the job experiences section, include a "Links" subsection listing all URLs in the format: `Project/Company Name: https://url.com`
 
 **Important:** Each bullet point sentence should be approximately 85 characters in length.
@@ -70,9 +72,9 @@ Example:
 
 Dec. 2022 – Present
 
-- Implemented cost-effective solutions, resulting in a 20% reduction in project expenses.
-- Streamlined project workflows, enhancing overall efficiency by 25%.
-- Led a team in successfully delivering a complex engineering project on time and within allocated budget.
+Implemented cost-effective solutions, resulting in a 20% reduction in project expenses.
+Streamlined project workflows, enhancing overall efficiency by 25%.
+Led a team in successfully delivering a complex engineering project on time and within allocated budget.
 
 **Links:**
 Company Name: https://example.com
