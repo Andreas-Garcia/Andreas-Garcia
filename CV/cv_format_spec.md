@@ -62,7 +62,7 @@ Format:
 
 **Important:** Do not use "-" as a bullet point marker. Write bullet points as plain text sentences without any bullet markers.
 
-**Project links:** When mentioning specific projects (e.g., AudioMeta Python, TheMusicTreeAPI, OpenSILEX, GrowTheMusicTree), include the project link in parentheses immediately after the project name: `ProjectName (https://url.com)`. **Note:** Links in parentheses do not count toward the character limit.
+**Project links:** When mentioning specific projects (e.g., AudioMeta Python, TheMusicTreeAPI, OpenSILEX, GrowTheMusicTree), include the project link(s) in parentheses immediately after the project name: `ProjectName (https://url.com)`. When a PyPI link is available, include both GitHub and PyPI links: `ProjectName (https://github.com/..., https://pypi.org/...)`. **Note:** Links in parentheses do not count toward the character limit.
 
 **Links:** After the job experiences section, include a "Links" subsection listing all URLs in the format: `Project/Company Name: https://url.com`
 
