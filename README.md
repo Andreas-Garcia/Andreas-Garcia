@@ -220,10 +220,17 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 
 ### 🎓 Education
 
-- **INSA Lyon** - 2014
-  - Engineering degree in Computer Science
-- **La Ruche** - 2025
-  - Entrepreneurship program
+#### La Ruche - Programme Itinéraire - 2025
+
+- 3-month entrepreneurship program
+- Completed 5 thematic workshops: market research, customer targeting, marketing strategy, project costing, and business pitch
+- Attended 4 expert workshops on legal structures, independent worker regulations, funding opportunities, and intellectual property
+- Developed Business Plan for BehindTheMusicTree project
+- Conducted market research and created user personas
+
+#### INSA Lyon - 2014
+
+- Engineering degree in Computer Science
 
 ### 💼 Professional Experience
 
