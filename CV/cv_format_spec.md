@@ -19,6 +19,8 @@ Both files should be created in the same directory as the job description: `CV/[
 
 **Source of truth:** All job experiences, projects, achievements, and skills should be referenced from `README.md` in the repository root.
 
+**Language:** The output language (for both cv.txt and motivation_letter.txt) must match the language of the job description. If the job description is in French, output in French. If in English, output in English.
+
 ## INTRO SECTION
 
 Format:
