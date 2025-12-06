@@ -21,6 +21,8 @@ Both files should be created in the same directory as the job description: `CV/[
 
 **Language:** The output language (for both cv.txt and motivation_letter.txt) must match the language of the job description. If the job description is in French, output in French. If in English, output in English.
 
+**Writing style:** Avoid overusing the words "expert" or "expertise". Use alternative phrasing such as "experienced in", "skilled in", "proficient with", or describe specific achievements and capabilities instead.
+
 ## INTRO SECTION
 
 Format:
@@ -30,7 +32,7 @@ Format:
 - Optional: Brief mention of key achievements
 
 Example:
-Results-oriented Engineering Executive with a proven track record of optimizing project outcomes. Skilled in strategic project management and team leadership. Seeking a challenging executive role to leverage technical expertise and drive engineering excellence.
+Results-oriented Engineering Executive with a proven track record of optimizing project outcomes. Skilled in strategic project management and team leadership. Seeking a challenging executive role to leverage technical skills and drive engineering excellence.
 
 ## JOB EXPERIENCES SECTION
 
