@@ -23,6 +23,8 @@ Both files should be created in the same directory as the job description: `CV/[
 
 **Writing style:** Avoid overusing the words "expert" or "expertise". Use alternative phrasing such as "experienced in", "skilled in", "proficient with", or describe specific achievements and capabilities instead.
 
+**Links formatting:** Do not include markdown links in the text (e.g., `[text](url)`). Instead, use `[ICON]` as a placeholder where an icon should be placed (you will add the icon manually in Canva). List all links separately at the end of the document or after the relevant section in the format: `Project/Company Name: https://url.com`. This allows you to manually link the icon to the URL in Canva.
+
 ## INTRO SECTION
 
 Format:
@@ -44,7 +46,7 @@ Results-oriented Engineering Executive with a proven track record of optimizing 
 
 Format:
 
-- Company/Project Name - Role Title
+- `[ICON]` Company/Project Name - Role Title (use `[ICON]` placeholder instead of markdown links)
 - Date Range (e.g., "Dec. 2022 – Present")
 - 2-3 bullet points describing:
   - Key responsibilities
@@ -52,13 +54,22 @@ Format:
   - Impact/Results (with metrics when possible)
   - Technologies used (if relevant)
 
+**Links:** After the job experiences section, include a "Links" subsection listing all URLs in the format: `Project/Company Name: https://url.com`
+
 **Important:** Each bullet point sentence should be between 80 and 120 characters in length.
 
 Example:
 
+### [ICON] Company Name - Role Title
+
+Dec. 2022 – Present
+
 - Implemented cost-effective solutions, resulting in a 20% reduction in project expenses.
 - Streamlined project workflows, enhancing overall efficiency by 25%.
 - Led a team in successfully delivering a complex engineering project on time and within allocated budget.
+
+**Links:**
+Company Name: https://example.com
 
 ## MORE INFO SECTION
 
