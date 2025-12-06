@@ -20,7 +20,7 @@ When the user asks to generate a CV and/or motivation letter for a job applicati
      - **Job Experiences Section**: Maximum 3 job experiences selected from README.md "Professional Experience" section **based on relevance to the job description**. **Experiences must always be listed in reverse chronological order (most recent first)**. Each with:
        - `[ICON]` Company/Project Name - Role Title (use `[ICON]` placeholder instead of markdown links)
        - Date Range (e.g., "Dec. 2022 – Present")
-       - 2-3 bullet points written as plain text sentences without bullet markers (no "-" prefix). Each bullet point should be approximately 75 characters in length (excluding project links in parentheses).
+       - 2-3 bullet points written as plain text sentences without bullet markers (no "-" prefix). Each bullet point must be a complete, real sentence (not fragmented bullet-style text). Bullet points should start with past participles (e.g., "Développé", "Créé", "Implémenté") rather than using "Je" or "J'ai". Each bullet point should be approximately 75 characters in length (excluding project links in parentheses).
        - When mentioning specific projects, include project link(s) in parentheses immediately after the project name: `ProjectName (https://url.com)`. Priority order for links: website > PyPI > GitHub. Only one link per project in intro section.
      - **Links Section**: After the job experiences section, include a "Links" subsection listing all URLs in the format: `Project/Company Name: https://url.com`
      - **More Info Section**: Technical stack (grouped by Backend/Frontend/Database/DevOps), Education, Languages, Open to opportunities
@@ -56,6 +56,7 @@ When the user asks to generate a CV and/or motivation letter for a job applicati
    - Tailor content to match job description requirements
    - Use professional, authentic language
    - Avoid overusing the words "expert" or "expertise". Use alternative phrasing such as "experienced in", "skilled in", "proficient with", or describe specific achievements and capabilities instead.
+   - **Phrasing for job experience bullet points**: Write complete, natural sentences that start with past participles (e.g., "Développé", "Créé", "Implémenté", "Contribué", "Collaboré"). Do not use "Je" or "J'ai" at the beginning of bullet points. Ensure sentences are real, flowing formulations, not fragmented bullet-style text.
    - The output language (for both cv.txt and motivation_letter.txt) must match the language of the job description. If the job description is in French, output in French. If in English, output in English.
 
 7. **Output**: Both files should be created in `professional/CV/Job Descriptions/[job title]/` directory alongside the job description.

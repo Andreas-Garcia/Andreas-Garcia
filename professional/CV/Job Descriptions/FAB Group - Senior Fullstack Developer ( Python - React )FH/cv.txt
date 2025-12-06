@@ -1,8 +1,8 @@
 Développeur Fullstack Senior | Python & React | Fondateur Open Source
 
-Ingénieur full-stack avec plus de 5 ans d'expérience, je me spécialise dans Python/Django et React/Next.js. Je conçois des applications robustes et scalables, en privilégiant la qualité du code et les déploiements Docker/CI/CD.
+Ingénieur full-stack avec plus de 5 ans d'expérience, je me spécialise dans Python/Django et React/Next.js. Je conçois des applications robustes et scalables, en privilégiant la qualité du code et les déploiements Docker/CI/CD pour garantir des solutions performantes.
 
-J'ai créé AudioMeta Python (https://pypi.org/project/audiometa-python/) avec plus de 5000 téléchargements PyPI. Je suis le fondateur de l'écosystème BehindTheMusicTree (https://github.com/behindthemusictree), incluant plusieurs projets open-source en production. Passionné par les bonnes pratiques et les outils modernes pour accélérer le développement.
+J'ai créé AudioMeta Python (https://pypi.org/project/audiometa-python/) avec plus de 5000 téléchargements PyPI. Je suis le fondateur de l'écosystème BehindTheMusicTree (https://github.com/behindthemusictree), incluant plusieurs projets open-source en production. Passionné par les bonnes pratiques et les outils modernes pour accélérer le développement tout en maintenant une haute qualité.
 
 ---
 
@@ -22,14 +22,14 @@ Oct. 2018 – Déc. 2019 | Montpellier, France
 
 Implémenté APIs REST avec patterns DTO en équipe SCRUM sur projet open-source.
 Contribué OpenSILEX (https://github.com/OpenSILEX/opensilex), manipulant bases graphe RDF4J en projet agrivoltaïsme.
-Développé services événements sur architecture trois niveaux avec intégration APIs.
+Développé services événements sur architecture trois niveaux avec APIs.
 
 ### [ICON] Cleversys (acquis par Deloitte) - Consultant BI/ERP
 
 Avr. 2015 – Oct. 2017 | Paris
 
-Collaboré à toutes les étapes projets BI, de la conception aux présentations Tableau.
-Développé 62 interfaces comptables critiques en tant qu'expert ETL avec SQL Server.
+Collaboré à toutes les étapes projets BI, de la conception aux présentations.
+Développé 62 interfaces comptables critiques en ETL avec SQL Server.
 Point de contact technique client (CA > 4Md€), animant ateliers et formation.
 
 **Liens:**
