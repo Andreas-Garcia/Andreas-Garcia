@@ -39,7 +39,7 @@ Format:
 - 2 paragraphs about your professional identity
 - Optional: Brief mention of key achievements
 
-**Important:** The intro section should be a maximum of 600 characters in length (excluding project links in parentheses). **Only one link per project should be included in the intro section** (priority order: website > PyPI > GitHub).
+**Important:** The intro section should be a maximum of 600 characters in length (excluding project links in parentheses). **Multiple projects can be mentioned, but only one link per project should be included** (priority order: website > PyPI > GitHub).
 
 Example:
 Results-oriented Engineering Executive with a proven track record of optimizing project outcomes. Skilled in strategic project management and team leadership.
