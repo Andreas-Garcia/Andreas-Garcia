@@ -47,6 +47,8 @@ Format:
   - Impact/Results (with metrics when possible)
   - Technologies used (if relevant)
 
+**Important:** Each bullet point sentence should be between 80 and 120 characters in length.
+
 Example:
 
 - Implemented cost-effective solutions, resulting in a 20% reduction in project expenses.
