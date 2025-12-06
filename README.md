@@ -232,6 +232,14 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 
 - Engineering degree in Computer Science
 
+**Technical Skills:** Full-Stack Development, API Design, Database Management, DevOps & CI/CD, Testing & Quality Assurance, Agile/SCRUM, Project Management
+
+**Languages:** French (Native), English (Advanced), Spanish (Advanced), German (Basic)
+
+**Certifications:** La Ruche - Programme Itinéraire (Entrepreneurship Program, 2025)
+
+**Awards/Activities:** Organized Music Micro Festival (80+ attendees, 2021), Open Source Contributor (AudioMeta Python: 5000+ downloads), Founder & Lead Developer of BehindTheMusicTree ecosystem
+
 ### 💼 Professional Experience
 
 #### [BehindTheMusicTree](https://github.com/behindthemusictree) - Founder & Lead Developer
