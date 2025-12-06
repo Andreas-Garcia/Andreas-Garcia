@@ -331,7 +331,7 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 
 #### Music Micro Festival - Organizer & DJ
 
-**2021**
+**Since 2021 - Ongoing**
 
 - Organized a music micro festival that brought together 80+ people
 - DJ'd at the event, providing live music experiences
