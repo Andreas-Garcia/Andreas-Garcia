@@ -56,7 +56,7 @@ Format:
 
 **Links:** After the job experiences section, include a "Links" subsection listing all URLs in the format: `Project/Company Name: https://url.com`
 
-**Important:** Each bullet point sentence should be between 80 and 120 characters in length.
+**Important:** Each bullet point sentence should be between around 100 characters in length.
 
 Example:
 
