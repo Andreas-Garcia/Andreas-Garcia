@@ -4,29 +4,31 @@
 
 When the user asks to generate a CV and/or motivation letter for a job application:
 
-1. **Locate the job description**: The job description should be at `CV/[job title]/Description.txt`. If the user provides a job description path or mentions a job title, use that location.
+1. **Locate the job description**: The job description should be at `professional/CV/Job Descriptions/[job title]/Description.txt`. If the user provides a job description path or mentions a job title, use that location.
 
 2. **Read required files**:
 
-   - Read the job description from `CV/[job title]/Description.txt`
-   - Read `CV/cv_format_spec.md` to understand the format requirements
+   - Read the job description from `professional/CV/Job Descriptions/[job title]/Description.txt`
+   - Read `professional/CV/cv_format_spec.md` to understand the format requirements
    - Read `README.md` from the repository root as the source of truth for all experiences, projects, achievements, and skills
 
 3. **Generate cv.txt**:
 
-   - Create `CV/[job title]/cv.txt` in the same directory as the job description
-   - Follow the format specified in `CV/cv_format_spec.md`:
-     - **Intro Section**: Opening line with title/role tags, 3 sentences about professional identity, optional key achievements. 300 characters max.
-     - **Job Experiences Section**: Maximum 3 job experiences selected from README.md "Professional Experience" section. Each with:
-       - Company/Project Name - Role Title (include links when available: website/PyPI preferred, or GitHub)
-       - Date Range
-       - 2-3 bullet points with key responsibilities, technical achievements, impact/results (with metrics), and technologies used
+   - Create `professional/CV/Job Descriptions/[job title]/cv.txt` in the same directory as the job description
+   - Follow the format specified in `professional/CV/cv_format_spec.md`:
+     - **Intro Section**: Opening line with title/role tags, 2 paragraphs about professional identity, optional key achievements. Must be between 570 and 580 characters in length (excluding project links in parentheses). Use real, flowing sentences, not fragmented bullet-style text.
+     - **Job Experiences Section**: Maximum 3 job experiences selected from README.md "Professional Experience" section **based on relevance to the job description**. **Experiences must always be listed in reverse chronological order (most recent first)**. Each with:
+       - `[ICON]` Company/Project Name - Role Title (use `[ICON]` placeholder instead of markdown links)
+       - Date Range (e.g., "Dec. 2022 – Present")
+       - 2-3 bullet points written as plain text sentences without bullet markers (no "-" prefix). Each bullet point should be approximately 75 characters in length (excluding project links in parentheses).
+       - When mentioning specific projects, include project link(s) in parentheses immediately after the project name: `ProjectName (https://url.com)`. Priority order for links: website > PyPI > GitHub. Only one link per project in intro section.
+     - **Links Section**: After the job experiences section, include a "Links" subsection listing all URLs in the format: `Project/Company Name: https://url.com`
      - **More Info Section**: Technical stack (grouped by Backend/Frontend/Database/DevOps), Education, Languages, Open to opportunities
 
 4. **Generate motivation_letter.txt**:
 
-   - Create `CV/[job title]/motivation_letter.txt` in the same directory as the job description
-   - Follow the 4-paragraph structure from `CV/cv_format_spec.md`:
+   - Create `professional/CV/Job Descriptions/[job title]/motivation_letter.txt` in the same directory as the job description
+   - Follow the 4-paragraph structure from `professional/CV/cv_format_spec.md`:
      - **Paragraph 1**: Opening & Interest - express genuine interest, mention discovery, align with career goals
      - **Paragraph 2**: Relevant Experience & Skills - reference 2-3 key requirements from job description, connect to README experiences, highlight matching technical skills, include metrics
      - **Paragraph 3**: Cultural Fit & Values - reference impact areas from README, show alignment with company values, mention relevant soft skills
@@ -37,13 +39,23 @@ When the user asks to generate a CV and/or motivation letter for a job applicati
    - Length: 3-4 paragraphs, concise and focused
    - Tone: Professional, enthusiastic, authentic
 
-5. **Key principles**:
+5. **Validation step** - After generating cv.txt:
+
+   - Verify that all bullet points in the job experiences section are approximately 75 characters in length (excluding project links in parentheses)
+   - Verify that the intro section is between 570 and 580 characters in length (excluding all project links in parentheses) and consists of 2 paragraphs
+   - Adjust any bullet points or intro section that do not meet these requirements
+
+6. **Key principles**:
 
    - All content must be based on information from README.md
-   - Job experiences must be selected from README.md "Professional Experience" section (max 3)
+   - Job experiences must be selected from README.md "Professional Experience" section (max 3) **based on relevance to the job description requirements**
+   - Job experiences must always be listed in reverse chronological order (most recent first)
    - Always include metrics/quantifiable results when available
-   - Include links when available: website/PyPI preferred, or GitHub links for projects and companies
+   - Use `[ICON]` placeholder instead of markdown links in the text
+   - List all links separately after the relevant section in the format: `Project/Company Name: https://url.com`
    - Tailor content to match job description requirements
    - Use professional, authentic language
+   - Avoid overusing the words "expert" or "expertise". Use alternative phrasing such as "experienced in", "skilled in", "proficient with", or describe specific achievements and capabilities instead.
+   - The output language (for both cv.txt and motivation_letter.txt) must match the language of the job description. If the job description is in French, output in French. If in English, output in English.
 
-6. **Output**: Both files should be created in `CV/[job title]/` directory alongside the job description.
+7. **Output**: Both files should be created in `professional/CV/Job Descriptions/[job title]/` directory alongside the job description.

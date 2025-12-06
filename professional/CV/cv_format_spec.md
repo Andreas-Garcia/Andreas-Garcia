@@ -2,7 +2,7 @@
 
 ## PROCESS
 
-Given a job description located at `CV/[job title]/Description.txt`, follow the formats below to generate:
+Given a job description located at `professional/CV/Job Descriptions/[job title]/Description.txt`, follow the formats below to generate:
 
 1. **cv.txt** - Contains:
 
@@ -21,7 +21,7 @@ Given a job description located at `CV/[job title]/Description.txt`, follow the 
    - Verify that the intro section is between 570 and 580 characters in length (excluding all project links in parentheses) and consists of 2 paragraphs
    - Adjust any bullet points or intro section that do not meet these requirements
 
-Both files should be created in the same directory as the job description: `CV/[job title]/`
+Both files should be created in the same directory as the job description: `professional/CV/Job Descriptions/[job title]/`
 
 **Source of truth:** All job experiences, projects, achievements, and skills should be referenced from `README.md` in the repository root.
 
@@ -39,7 +39,7 @@ Format:
 - 2 paragraphs about your professional identity
 - Optional: Brief mention of key achievements
 
-**Important:** The intro section should be between 570 and 580 characters in length (excluding project links in parentheses). **Multiple projects can be mentioned, but only one link per project should be included** (priority order: website > PyPI > GitHub). The character count should be verified excluding all links in parentheses.
+**Important:** The intro section should be between 570 and 580 characters in length (excluding project links in parentheses). **Multiple projects can be mentioned, but only one link per project should be included** (priority order: website > PyPI > GitHub). The character count should be verified excluding all links in parentheses. Use real, flowing sentences, not fragmented bullet-style text.
 
 Example:
 Results-oriented Engineering Executive with a proven track record of optimizing project outcomes. Skilled in strategic project management and team leadership.
@@ -50,7 +50,7 @@ Seeking a challenging executive role to leverage technical skills and drive engi
 
 3 job experiences max.
 
-**Note:** Job experiences should be selected from those listed in the README.md file under the "Professional Experience" section.
+**Note:** Job experiences should be selected from those listed in the README.md file under the "Professional Experience" section **based on relevance to the job description**. **Experiences must always be listed in reverse chronological order (most recent first)**.
 
 Format:
 
@@ -64,7 +64,7 @@ Format:
 
 **Important:** Do not use "-" as a bullet point marker. Write bullet points as plain text sentences without any bullet markers.
 
-**Project links:** When mentioning specific projects (e.g., AudioMeta Python, TheMusicTreeAPI, OpenSILEX, GrowTheMusicTree), include the project link(s) in parentheses immediately after the project name: `ProjectName (https://url.com)`. When a PyPI link is available, include both GitHub and PyPI links: `ProjectName (https://github.com/..., https://pypi.org/...)`. **Note:** Links in parentheses do not count toward the character limit. **Multiple project links with icon placeholders are allowed in the job experiences section.**
+**Project links:** When mentioning specific projects (e.g., AudioMeta Python, TheMusicTreeAPI, OpenSILEX, GrowTheMusicTree), include the project link(s) in parentheses immediately after the project name: `ProjectName (https://url.com)`. Priority order for links: website > PyPI > GitHub. **Note:** Links in parentheses do not count toward the character limit. **Multiple project links with icon placeholders are allowed in the job experiences section.**
 
 **Links:** After the job experiences section, include a "Links" subsection listing all URLs in the format: `Project/Company Name: https://url.com`
 

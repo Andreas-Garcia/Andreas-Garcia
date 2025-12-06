@@ -16,21 +16,21 @@ Développé applications full-stack Django/PostgreSQL et Next.js/React/TypeScrip
 Créé AudioMeta Python (https://pypi.org/project/audiometa-python/) avec 1500+ tests pytest, 5000+ téléchargements PyPI.
 Implémenté TheMusicTreeAPI Django REST avec PostgreSQL et intégrations APIs.
 
+### [ICON] Major Music Events Company - Consultant
+
+Déc. 2024 – Jan. 2025
+
+Classifié 1300+ genres musicaux pour outil matching utilisateur/concert.
+Créé taxonomie scalable : 15 genres principaux, ~120 sous-genres normalisés.
+Normalisé labels inconsistants pour améliorer précision classification.
+
 ### [ICON] INRAE - Ingénieur de Recherche
 
 Oct. 2018 – Déc. 2019 | Montpellier, France
 
-Implémenté APIs REST avec patterns DTO en équipe SCRUM sur projet open-source.
+Implémenté APIs REST Java/Spring Boot avec patterns DTO en équipe SCRUM.
 Contribué OpenSILEX (https://github.com/OpenSILEX/opensilex), manipulant bases graphe RDF4J en projet agrivoltaïsme.
-Développé services événements sur architecture trois niveaux avec intégration APIs.
-
-### [ICON] Cleversys (acquis par Deloitte) - Consultant BI/ERP
-
-Avr. 2015 – Oct. 2017 | Paris
-
-Collaboré à toutes les étapes projets BI, de la conception aux présentations Tableau.
-Développé 62 interfaces comptables critiques en tant qu'expert ETL avec SQL Server.
-Point de contact technique client (CA > 4Md€), animant ateliers et formation.
+Développé services événements Java/JavaScript sur architecture trois niveaux.
 
 **Liens:**
 BehindTheMusicTree: https://github.com/behindthemusictree
