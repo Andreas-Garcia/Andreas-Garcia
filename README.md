@@ -234,14 +234,14 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 
 ### 💼 Professional Experience
 
-### [BehindTheMusicTree](https://github.com/behindthemusictree) - Founder & Lead Developer
+#### [BehindTheMusicTree](https://github.com/behindthemusictree) - Founder & Lead Developer
 
 **Dec. 2022 – Present**
 
 - Defined the vision, mission, and strategic direction of the company to guide product development
 - Participated in a 3-month entrepreneurship program by La Ruche, conducting market research and creating personas
 
-#### 🎵 [**AudioMeta Python**](https://github.com/BehindTheMusicTree/audiometa)
+##### 🎵 [**AudioMeta Python**](https://github.com/BehindTheMusicTree/audiometa)
 
 - Developed a unified Python library for reading and writing audio metadata across multiple formats (ID3v1, ID3v2, Vorbis, RIFF)
 - Implemented comprehensive test suite with 1500+ unit tests ensuring reliability and edge case coverage
@@ -249,7 +249,7 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 - Published on [PyPI](https://pypi.org/project/audiometa-python/) achieving 5000+ downloads, establishing it as a production-ready tool
 - Maintained active development with community contributions, issue tracking, and continuous improvements
 
-#### 🌳 [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree)
+##### 🌳 [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree)
 
 - Building a collaborative platform for music genre classification using Next.js, TypeScript, and React
 - Designed interactive genre tree visualization enabling users to build and explore music genres
@@ -257,7 +257,7 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 - Integrated with TheMusicTreeAPI, MusicBrainz, and Spotify for real-time genre data, intelligent recommendations, and music discovery
 - Deployed with Docker containerization and automated CI/CD pipelines using GitHub Actions and Docker Hub
 
-#### 🔌 [**TheMusicTreeAPI**](https://github.com/BehindTheMusicTree/the-music-tree-api)
+##### 🔌 [**TheMusicTreeAPI**](https://github.com/BehindTheMusicTree/the-music-tree-api)
 
 - Created RESTful Django API providing access to genre hierarchy, metadata, and intelligent genre detection
 - Developed PostgreSQL database schema optimized for efficient storage and querying of genre relationships
@@ -266,7 +266,7 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 - Ensured API scalability, security, and performance through comprehensive testing and monitoring
 - Deployed with Docker containerization and automated CI/CD pipelines using GitHub Actions
 
-#### 🎧 HearTheMusicTree
+##### 🎧 HearTheMusicTree
 
 - Developing cloud-based music library manager using Django REST Framework and PostgreSQL
 - Implemented smart playlist generation algorithms based on genre intelligence and user preferences
@@ -274,7 +274,7 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 - Integrated MusicBrainz API for automatic track identification and metadata enrichment
 - Deployed with Docker containerization and automated CI/CD pipelines using GitHub Actions and Docker Hub
 
-### Major Music Events Company - Consultant
+#### Major Music Events Company - Consultant
 
 **Dec. 2024 – Jan. 2025**
 
@@ -283,7 +283,7 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 - Normalized and consolidated inconsistent labels, resolved duplicates, and standardized naming conventions to support accurate matching and classification.
 - Combined domain expertise in music history, sonic feature analysis, and trend detection to ensure meaningful genre grouping and improve recommendation and matching precision.
 
-### INRAE - Research Engineer
+#### INRAE - Research Engineer
 
 **Oct. 2018 – Dec. 2019 | Montpellier, France**
 
@@ -295,7 +295,7 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 - Added event handling in PHP and JavaScript on the website layer (three-tier architecture) using API calls
 - Worked on topics I remain passionate about: climate change mitigation and open science
 
-### Cleversys (acquired by Deloitte) - BI/ERP Consultant
+#### Cleversys (acquired by Deloitte) - BI/ERP Consultant
 
 **Apr. 2015 – Oct. 2017 | Paris**
 
@@ -303,25 +303,25 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 - Technical development on ERP projects as an ETL expert, specifying and implementing 62 critical accounting interfaces
 - Technical point of contact for the client (annual revenue > €4B), leading specification workshops and training developers
 
-### Sopra Steria - Developer
+#### Sopra Steria - Developer
 
 **Nov. 2014 – Apr. 2015 | Paris**
 
 - Development on a maintenance application for a railway company (C#)
 
-### Sogeti High Tech – Developer
+#### Sogeti High Tech – Developer
 
 **Apr. 2014 – Oct. 2014 | Aix-en-Provence** (Internship)
 
 - Development of a web portal in ASP.NET based on the Umbraco CMS and features for Onlymoov', an Android mobility assistant application
 
-### Kreactive Digital Studio - Developer
+#### Kreactive Digital Studio - Developer
 
 **2013 | Lyon** (Internship)
 
 - Development of iOS applications for various clients (Eurosport)
 
-### Music Micro Festival - Organizer & DJ
+#### Music Micro Festival - Organizer & DJ
 
 **2021**
 
