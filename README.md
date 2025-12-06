@@ -295,7 +295,7 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 
 **Oct. 2018 – Dec. 2019 | Montpellier, France**
 
-- Led researchers to efficiently share their data using a common vocabulary and structure for a cross-disciplinary agrivoltaism research project combining agriculture and photovoltaics
+- Assisted researchers to efficiently share their data using a common vocabulary and structure for a cross-disciplinary agrivoltaism research project combining agriculture and photovoltaics
 - Contributed to an open-source information system to make research data FAIR (Findable, Accessible, Interoperable, and Reusable)
 - Collaborated within a SCRUM team on an open-source program hosted on GitHub
 - Manipulated complex data structures within the RDF4J graph database and improved ontologies (graph structures)
