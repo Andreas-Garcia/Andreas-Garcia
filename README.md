@@ -27,9 +27,8 @@
   - [💼 Professional Experience](#-professional-experience)
 - [📊 GitHub Stats](#-github-stats)
 - [🤝 Open Source Contributions](#-open-source-contributions)
-- [📝 Recent Activity](#-recent-activity)
-- [🏆 GitHub Achievements](#-github-achievements)
-- [🌍 A Global Vision for Music Culture](#-a-global-vision-for-music-culture)
+<!-- - [📝 Recent Activity](#-recent-activity)
+- [🏆 GitHub Achievements](#-github-achievements) -->
 - [🤝 Contributing & Collaboration](#-contributing-and-collaboration)
 - [📫 Connect With Me](#-connect-with-me)
 - [⭐ Show Your Support](#-show-your-support)
@@ -123,7 +122,7 @@ By continuously evolving through **crowd-sourced curation**, expert input, and a
 - **A dynamic, evolving genre tree**, collaboratively built by users and experts
 - **Personalized music journeys** that visually map users' listening habits within the genre tree, enabling niche genres discovery
 - **Intelligent genre detection** that accurately categorizes any track, even those outside mainstream genres
-- **API access** through **TheMusicTreeAPI** allows developers and professionals to integrate genre intelligence into their platforms
+- **API access** through [**TheMusicTreeAPI**](https://github.com/BehindTheMusicTree/the-music-tree-api) allows developers and professionals to integrate genre intelligence into their platforms
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
@@ -138,7 +137,7 @@ By continuously evolving through **crowd-sourced curation**, expert input, and a
 
 > 🔨 **Work in Progress** - Will be published open source soon! 🚀
 
-**TheMusicTreeAPI** is the API companion to **GrowTheMusicTree**, giving developers, researchers, and music platforms access to the full genre hierarchy, detailed metadata, and intelligent genre detection. Built with **Django REST Framework** and **PostgreSQL**, it enables personalized user profiling based on listening habits, delivers accurate track and artist classifications, and provides data-driven recommendations. Perfect for powering music discovery, streaming personalization, event recommendations, and listener analytics, **TheMusicTreeAPI** brings the intelligence of the genre tree to any app or service.
+[**TheMusicTreeAPI**](https://github.com/BehindTheMusicTree/the-music-tree-api) is the API companion to **GrowTheMusicTree**, giving developers, researchers, and music platforms access to the full genre hierarchy, detailed metadata, and intelligent genre detection. Built with **Django REST Framework** and **PostgreSQL**, it enables personalized user profiling based on listening habits, delivers accurate track and artist classifications, and provides data-driven recommendations. Perfect for powering music discovery, streaming personalization, event recommendations, and listener analytics, **TheMusicTreeAPI** brings the intelligence of the genre tree to any app or service.
 
 ![Python](https://img.shields.io/badge/Python-3.12+-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Django](https://img.shields.io/badge/Django_REST_Framework-092E20?style=flat-square&logo=django&logoColor=white)
@@ -149,7 +148,7 @@ By continuously evolving through **crowd-sourced curation**, expert input, and a
 
 ### 🎧 HearTheMusicTree: A Smart Cloud-Based Music Library Manager
 
-Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the **TheMusicTreeAPI API**, and built on **AudioMeta Python** for robust metadata handling, **HearTheMusicTree** is a **cloud-based audio file manager** built for collectors, DJs, and music lovers who want full control over their libraries. It uses automatic genre detection, deep metadata analysis powered by AudioMeta Python, and real-time insights from the API to help users seamlessly organize, stream, and explore their collections—leveraging the **ultimate genre reference** to its fullest potential.
+Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the **TheMusicTreeAPI**, and built on **AudioMeta Python** for robust metadata handling, **HearTheMusicTree** is a **cloud-based audio file manager** built for collectors, DJs, and music lovers who want full control over their libraries. It uses automatic genre detection, deep metadata analysis powered by AudioMeta Python, and real-time insights from the API to help users seamlessly organize, stream, and explore their collections—leveraging the **ultimate genre reference** to its fullest potential.
 
 **Key features:**
 
@@ -408,12 +407,12 @@ I believe open-source software should be:
 - **Community-driven** - Built with and for the community
 - **Production-ready** - Tools that people can trust in real projects
 
-## 📝 Recent Activity
+<!-- ## 📝 Recent Activity -->
 
 <!--START_SECTION:activity-->
 <!--END_SECTION:activity-->
 
-## 🏆 GitHub Achievements
+<!-- ## 🏆 GitHub Achievements -->
 
 <!-- GitHub Trophies service is currently unavailable (503 error) -->
 <!-- <div align="center">
@@ -421,12 +420,6 @@ I believe open-source software should be:
   ![GitHub Trophies](https://github-profile-trophy.vercel.app/?username=Andreas-Garcia&theme=radical)
 
 </div> -->
-
-## 🌍 A Global Vision for Music Culture
-
-The **BehindTheMusicTree** ecosystem is committed to creating a **global, authoritative reference** that serves as the foundation for music discovery, exploration, and understanding. Through **AudioMeta Python**, **GrowTheMusicTree**, **InTheMusicTree**, and **TheMusicTreeApi**, we offer a comprehensive framework that reflects the full diversity of global music culture.
-
-Through the combined power of **robust metadata management, expert curation, developer tools, and community collaboration**, we're building a future where everyone—from casual listeners to creators to engineers—can connect more deeply with music.
 
 ## 🤝 Contributing & Collaboration
 

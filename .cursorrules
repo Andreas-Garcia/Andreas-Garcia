@@ -17,6 +17,7 @@ When the user asks to generate a CV and/or motivation letter for a job applicati
    - Create `professional/CV/Job Descriptions/[job title]/cv.txt` in the same directory as the job description
    - Follow the format specified in `professional/CV/cv_format_spec.md`:
      - **Intro Section**: Opening line with title/role tags, 2 paragraphs about professional identity, optional key achievements. Must be between 570 and 580 characters in length (excluding project links in parentheses). Use real, flowing sentences, not fragmented bullet-style text.
+     - **Skills Section**: Technical skills (Techniques) and project/process skills (Projet) relevant to the job description, selected from README.md. Format: "Techniques: [comma-separated list]" and "Projet: [comma-separated list]". The language should match the job description language.
      - **Job Experiences Section**: Maximum 3 job experiences selected from README.md "Professional Experience" section **based on relevance to the job description**. **Experiences must always be listed in reverse chronological order (most recent first)**. Each with:
        - `[ICON]` Company/Project Name - Role Title (use `[ICON]` placeholder instead of markdown links)
        - Date Range (e.g., "Dec. 2022 – Present")
