@@ -18,7 +18,7 @@ Implémenté TheMusicTreeAPI Django REST avec PostgreSQL et intégrations APIs.
 
 ### [ICON] INRAE - Ingénieur de Recherche
 
-Oct. 2018 – Déc. 2019 | Montpellier, France
+Oct. 2018 – Jan. 2020 | Montpellier, France
 
 Implémenté APIs REST avec patterns DTO en équipe SCRUM sur projet open-source.
 Contribué OpenSILEX (https://github.com/OpenSILEX/opensilex), manipulant bases graphe RDF4J en projet agrivoltaïsme.

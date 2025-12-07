@@ -26,7 +26,7 @@ Normalisé labels inconsistants pour améliorer précision classification.
 
 ### [ICON] INRAE - Ingénieur de Recherche
 
-Oct. 2018 – Déc. 2019 | Montpellier, France
+Oct. 2018 – Jan. 2020 | Montpellier, France
 
 Implémenté APIs REST Java/Spring Boot avec patterns DTO en équipe SCRUM.
 Contribué OpenSILEX (https://github.com/OpenSILEX/opensilex), manipulant bases graphe RDF4J en projet agrivoltaïsme.
