@@ -7,6 +7,7 @@ Given a job description located at `professional/CV/Job Descriptions/[job title]
 1. **cv.txt** - Contains:
 
    - Intro section (following INTRO SECTION format)
+   - Skills section (following SKILLS SECTION format)
    - Job experiences section (following JOB EXPERIENCES SECTION format, max 3 experiences from README.md)
    - More info section (following MORE INFO SECTION format)
 
@@ -45,6 +46,21 @@ Example:
 Results-oriented Engineering Executive with a proven track record of optimizing project outcomes. Skilled in strategic project management and team leadership.
 
 Seeking a challenging executive role to leverage technical skills and drive engineering excellence. Experienced in leading cross-functional teams and delivering complex projects on time and within budget.
+
+## SKILLS SECTION
+
+Format:
+
+- **Techniques:** List technical skills relevant to the job description (e.g., Javascript, React, Next.js, Python, Django DRF, RESTfull API, SGBD, CI/CD)
+- **Projet:** List project/process skills relevant to the job description (e.g., Git Flow, Test Driven Development, Assurance Qualité, Agile/SCRUM)
+
+**Important:** Skills should be selected based on relevance to the job description and should reference skills from README.md. The language should match the job description language (French or English).
+
+Example:
+
+Techniques: Javascript, React, Next.js, Python, Django DRF, RESTfull API, SGBD, CI/CD
+
+Projet: Git Flow, Test Driven Development, Assurance Qualité, Agile/SCRUM
 
 ## JOB EXPERIENCES SECTION
 

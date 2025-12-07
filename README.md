@@ -247,7 +247,8 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 **Dec. 2022 – Present**
 
 - Defined the vision, mission, and strategic direction of the company to guide product development
-- Participated in a 3-month entrepreneurship program by La Ruche, conducting market research and creating personas
+- Programme d'entrepreneuriat de 3 mois. 9 ateliers sur la stratégie, le juridique, le financement et la propriété intellectuelle
+- Développé un plan d'affaires. Réalisé des études de marché et créé des personas utilisateurs
 
 ##### 🎵 [**AudioMeta Python**](https://github.com/BehindTheMusicTree/audiometa)
 
