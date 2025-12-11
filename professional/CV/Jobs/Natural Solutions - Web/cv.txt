@@ -1,0 +1,51 @@
+Développeur Full-Stack | Fondateur & Lead Developer | Contributeur Open Source
+
+Développeur full-stack passionné par les technologies et l'impact environnemental, avec une solide expérience dans le développement d'applications web modernes. Expérimenté dans la création d'écosystèmes techniques complets alliant React, TypeScript, Python et Django REST Framework, avec un focus sur la qualité du code.
+
+Fondateur de BehindTheMusicTree (https://github.com/behindthemusictree), écosystème open source incluant AudioMeta Python (https://github.com/BehindTheMusicTree/audiometa) avec 6000+ téléchargements, et contributeur à OpenSILEX (https://github.com/OpenSILEX/opensilex) pour la gestion de données de recherche FAIR. Recherche un poste alliant expertise technique et engagement environnemental.
+
+Techniques: React, TypeScript, JavaScript, Python, Django REST Framework, PostgreSQL, SQL, JSON, HTML, CSS
+
+Workflow: Git Flow, Test Driven Development, CI/CD, Docker, Agile/SCRUM, Revue de code, Documentation, Déploiement autonome
+
+### [ICON] BehindTheMusicTree - Fondateur & Lead Developer
+
+Déc. 2022 – Présent
+
+Développé un écosystème d'applications web avec React, TypeScript et Next.js pour GrowTheMusicTree (https://github.com/BehindTheMusicTree/grow-the-music-tree).
+Créé TheMusicTreeAPI (https://github.com/BehindTheMusicTree/the-music-tree-api) avec Django REST Framework et PostgreSQL, implémentant des algorithmes.
+Implémenté une suite de tests avec 1500+ tests unitaires pour AudioMeta Python (https://github.com/BehindTheMusicTree/audiometa), publié sur PyPI.
+
+Links:
+BehindTheMusicTree: https://github.com/behindthemusictree
+GrowTheMusicTree: https://github.com/BehindTheMusicTree/grow-the-music-tree
+TheMusicTreeAPI: https://github.com/BehindTheMusicTree/the-music-tree-api
+AudioMeta Python: https://github.com/BehindTheMusicTree/audiometa
+
+### [ICON] INRAE - Ingénieur de Recherche
+
+Oct. 2018 – Déc. 2019 | Montpellier, France
+
+Contribué à un système d'information open source pour rendre les données de recherche FAIR dans un projet d'agrivoltaïsme.
+Implémenté des services de gestion d'événements en Java (API REST) avec le pattern DTO et ajouté la gestion en PHP et JS.
+Manipulé des structures de données complexes dans la base de données graphe RDF4J et amélioré les ontologies pour optimiser.
+
+Links:
+OpenSILEX: https://github.com/OpenSILEX/opensilex
+
+### [ICON] Major Music Events Company - Consultant
+
+Déc. 2024 – Jan. 2025
+
+Organisé et classifié 1300+ genres musicaux pour un outil de matching, créant une taxonomie avec 15 genres principaux.
+Mappé 1300+ labels de genres bruts vers une taxonomie normalisée, résolvant les doublons et standardisant les conventions.
+
+More Info:
+
+Backend: Python, Django REST Framework, Java (Spring Boot), PostgreSQL, SQL
+Frontend: TypeScript, JavaScript, React, Next.js, HTML, CSS
+Database: PostgreSQL, SQL, modélisation de données, JSON, XML
+DevOps: Docker, Docker Hub, CI/CD (GitHub Actions), déploiement autonome
+Education: INSA Lyon - Diplôme d'ingénieur en Informatique (2014)
+Languages: Français (Natif), Anglais (Avancé), Espagnol (Avancé), Allemand (Bases)
+Open to: Opportunités en développement full-stack avec impact environnemental et social

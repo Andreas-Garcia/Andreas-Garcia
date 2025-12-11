@@ -17,7 +17,7 @@ When the user asks to generate a CV and/or motivation letter for a job applicati
    - Create `professional/CV/Job Descriptions/[job title]/cv.txt` in the same directory as the job description
    - Follow the format specified in `professional/CV/cv_format_spec.md`:
      - **Intro Section**: Opening line with title/role tags, 2 paragraphs about professional identity, optional key achievements. Must be between 570 and 580 characters in length (excluding project links in parentheses). Use real, flowing sentences, not fragmented bullet-style text.
-     - **Skills Section**: Technical skills (Techniques) and project/process skills (Projet) relevant to the job description, selected from README.md. Format: "Techniques: [comma-separated list]" and "Projet: [comma-separated list]". The language should match the job description language.
+     - **Skills Section**: Technical skills (Techniques) and project/process skills (Workflow) relevant to the job description, selected from README.md. Format: "Techniques: [comma-separated list]" and "Workflow: [comma-separated list]". Maximum 9 keywords for Techniques and maximum 9 keywords for Workflow. The language should match the job description language.
      - **Job Experiences Section**: Maximum 3 job experiences selected from README.md "Professional Experience" section **based on relevance to the job description**. **Experiences must always be listed in reverse chronological order (most recent first)**. Each with:
        - `[ICON]` Company/Project Name - Role Title (use `[ICON]` placeholder instead of markdown links)
        - Date Range (e.g., "Dec. 2022 – Present")
@@ -42,9 +42,12 @@ When the user asks to generate a CV and/or motivation letter for a job applicati
 
 5. **Validation step** - After generating cv.txt:
 
-   - Verify that all bullet points in the job experiences section are approximately 95 characters in length (excluding project links in parentheses)
-   - Verify that the intro section is between 570 and 580 characters in length (excluding all project links in parentheses) and consists of 2 paragraphs
-   - Adjust any bullet points or intro section that do not meet these requirements
+   - **Run the validation script**: Execute `python3 professional/CV/validate_cv.py professional/CV/Job Descriptions/[job title]/cv.txt` to validate the CV format
+   - The script checks:
+     - Intro section is between 570 and 580 characters in length (excluding project links in parentheses)
+     - All bullet points in the job experiences section are approximately 95 characters in length (excluding project links in parentheses, target range: 85-105 characters)
+   - If validation fails, adjust any bullet points or intro section that do not meet these requirements
+   - Continue adjusting until the validation script passes
 
 6. **Key principles**:
 

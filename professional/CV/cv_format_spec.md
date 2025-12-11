@@ -18,8 +18,10 @@ Given a job description located at `professional/CV/Job Descriptions/[job title]
    - Must connect experiences from README.md to job requirements
 
 3. **Validation step** - After generating cv.txt:
-   - Verify that all bullet points in the job experiences section are approximately 90 characters in length (excluding project links in parentheses)
+   - Verify that all mentions of projects in the intro section and job experiences section have links in parentheses (format: `ProjectName (https://url.com)`)
+   - Verify that all bullet points in the job experiences section are approximately 95 characters in length (excluding project links in parentheses)
    - Verify that the intro section is between 570 and 580 characters in length (excluding all project links in parentheses) and consists of 2 paragraphs
+   - **Important:** Project links in parentheses do not count toward character limits for validation purposes
    - Adjust any bullet points or intro section that do not meet these requirements
 
 Both files should be created in the same directory as the job description: `professional/CV/Job Descriptions/[job title]/`
@@ -40,7 +42,7 @@ Format:
 - 2 paragraphs about your professional identity
 - Optional: Brief mention of key achievements
 
-**Important:** The intro section should be between 570 and 580 characters in length (excluding project links in parentheses). **Multiple projects can be mentioned, but only one link per project should be included** (priority order: website > PyPI > GitHub). The character count should be verified excluding all links in parentheses. Use real, flowing sentences, not fragmented bullet-style text.
+**Important:** The intro section should be between 570 and 580 characters in length (excluding project links in parentheses). **All mentions of projects must include a link in parentheses** (format: `ProjectName (https://url.com)`). **Multiple projects can be mentioned, but only one link per project should be included** (priority order: website > PyPI > GitHub). The character count should be verified excluding all links in parentheses. Use real, flowing sentences, not fragmented bullet-style text.
 
 Example:
 Results-oriented Engineering Executive with a proven track record of optimizing project outcomes. Skilled in strategic project management and team leadership.
@@ -51,8 +53,8 @@ Seeking a challenging executive role to leverage technical skills and drive engi
 
 Format:
 
-- **Techniques:** List technical skills relevant to the job description (e.g., Javascript, React, Next.js, Python, Django DRF, RESTfull API, SGBD, CI/CD)
-- **Projet:** List project/process skills relevant to the job description (e.g., Git Flow, Test Driven Development, Assurance Qualité, Agile/SCRUM)
+- **Techniques:** List technical skills relevant to the job description (e.g., Javascript, React, Next.js, Python, Django DRF, RESTfull API, SGBD, CI/CD). **Maximum 9 keywords.**
+- **Workflow:** List project/process skills relevant to the job description (e.g., Git Flow, Test Driven Development, Assurance Qualité, Agile/SCRUM). **Maximum 9 keywords.**
 
 **Important:** Skills should be selected based on relevance to the job description and should reference skills from README.md. The language should match the job description language (French or English).
 
@@ -60,7 +62,7 @@ Example:
 
 Techniques: Javascript, React, Next.js, Python, Django DRF, RESTfull API, SGBD, CI/CD
 
-Projet: Git Flow, Test Driven Development, Assurance Qualité, Agile/SCRUM
+Workflow: Git Flow, Test Driven Development, Assurance Qualité, Agile/SCRUM
 
 ## JOB EXPERIENCES SECTION
 
@@ -80,7 +82,7 @@ Format:
 
 **Important:** Do not use "-" as a bullet point marker. Write bullet points as plain text sentences without any bullet markers.
 
-**Project links:** When mentioning specific projects (e.g., AudioMeta Python, TheMusicTreeAPI, OpenSILEX, GrowTheMusicTree), include the project link(s) in parentheses immediately after the project name: `ProjectName (https://url.com)`. Priority order for links: website > PyPI > GitHub. **Note:** Links in parentheses do not count toward the character limit. **Multiple project links with icon placeholders are allowed in the job experiences section.**
+**Project links:** **All mentions of specific projects** (e.g., AudioMeta Python, TheMusicTreeAPI, OpenSILEX, GrowTheMusicTree) **must include the project link(s) in parentheses immediately after the project name**: `ProjectName (https://url.com)`. Priority order for links: website > PyPI > GitHub. **Note:** Links in parentheses do not count toward the character limit. **Multiple project links with icon placeholders are allowed in the job experiences section.**
 
 **Links:** After the job experiences section, include a "Links" subsection listing all URLs in the format: `Project/Company Name: https://url.com`
 
