@@ -291,6 +291,14 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 - Normalized and consolidated inconsistent labels, resolved duplicates, and standardized naming conventions to support accurate matching and classification.
 - Combined domain expertise in music history, sonic feature analysis, and trend detection to ensure meaningful genre grouping and improve recommendation and matching precision.
 
+#### WWOOFing & Sustainable Home Construction - Volunteer
+
+**2022 - 2023**
+
+- Participated in WWOOFing (World Wide Opportunities on Organic Farms) programs, learning organic farming practices and sustainable agriculture methods
+- Contributed to sustainable home construction projects, gaining hands-on experience with eco-friendly building techniques and environmentally responsible construction methods
+- Worked with natural materials and traditional building techniques to promote sustainable living practices
+
 #### INRAE - Research Engineer
 
 **Oct. 2018 – Dec. 2019 | Montpellier, France**
