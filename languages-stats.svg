@@ -3,25 +3,25 @@
   <rect width="495" height="195" fill="#0d1117" rx="8" />
   <rect x="10" y="10" width="475" height="175" fill="#161b22" rx="6" />
   <text x="247" y="35" text-anchor="middle" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="18" font-weight="700" fill="#ff6e96">Most Used Languages</text>
-  <rect x="20" y="60" width="170.33928518743323" height="10" fill="#3776ab" rx="2" />
-  <rect x="190.33928518743323" y="60" width="106.53261189105424" height="10" fill="#ed8b00" rx="2" />
-  <rect x="296.87189707848745" y="60" width="94.86394472958142" height="10" fill="#f7df1e" rx="2" />
-  <rect x="391.73584180806887" y="60" width="36.36613128090446" height="10" fill="#f7df1e" rx="2" />
-  <rect x="428.10197308897335" y="60" width="14.204138232933195" height="10" fill="#89e051" rx="2" />
-  <rect x="442.30611132190654" y="60" width="12.443354226928157" height="10" fill="#3178c6" rx="2" />
-  <rect x="454.7494655488347" y="60" width="10.969047772165275" height="10" fill="#1572b6" rx="2" />
-  <rect x="465.71851332099993" y="60" width="7.132252282282531" height="10" fill="#3776ab" rx="2" />
-  <rect x="472.85076560328247" y="60" width="1.1838839481390406" height="10" fill="#012456" rx="2" />
+  <rect x="20" y="60" width="170.355109214401" height="10" fill="#3776ab" rx="2" />
+  <rect x="190.355109214401" y="60" width="106.3795506727091" height="10" fill="#ed8b00" rx="2" />
+  <rect x="296.7346598871101" y="60" width="94.72764852225491" height="10" fill="#f7df1e" rx="2" />
+  <rect x="391.46230840936505" y="60" width="36.313882075130294" height="10" fill="#f7df1e" rx="2" />
+  <rect x="427.7761904844954" y="60" width="14.531011152085709" height="10" fill="#89e051" rx="2" />
+  <rect x="442.30720163658106" y="60" width="12.425476180718029" height="10" fill="#3178c6" rx="2" />
+  <rect x="454.7326778172991" y="60" width="10.953287942510382" height="10" fill="#1572b6" rx="2" />
+  <rect x="465.68596575980945" y="60" width="7.142608309694701" height="10" fill="#3776ab" rx="2" />
+  <rect x="472.82857406950416" y="60" width="1.1821829974511262" height="10" fill="#012456" rx="2" />
   <circle cx="26.0" cy="96" r="5" fill="#3776ab" />
   <text x="38.0" y="100" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#c9d1d9">Python 37.44%</text>
   <circle cx="177.66666666666666" cy="96" r="5" fill="#ed8b00" />
-  <text x="189.66666666666666" y="100" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#c9d1d9">Java 23.41%</text>
+  <text x="189.66666666666666" y="100" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#c9d1d9">Java 23.38%</text>
   <circle cx="329.3333333333333" cy="96" r="5" fill="#f7df1e" />
-  <text x="341.3333333333333" y="100" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#c9d1d9">JavaScript 20.85%</text>
+  <text x="341.3333333333333" y="100" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#c9d1d9">JavaScript 20.82%</text>
   <circle cx="26.0" cy="121" r="5" fill="#f7df1e" />
-  <text x="38.0" y="125" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#c9d1d9">PHP 7.99%</text>
+  <text x="38.0" y="125" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#c9d1d9">PHP 7.98%</text>
   <circle cx="177.66666666666666" cy="121" r="5" fill="#89e051" />
-  <text x="189.66666666666666" y="125" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#c9d1d9">Shell 3.12%</text>
+  <text x="189.66666666666666" y="125" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#c9d1d9">Shell 3.19%</text>
   <circle cx="329.3333333333333" cy="121" r="5" fill="#3178c6" />
   <text x="341.3333333333333" y="125" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#c9d1d9">TypeScript 2.73%</text>
   <circle cx="26.0" cy="146" r="5" fill="#1572b6" />
