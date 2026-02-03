@@ -1,12 +1,12 @@
 # Full-Stack Developer | Music Technology Innovator | Open Source Contributor
 
-Full-stack engineer passionate about building products that reach large audiences, with proven experience in React, Next.js, and Node.js ecosystems. Founded BehindTheMusicTree (https://github.com/behindthemusictree), an open-source music technology ecosystem including AudioMeta Python (https://pypi.org/project/audiometa-python/) with 10 000+ downloads.
+Full-stack engineer passionate about building products that reach large audiences, with experience in React, Next.js ecosystems. Deeply passionate about music and entertainment, founded BehindTheMusicTree (https://github.com/behindthemusictree), an open-source music technology ecosystem including AudioMeta Python (https://pypi.org/project/audiometa-python/) with 10 000+ downloads.
 
-Experienced in building scalable applications with React, Next.js, TypeScript, and GraphQL APIs, with strong focus on user experience and product ownership. Worked on music industry projects including genre classification systems and event matching tools, combining technical skills with entertainment knowledge.
+The ecosystem includes GrowTheMusicTree (https://github.com/BehindTheMusicTree/grow-the-music-tree) for collaborative genre classification, TheMusicTreeAPI (https://github.com/BehindTheMusicTree/the-music-tree-api) for genre hierarchy, and HearTheMusicTree (https://github.com/BehindTheMusicTree/hear-the-music-tree-api) for cloud-based music library management. Each project demonstrates commitment to building production-ready tools with deep passion for music.
 
 ## Skills
 
-Techniques: React, Next.js, TypeScript, JavaScript, Node.js, GraphQL, PostgreSQL, Django REST Framework, Python
+Technical Skills: React, Next.js, TypeScript, JavaScript, Node.js, GraphQL, PostgreSQL, Django REST Framework, Python
 
 Workflow: GitFlow, Test Driven Development, CI/CD, Agile/SCRUM, Clean Code, API Design, Containerization, Docker
 
@@ -19,6 +19,7 @@ Dec. 2022 – Present
 Developed GrowTheMusicTree (https://github.com/BehindTheMusicTree/grow-the-music-tree) using Next.js, TypeScript, and React, building collaborative platform.
 Implemented TheMusicTreeAPI (https://github.com/BehindTheMusicTree/the-music-tree-api) using Django REST Framework and PostgreSQL, providing genre hierarchy.
 Created AudioMeta Python (https://pypi.org/project/audiometa-python/) library achieving 10 000+ downloads, with test suite of 1500+ unit tests.
+Developed HearTheMusicTree (https://github.com/BehindTheMusicTree/hear-the-music-tree-api) for cloud-based music library management with smart playlists.
 
 **Links:**
 BehindTheMusicTree: https://github.com/behindthemusictree
@@ -27,11 +28,11 @@ TheMusicTreeAPI: https://github.com/BehindTheMusicTree/the-music-tree-api
 AudioMeta Python: https://pypi.org/project/audiometa-python/
 AudioMeta Python GitHub: https://github.com/BehindTheMusicTree/audiometa
 
-### [ICON] Major Music Events Company - Consultant
+### [ICON] Major Music Events Company - Independent Consultant
 
 Dec. 2024 – Jan. 2025
 
-Organized and classified 1300+ music genres for user-concert matching tool, mapping raw genre labels.
+Classified 1300+ music genres for matching tool, mapping raw genre labels into structured taxonomy.
 Normalized inconsistent labels and resolved duplicates to support accurate matching and improve precision.
 Combined domain expertise in music history and sonic analysis to ensure meaningful genre grouping.
 
