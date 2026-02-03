@@ -1,18 +1,18 @@
 Développeur Full-Stack | Fondateur & Lead Developer | Contributeur Open Source
 
-Développeur full-stack passionné par les technologies et l'impact environnemental, avec une solide expérience dans le développement d'applications web modernes. Expérimenté dans la création d'écosystèmes techniques complets alliant React, TypeScript, Python et Django REST Framework, avec un focus sur la qualité du code.
+Développeur full-stack passionné par les technologies et l'impact environnemental, avec une solide expérience dans le développement d'applications web modernes. Expérimenté dans la création d'écosystèmes techniques complets alliant React, TypeScript, Python et Django REST Framework, avec un focus sur la qualité du code et les tests automatisés.
 
-Fondateur de BehindTheMusicTree (https://github.com/behindthemusictree), écosystème open source incluant AudioMeta Python (https://github.com/BehindTheMusicTree/audiometa) avec 6000+ téléchargements, et contributeur à OpenSILEX (https://github.com/OpenSILEX/opensilex) pour la gestion de données de recherche FAIR. Recherche un poste alliant expertise technique et engagement environnemental.
+Fondateur de BehindTheMusicTree (https://github.com/behindthemusictree), écosystème open source dédié à la découverte et l'organisation musicale, incluant AudioMeta Python (https://github.com/BehindTheMusicTree/audiometa) avec 10 000+ téléchargements, et contributeur à OpenSILEX (https://github.com/OpenSILEX/opensilex) pour la gestion de données de recherche FAIR (https://www.go-fair.org/).
 
 Techniques: React, TypeScript, JavaScript, Python, Django REST Framework, PostgreSQL, SQL, JSON, HTML, CSS
 
-Workflow: Git Flow, Test Driven Development, CI/CD, Docker, Agile/SCRUM, Revue de code, Documentation, Déploiement autonome
+Workflow: GitFlow, Test Driven Development, CI/CD, Docker, Agile/SCRUM, Revue de code, Documentation, Déploiement autonome
 
 ### [ICON] BehindTheMusicTree - Fondateur & Lead Developer
 
 Déc. 2022 – Présent
 
-Développé un écosystème d'applications web avec React, TypeScript et Next.js pour GrowTheMusicTree (https://github.com/BehindTheMusicTree/grow-the-music-tree).
+Développé GrowTheMusicTree (https://github.com/BehindTheMusicTree/grow-the-music-tree) avec React, TypeScript et Next.js, plateforme crowdsourcing des genres.
 Créé TheMusicTreeAPI (https://github.com/BehindTheMusicTree/the-music-tree-api) avec Django REST Framework et PostgreSQL, implémentant des algorithmes.
 Implémenté une suite de tests avec 1500+ tests unitaires pour AudioMeta Python (https://github.com/BehindTheMusicTree/audiometa), publié sur PyPI.
 
@@ -26,9 +26,9 @@ AudioMeta Python: https://github.com/BehindTheMusicTree/audiometa
 
 Oct. 2018 – Déc. 2019 | Montpellier, France
 
-Contribué à un système d'information open source pour rendre les données de recherche FAIR dans un projet d'agrivoltaïsme.
-Implémenté des services de gestion d'événements en Java (API REST) avec le pattern DTO et ajouté la gestion en PHP et JS.
-Manipulé des structures de données complexes dans la base de données graphe RDF4J et amélioré les ontologies pour optimiser.
+Contribué à un système d'information open source pour rendre les données de recherche FAIR (https://www.go-fair.org/) dans un projet d'agrivoltaïsme.
+Implémenté des services de gestion d'événements en Java (API REST) avec le pattern DTO pour la couche backend.
+Ajouté la gestion d'événements en PHP et JavaScript sur la couche web avec des appels API dans une architecture trois tiers.
 
 Links:
 OpenSILEX: https://github.com/OpenSILEX/opensilex

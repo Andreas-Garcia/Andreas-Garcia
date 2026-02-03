@@ -1,0 +1,56 @@
+Développeur Backend | Ingénieur Full-Stack | Contributeur Open Source
+
+Ingénieur logiciel expérimenté en développement backend avec Python et Django REST Framework. Spécialisé dans la conception d'APIs REST pour applications web et mobiles, la gestion de bases de données PostgreSQL et le déploiement automatisé via Docker et CI/CD.
+
+Passionné par le développement de qualité production, j'ai fondé l'écosystème BehindTheMusicTree (https://github.com/behindthemusictree) incluant AudioMeta Python (https://pypi.org/project/audiometa-python/) avec 10 000+ téléchargements. Mon expérience couvre l'implémentation de fonctionnalités backend, la maintenance et l'amélioration de l'existant, la mise en place de tests complets avec pytest, ainsi que l'optimisation de schémas de base de données et l'amélioration de l'architecture.
+
+Techniques: Python, Django REST Framework, PostgreSQL, API REST, Docker, CI/CD, pytest, mypy, ruff
+
+Workflow: GitFlow, Test Driven Development, SCRUM, CI/CD, Déploiement en production, Documentation technique, Travail en équipe, Clean Code
+
+[ICON] BehindTheMusicTree (https://github.com/behindthemusictree) - Founder & Lead Developer
+
+Dec. 2022 – Present
+
+Développé TheMusicTreeAPI (https://github.com/BehindTheMusicTree/the-music-tree-api) avec Django REST Framework et PostgreSQL, fournissant des APIs REST.
+Implémenté des stratégies de test complètes avec pytest, assurant une couverture optimale.
+Créé et déployé des services containerisés avec Docker, automatisant les pipelines CI/CD.
+Intégré des APIs externes (Spotify, MusicBrainz) pour enrichir les métadonnées utilisateur.
+
+[ICON] INRAE - Research Engineer
+
+Oct. 2018 – Dec. 2019 | Montpellier, France
+
+Implémenté de nouveaux services de gestion d'événements en Java (REST API) utilisant le pattern DTO.
+Collaboré au sein d'une équipe SCRUM sur un système d'information open-source OpenSILEX (https://github.com/OpenSILEX/opensilex) pour rendre les données FAIR.
+Manipulé des structures de données complexes dans la base de données graphe RDF4J et amélioré les ontologies.
+Ajouté la gestion d'événements en PHP et JavaScript sur la couche web via des appels API.
+
+[ICON] Cleversys (acquis par Deloitte) - BI/ERP Consultant
+
+Avr. 2015 – Oct. 2017 | Paris
+
+Développé des interfaces comptables critiques en tant qu'expert ETL, implémentant 62 interfaces.
+Géré des transferts de données dans des entrepôts avec SSIS et SQL Server pour des projets BI.
+Assuré le point de contact technique pour le client (CA > 4 Md€), animant des ateliers de spécification.
+
+Plus d'informations
+
+Stack technique:
+Backend: Python, Django REST Framework, Java (Spring Boot), PostgreSQL, SQL
+Frontend: TypeScript, JavaScript, Next.js, React
+DevOps: Docker, Docker Hub, Git, GitHub Actions, CI/CD
+Qualité: pytest, mypy, ruff, Test Driven Development
+
+Formation:
+INSA Lyon - 2014
+Diplôme d'ingénieur en Informatique
+
+Langues:
+Français (Natif), Anglais (Avancé), Espagnol (Avancé), Allemand (Bases)
+
+Ouvert à: Opportunités d'emploi, collaborations, missions de conseil
+
+
+
+

@@ -1,0 +1,70 @@
+Descriptif du poste
+Le produit et la tech chez SportEasy
+Le produit et la tech sont au coeur de la culture et de la stratégie de SportEasy : nos deux fondateurs sont ingénieurs, nos premiers employés étaient tous développeurs - et notre moteur de croissance est le bouche à oreille, i.e. la qualité de nos applications et notre capacité à mettre régulièrement en production des fonctionnalités utiles à nos utilisateurs.
+
+SportEasy développe des applications web, iOS et Android, ainsi que des intégrations techniques avec différents partenaires. La plateforme repose sur un backend en Python/Django, et notre stack technique est décrite dans le détail ici.
+
+Nous recherchons des développeur(se)s ingénieux(ses) et passionné(e)s pour rejoindre un projet qui grandit plus vite que nous, et nous force à progresser avec lui !
+
+Le poste de développeur(se) back-end
+En tant que développeur(se) backend, tu auras des responsabilités essentielles et variées :
+
+maîtriser le backend de la conception aux mises en production, et le maintenir à un excellent standard de qualité
+
+implémenter la logique de nouvelles fonctionnalités de SportEasy, en lien avec le product owner
+
+développer les API pour alimenter nos applications web, iOS et Android, en lien avec les développeurs frontend
+
+s’assurer d’une couverture de tests optimale
+
+travailler en intégration et déploiement continus (CI/CD)
+
+mettre en place et suivre des métriques d’utilisation des fonctionnalités
+
+mener des projets d’intégration avec des partenaires techniques (ex. : fédérations, centres sportifs, autres startups)
+
+améliorer l’existant (enrichir des fonctionnalités, pérenniser et scaler notre architecture, optimiser les temps de réponse)
+
+proposer des outils internes pour rendre les équipes tech/produit, support et sales/marketing plus efficaces
+
+être force de proposition quant à la vision tech de SportEasy
+
+collaborer avec tous les devs pour garantir une cohérence entre les plateformes et faire progresser l’équipe tech
+
+Ce que nous t’apportons
+Une opportunité unique : devenir un pilier d’une équipe tech encore petite, mais qui développe un produit déjà utilisé par 3M de personnes
+
+Un challenge à relever : mettre ton expertise et un haut niveau d’exigence au service d’une startup aux ambitions internationales
+
+Une grande autonomie : possibilité de télétravailler régulièrement, grande marge de manoeuvre tech (architecture, choix d’implémentation, refactoring, maintenance, deploy)
+
+Un esprit d’équipe exceptionnel : ambiance décontractée, équipe hyper soudée, sport toutes les semaines (si tu en as envie), séminaires mythiques
+
+Voir plus
+Profil recherché
+Diplôme d’ingénieur, master ou école d’informatique (bac +5)
+
+4+ années d’expérience en développement back-end (2+ années d’expérience en Python/Django)
+
+Solide connaissance de l’écosystème web (API, bases de données, contraintes navigateurs/mobiles, Docker, culture data-driven, bonnes pratiques, etc.)
+
+Expérience sur (ou appétence pour) des services proches des utilisateurs
+
+Rigueur, excellence technique, forte exigence individuelle
+
+Curiosité, créativité, envie d’apprendre et d’expérimenter de nouvelles choses
+
+Autonomie, esprit entrepreneurial et forte capacité d’adaptation
+
+Esprit d’équipe, capacité à bien communiquer, énergie et motivation
+
+Tu parles français et habites en France
+
+Déroulement des entretiens
+Echange de 15 min
+
+Tests techniques en ligne (1h15 en autonomie + 2h en live)
+
+Entretien avec un développeur backend (45 min)
+
+Entretien dans nos bureaux à Paris avec un fondateur (1h)

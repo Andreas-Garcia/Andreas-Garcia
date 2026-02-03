@@ -1,0 +1,66 @@
+Expert en Ingénierie Logicielle | Développeur Full-Stack | Contributeur Open Source
+
+Ingénieur logiciel expérimenté en développement full-stack et ingénierie logicielle. Spécialisé dans la conception et le déploiement de solutions robustes avec Python, TypeScript et PostgreSQL, maîtrisant les méthodes DevOps et la virtualisation.
+
+Passionné par le développement de qualité production, j'ai fondé l'écosystème BehindTheMusicTree incluant AudioMeta Python (https://pypi.org/project/audiometa-python/) avec 10 000+ téléchargements. Mon expérience couvre la maintenance corrective et évolutive, les stratégies de test, le déploiement automatisé via Docker et CI/CD, ainsi que la documentation technique.
+
+Techniques: Python, TypeScript, JavaScript, PostgreSQL, Docker, Git, GitLab CI, Django REST Framework, React
+
+Workflow: GitFlow, Test Driven Development, CI/CD, Méthodes d'analyse et de conception, Déploiement en production, Virtualisation, Documentation technique, Travail en équipe
+
+[ICON] BehindTheMusicTree - Founder & Lead Developer
+
+Dec. 2022 – Present
+
+Développé et maintenu AudioMeta Python (https://pypi.org/project/audiometa-python/), bibliothèque avec 1500+ tests et 10 000+ téléchargements.
+Implémenté des stratégies de test complètes avec pytest, mypy et ruff pour garantir la fiabilité.
+Créé et déployé des packages containerisés avec Docker, automatisant les pipelines CI/CD.
+Conçu TheMusicTreeAPI avec Django REST Framework et PostgreSQL, optimisant les schémas de base de données.
+Intégré des APIs externes (Spotify, MusicBrainz) pour enrichir les métadonnées et améliorer l'expérience.
+
+Links:
+BehindTheMusicTree: https://github.com/behindthemusictree
+AudioMeta Python: https://pypi.org/project/audiometa-python/
+GrowTheMusicTree: https://github.com/BehindTheMusicTree/grow-the-music-tree
+TheMusicTreeAPI: https://github.com/BehindTheMusicTree/the-music-tree-api
+
+[ICON] INRAE - Research Engineer
+
+Oct. 2018 – Dec. 2019 | Montpellier, France
+
+Collaboré au sein d'une équipe SCRUM sur un système d'information open-source pour rendre les données FAIR.
+Implémenté de nouveaux services de gestion d'événements en Java (REST API) utilisant le pattern DTO.
+Manipulé des structures de données complexes dans la base de données graphe RDF4J et amélioré les ontologies.
+Ajouté la gestion d'événements en PHP et JavaScript sur la couche web via des appels API.
+Contribué à un projet de recherche interdisciplinaire en agrivoltaïsme combinant agriculture et photovoltaïque.
+
+Links:
+OpenSILEX: https://github.com/OpenSILEX/opensilex
+
+[ICON] Cleversys (acquis par Deloitte) - BI/ERP Consultant
+
+Avr. 2015 – Oct. 2017 | Paris
+
+Développé des interfaces comptables critiques en tant qu'expert ETL, implémentant 62 interfaces.
+Géré des transferts de données dans des entrepôts avec SSIS et SQL Server pour des projets BI.
+Assuré le point de contact technique pour le client (CA > 4 Md€), animant des ateliers de spécification.
+
+Links:
+Deloitte: https://www.deloitte.com
+
+Plus d'informations
+
+Stack technique:
+Backend: Python, Django REST Framework, Java (Spring Boot), PostgreSQL, SQL
+Frontend: TypeScript, JavaScript, Next.js, React, HTML, CSS
+DevOps: Docker, Docker Hub, Git, GitHub Actions, GitLab CI, CI/CD
+Qualité: pytest, mypy, ruff, Test Driven Development
+
+Formation:
+INSA Lyon - 2014
+Diplôme d'ingénieur en Informatique
+
+Langues:
+Français (Natif), Anglais (Avancé), Espagnol (Avancé), Allemand (Bases)
+
+Ouvert à: Opportunités d'emploi, collaborations, missions de conseil

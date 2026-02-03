@@ -43,7 +43,7 @@ Core strengths:
 - Dev practices: robust test suites (pytest), type-checking (mypy), linting (ruff), CI/CD, Docker, Docker Hub, GitFlow — Adheres to Robert C. Martin's "Clean Code" principles
 - Product: API design, metadata systems, containerised deployments (Docker, Docker Hub), and user-centered products
 
-I founded the [BehindTheMusicTree](https://github.com/behindthemusictree) ecosystem including [AudioMeta Python](https://github.com/BehindTheMusicTree/audiometa) (unified audio metadata manager, 5000+ downloads) 🎶, [GrowTheMusicTree](https://github.com/BehindTheMusicTree/grow-the-music-tree) (crowd sourced genre classification) 🌳, [TheMusicTreeAPI](https://github.com/BehindTheMusicTree/the-music-tree-api) (Django REST API) 🔌, and HearTheMusicTree (cloud library manager) 🎧.
+I founded the [BehindTheMusicTree](https://github.com/behindthemusictree) ecosystem including [AudioMeta Python](https://github.com/BehindTheMusicTree/audiometa) (unified audio metadata manager, 10 000+ downloads) 🎶, [GrowTheMusicTree](https://github.com/BehindTheMusicTree/grow-the-music-tree) (crowd sourced genre classification) 🌳, [TheMusicTreeAPI](https://github.com/BehindTheMusicTree/the-music-tree-api) (Django REST API) 🔌, and HearTheMusicTree (cloud library manager) 🎧.
 
 I also collaborate on open-source projects and programs (e.g., [OpenSILEX](https://github.com/OpenSILEX/opensilex)) that emphasize sustainability 🌍, reproducibility, and community-driven curation.
 
@@ -103,7 +103,7 @@ print(f"Title: {metadata.get(UnifiedMetadataKey.TITLE)}")
 ![mypy](https://img.shields.io/badge/mypy-000000?style=flat-square&logo=python&logoColor=white)
 ![ruff](https://img.shields.io/badge/ruff-000000?style=flat-square&logo=ruff&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
-![Light Git Flow](https://img.shields.io/badge/Light%20Git%20Flow-6DB33F?style=flat-square&logo=git&logoColor=white)
+![GitHub Flow](https://img.shields.io/badge/Light%20Git%20Flow-6DB33F?style=flat-square&logo=git&logoColor=white)
 ![ID3v1](https://img.shields.io/badge/ID3v1-000000?style=flat-square)
 ![ID3v2](https://img.shields.io/badge/ID3v2-000000?style=flat-square)
 ![Vorbis](https://img.shields.io/badge/Vorbis-FC60A8?style=flat-square)
@@ -203,7 +203,7 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
 ![GitFlow](https://img.shields.io/badge/GitFlow-F05032?style=flat-square&logo=git&logoColor=white)
-![Light Git Flow](https://img.shields.io/badge/Light%20Git%20Flow-6DB33F?style=flat-square&logo=git&logoColor=white)
+![GitHub Flow](https://img.shields.io/badge/Light%20Git%20Flow-6DB33F?style=flat-square&logo=git&logoColor=white)
 ![PyPI](https://img.shields.io/badge/PyPI-3775A9?style=flat-square&logo=pypi&logoColor=white)
 
 #### Testing & Quality
@@ -230,14 +230,13 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 #### INSA Lyon - 2014
 
 - Engineering degree in Computer Science
-
-**Technical Skills:** Full-Stack Development, API Design, Database Management, DevOps & CI/CD, Testing & Quality Assurance, Agile/SCRUM, Project Management
+  **Technical Skills:** Full-Stack Development, API Design, Database Management, DevOps & CI/CD, Testing & Quality Assurance, Agile/SCRUM, Project Management
 
 **Languages:** French (Native), English (Advanced), Spanish (Advanced), German (Basic)
 
 **Certifications:** La Ruche - Programme Itinéraire (Entrepreneurship Program, 2025)
 
-**Awards/Activities:** Organized Music Micro Festival (80+ attendees, 2021), Open Source Contributor (AudioMeta Python: 5000+ downloads), Founder & Lead Developer of BehindTheMusicTree ecosystem
+**Awards/Activities:** Organized Music Micro Festival (80+ attendees, 2021), Open Source Contributor (AudioMeta Python: 10 000+ downloads), Founder & Lead Developer of BehindTheMusicTree ecosystem
 
 ### 💼 Professional Experience
 
@@ -254,7 +253,7 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 - Developed a unified Python library for reading and writing audio metadata across multiple formats (ID3v1, ID3v2, Vorbis, RIFF)
 - Implemented comprehensive test suite with 1500+ unit tests ensuring reliability and edge case coverage
 - Created extensive documentation and usage examples to facilitate developer adoption
-- Published on [PyPI](https://pypi.org/project/audiometa-python/) achieving 5000+ downloads, establishing it as a production-ready tool
+- Published on [PyPI](https://pypi.org/project/audiometa-python/) achieving 10 000+ downloads, establishing it as a production-ready tool
 - Maintained active development with community contributions, issue tracking, and continuous improvements
 
 ##### 🌳 [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree)
@@ -332,6 +331,14 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 - Development of a web portal in ASP.NET based on the Umbraco CMS and features for Onlymoov', an Android mobility assistant application
 
 #### Kreactive Digital Studio - Developer
+
+##### Language Learning Meetup App - Student Project
+
+**2014 (2 months)**
+
+- Developed a web application using Angular to enable people to meet and learn languages together
+- Designed user matching system to connect language learners based on complementary language skills
+- Implemented features for scheduling meetups and facilitating language exchange between users
 
 **2013 | Lyon** (Internship)
 

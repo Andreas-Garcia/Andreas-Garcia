@@ -1,0 +1,83 @@
+Senior Fullstack Developer ( Python / React )F/H 
+Marseille, Provence-Alpes-Côte d’Azur, France · il y a 2 jours · 7 autres personnes ont cliqué sur Postuler
+Promue par un recruteur · Réponses gérées en dehors de LinkedIn
+
+
+60 €K/an - 75 €K/an
+
+ Sur site
+Correspond à vos préférences d’emploi, le type de lieu de travail est Sur site.
+
+ Temps plein
+Correspond à vos préférences d’emploi, le type d’emploi est Temps plein.
+
+Postuler
+
+Enregistrer
+Enregistrer Senior Fullstack Developer ( Python / React )F/H  chez FAB Group
+Découvrez comment vous vous positionnez par rapport aux 7 autres personnes qui ont cliqué sur Postuler
+Accédez à des informations exclusives sur les candidats, consultez les offres d’emploi pour lesquelles vous avez le plus de chances d’obtenir une réponse, et plus encore.
+
+Réactivez Premium : - 50%
+À propos de l’offre d’emploi
+Fab Group recherche pour son client, acteur majeur dans la formation , un Développeur Fullstack senior H/F.
+Vous intégrerez une équipe technique en charge de la conception et de l'amélioration continue de leurs outils internes et plateformes numériques.
+Le poste requiert une expertise technique solide, une bonne compréhension des besoins métiers et la capacité à exploiter des outils modernes, y compris l'IA, pour accélérer et fiabiliser le développement.
+
+
+Rattaché·e directement au CTO, vous évoluerez dans un environnement où l'impact de votre travail est concret et valorisé, et où chaque contribution compte.
+
+ 
+Missions principales
+
+Concevoir, développer et maintenir des applications robustes, scalables et sécurisées (frontend et backend).
+Produire un code propre, testable et efficace, en respectant les meilleures pratiques de développement web.
+Garantir la qualité du code, incluant tests, relectures, documentation et bonnes pratiques, qu'il soit produit manuellement ou via IA.
+Participer au recueil des besoins métiers, à la définition des solutions techniques et à la priorisation des tâches.
+Développer l'interface utilisateur et la mise en page web en utilisant HTML, CSS et des frameworks frontend reconnus.
+Intégrer et gérer les données issues de services back-end et bases de données.
+Recueillir et affiner les spécifications et exigences selon les besoins métiers et contraintes techniques.
+Créer et maintenir la documentation des projets.
+Assurer la maintenance des projets et prévoir leur évolutivité.
+Apporter un support technique pour les projets gérés par le département, notamment la plateforme d'apprentissage.
+Assurer une veille technologique et IA pour proposer des améliorations pertinentes.
+Collaborer avec l'équipe Design afin de respecter l'intention visuelle des interfaces.
+Travailler avec les équipes SEO et SEA pour garantir l'optimisation des projets en ligne.
+ 
+
+
+ 
+
+Expérience : 5 ans ou plus en développement web, avec un focus sur des architectures modernes et scalables.
+Compétences métiers : Compréhension des enjeux métiers et capacité à dialoguer avec les équipes Produit et Opérations.
+IA générative : Aisance avec les outils d'IA pour assister le développement, tout en garantissant qualité, performance et sécurité du code.
+Savoir-être : Autonomie, rigueur, proactivité, esprit d'équipe, bienveillance et capacité à faire monter l'équipe en compétences.
+
+ 
+
+
+
+Compétences techniques
+
+Frontend : React, NextJS, HTML, CSS
+Backend : Python, Django, SQL, NodeJS, GraphQL
+Solide compréhension du fonctionnement des applications Web
+Connaissance des modes de déploiement : Docker, Lambda
+ 
+
+
+Compétences transverses
+
+Orientation produit / business : comprendre les enjeux et proposer des solutions pertinentes
+Exigence technique et autonomie
+Capacité à évaluer et améliorer la qualité du code, y compris généré par IA
+Esprit d'équipe, entraide, bienveillance
+Culture de la documentation et du partage de savoir
+Curiosité technologique, notamment sur les usages d'IA dans le développement
+ 
+Informations complémentaires:
+
+Salaire 60K€ - 70K€
+Poste basé à Marseille
+full présentiel
+CDI statut cadre

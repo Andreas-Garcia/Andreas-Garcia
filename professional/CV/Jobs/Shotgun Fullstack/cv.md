@@ -8,7 +8,7 @@ Experienced in building scalable applications with React, Next.js, TypeScript, a
 
 Techniques: React, Next.js, TypeScript, JavaScript, Node.js, GraphQL, PostgreSQL, Django REST Framework, Python
 
-Workflow: Git Flow, Test Driven Development, CI/CD, Agile/SCRUM, Clean Code, API Design, Containerization, Docker
+Workflow: GitFlow, Test Driven Development, CI/CD, Agile/SCRUM, Clean Code, API Design, Containerization, Docker
 
 ## Professional Experience
 

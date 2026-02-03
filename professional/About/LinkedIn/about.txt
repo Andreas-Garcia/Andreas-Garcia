@@ -1,0 +1,32 @@
+Full-Stack Developer | Founder & Lead Developer | Music Technology Innovator | Open Source Contributor
+
+I'm a full-stack developer passionate about building open-source tools and platforms that combine technical excellence with real-world impact, with a particular commitment to environmental, social, and cultural dimensions.
+
+🌍 Environmental & Social Impact: Agrivoltaism research at INRAE, combining agriculture and photovoltaics to combat climate change. Contribution to open science initiatives (FAIR data). Experiences in sustainable agriculture (WWOOFing) and eco-construction projects. Experience in home care and public service. Open-source projects to democratize access to music culture and knowledge.
+
+🎵 Cultural Impact: My work on music technology contributes to preserving and organizing our global musical heritage. The BehindTheMusicTree ecosystem aims to become a definitive reference reflecting the full diversity of global music culture. Co-organization of a micro music festival (80+ people).
+
+Achievements and projects:
+
+I've developed tools, libraries, platforms, and services in various contexts:
+
+- BehindTheMusicTree (Founder & Lead Developer):
+  - AudioMeta Python: audio metadata library, 1500+ tests, 10 000+ downloads
+  - GrowTheMusicTree: community music genre classification platform (Next.js, TypeScript, React)
+  - TheMusicTreeAPI: REST API for access to genre hierarchy and metadata (Django REST Framework, PostgreSQL)
+  - HearTheMusicTree: cloud music library manager
+- OpenSILEX (INRAE): open-source information system for FAIR data (Java Spring Boot, RDF4J), backend REST API services and frontend (PHP, JavaScript)
+
+Technical stack:
+
+- Backend: Python, Django REST Framework, Java Spring Boot
+- Frontend: Next.js, TypeScript, React
+- Database: PostgreSQL
+- DevOps & Tools: Docker, GitFlow, CI/CD (GitHub Actions)
+- Methodologies: SCRUM, test-driven development (TDD)
+
+🎓 Education: Engineering degree in Computer Science from INSA Lyon (2014) | Entrepreneurship program at La Ruche (2025)
+
+Languages: 🇫🇷 French (Native) | 🇬🇧 English (Advanced) | 🇪🇸 Spanish (Advanced) | 🇩🇪 German (Basic)
+
+Open to: Job opportunities, collaborations, consulting opportunities, and connecting with fellow developers and music technology enthusiasts.

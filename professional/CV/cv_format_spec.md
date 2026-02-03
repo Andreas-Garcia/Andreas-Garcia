@@ -5,14 +5,12 @@
 Given a job description located at `professional/CV/Job Descriptions/[job title]/Description.txt`, follow the formats below to generate:
 
 1. **cv.txt** - Contains:
-
    - Intro section (following INTRO SECTION format)
    - Skills section (following SKILLS SECTION format)
    - Job experiences section (following JOB EXPERIENCES SECTION format, max 3 experiences from README.md)
    - More info section (following MORE INFO SECTION format)
 
 2. **motivation_letter.txt** - Contains:
-
    - A tailored motivation letter (following MOTIVATION LETTER TEMPLATE format)
    - Must reference specific requirements from the job description
    - Must connect experiences from README.md to job requirements
@@ -54,7 +52,7 @@ Seeking a challenging executive role to leverage technical skills and drive engi
 Format:
 
 - **Techniques:** List technical skills relevant to the job description (e.g., Javascript, React, Next.js, Python, Django DRF, RESTfull API, SGBD, CI/CD). **Maximum 9 keywords.**
-- **Workflow:** List project/process skills relevant to the job description (e.g., Git Flow, Test Driven Development, Assurance Qualité, Agile/SCRUM). **Maximum 9 keywords.**
+- **Workflow:** List project/process skills relevant to the job description (e.g., GitFlow, Test Driven Development, Assurance Qualité, Agile/SCRUM). **Maximum 9 keywords.**
 
 **Important:** Skills should be selected based on relevance to the job description and should reference skills from README.md. The language should match the job description language (French or English).
 
@@ -62,7 +60,7 @@ Example:
 
 Techniques: Javascript, React, Next.js, Python, Django DRF, RESTfull API, SGBD, CI/CD
 
-Workflow: Git Flow, Test Driven Development, Assurance Qualité, Agile/SCRUM
+Workflow: GitFlow, Test Driven Development, Assurance Qualité, Agile/SCRUM
 
 ## JOB EXPERIENCES SECTION
 

@@ -1,0 +1,87 @@
+H/F Expert en Ingénierie logicielle
+CNRS
+3.8
+3.8/5 étoiles
+Marseille (13)
+De 3 237,95 € à 4 960,80 € par mois - CDD
+&nbsp;
+Informations sur le profil
+Correspondance entre les qualifications requises pour ce poste et votre profil.
+Compétences
+
+TypeScript
+
+SQL
+
+Python
++ afficher plus
+Formation
+
+Master
+Langues
+
+Anglais
+&nbsp;
+Détails de l'emploi
+Correspondance entre ce poste et votre profil.
+Salaire
+
+De 3 237,95 € à 4 960,80 € par mois
+Type de poste
+
+CDD
+&nbsp;
+Lieu
+Marseille (13)
+&nbsp;
+Description du poste
+Date Limite Candidature : mercredi 24 décembre 2025 23:59:00 heure de Paris
+Assurez-vous que votre profil candidat soit correctement renseigné avant de postuler
+
+Informations générales
+Intitulé de l'offre : H/F Expert en Ingénierie logicielle
+Référence : UMR7326-ANAMEK-121
+Nombre de Postes : 1
+Lieu de travail : MARSEILLE 13
+Date de publication : mercredi 3 décembre 2025
+Type de contrat : IT en contrat CDD
+Durée du contrat : 12 mois
+Date d'embauche prévue : 1 mars 2026
+Quotité de travail : Complet
+Rémunération : 3 237,95 € à 4 960,80 € brut/mois, selon expérience.
+Niveau d'études souhaité : BAC+5
+Expérience souhaitée : Indifférent
+BAP : E - Informatique, Statistiques et Calcul scientifique
+Emploi type : Cheffe ou chef de projet / experte ou expert en ingenierie logicielle
+
+Missions
+Le Laboratoire d’Astrophysique de Marseille (LAM) recrute un Ingénieur de Recherche pour assurer les développements de la plateforme de suivi des alertes de sursaut gamma pour la mission SVOM.
+La durée du contrat est de 1 an, renouvelable.
+
+Activités
+Assurer la maintenance corrective et évolutive de la solution logicielle iFSC-Tools (concevoir de nouveaux composants, correction de bugs, ...) ;
+Élaborer et mettre en œuvre la stratégie de test ;
+Créer et tester les packages applicatifs et les scripts de déploiement en production ;
+Concevoir les actions de formation techniques et fonctionnelles ;
+Documenter l’activité ;
+Participer aux réunions d’intégration (en France).
+Compétences
+Savoir-faire :
+Expertise Génie logiciel
+Expertise Méthodes d'analyse et de conception
+Expertise Méthodes de mise en production et de virtualisation (Git, GitLab CI, Docker, SonarQube)
+Langage de programmation Objet (Python)
+Langage de programmation WEB (HTML, CSS, JS, Typescript, Angular 2+, D3JS)
+Système de gestion de base de données (PostgreSQL, SQL)
+Pratique de l’anglais technique indispensable
+Des connaissances en astrophysique serait un plus
+
+Savoir-être :
+Facilités à travailler en équipe
+Un fort sens de l’initiative et d’autonomie pour interagir avec les scientifiques
+Contexte de travail
+Dans le cadre du projet SVOM, le LAM est responsable du stockage et de la mise à disposition des produits scientifiques de SVOM, ainsi que de la plateforme de suivi et d’aide à la décision des alertes de sursaut gamma. La personne recrutée intègrera le Centre de données astrophysiques de Marseille (CeSAM) du Laboratoire d’Astrophysique de Marseille, sous la responsabilité du responsable du CeSAM et du chef de projet technique SVOM du LAM. Elle sera intégrée au consortium international du projet. Elle participera à l’équipe projet qui mène le développement de iFSC-Tools dans le respect du cahier des charges, des normes et des règles de sécurité en accord avec les contraintes du projet SVOM. Elle sera amenée à présenter son travail devant le consortium, pour ce faire une bonne connaissance de l’anglais est indispensable. Le travail nécessite une autonomie certaine et le goût pour le travail en équipe.
+
+Contraintes et risques
+Déplacements possibles (en France).
+

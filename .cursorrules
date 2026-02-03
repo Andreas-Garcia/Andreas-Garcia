@@ -4,17 +4,17 @@
 
 When the user asks to generate a CV and/or motivation letter for a job application:
 
-1. **Locate the job description**: The job description should be at `professional/CV/Job Descriptions/[job title]/Description.txt`. If the user provides a job description path or mentions a job title, use that location.
+1. **Locate the job description**: The job description should be at `professional/CV/Job Descriptions/[job title]/Job Description.md` or `Professional/CV/Jobs/[job title]/Job Description.md`. If the user provides a job description path or mentions a job title, use that location.
 
 2. **Read required files**:
 
-   - Read the job description from `professional/CV/Job Descriptions/[job title]/Description.txt`
+   - Read the job description from the located path (typically `Job Description.md`)
    - Read `professional/CV/cv_format_spec.md` to understand the format requirements
    - Read `README.md` from the repository root as the source of truth for all experiences, projects, achievements, and skills
 
-3. **Generate cv.txt**:
+3. **Generate cv.md**:
 
-   - Create `professional/CV/Job Descriptions/[job title]/cv.txt` in the same directory as the job description
+   - Create `professional/CV/Job Descriptions/[job title]/cv.md` in the same directory as the job description
    - Follow the format specified in `professional/CV/cv_format_spec.md`:
      - **Intro Section**: Opening line with title/role tags, 2 paragraphs about professional identity, optional key achievements. Must be between 570 and 580 characters in length (excluding project links in parentheses). Use real, flowing sentences, not fragmented bullet-style text.
      - **Skills Section**: Technical skills (Techniques) and project/process skills (Workflow) relevant to the job description, selected from README.md. Format: "Techniques: [comma-separated list]" and "Workflow: [comma-separated list]". Maximum 9 keywords for Techniques and maximum 9 keywords for Workflow. The language should match the job description language.
@@ -26,23 +26,22 @@ When the user asks to generate a CV and/or motivation letter for a job applicati
      - **Links Section**: After the job experiences section, include a "Links" subsection listing all URLs in the format: `Project/Company Name: https://url.com`
      - **More Info Section**: Technical stack (grouped by Backend/Frontend/Database/DevOps), Education, Languages, Open to opportunities
 
-4. **Generate motivation_letter.txt**:
+4. **Generate motivation_letter.md**:
 
-   - Create `professional/CV/Job Descriptions/[job title]/motivation_letter.txt` in the same directory as the job description
-   - Follow the 4-paragraph structure from `professional/CV/cv_format_spec.md`:
+   - Create `professional/CV/Job Descriptions/[job title]/motivation_letter.md` in the same directory as the job description
+   - Follow a concise 2-3 paragraph structure:
      - **Paragraph 1**: Opening & Interest - express genuine interest, mention discovery, align with career goals
      - **Paragraph 2**: Relevant Experience & Skills - reference 2-3 key requirements from job description, connect to README experiences, highlight matching technical skills, include metrics
-     - **Paragraph 3**: Cultural Fit & Values - reference impact areas from README, show alignment with company values, mention relevant soft skills
-     - **Paragraph 4**: Closing - reiterate enthusiasm, express willingness to discuss, professional closing
+     - **Paragraph 3 (optional)**: Cultural Fit & Closing - briefly reference alignment with company values, express willingness to discuss, professional closing
    - Must be tailored to the specific job description
    - Must reference specific requirements from the job description
    - Must connect experiences from README.md to job requirements
-   - Length: 3-4 paragraphs, concise and focused
+   - Length: 2-3 paragraphs maximum, very concise and focused (significantly shorter than previous versions)
    - Tone: Professional, enthusiastic, authentic
 
-5. **Validation step** - After generating cv.txt:
+5. **Validation step** - After generating cv.md:
 
-   - **Run the validation script**: Execute `python3 professional/CV/validate_cv.py professional/CV/Job Descriptions/[job title]/cv.txt` to validate the CV format
+   - **Run the validation script**: Execute `python3 professional/CV/validate_cv.py professional/CV/Job Descriptions/[job title]/cv.md` to validate the CV format
    - The script checks:
      - Intro section is between 570 and 580 characters in length (excluding project links in parentheses)
      - All bullet points in the job experiences section are approximately 95 characters in length (excluding project links in parentheses, target range: 85-105 characters)
@@ -61,6 +60,6 @@ When the user asks to generate a CV and/or motivation letter for a job applicati
    - Use professional, authentic language
    - Avoid overusing the words "expert" or "expertise". Use alternative phrasing such as "experienced in", "skilled in", "proficient with", or describe specific achievements and capabilities instead.
    - **Phrasing for job experience bullet points**: Write complete, natural sentences that start with past participles (e.g., "Développé", "Créé", "Implémenté", "Contribué", "Collaboré"). Do not use "Je" or "J'ai" at the beginning of bullet points. Ensure sentences are real, flowing formulations, not fragmented bullet-style text.
-   - The output language (for both cv.txt and motivation_letter.txt) must match the language of the job description. If the job description is in French, output in French. If in English, output in English.
+   - The output language (for both cv.md and motivation_letter.md) must match the language of the job description. If the job description is in French, output in French. If in English, output in English.
 
 7. **Output**: Both files should be created in `professional/CV/Job Descriptions/[job title]/` directory alongside the job description.
