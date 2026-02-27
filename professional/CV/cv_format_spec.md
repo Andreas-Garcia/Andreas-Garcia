@@ -82,6 +82,10 @@ Format:
 
 **Project links:** **All mentions of specific projects** (e.g., AudioMeta Python, TheMusicTreeAPI, OpenSILEX, GrowTheMusicTree) **must include the project link(s) in parentheses immediately after the project name**: `ProjectName (https://url.com)`. Priority order for links: website > PyPI > GitHub. **Note:** Links in parentheses do not count toward the character limit. **Multiple project links with icon placeholders are allowed in the job experiences section.**
 
+**Available links (first priority):** Use these URLs when mentioning the following projects (override GitHub/repo links). Mention systematically that they are wip:
+- **GrowTheMusicTree:** https://grow.themusictree.org/ (wip)
+- **HearTheMusicTree:** https://hear-api.themusictree.org/docs/ (wip)
+
 **Links:** After the job experiences section, include a "Links" subsection listing all URLs in the format: `Project/Company Name: https://url.com`
 
 **Important:** Each bullet point sentence should be approximately 95 characters in length (excluding project links in parentheses).

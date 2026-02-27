@@ -22,7 +22,7 @@ When the user asks to generate a CV and/or motivation letter for a job applicati
        - `[ICON]` Company/Project Name - Role Title (use `[ICON]` placeholder instead of markdown links)
        - Date Range (e.g., "Dec. 2022 – Present")
        - 2-3 bullet points written as plain text sentences without bullet markers (no "-" prefix). Each bullet point must be a complete, real sentence (not fragmented bullet-style text). Bullet points should start with past participles (e.g., "Développé", "Créé", "Implémenté") rather than using "Je" or "J'ai". Each bullet point should be approximately 95 characters in length (excluding project links in parentheses).
-       - When mentioning specific projects, include project link(s) in parentheses immediately after the project name: `ProjectName (https://url.com)`. Priority order for links: website > PyPI > GitHub. Only one link per project in intro section.
+       - When mentioning specific projects, include project link(s) in parentheses immediately after the project name: `ProjectName (https://url.com)`. Priority order for links: website > PyPI > GitHub. **Available links (first priority, mention systematically they are wip):** GrowTheMusicTree: https://grow.themusictree.org/ ; HearTheMusicTree: https://hear-api.themusictree.org/docs/ . Only one link per project in intro section.
      - **Links Section**: After the job experiences section, include a "Links" subsection listing all URLs in the format: `Project/Company Name: https://url.com`
      - **More Info Section**: Technical stack (grouped by Backend/Frontend/Database/DevOps), Education, Languages, Open to opportunities
 
