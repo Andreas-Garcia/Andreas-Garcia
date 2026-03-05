@@ -1,0 +1,10 @@
+Madame, Monsieur,
+
+Je vous écris pour candidater au poste de Développeur Fullstack au sein de votre équipe R&D et Innovation. Donner du sens à mon métier en participant à la transformation écologique et énergétique correspond pleinement à mes aspirations. Votre raison d’être — concevoir et déployer des solutions à haute valeur environnementale et sociale — rejoint mon engagement pour des projets à impact, que ce soit dans l’open source ou dans la recherche (agrivoltaïsme, données FAIR).
+
+Mon parcours allie développement full-stack et sensibilité aux enjeux environnementaux. Chez INRAE, j’ai contribué à un système d’information open source pour rendre les données de recherche FAIR et collaboré en équipe SCRUM sur un projet d’agrivoltaïsme. Aujourd’hui, je pilote l’écosystème BehindTheMusicTree : interfaces React/Next.js et TypeScript, APIs Django/PostgreSQL, déploiement Docker et CI/CD. Je me sens à l’aise sur le développement d’interfaces et de back-end, l’intégration de maquettes UX/UI et la manipulation de données ; le volet géospatial (PostGIS) est un domaine que j’aimerais découvrir.
+
+Rigueur, curiosité, autonomie et travail en équipe guident mon travail au quotidien. Je serais ravi d’échanger avec vous sur la façon dont je peux contribuer aux missions d’EODD.
+
+Cordialement,  
+Andreas Garcia

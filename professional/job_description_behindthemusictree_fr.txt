@@ -19,7 +19,7 @@ En tant que Fondateur & Lead Developer de BehindTheMusicTree, je dirige le déve
 
 🚀 PROJETS DÉVELOPPÉS :
 
-	🎵 AudioMeta Python : Bibliothèque métadonnées (ID3v1, ID3v2, Vorbis, RIFF), 1500+ tests, 12 000+ téléchargements PyPI
+	🎵 AudioMeta Python : Bibliothèque métadonnées (ID3v1, ID3v2, Vorbis, RIFF), 1500+ tests, 13 000+ téléchargements PyPI
 	🌳 GrowTheMusicTree : Plateforme communautaire genres musicaux (Next.js, TypeScript, React)
 	🎧 HearTheMusicTree : Gestionnaire bibliothèque musicale cloud avec playlists intelligentes
 	🔌 TheMusicTreeAPI : API REST genres et métadonnées (Django REST Framework, PostgreSQL)

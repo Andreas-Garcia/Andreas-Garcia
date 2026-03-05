@@ -11,7 +11,7 @@ Achievements and projects:
 I've developed tools, libraries, platforms, and services in various contexts:
 
 - BehindTheMusicTree (Founder & Lead Developer):
-  - AudioMeta Python: audio metadata library, 1500+ tests, 12 000+ downloads
+  - AudioMeta Python: audio metadata library, 1500+ tests, 13 000+ downloads
   - GrowTheMusicTree: community music genre classification platform (Next.js, TypeScript, React)
   - TheMusicTreeAPI: REST API for access to genre hierarchy and metadata (Django REST Framework, PostgreSQL)
   - HearTheMusicTree: cloud music library manager

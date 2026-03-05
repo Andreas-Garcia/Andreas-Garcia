@@ -1,0 +1,105 @@
+Description du poste
+Entreprise
+Vous souhaitez donner du sens à votre métier ?
+Devenez acteur de la transformation écologique en rejoignant EODD ingénieurs conseils !
+
+Cabinet d’expertise environnementale indépendant, EODD est une société à mission ayant pour raison d’être et d’agir de convaincre, concevoir et déployer des solutions à haute valeur environnementale et sociale pour aujourd’hui et pour demain. EODD s’engage dans une politique RSE (Responsabilité Sociétale des Entreprises) ambitieuse évaluée par l’organisme indépendant ECOVADIS qui la place parmi les 1% des entreprises les mieux notées dans son secteur et parmi les 5% des plus performantes tous secteurs confondus.
+
+Intégrer notre équipe pluridisciplinaire spécialisée dans la transformation écologique et énergétique, c’est participer à l’élaboration de solutions innovantes pour répondre aux enjeux de notre époque.
+
+
+
+
+Pourquoi choisir EODD ?
+
+Nos engagements en matière de Santé & Sécurité et la démarche de qualité de vie au travail (QVT) tiennent un rôle primordial dans la politique RH d’EODD. Pour répondre au bien-être et à l’épanouissement de ses collaborateurs, l’entreprise mène des actions concrètes autour de quatre grands objectifs :
+Assurer la sécurité de nos collaborateurs en proposant des conditions de travail optimales (environnement de travail, équipements, matériels, …),
+Garantir l’équilibre vie professionnelle et vie personnelle grâce à la promotion de la mobilité au sein de nos agences, à la souplesse des horaires de travail et à la mise en place du télétravail,
+Développer les compétences tout au long de la carrière par des parcours professionnels variés, une offre de formations internes riches (EODD Académie) et une approche transversale des activités ouvrant la possibilité de passerelles entre les métiers,
+Poursuivre ses engagements RSE par la promotion de la diversité et du principe d’égalité des chances, ou encore par la réduction de son impact carbone au quotidien.
+
+
+Mission
+Dans le cadre du développement de notre équipe R&D et Innovation, nous recherchons notre Développeur Fullstack sur l’une des agences suivantes : EODD Lyon (69), EODD Paris (75), EODD Marseille (13), EODD Toulouse (31), EODD Montpellier (34).
+
+Rattaché(e) à l’équipe, vous :
+développez et maintenez les interfaces utilisateur en optimisant les performances et l’accessibilité des applications ;
+collaborez avec les designers pour implémenter des maquettes (UX/UI) ;
+développez et intégrez des APIs, services back-end et bases de données ;
+participez à l’architecture et à la conception des solutions techniques ;
+collaborez avec le service Communication pour maintenir le site internet EODD ingénieurs conseils et développer des fonctionnalités personnalisées en fonction des besoins ;
+gérez des données géospatiales (manipulation, affichage et développement de fonctionnalités cartographiques).
+
+
+Selon votre profil, vous pouvez développer et optimiser des applications Android natives pour nos solutions connectées en intégrant des fonctionnalités avancées (géolocalisation, APIs, IoT, etc.). Vous collaborez avec nos équipes design pour proposer des expériences utilisateur fluides et performantes.
+
+Dans le cadre de vos missions, vous travaillez en équipe avec des méthodes Agiles/Scrum en appliquant les bonnes pratiques de développement. Aussi, vous proposez des améliorations techniques ou fonctionnelles en lien avec les évolutions des technologies web.
+
+
+
+Cliquez pour découvrir l'équipe Services aux métiers
+
+
+
+
+Profil recherché
+Votre parcours :
+bac + 3 minimum dans le domaine du développement informatique ;
+2 à 3 ans d’expérience en développement web fullstack en environnement professionnel ;
+vous disposez des compétences techniques suivantes :
+front-end : Angular, React, TypeScript, HTML5, framework CSS ;
+back-end : PostgreSQL, PostGIS, framework FastAPI, Django, Flask ;
+android : Kotlin, Java, Android Studio, Jetpack Compose, architectures MVVM/MVI ;
+environnement : Git, CI/CD, bonnes pratiques DevOps, tests unitaires (Jest, Karma, Jasmine), Docker.
+une expérience avec PostGIS ou d’autres outils géospatiaux est un atout ;
+des certifications en développement web et/ou géomatique sont un plus.
+
+Vos qualités :
+travail en équipe ;
+rigueur ;
+curiosité ;
+autonomie ;
+proactivité dans la résolution de problèmes.
+
+
+Votre contrat :
+début de contrat : dès que possible ;
+contrat à durée indéterminée ;
+localisation : France entière ;
+contrat 37 h/semaine, avec 12 jours de RTT par an.
+
+Votre cadre de travail :
+possibilité de télétravail, selon charte d’entreprise ;
+rémunération globale :
+salaire fixe sur 12 mois selon profil ;
+primes de participation et d’intéressement, selon accords d’entreprise ;
+prime de vacances conventionnelle (SYNTEC).
+
+avantages sociaux :
+tickets restaurants : pris en charge à 60% par EODD ;
+mutuelle santé : coût de base pris en charge à 75% par EODD ;
+abonnement transport en commun : pris en charge à 50% par EODD ;
+abonnement vélo urbain : pris en charge à 100% par EODD.
+
+moments d'échanges et de convivialité :
+rencontres métier deux fois par an ;
+convention bisannuelle d’entreprise (team building) ;
+ateliers du savoir ;
+diverses activités à l’initiative du CSE, des RH et des collaborateurs (sorties, ateliers, challenges, …).
+
+
+
+Dans le cadre de sa politique de diversité, EODD ingénieurs conseils s’engage à considérer toutes les candidatures, sans aucune discrimination.
+
+Informations
+Référence
+
+581_DEV_LY
+
+Secteur d'activité
+
+R&D innovation
+
+Localisation
+
+Lyon, Metz, Marseille, Paris, Toulouse, Bordeaux, Saint-Etienne
