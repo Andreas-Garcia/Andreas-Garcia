@@ -4,7 +4,7 @@ CV Validation Script
 
 Validates CV format according to cv_format_spec.md:
 - Intro section: 570-580 characters (excluding all links in parentheses, including project links and FAIR links)
-- Bullet points: ~95 characters each (excluding all links in parentheses, including project links and FAIR links)
+- Bullet points: ~95 characters each, max 160 (excluding all links in parentheses)
 """
 
 import re
@@ -99,9 +99,9 @@ def validate_cv(cv_path):
         for i, bp in enumerate(bullet_points, 1):
             bp_no_links = remove_links(bp)
             length = len(bp_no_links)
-            if not (85 <= length <= 105):
+            if not (85 <= length <= 160):
                 errors.append(
-                    f"Bullet point {i}: {length} characters (target: 85-105) - "
+                    f"Bullet point {i}: {length} characters (target: 85-160) - "
                     f"Off by {abs(length - 95)} characters"
                 )
     

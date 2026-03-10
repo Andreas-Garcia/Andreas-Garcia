@@ -50,6 +50,7 @@ When the user asks to generate a CV and/or motivation letter for a job applicati
 
 6. **Key principles**:
 
+   - **Bold important words**: In cv.md only, make important words **bold** (e.g. key skills, technologies, role titles, and achievements that match the job description). Do not use bold in motivation_letter.md.
    - All content must be based on information from README.md
    - Job experiences must be selected from README.md "Professional Experience" section (max 3) **based on relevance to the job description requirements**
    - Job experiences must always be listed in reverse chronological order (most recent first)

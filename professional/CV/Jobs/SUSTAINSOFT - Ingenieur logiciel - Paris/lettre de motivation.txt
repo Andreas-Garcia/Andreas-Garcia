@@ -1,0 +1,10 @@
+Madame, Monsieur,
+
+Je vous adresse ma candidature au poste d’Ingénieur logiciel chez SustainSoft. Rejoindre une entreprise qui aide les organisations à structurer et piloter leur stratégie de durabilité donne un sens concret à mon travail. Votre ambition de bâtir une solution SaaS européenne de référence, dans un contexte de forte croissance, correspond pleinement à ce que je recherche : un rôle où contribuer directement au produit, aux choix techniques et à la qualité d’exécution.
+
+Je développe aujourd’hui l’écosystème BehindTheMusicTree, où je porte des sujets de bout en bout sur le front-end et le back-end : interfaces Next.js et TypeScript, APIs, modélisation de données, Docker et CI/CD. Cette expérience m’a appris à livrer des fonctionnalités produit, structurer un codebase maintenable et arbitrer des choix techniques dans un environnement entrepreneurial. Chez INRAE, j’ai aussi implémenté des services REST en Java et collaboré en équipe SCRUM sur un projet d’agrivoltaïsme, ce qui a renforcé mon intérêt pour les projets à impact et mon aisance avec les équipes pluridisciplinaires.
+
+Je me reconnais dans votre culture de responsabilité, de polyvalence et d’amélioration continue. Mon parcours mêle autonomie, rigueur, sens du produit et envie de construire des outils utiles pour les utilisateurs. Je serais ravi d’échanger avec vous sur la manière dont je pourrais contribuer à SustainSoft, d’abord de façon très opérationnelle puis dans des responsabilités plus structurantes à mesure de la croissance de l’équipe.
+
+Cordialement,
+Andreas Garcia
