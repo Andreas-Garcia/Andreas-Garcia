@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <svg width="495" height="195" xmlns="http://www.w3.org/2000/svg">
   <rect width="495" height="195" fill="#0d1117" rx="8" />
-  <rect x="10" y="10" width="475" height="175" fill="#161b22" rx="6" stroke="#30363d" stroke-width="1" />
+  <rect x="10" y="10" width="475" height="175" fill="#161b22" rx="6" />
   <text x="247" y="35" text-anchor="middle" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="18" font-weight="700" fill="#ff6e96">Most Used Languages</text>
   <rect x="20" y="60" width="170.86844141161092" height="10" fill="#3776ab" rx="2" />
   <rect x="190.86844141161092" y="60" width="102.11876675168807" height="10" fill="#ed8b00" rx="2" />
