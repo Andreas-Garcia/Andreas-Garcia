@@ -42,6 +42,8 @@ Format:
 
 **Important:** The intro section should be between 570 and 580 characters in length (excluding project links in parentheses). **All mentions of projects must include a link in parentheses** (format: `ProjectName (https://url.com)`). **Multiple projects can be mentioned, but only one link per project should be included** (priority order: website > PyPI > GitHub). The character count should be verified excluding all links in parentheses. Use real, flowing sentences, not fragmented bullet-style text.
 
+**Best practice:** Write both paragraphs as full, narrative sentences with clear subject and verb (e.g. "Je construis…", "J'ai travaillé…"). Avoid a telegram-style or list-like second paragraph (e.g. chaining noun phrases or fragments separated only by periods). Prefer 1–2 complete sentences per paragraph that tell a short narrative.
+
 Example:
 Results-oriented Engineering Executive with a proven track record of optimizing project outcomes. Skilled in strategic project management and team leadership.
 
