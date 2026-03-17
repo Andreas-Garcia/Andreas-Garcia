@@ -43,7 +43,7 @@ Core strengths:
 - Dev practices: robust test suites (pytest), type-checking (mypy), linting (ruff), CI/CD, Docker, Docker Hub, GitFlow — Adheres to Robert C. Martin's "Clean Code" principles
 - Product: API design, metadata systems, containerised deployments (Docker, Docker Hub), and user-centered products
 
-I founded the [BehindTheMusicTree](https://github.com/behindthemusictree) ecosystem including [AudioMeta Python](https://github.com/BehindTheMusicTree/audiometa) (unified audio metadata manager, 16 000+ downloads, [web demo](https://audiometa.themusictree.org)) 🎶, [GrowTheMusicTree](https://github.com/BehindTheMusicTree/grow-the-music-tree) (crowd sourced genre classification) 🌳, [TheMusicTreeAPI](https://github.com/BehindTheMusicTree/the-music-tree-api) (Django REST API) 🔌, and HearTheMusicTree (cloud library manager) 🎧.
+I founded the [BehindTheMusicTree](https://github.com/behindthemusictree) ecosystem including [AudioMeta Python](https://github.com/BehindTheMusicTree/audiometa) (unified audio metadata manager, 16 000+ downloads, [web demo](https://audiometa.themusictree.org)) 🎶, [GrowTheMusicTree](https://github.com/BehindTheMusicTree/grow-the-music-tree) (crowd sourced genre classification) 🌳, [TheMusicTreeAPI](https://github.com/BehindTheMusicTree/the-music-tree-api) (Django REST API) 🔌, and HearTheMusicTree (cloud library manager) 🎧. Discover it all at [themusictree.org](https://themusictree.org).
 
 I also collaborate on open-source projects and programs (e.g., [OpenSILEX](https://github.com/OpenSILEX/opensilex)) that emphasize sustainability 🌍, reproducibility, and community-driven curation.
 
@@ -53,7 +53,9 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 ### 🎶 BehindTheMusicTree: Empowering Music Discovery and Organization
 
-**BehindTheMusicTree** is an ecosystem that encompasses interconnected projects designed to transform how we explore, understand, and organize music. by blending community-driven intelligence, robust metadata management, and an evolving framework, these projects work together to provide a holistic music experience for music lovers, collectors, and professionals alike.
+**BehindTheMusicTree** is an ecosystem that encompasses interconnected projects designed to transform how we explore, understand, and organize music. By blending community-driven intelligence, robust metadata management, and an evolving framework, these projects work together to provide a holistic music experience for music lovers, collectors, and professionals alike.
+
+**Discover the ecosystem:** [themusictree.org](https://themusictree.org) — one place to explore every project and see it in action.
 
 **Projects:**
 
