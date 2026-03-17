@@ -43,7 +43,7 @@ Core strengths:
 - Dev practices: robust test suites (pytest), type-checking (mypy), linting (ruff), CI/CD, Docker, Docker Hub, GitFlow — Adheres to Robert C. Martin's "Clean Code" principles
 - Product: API design, metadata systems, containerised deployments (Docker, Docker Hub), and user-centered products
 
-I founded the [BehindTheMusicTree](https://github.com/behindthemusictree) ecosystem including [AudioMeta Python](https://github.com/BehindTheMusicTree/audiometa) (unified audio metadata manager, 15 000+ downloads) 🎶, [GrowTheMusicTree](https://github.com/BehindTheMusicTree/grow-the-music-tree) (crowd sourced genre classification) 🌳, [TheMusicTreeAPI](https://github.com/BehindTheMusicTree/the-music-tree-api) (Django REST API) 🔌, and HearTheMusicTree (cloud library manager) 🎧.
+I founded the [BehindTheMusicTree](https://github.com/behindthemusictree) ecosystem including [AudioMeta Python](https://github.com/BehindTheMusicTree/audiometa) (unified audio metadata manager, 16 000+ downloads, [web demo](https://audiometa.themusictree.org)) 🎶, [GrowTheMusicTree](https://github.com/BehindTheMusicTree/grow-the-music-tree) (crowd sourced genre classification) 🌳, [TheMusicTreeAPI](https://github.com/BehindTheMusicTree/the-music-tree-api) (Django REST API) 🔌, and HearTheMusicTree (cloud library manager) 🎧.
 
 I also collaborate on open-source projects and programs (e.g., [OpenSILEX](https://github.com/OpenSILEX/opensilex)) that emphasize sustainability 🌍, reproducibility, and community-driven curation.
 
@@ -57,7 +57,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 **Projects:**
 
-- 🎵 [**AudioMeta Python**](https://github.com/BehindTheMusicTree/audiometa) - Unified Python library for reading and writing audio metadata across multiple formats
+- 🎵 [**AudioMeta Python**](https://github.com/BehindTheMusicTree/audiometa) - Unified Python library for reading and writing audio metadata across multiple formats • [Web demo](https://audiometa.themusictree.org)
 - 🌳 [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree) - Crowd-sourced platform for building the definitive interactive map of global music genres
 - 🔌 [**TheMusicTreeAPI**](https://github.com/BehindTheMusicTree/the-music-tree-api) - RESTful API providing access to genre hierarchy, metadata, and intelligent genre detection
 - 🎧 **HearTheMusicTree** - Cloud-based music library manager with smart playlists and cross-platform sync
@@ -70,12 +70,15 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 **AudioMeta Python** is a powerful, unified Python library for reading and writing audio metadata across multiple formats. As the foundational library of the ecosystem, it provides the core metadata management capabilities that power the other projects. Supports ID3v1, ID3v2, Vorbis, and RIFF metadata formats through a single, consistent API.
 
+**Live demo:** [audiometa.themusictree.org](https://audiometa.themusictree.org) — try reading and editing metadata for MP3, FLAC, WAV, and more in the browser.
+
 **Key Features:**
 
 - ✅ Unified API for all audio formats
 - ✅ Comprehensive metadata field support
 - ✅ Cross-platform (Windows, macOS, Linux)
 - ✅ Extensive documentation
+- ✅ [Web demo](https://audiometa.themusictree.org) to try it in the browser
 
 **Installation:**
 
@@ -236,7 +239,7 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 
 **Certifications:** La Ruche - Programme Itinéraire (Entrepreneurship Program, 2025)
 
-**Awards/Activities:** Organized Music Micro Festival (80+ attendees, 2021), Open Source Contributor (AudioMeta Python: 15 000+ downloads), Founder & Lead Developer of BehindTheMusicTree ecosystem
+**Awards/Activities:** Organized Music Micro Festival (80+ attendees, 2021), Open Source Contributor (AudioMeta Python: 16 000+ downloads), Founder & Lead Developer of BehindTheMusicTree ecosystem
 
 ### 💼 Professional Experience
 
@@ -253,7 +256,7 @@ Powered by the genre intelligence of **GrowTheMusicTree**, integrated with the *
 - Developed a unified Python library for reading and writing audio metadata across multiple formats (ID3v1, ID3v2, Vorbis, RIFF)
 - Implemented comprehensive test suite with 1500+ unit tests ensuring reliability and edge case coverage
 - Created extensive documentation and usage examples to facilitate developer adoption
-- Published on [PyPI](https://pypi.org/project/audiometa-python/) achieving 15 000+ downloads, establishing it as a production-ready tool
+- Published on [PyPI](https://pypi.org/project/audiometa-python/) achieving 16 000+ downloads, establishing it as a production-ready tool
 - Maintained active development with community contributions, issue tracking, and continuous improvements
 
 ##### 🌳 [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree)

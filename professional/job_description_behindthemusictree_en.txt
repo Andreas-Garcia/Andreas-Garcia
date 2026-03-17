@@ -17,7 +17,7 @@ Lead the development of an ecosystem of interconnected projects transforming mus
     🐳 DevOps: Docker, GitFlow, CI/CD (GitHub Actions)
 
 🚀 PROJECTS DEVELOPED:
-    🎵 AudioMeta Python: Audio metadata library (ID3v1, ID3v2, Vorbis, RIFF), 1500+ tests, 15 000+ PyPI downloads
+    🎵 AudioMeta Python: Audio metadata library (ID3v1, ID3v2, Vorbis, RIFF), 1500+ tests, 16 000+ PyPI downloads
     🌳 GrowTheMusicTree: Community music genre classification platform (Next.js, TypeScript, React)
     🎧 HearTheMusicTree: Cloud music library manager with intelligent playlists
     🔌 TheMusicTreeAPI: REST API for genre hierarchy and metadata (Django REST Framework, PostgreSQL)
