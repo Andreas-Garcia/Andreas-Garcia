@@ -46,13 +46,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 ## 🚀 Featured Projects
 
-**BehindTheMusicTree** is an interconnected set of open-source projects for music metadata and genre reference. Long-form descriptions and status live on the public site so this profile does not duplicate them.
-
-| What | Where |
-|------|--------|
-| **Live portfolio** — every project, demos | **[themusictree.org](https://themusictree.org)** · **[Projects](https://themusictree.org/projects)** |
-| **Site source** (copy, structure, project pages) | **[the-music-tree-frontend](https://github.com/BehindTheMusicTree/the-music-tree-frontend)** |
-| **Shared UI, tokens, components** | **[organization-assets](https://github.com/BehindTheMusicTree/organization-assets)** |
+**BehindTheMusicTree** is my ecosystem for music metadata and genre reference. A dedicated public portfolio covers every project, demos, and status: **[themusictree.org](https://themusictree.org)** · **[Projects](https://themusictree.org/projects)**.
 
 ### BehindTheMusicTree — quick pointers (one line each)
 
@@ -303,6 +297,8 @@ I'm passionate about open-source development and believe in building tools that 
 ### 🌿 Contributions to Other Projects
 
 - **[OpenSILEX](https://github.com/OpenSILEX/opensilex)** — Contributor; summary and links in [Other featured open source](#other-featured-open-source) above.
+  - Contributed to open-source information systems for making research data FAIR (Findable, Accessible, Interoperable, Reusable)
+  - Worked on backend services and ontology improvements for research data management
 
 ### 🌱 How I Contribute
 
