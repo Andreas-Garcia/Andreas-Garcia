@@ -63,7 +63,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 ### Other featured open source
 
-- **OpenSILEX** — Open information system for **FAIR** research data (life sciences, agronomy); contributor on backend services and ontology work. [Documentation](https://opensilex.github.io/opensilex-docs/)  
+- **OpenSILEX** — Open information system for **FAIR** research data (life sciences, agronomy); contributor on backend services and ontology work. [Documentation](https://opensilex.github.io/opensilex-docs/) · <a href="https://github.com/OpenSILEX/opensilex" title="OpenSILEX on GitHub"><img src="https://raw.githubusercontent.com/Andreas-Garcia/Andreas-Garcia/main/Professional/CV/assets/opensilex.png" alt="OpenSILEX" width="28" height="28"></a>  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/OpenSILEX/opensilex) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/OpenSILEX/opensilex/issues)
 
 ## 📚 Curriculum
