@@ -54,14 +54,6 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 | **Site source** (copy, structure, project pages) | **[the-music-tree-frontend](https://github.com/BehindTheMusicTree/the-music-tree-frontend)** |
 | **Shared UI, tokens, components** | **[organization-assets](https://github.com/BehindTheMusicTree/organization-assets)** |
 
-| Project | On the site | GitHub |
-|--------|-------------|--------|
-| AudioMeta Python | [Project page](https://themusictree.org/projects/audiometa) | [BehindTheMusicTree/audiometa](https://github.com/BehindTheMusicTree/audiometa) |
-| AudioMeta Webapp | [Project page](https://themusictree.org/projects/audiometa-webapp) | [BehindTheMusicTree/audiometa-frontend](https://github.com/BehindTheMusicTree/audiometa-frontend) |
-| GrowTheMusicTree | [Project page](https://themusictree.org/projects/grow-the-music-tree) | [BehindTheMusicTree/grow-the-music-tree](https://github.com/BehindTheMusicTree/grow-the-music-tree) |
-| TheMusicTreeAPI | [Project page](https://themusictree.org/projects/the-music-tree-api) | [BehindTheMusicTree/the-music-tree-api](https://github.com/BehindTheMusicTree/the-music-tree-api) |
-| HearTheMusicTree | [Project page](https://themusictree.org/projects/hear-the-music-tree) | [BehindTheMusicTree/hear-the-music-tree-api](https://github.com/BehindTheMusicTree/hear-the-music-tree-api) |
-
 ### Quick pointers (one line each)
 
 - **AudioMeta Python** — Library for reading/writing audio tags (ID3, Vorbis, RIFF). [Repo](https://github.com/BehindTheMusicTree/audiometa) · [PyPI](https://pypi.org/project/audiometa-python/) · [Browser demo](https://audiometa.themusictree.org)
@@ -69,8 +61,6 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 - **GrowTheMusicTree** — Web app for the collaborative global genre map. [Repo](https://github.com/BehindTheMusicTree/grow-the-music-tree) · [Project page](https://themusictree.org/projects/grow-the-music-tree)
 - **TheMusicTreeAPI** — Django REST API for genre data and detection. [Repo](https://github.com/BehindTheMusicTree/the-music-tree-api) · [Project page](https://themusictree.org/projects/the-music-tree-api)
 - **HearTheMusicTree** — Cloud audio library and playlist-oriented backend. [Repo](https://github.com/BehindTheMusicTree/hear-the-music-tree-api) · [Project page](https://themusictree.org/projects/hear-the-music-tree)
-
-Full write-ups and status: **[themusictree.org/projects](https://themusictree.org/projects)**.
 
 ## 📚 Curriculum
 
