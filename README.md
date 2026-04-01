@@ -50,20 +50,20 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 ### BehindTheMusicTree — quick pointers (one line each)
 
-- **AudioMeta Python** — Library for reading/writing audio tags (ID3, Vorbis, RIFF).  
+- [**AudioMeta Python**](https://themusictree.org/projects/audiometa) — Library for reading/writing audio tags (ID3, Vorbis, RIFF).  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audiometa) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audiometa/issues) [![PyPI version](https://img.shields.io/pypi/v/audiometa-python?style=flat-square)](https://pypi.org/project/audiometa-python/) [![Downloads](https://img.shields.io/pepy/dt/audiometa-python?style=flat-square)](https://pepy.tech/project/audiometa-python)
-- **AudioMeta Webapp** — Next.js UI to inspect and edit file metadata in the browser. [Project page](https://themusictree.org/projects/audiometa-webapp) · <a href="https://audiometa.themusictree.org/" title="AudioMeta live app"><img src="https://raw.githubusercontent.com/BehindTheMusicTree/organization-assets/main/src/icons/behind-the-music-tree/audiometa-logo.svg" alt="AudioMeta live app" width="28" height="28"></a>  
+- [**AudioMeta Webapp**](https://themusictree.org/projects/audiometa-webapp) — Next.js UI to inspect and edit file metadata in the browser. <a href="https://audiometa.themusictree.org/" title="AudioMeta live app"><img src="https://raw.githubusercontent.com/BehindTheMusicTree/organization-assets/main/src/icons/behind-the-music-tree/audiometa-logo.svg" alt="AudioMeta live app" width="28" height="28"></a>  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audiometa-frontend) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audiometa-frontend/issues)
-- **GrowTheMusicTree** — Web app for the collaborative global genre map. [Project page](https://themusictree.org/projects/grow-the-music-tree)  
+- [**GrowTheMusicTree**](https://themusictree.org/projects/grow-the-music-tree) — Web app for the collaborative global genre map.  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/grow-the-music-tree) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/grow-the-music-tree/issues)
-- **TheMusicTreeAPI** — Django REST API for genre data and detection. [Project page](https://themusictree.org/projects/the-music-tree-api)  
+- [**TheMusicTreeAPI**](https://themusictree.org/projects/the-music-tree-api) — Django REST API for genre data and detection.  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/the-music-tree-api) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/the-music-tree-api/issues)
-- **HearTheMusicTree** — Cloud audio library and playlist-oriented backend. [Project page](https://themusictree.org/projects/hear-the-music-tree)  
+- [**HearTheMusicTree**](https://themusictree.org/projects/hear-the-music-tree) — Cloud audio library and playlist-oriented backend.  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/hear-the-music-tree-api) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/hear-the-music-tree-api/issues)
 
 ### Other featured open source
 
-- **OpenSILEX** — Open information system for **FAIR** research data (life sciences, agronomy); contributor on backend services and ontology work. [Documentation](https://opensilex.github.io/opensilex-docs/) · <a href="https://github.com/OpenSILEX/opensilex" title="OpenSILEX on GitHub"><img src="https://raw.githubusercontent.com/Andreas-Garcia/Andreas-Garcia/main/Professional/CV/assets/opensilex.png" alt="OpenSILEX" width="28" height="28"></a>  
+- [**OpenSILEX**](https://github.com/OpenSILEX/opensilex) — Open information system for **FAIR** research data (life sciences, agronomy); contributor on backend services and ontology work. [Documentation](https://opensilex.github.io/opensilex-docs/) · <a href="https://github.com/OpenSILEX/opensilex" title="OpenSILEX on GitHub"><img src="https://raw.githubusercontent.com/Andreas-Garcia/Andreas-Garcia/main/Professional/CV/assets/opensilex.png" alt="OpenSILEX" width="28" height="28"></a>  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/OpenSILEX/opensilex) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/OpenSILEX/opensilex/issues)
 
 ## 📚 Curriculum
