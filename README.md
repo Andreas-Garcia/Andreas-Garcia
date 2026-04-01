@@ -62,13 +62,15 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 | TheMusicTreeAPI | [Project page](https://themusictree.org/projects/the-music-tree-api) | [BehindTheMusicTree/the-music-tree-api](https://github.com/BehindTheMusicTree/the-music-tree-api) |
 | HearTheMusicTree | [Project page](https://themusictree.org/projects/hear-the-music-tree) | [BehindTheMusicTree/hear-the-music-tree-api](https://github.com/BehindTheMusicTree/hear-the-music-tree-api) |
 
-### AudioMeta Python (quick pointer)
+### Quick pointers (one line each)
 
-[![GitHub stars](https://img.shields.io/github/stars/Andreas-Garcia/audiometa?style=social)](https://github.com/Andreas-Garcia/audiometa/stargazers)
-[![PyPI version](https://img.shields.io/pypi/v/audiometa-python)](https://pypi.org/project/audiometa-python/)
-[![Downloads](https://img.shields.io/pepy/dt/audiometa-python)](https://pepy.tech/project/audiometa-python)
+- **AudioMeta Python** — Library for reading/writing audio tags (ID3, Vorbis, RIFF). [Repo](https://github.com/BehindTheMusicTree/audiometa) · [PyPI](https://pypi.org/project/audiometa-python/) · [Browser demo](https://audiometa.themusictree.org)
+- **AudioMeta Webapp** — Next.js UI to inspect and edit file metadata in the browser. [Repo](https://github.com/BehindTheMusicTree/audiometa-frontend) · [Project page](https://themusictree.org/projects/audiometa-webapp)
+- **GrowTheMusicTree** — Web app for the collaborative global genre map. [Repo](https://github.com/BehindTheMusicTree/grow-the-music-tree) · [Project page](https://themusictree.org/projects/grow-the-music-tree)
+- **TheMusicTreeAPI** — Django REST API for genre data and detection. [Repo](https://github.com/BehindTheMusicTree/the-music-tree-api) · [Project page](https://themusictree.org/projects/the-music-tree-api)
+- **HearTheMusicTree** — Cloud audio library and playlist-oriented backend. [Repo](https://github.com/BehindTheMusicTree/hear-the-music-tree-api) · [Project page](https://themusictree.org/projects/hear-the-music-tree)
 
-Unified metadata I/O (ID3, Vorbis, RIFF). **`pip install audiometa-python`** · [docs & examples on GitHub](https://github.com/BehindTheMusicTree/audiometa) · **[Web demo](https://audiometa.themusictree.org)**
+Full write-ups and status: **[themusictree.org/projects](https://themusictree.org/projects)**.
 
 ## 📚 Curriculum
 
