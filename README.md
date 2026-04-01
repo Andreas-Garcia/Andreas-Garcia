@@ -56,16 +56,16 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 ### Quick pointers (one line each)
 
-- **AudioMeta Python** — Library for reading/writing audio tags (ID3, Vorbis, RIFF). [Repo](https://github.com/BehindTheMusicTree/audiometa) · [PyPI](https://pypi.org/project/audiometa-python/) · [Browser demo](https://audiometa.themusictree.org)  
-  [![GitHub](https://img.shields.io/static/v1?style=flat-square&label=&message=&logo=github&logoColor=white&color=181717)](https://github.com/BehindTheMusicTree/audiometa) [![PyPI version](https://img.shields.io/pypi/v/audiometa-python?style=flat-square)](https://pypi.org/project/audiometa-python/) [![Downloads](https://img.shields.io/pepy/dt/audiometa-python?style=flat-square)](https://pepy.tech/project/audiometa-python)
-- **AudioMeta Webapp** — Next.js UI to inspect and edit file metadata in the browser. [Repo](https://github.com/BehindTheMusicTree/audiometa-frontend) · [Project page](https://themusictree.org/projects/audiometa-webapp)  
-  [![GitHub](https://img.shields.io/static/v1?style=flat-square&label=&message=&logo=github&logoColor=white&color=181717)](https://github.com/BehindTheMusicTree/audiometa-frontend)
-- **GrowTheMusicTree** — Web app for the collaborative global genre map. [Repo](https://github.com/BehindTheMusicTree/grow-the-music-tree) · [Project page](https://themusictree.org/projects/grow-the-music-tree)  
-  [![GitHub](https://img.shields.io/static/v1?style=flat-square&label=&message=&logo=github&logoColor=white&color=181717)](https://github.com/BehindTheMusicTree/grow-the-music-tree)
-- **TheMusicTreeAPI** — Django REST API for genre data and detection. [Repo](https://github.com/BehindTheMusicTree/the-music-tree-api) · [Project page](https://themusictree.org/projects/the-music-tree-api)  
-  [![GitHub](https://img.shields.io/static/v1?style=flat-square&label=&message=&logo=github&logoColor=white&color=181717)](https://github.com/BehindTheMusicTree/the-music-tree-api)
-- **HearTheMusicTree** — Cloud audio library and playlist-oriented backend. [Repo](https://github.com/BehindTheMusicTree/hear-the-music-tree-api) · [Project page](https://themusictree.org/projects/hear-the-music-tree)  
-  [![GitHub](https://img.shields.io/static/v1?style=flat-square&label=&message=&logo=github&logoColor=white&color=181717)](https://github.com/BehindTheMusicTree/hear-the-music-tree-api)
+- **AudioMeta Python** — Library for reading/writing audio tags (ID3, Vorbis, RIFF). [PyPI](https://pypi.org/project/audiometa-python/) · [Browser demo](https://audiometa.themusictree.org)  
+  [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audiometa) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audiometa/issues) [![PyPI version](https://img.shields.io/pypi/v/audiometa-python?style=flat-square)](https://pypi.org/project/audiometa-python/) [![Downloads](https://img.shields.io/pepy/dt/audiometa-python?style=flat-square)](https://pepy.tech/project/audiometa-python)
+- **AudioMeta Webapp** — Next.js UI to inspect and edit file metadata in the browser. [Project page](https://themusictree.org/projects/audiometa-webapp)  
+  [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audiometa-frontend) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audiometa-frontend/issues)
+- **GrowTheMusicTree** — Web app for the collaborative global genre map. [Project page](https://themusictree.org/projects/grow-the-music-tree)  
+  [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/grow-the-music-tree) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/grow-the-music-tree/issues)
+- **TheMusicTreeAPI** — Django REST API for genre data and detection. [Project page](https://themusictree.org/projects/the-music-tree-api)  
+  [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/the-music-tree-api) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/the-music-tree-api/issues)
+- **HearTheMusicTree** — Cloud audio library and playlist-oriented backend. [Project page](https://themusictree.org/projects/hear-the-music-tree)  
+  [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/hear-the-music-tree-api) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/hear-the-music-tree-api/issues)
 
 ## 📚 Curriculum
 
