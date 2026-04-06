@@ -84,9 +84,10 @@ Format:
 
 **Important:** Do not use "-" as a bullet point marker. Write bullet points as plain text sentences without any bullet markers.
 
-**Project links:** **All mentions of specific projects** (e.g., AudioMeta Python, TheMusicTreeAPI, OpenSILEX, GrowTheMusicTree) **must include the project link(s) in parentheses immediately after the project name**: `ProjectName (https://url.com)`. Priority order for links: website > PyPI > GitHub. **Note:** Links in parentheses do not count toward the character limit. **Multiple project links with icon placeholders are allowed in the job experiences section.**
+**Project links:** **All mentions of specific projects** (e.g., AudioMeta Python, AudioMeta Webapp, TheMusicTreeAPI, OpenSILEX, GrowTheMusicTree) **must include the project link(s) in parentheses immediately after the project name**: `ProjectName (https://url.com)`. Priority order for links: website > PyPI > GitHub. **Note:** Links in parentheses do not count toward the character limit. **Multiple project links with icon placeholders are allowed in the job experiences section.**
 
 **Available links (first priority):** Use these URLs when mentioning the following projects (override GitHub/repo links). Mention systematically that they are wip:
+- **AudioMeta Webapp:** https://themusictree.org/projects/audiometa-webapp (portfolio page) or https://audiometa.themusictree.org/ (live app)
 - **GrowTheMusicTree:** https://grow.themusictree.org/ (wip)
 - **HearTheMusicTree:** https://hear-api.themusictree.org/docs/ (wip)
 

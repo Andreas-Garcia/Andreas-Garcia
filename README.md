@@ -155,6 +155,13 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 - Published on [PyPI](https://pypi.org/project/audiometa-python/) achieving 16 000+ downloads, establishing it as a production-ready tool
 - Maintained active development with community contributions, issue tracking, and continuous improvements
 
+##### 🖥️ [**AudioMeta Webapp**](https://themusictree.org/projects/audiometa-webapp)
+
+- Building a Next.js web application for inspecting and editing audio file metadata directly in the browser
+- Implemented the UI with TypeScript and React, aligned with the AudioMeta Python library’s capabilities (ID3, Vorbis, RIFF, and related formats)
+- Shipped a live app at [audiometa.themusictree.org](https://audiometa.themusictree.org/) so users can try metadata workflows without installing software
+- Developing in the open in [audiometa-frontend](https://github.com/BehindTheMusicTree/audiometa-frontend) with iterative releases and issue-driven improvements
+
 ##### 🌳 [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree)
 
 - Building a collaborative platform for music genre classification using Next.js, TypeScript, and React
