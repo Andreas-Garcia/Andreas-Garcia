@@ -1,8 +1,8 @@
 # Full-Stack Developer | Open Source Contributor | Backend Engineer
 
-Backend engineer and **open-source maintainer** with a strong record of building **production-ready** libraries and APIs. Founded the BehindTheMusicTree ecosystem and published **AudioMeta Python** (https://pypi.org/project/audiometa-python/) with 16 000+ downloads and **1500+ unit tests**, demonstrating **clean code**, **modular design**, and high-coverage testing.
+Backend engineer and **open-source maintainer** with a strong record of building **production-ready** libraries and APIs. Founded the TheMusicTree ecosystem and published **AudioMeta Python** (https://pypi.org/project/audiometa-python/) with 18k+ downloads and **1500+ unit tests**, demonstrating **clean code**, **modular design**, and high-coverage testing.
 
-Contributions to **OpenSILEX** (https://github.com/OpenSILEX/opensilex) and **BehindTheMusicTree** (https://github.com/behindthemusictree)—**GrowTheMusicTree** (https://grow.themusictree.org/), TheMusicTreeAPI, **HearTheMusicTree** (https://hear-api.themusictree.org/docs/). Experienced with **Docker**, **GitHub Actions\*\*, pull requests, code reviews, and collaborative development on backend systems and tools.
+Contributions to **OpenSILEX** (https://github.com/OpenSILEX/opensilex) and **TheMusicTree** (https://github.com/BehindTheMusicTree)—**GrowTheMusicTree** (https://grow.themusictree.org/), TheMusicTreeAPI, **HearTheMusicTree** (https://hear-api.themusictree.org/docs/). Experienced with **Docker**, **GitHub Actions\*\*, pull requests, code reviews, and collaborative development on backend systems and tools.
 
 ## Skills
 
@@ -12,7 +12,7 @@ Workflow: Clean Code, GitFlow, pull requests, code reviews, unit testing, CI/CD,
 
 ## Professional Experience
 
-### [ICON] BehindTheMusicTree - Founder & Lead Developer
+### [ICON] TheMusicTree - Founder & Lead Developer
 
 Dec. 2022 – Present
 
@@ -21,7 +21,7 @@ Implemented **TheMusicTreeAPI** (https://github.com/BehindTheMusicTree/the-music
 Built **HearTheMusicTree** (https://hear-api.themusictree.org/docs/) backend services with Django REST Framework and PostgreSQL for cloud library management.
 
 Links:
-BehindTheMusicTree: https://github.com/behindthemusictree
+TheMusicTree: https://github.com/BehindTheMusicTree
 AudioMeta Python: https://pypi.org/project/audiometa-python/
 TheMusicTreeAPI: https://github.com/BehindTheMusicTree/the-music-tree-api
 GrowTheMusicTree: https://grow.themusictree.org/

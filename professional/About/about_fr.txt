@@ -4,14 +4,14 @@ Je suis un développeur full-stack passionné par la création d'outils et plate
 
 **🌍 Impact Environnemental & Social :** Recherche en agrivoltaïsme à l'INRAE, combinant agriculture et photovoltaïque pour lutter contre le changement climatique. Contribution aux initiatives de science ouverte (données FAIR). Expériences en agriculture durable (WWOOFing) et projets d'éco-construction. Expérience dans l'aide à domicile et le service public. Projets open-source pour démocratiser l'accès à la culture musicale et au savoir.
 
-**🎵 Impact Culturel :** Mon travail sur la technologie musicale contribue à préserver et organiser notre patrimoine musical mondial. L'écosystème BehindTheMusicTree vise à devenir une référence définitive reflétant toute la diversité de la culture musicale mondiale. Co-organisation d'un micro-festival de musique (80+ personnes).
+**🎵 Impact Culturel :** Mon travail sur la technologie musicale contribue à préserver et organiser notre patrimoine musical mondial. L'écosystème TheMusicTree vise à devenir une référence définitive reflétant toute la diversité de la culture musicale mondiale. Co-organisation d'un micro-festival de musique (80+ personnes).
 
 **Réalisations et projets :**
 
 J'ai développé des outils, bibliothèques, plateformes et services dans différents contextes :
 
-- **BehindTheMusicTree** (Fondateur & Lead Developer) :
-  - **AudioMeta Python** : bibliothèque métadonnées audio, 1500+ tests, 16 000+ téléchargements
+- **TheMusicTree** (Fondateur & Lead Developer) :
+  - **AudioMeta Python** : bibliothèque métadonnées audio, 1500+ tests, 18k+ téléchargements
   - **GrowTheMusicTree** : plateforme communautaire de classification de genres musicaux (Next.js, TypeScript, React)
   - **TheMusicTreeAPI** : API REST pour l'accès à la hiérarchie de genres et métadonnées (Django REST Framework, PostgreSQL)
   - **HearTheMusicTree** : gestionnaire bibliothèque musicale cloud

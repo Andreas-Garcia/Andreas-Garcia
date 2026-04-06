@@ -1,6 +1,6 @@
 # Développeur Full-Stack | Python & React | Données fiables & systèmes scalables
 
-**Ingénieur logiciel** avec 4+ ans en **Python**, **Django**, **React** et **Next.js**. Fondateur de BehindTheMusicTree ; a publié **AudioMeta Python** (https://pypi.org/project/audiometa-python/) (16k+ téléchargements, **1500+ tests**). Conçoit **systèmes fiables** avec **clean code**, tests. Animé par données structurées, interopérabilité (FAIR) et systèmes robustes.
+**Ingénieur logiciel** avec 4+ ans en **Python**, **Django**, **React** et **Next.js**. Fondateur de TheMusicTree ; a publié **AudioMeta Python** (https://pypi.org/project/audiometa-python/) (18k+ téléchargements, **1500+ tests**). Conçoit **systèmes fiables** avec **clean code**, tests. Animé par données structurées, interopérabilité (FAIR) et systèmes robustes.
 
 Je construis des **APIs REST** et modèles de **données** avec **Django** et **PostgreSQL** (TheMusicTreeAPI, **GrowTheMusicTree** (https://grow.themusictree.org/), **HearTheMusicTree** (https://hear-api.themusictree.org/docs/)). Expérience **données FAIR** (INRAE). **DevOps** (Docker, CI/CD). Français natif, anglais avancé.
 
@@ -12,7 +12,7 @@ Workflow: Clean Code, GitFlow, tests unitaires, CI/CD, SCRUM, revues de code, sp
 
 ## Expérience professionnelle
 
-### [ICON] BehindTheMusicTree - Fondateur & Lead Developer
+### [ICON] TheMusicTree - Fondateur & Lead Developer
 
 Déc. 2022 – Présent
 
@@ -21,7 +21,7 @@ Conçu une bibliothèque **Python** robuste avec 1500+ tests (AudioMeta Python) 
 Implémenté et déployé **GrowTheMusicTree** (https://grow.themusictree.org/) avec modélisation de domaine et pipelines CI/CD (Docker, GitHub Actions).
 
 Links:
-BehindTheMusicTree: https://github.com/behindthemusictree
+TheMusicTree: https://github.com/BehindTheMusicTree
 AudioMeta Python: https://pypi.org/project/audiometa-python/
 GrowTheMusicTree: https://grow.themusictree.org/
 HearTheMusicTree: https://hear-api.themusictree.org/docs/

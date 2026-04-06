@@ -1,5 +1,7 @@
 # Cursor Rules for CV and Motivation Letter Generation
 
+**Ecosystem naming:** The public name of the music metadata ecosystem is **TheMusicTree**. **Primary link (portfolio):** `https://themusictree.org`. Open-source repositories are under the GitHub organization **BehindTheMusicTree**—use **TheMusicTree** in narrative copy (CV, motivation letters); when a single URL is needed for the venture, prefer the portfolio; add `https://github.com/BehindTheMusicTree` when code or the org is the point.
+
 ## CV and Motivation Letter Generation Process
 
 When the user asks to generate a CV and/or motivation letter for a job application:
@@ -50,6 +52,7 @@ When the user asks to generate a CV and/or motivation letter for a job applicati
 
 6. **Key principles**:
 
+   - **TheMusicTree ecosystem**: Use **TheMusicTree** as the ecosystem/venture name in generated CV and motivation letter text (not “BehindTheMusicTree”). Job experience line format: `[ICON] TheMusicTree - Founder & Lead Developer` (or equivalent in the job description language). In the Links section, list the portfolio first: `TheMusicTree: https://themusictree.org`; include `https://github.com/BehindTheMusicTree` when the org or code is relevant.
    - **Bold important words**: In cv.md only, make important words **bold** (e.g. key skills, technologies, role titles, and achievements that match the job description). Do not use bold in motivation_letter.md.
    - All content must be based on information from README.md
    - Job experiences must be selected from README.md "Professional Experience" section (max 3) **based on relevance to the job description requirements**

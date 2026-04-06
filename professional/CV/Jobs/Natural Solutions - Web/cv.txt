@@ -2,13 +2,13 @@ Développeur Full-Stack | Fondateur & Lead Developer | Contributeur Open Source
 
 Développeur full-stack passionné par les technologies et l'impact environnemental, avec une solide expérience dans le développement d'applications web modernes. Expérimenté dans la création d'écosystèmes techniques complets alliant React, TypeScript, Python et Django REST Framework, avec un focus sur la qualité du code et les tests automatisés.
 
-Fondateur de BehindTheMusicTree (https://github.com/behindthemusictree), écosystème open source dédié à la découverte et l'organisation musicale, incluant AudioMeta Python (https://github.com/BehindTheMusicTree/audiometa) avec 16 000+ téléchargements, et contributeur à OpenSILEX (https://github.com/OpenSILEX/opensilex) pour la gestion de données de recherche FAIR (https://www.go-fair.org/).
+Fondateur de TheMusicTree (https://github.com/BehindTheMusicTree), écosystème open source dédié à la découverte et l'organisation musicale, incluant AudioMeta Python (https://github.com/BehindTheMusicTree/audiometa) avec 18k+ téléchargements, et contributeur à OpenSILEX (https://github.com/OpenSILEX/opensilex) pour la gestion de données de recherche FAIR (https://www.go-fair.org/).
 
 Techniques: React, TypeScript, JavaScript, Python, Django REST Framework, PostgreSQL, SQL, JSON, HTML, CSS
 
 Workflow: GitFlow, Test Driven Development, CI/CD, Docker, Agile/SCRUM, Revue de code, Documentation, Déploiement autonome
 
-### [ICON] BehindTheMusicTree - Fondateur & Lead Developer
+### [ICON] TheMusicTree - Fondateur & Lead Developer
 
 Déc. 2022 – Présent
 
@@ -17,7 +17,7 @@ Créé TheMusicTreeAPI (https://github.com/BehindTheMusicTree/the-music-tree-api
 Implémenté une suite de tests avec 1500+ tests unitaires pour AudioMeta Python (https://github.com/BehindTheMusicTree/audiometa), publié sur PyPI.
 
 Links:
-BehindTheMusicTree: https://github.com/behindthemusictree
+TheMusicTree: https://github.com/BehindTheMusicTree
 GrowTheMusicTree: https://github.com/BehindTheMusicTree/grow-the-music-tree
 TheMusicTreeAPI: https://github.com/BehindTheMusicTree/the-music-tree-api
 AudioMeta Python: https://github.com/BehindTheMusicTree/audiometa

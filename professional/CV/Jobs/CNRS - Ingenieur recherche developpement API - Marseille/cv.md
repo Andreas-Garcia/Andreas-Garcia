@@ -1,6 +1,6 @@
 # Ingénieur de recherche | Développement d'API & données – Python, JavaScript
 
-Ingénieur logiciel, je conçois des **APIs** (Python, **Django**) et des applications web (**JavaScript**, Next.js). Je développe l’écosystème BehindTheMusicTree (https://github.com/behindthemusictree), avec GrowTheMusicTree (https://grow.themusictree.org/) et HearTheMusicTree (https://hear-api.themusictree.org/docs/), en privilégiant **documentation**, tests et Docker.
+Ingénieur logiciel, je conçois des **APIs** (Python, **Django**) et des applications web (**JavaScript**, Next.js). Je développe l’écosystème TheMusicTree (https://github.com/BehindTheMusicTree), avec GrowTheMusicTree (https://grow.themusictree.org/) et HearTheMusicTree (https://hear-api.themusictree.org/docs/), en privilégiant **documentation**, tests et Docker.
 
 J’ai contribué à l’INRAE à un système **open source** pour données **FAIR** et à des services **REST** en contexte de recherche. Mon approche associe rigueur, formalisation (JSON, métadonnées) et travail en équipe. Passionné d’histoire, expérience en recherche (INRAE) et en développement d’**API** pour données structurées.
 
@@ -12,7 +12,7 @@ J’ai contribué à l’INRAE à un système **open source** pour données **FA
 
 ## Expériences professionnelles
 
-### [ICON] BehindTheMusicTree - Fondateur & Lead Developer
+### [ICON] TheMusicTree - Fondateur & Lead Developer
 
 Déc. 2022 – Présent
 
@@ -23,7 +23,7 @@ Déployé les applications avec **Docker** et CI/CD (GitHub) en collaboration av
 Links:
 GrowTheMusicTree : https://grow.themusictree.org/
 HearTheMusicTree : https://hear-api.themusictree.org/docs/
-BehindTheMusicTree : https://github.com/behindthemusictree
+TheMusicTree : https://github.com/BehindTheMusicTree
 
 ### [ICON] INRAE - Ingénieur de recherche
 

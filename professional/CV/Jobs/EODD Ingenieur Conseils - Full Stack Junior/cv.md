@@ -1,6 +1,6 @@
 # Développeur Full-Stack | Innovation & Données | Transition écologique
 
-Développeur full-stack et mainteneur open source, je conçois des applications en production (ingénierie solide, données, outils accessibles). Je pilote l’écosystème BehindTheMusicTree, avec GrowTheMusicTree (https://grow.themusictree.org/) et HearTheMusicTree (https://hear-api.themusictree.org/docs/), en cours de déploiement.
+Développeur full-stack et mainteneur open source, je conçois des applications en production (ingénierie solide, données, outils accessibles). Je pilote l’écosystème TheMusicTree, avec GrowTheMusicTree (https://grow.themusictree.org/) et HearTheMusicTree (https://hear-api.themusictree.org/docs/), en cours de déploiement.
 
 Animé par l’impact concret, je privilégie des solutions testées, documentées et déployables. Mon expérience couvre les APIs REST, PostgreSQL et les interfaces React/Next.js, en équipe Agile. Attiré par les projets à impact environnemental et social, je souhaite contribuer à la transformation écologique et énergétique.
 
@@ -12,7 +12,7 @@ Workflow : Agile/SCRUM, GitFlow, bonnes pratiques DevOps, conception API, assura
 
 ## Expériences professionnelles
 
-### [ICON] BehindTheMusicTree - Fondateur & Lead Developer
+### [ICON] TheMusicTree - Fondateur & Lead Developer
 
 Déc. 2022 – Présent
 

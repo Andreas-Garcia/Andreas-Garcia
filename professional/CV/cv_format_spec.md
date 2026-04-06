@@ -26,6 +26,8 @@ Both files should be created in the same directory as the job description: `prof
 
 **Source of truth:** All job experiences, projects, achievements, and skills should be referenced from `README.md` in the repository root.
 
+**Ecosystem name:** The music metadata ecosystem is **TheMusicTree**. **Primary link (portfolio):** https://themusictree.org. Use **TheMusicTree** in CV copy; prefer that URL for the venture; open-source repos are under the GitHub organization **BehindTheMusicTree**—link there when referring to code or the org.
+
 **Language:** The output language (for both cv.txt and motivation_letter.txt) must match the language of the job description. If the job description is in French, output in French. If in English, output in English.
 
 **Writing style:** Avoid overusing the words "expert" or "expertise". Use alternative phrasing such as "experienced in", "skilled in", "proficient with", or describe specific achievements and capabilities instead.

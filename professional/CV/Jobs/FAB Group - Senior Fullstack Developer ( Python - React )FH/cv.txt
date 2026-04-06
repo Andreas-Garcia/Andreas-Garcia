@@ -2,18 +2,18 @@ Développeur Fullstack Senior | Python & React | Fondateur Open Source
 
 Ingénieur full-stack avec plus de 5 ans d'expérience, je me spécialise dans Python/Django et React/Next.js. Je conçois des applications robustes et scalables, en privilégiant la qualité du code et les déploiements Docker/CI/CD pour garantir des solutions performantes.
 
-J'ai créé AudioMeta Python (https://pypi.org/project/audiometa-python/) avec plus de 16 000 téléchargements PyPI. Je suis le fondateur de l'écosystème BehindTheMusicTree (https://github.com/behindthemusictree), incluant plusieurs projets open-source en production. Passionné par les bonnes pratiques et les outils modernes pour accélérer le développement tout en maintenant une haute qualité.
+J'ai créé AudioMeta Python (https://pypi.org/project/audiometa-python/) avec plus de 18k téléchargements PyPI. Je suis le fondateur de l'écosystème TheMusicTree (https://github.com/BehindTheMusicTree), incluant plusieurs projets open-source en production. Passionné par les bonnes pratiques et les outils modernes pour accélérer le développement tout en maintenant une haute qualité.
 
 ---
 
 ## Expériences Professionnelles
 
-### [ICON] BehindTheMusicTree - Fondateur & Lead Developer
+### [ICON] TheMusicTree - Fondateur & Lead Developer
 
 Déc. 2022 – Présent
 
 Développé applications full-stack Django/PostgreSQL et Next.js/React/TypeScript.
-Créé AudioMeta Python (https://pypi.org/project/audiometa-python/) avec 1500+ tests pytest, 16 000+ téléchargements PyPI.
+Créé AudioMeta Python (https://pypi.org/project/audiometa-python/) avec 1500+ tests pytest, 18k+ téléchargements PyPI.
 Implémenté TheMusicTreeAPI Django REST avec PostgreSQL et intégrations APIs.
 
 ### [ICON] INRAE - Ingénieur de Recherche
@@ -33,7 +33,7 @@ Développé 62 interfaces comptables critiques en ETL avec SQL Server.
 Point de contact technique client (CA > 4Md€), animant ateliers et formation.
 
 **Liens:**
-BehindTheMusicTree: https://github.com/behindthemusictree
+TheMusicTree: https://github.com/BehindTheMusicTree
 AudioMeta Python: https://pypi.org/project/audiometa-python/
 GrowTheMusicTree: https://github.com/BehindTheMusicTree/grow-the-music-tree
 TheMusicTreeAPI: https://github.com/BehindTheMusicTree/the-music-tree-api
@@ -63,7 +63,7 @@ Diplôme d'ingénieur en Informatique
 **La Ruche - Programme Itinéraire** - 2025
 Programme d'entrepreneuriat de 3 mois
 Complété 5 ateliers thématiques : recherche de marché, ciblage client, stratégie marketing, coûts de projet, pitch business
-Développé Business Plan pour le projet BehindTheMusicTree
+Développé Business Plan pour le projet TheMusicTree
 
 ### Langues
 

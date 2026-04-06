@@ -38,7 +38,7 @@ Core strengths:
 - Dev practices: robust test suites (pytest), type-checking (mypy), linting (ruff), CI/CD, Docker, Docker Hub, GitFlow — Adheres to Robert C. Martin's "Clean Code" principles
 - Product: API design, metadata systems, containerised deployments (Docker, Docker Hub), and user-centered products
 
-I founded the [BehindTheMusicTree](https://github.com/BehindTheMusicTree) ecosystem for music metadata and an evolving genre reference. The **live portfolio** (project pages, demos, status) is **[themusictree.org](https://themusictree.org)** — maintained in **[the-music-tree-frontend](https://github.com/BehindTheMusicTree/the-music-tree-frontend)** so READMEs stay lean. Flagship library: [AudioMeta Python](https://github.com/BehindTheMusicTree/audiometa) (16,000+ PyPI downloads, [web demo](https://audiometa.themusictree.org)). All project links: [Featured Projects](#-featured-projects).
+I founded **[TheMusicTree](https://themusictree.org)** ([GitHub organization](https://github.com/BehindTheMusicTree)) for music metadata and an evolving genre reference. The **live portfolio** (project pages, demos, status) is **[themusictree.org](https://themusictree.org)** — maintained in **[the-music-tree-frontend](https://github.com/BehindTheMusicTree/the-music-tree-frontend)** so READMEs stay lean. Flagship library: [AudioMeta Python](https://github.com/BehindTheMusicTree/audiometa) (16,000+ PyPI downloads, [web demo](https://audiometa.themusictree.org)). All project links: [Featured Projects](#-featured-projects).
 
 I also collaborate on open-source projects and programs (e.g., [OpenSILEX](https://github.com/OpenSILEX/opensilex)) that emphasize sustainability 🌍, reproducibility, and community-driven curation.
 
@@ -46,9 +46,9 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 ## 🚀 Featured Projects
 
-**BehindTheMusicTree** is my ecosystem for music metadata and genre reference. A dedicated public portfolio covers every project, demos, and status: **[themusictree.org](https://themusictree.org)** · **[Projects](https://themusictree.org/projects)**.
+**TheMusicTree** is my ecosystem for music metadata and genre reference. A dedicated public portfolio covers every project, demos, and status: **[themusictree.org](https://themusictree.org)** · **[Projects](https://themusictree.org/projects)**.
 
-### BehindTheMusicTree — quick pointers (one line each)
+### TheMusicTree — quick pointers (one line each)
 
 - [**AudioMeta Python**](https://themusictree.org/projects/audiometa) — Library for reading/writing audio tags (ID3, Vorbis, RIFF).  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audiometa) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audiometa/issues) [![PyPI version](https://img.shields.io/pypi/v/audiometa-python?style=flat-square)](https://pypi.org/project/audiometa-python/) [![Downloads](https://img.shields.io/pepy/dt/audiometa-python?style=flat-square)](https://pepy.tech/project/audiometa-python)
@@ -72,9 +72,9 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 **🌍 Environmental Impact:** I've worked on impactful projects like agrivoltaism research at INRAE, combining agriculture and photovoltaics to combat climate change. I'm passionate about finding technical solutions to environmental challenges and contributing to open science initiatives that make research data FAIR (Findable, Accessible, Interoperable, and Reusable). My engagement extends beyond work through hands-on experiences with sustainable agriculture via WWOOFing (World Wide Opportunities on Organic Farms), where I've learned about organic farming practices and sustainable living, as well as eco-construction projects that promote environmentally responsible building methods.
 
-**🤝 Social Impact:** Through my work on open-source projects and community-driven platforms like BehindTheMusicTree, I aim to democratize access to music culture and knowledge. I've contributed to making research more accessible and collaborated on projects that serve the public good. I've worked in home care, providing direct assistance and support to individuals in need, which has given me firsthand experience with social challenges and the importance of community support. My experience also includes public service work, reflecting my commitment to social causes and contributing to the well-being of others.
+**🤝 Social Impact:** Through my work on open-source projects and community-driven platforms like TheMusicTree, I aim to democratize access to music culture and knowledge. I've contributed to making research more accessible and collaborated on projects that serve the public good. I've worked in home care, providing direct assistance and support to individuals in need, which has given me firsthand experience with social challenges and the importance of community support. My experience also includes public service work, reflecting my commitment to social causes and contributing to the well-being of others.
 
-**🎵 Cultural Impact:** My work on music technology and metadata management contributes to preserving and organizing our global musical heritage. By building tools that help people discover, understand, and connect with diverse music cultures worldwide, I'm helping create a more inclusive and accessible cultural landscape. The BehindTheMusicTree ecosystem aims to become a definitive reference that reflects the full diversity of global music culture, empowering communities to share and celebrate their musical traditions. Beyond technology, I've co-organized a micro music festival that brought together 80+ people, creating a space for community connection and cultural exchange through live music experiences.
+**🎵 Cultural Impact:** My work on music technology and metadata management contributes to preserving and organizing our global musical heritage. By building tools that help people discover, understand, and connect with diverse music cultures worldwide, I'm helping create a more inclusive and accessible cultural landscape. TheMusicTree aims to become a definitive reference that reflects the full diversity of global music culture, empowering communities to share and celebrate their musical traditions. Beyond technology, I've co-organized a micro music festival that brought together 80+ people, creating a space for community connection and cultural exchange through live music experiences.
 
 **Languages:** 🇫🇷 French (Native) | 🇬🇧 English (Advanced) | 🇪🇸 Spanish (Advanced) | 🇩🇪 German (Basic)
 
@@ -123,7 +123,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 - 3-month entrepreneurship program
 - Completed 5 thematic workshops: market research, customer targeting, marketing strategy, project costing, and business pitch
 - Attended 4 expert workshops on legal structures, independent worker regulations, funding opportunities, and intellectual property
-- Developed Business Plan for BehindTheMusicTree project
+- Developed Business Plan for TheMusicTree project
 - Conducted market research and created user personas
 
 #### INSA Lyon - 2014
@@ -135,11 +135,11 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 **Certifications:** La Ruche - Programme Itinéraire (Entrepreneurship Program, 2025)
 
-**Awards/Activities:** Organized Music Micro Festival (80+ attendees, 2021), Open Source Contributor (AudioMeta Python: 16 000+ downloads), Founder & Lead Developer of BehindTheMusicTree ecosystem
+**Awards/Activities:** Organized Music Micro Festival (80+ attendees, 2021), Open Source Contributor (AudioMeta Python: 16 000+ downloads), Founder & Lead Developer of TheMusicTree ecosystem
 
 ### 💼 Professional Experience
 
-#### [BehindTheMusicTree](https://github.com/BehindTheMusicTree) - Founder & Lead Developer
+#### [TheMusicTree](https://themusictree.org) - Founder & Lead Developer
 
 **Dec. 2022 – Present**
 
@@ -292,7 +292,7 @@ I'm passionate about open-source development and believe in building tools that 
 
 ### 🎯 Active Projects
 
-- **[BehindTheMusicTree](https://github.com/BehindTheMusicTree)** — Founder & Lead Developer. Portfolio: **[themusictree.org](https://themusictree.org)** · site repo **[the-music-tree-frontend](https://github.com/BehindTheMusicTree/the-music-tree-frontend)** · per-project links in [Featured Projects](#-featured-projects) above.
+- **[TheMusicTree](https://themusictree.org)** — Founder & Lead Developer (portfolio). Code: **[BehindTheMusicTree on GitHub](https://github.com/BehindTheMusicTree)** · site repo **[the-music-tree-frontend](https://github.com/BehindTheMusicTree/the-music-tree-frontend)** · per-project links in [Featured Projects](#-featured-projects) above.
 
 ### 🌿 Contributions to Other Projects
 
@@ -372,7 +372,7 @@ For **AudioMeta Python**, see the [Contributing Guidelines](https://github.com/A
 ## 📫 Connect With Me
 
 - 💼 **LinkedIn**: [Connect on LinkedIn](https://www.linkedin.com/in/andreas-garcia/)
-- 🎵 **BehindTheMusicTree**: [Organization](https://github.com/BehindTheMusicTree) · [Ecosystem site](https://themusictree.org)
+- 🎵 **TheMusicTree**: [Portfolio (themusictree.org)](https://themusictree.org) · [GitHub organization](https://github.com/BehindTheMusicTree)
 - 📧 **Email**: garcia.andreas.1991@gmail.com
 - 🐛 **Issues**: [Report bugs or suggest features](https://github.com/Andreas-Garcia/audiometa/issues)
 - 💬 **Discussions**: [Join the conversation](https://github.com/Andreas-Garcia/audiometa/discussions)

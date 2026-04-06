@@ -1,6 +1,6 @@
 # Ingénieur logiciel Python | Données & impact environnemental
 
-Ingénieur logiciel **Python**, je mets **données**, **APIs** et **bases de données** au service de projets à impact. Je développe l'écosystème BehindTheMusicTree (https://github.com/behindthemusictree), avec GrowTheMusicTree (https://grow.themusictree.org/) et HearTheMusicTree (https://hear-api.themusictree.org/docs/), en alliant **PostgreSQL** et bonnes pratiques.
+Ingénieur logiciel **Python**, je mets **données**, **APIs** et **bases de données** au service de projets à impact. Je développe l'écosystème TheMusicTree (https://github.com/BehindTheMusicTree), avec GrowTheMusicTree (https://grow.themusictree.org/) et HearTheMusicTree (https://hear-api.themusictree.org/docs/), en alliant **PostgreSQL** et bonnes pratiques.
 
 Mon parcours intègre la recherche en environnement à l'**INRAE** (agrivoltaïsme, données **FAIR**) et le conseil en données (BI, ETL, SQL). Je suis animé par la **rigueur**, la documentation et la **collaboration**, avec un intérêt pour la transition écologique et l'aménagement durable au service des territoires et du climat.
 
@@ -12,7 +12,7 @@ Mon parcours intègre la recherche en environnement à l'**INRAE** (agrivoltaïs
 
 ## Expériences professionnelles
 
-### [ICON] BehindTheMusicTree - Fondateur & Lead Developer
+### [ICON] TheMusicTree - Fondateur & Lead Developer
 
 Déc. 2022 – Présent
 
@@ -23,7 +23,7 @@ Déployé des applications avec **Docker** et CI/CD en renforçant qualité, tes
 Links:
 GrowTheMusicTree : https://grow.themusictree.org/
 HearTheMusicTree : https://hear-api.themusictree.org/docs/
-BehindTheMusicTree : https://github.com/behindthemusictree
+TheMusicTree : https://github.com/BehindTheMusicTree
 
 ### [ICON] INRAE - Ingénieur de recherche
 

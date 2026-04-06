@@ -1,6 +1,6 @@
 # Ingénieur logiciel full-stack | Produit SaaS | Impact & durabilité
 
-Ingénieur logiciel full-stack, je conçois des applications web robustes, maintenables et prêtes pour la production. Je développe l’écosystème BehindTheMusicTree, avec GrowTheMusicTree (https://grow.themusictree.org/) et HearTheMusicTree (https://hear-api.themusictree.org/docs/), en combinant Next.js, TypeScript, APIs, tests et déploiement continu.
+Ingénieur logiciel full-stack, je conçois des applications web robustes, maintenables et prêtes pour la production. Je développe l’écosystème TheMusicTree, avec GrowTheMusicTree (https://grow.themusictree.org/) et HearTheMusicTree (https://hear-api.themusictree.org/docs/), en combinant Next.js, TypeScript, APIs, tests et déploiement continu.
 
 J’aime porter un sujet de bout en bout, du besoin produit à la qualité du code et à la performance. Mon parcours mêle front-end, back-end, CI/CD, documentation technique et collaboration transverse, avec sensibilité pour la durabilité, l’expérience utilisateur et les environnements entrepreneuriaux.
 
@@ -12,7 +12,7 @@ Workflow : Développement end-to-end, Agile/SCRUM, GitFlow, Clean Code, concepti
 
 ## Expériences professionnelles
 
-### [ICON] BehindTheMusicTree - Fondateur & Lead Developer
+### [ICON] TheMusicTree - Fondateur & Lead Developer
 
 Déc. 2022 – Présent
 
@@ -23,7 +23,7 @@ Déployé des applications avec Docker et CI/CD en renforçant qualité, perform
 Links:
 GrowTheMusicTree : https://grow.themusictree.org/
 HearTheMusicTree : https://hear-api.themusictree.org/docs/
-BehindTheMusicTree : https://github.com/behindthemusictree
+TheMusicTree : https://github.com/BehindTheMusicTree
 
 ### [ICON] INRAE - Ingénieur de recherche
 

@@ -1,10 +1,10 @@
 
-🎵 FONDATEUR & LEAD DEVELOPER - BehindTheMusicTree
+🎵 FONDATEUR & LEAD DEVELOPER - TheMusicTree
 
 📅 DATE : Déc. 2022 – Présent
 
 💼 DESCRIPTION DU POSTE :
-En tant que Fondateur & Lead Developer de BehindTheMusicTree, je dirige le développement d'un écosystème de projets interconnectés transformant l'exploration et l'organisation de la musique. Je définis la vision, la mission et la direction stratégique.
+En tant que Fondateur & Lead Developer de TheMusicTree, je dirige le développement d'un écosystème de projets interconnectés transformant l'exploration et l'organisation de la musique. Je définis la vision, la mission et la direction stratégique.
 
 🔑 RESPONSABILITÉS PRINCIPALES :
 
@@ -19,7 +19,7 @@ En tant que Fondateur & Lead Developer de BehindTheMusicTree, je dirige le déve
 
 🚀 PROJETS DÉVELOPPÉS :
 
-	🎵 AudioMeta Python : Bibliothèque métadonnées (ID3v1, ID3v2, Vorbis, RIFF), 1500+ tests, 16 000+ téléchargements PyPI
+	🎵 AudioMeta Python : Bibliothèque métadonnées (ID3v1, ID3v2, Vorbis, RIFF), 1500+ tests, 18k+ téléchargements PyPI
 	🌳 GrowTheMusicTree : Plateforme communautaire genres musicaux (Next.js, TypeScript, React)
 	🎧 HearTheMusicTree : Gestionnaire bibliothèque musicale cloud avec playlists intelligentes
 	🔌 TheMusicTreeAPI : API REST genres et métadonnées (Django REST Framework, PostgreSQL)
