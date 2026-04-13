@@ -1,6 +1,6 @@
 # Full-Stack Developer | Music Technology Innovator | Open Source Contributor
 
-Full-stack engineer passionate about building products that reach large audiences, with experience in React, Next.js ecosystems. Deeply passionate about music and entertainment, founded TheMusicTree (https://github.com/BehindTheMusicTree), an open-source music technology ecosystem including AudioMeta Python (https://pypi.org/project/audiometa-python/) with 18k+ downloads.
+Full-stack engineer passionate about building products that reach large audiences, with experience in React, Next.js ecosystems. Deeply passionate about music and entertainment, founded TheMusicTree (https://github.com/BehindTheMusicTree), an open-source music technology ecosystem including AudioMeta Python (https://pypi.org/project/audiometa-python/) with 20k+ downloads.
 
 The ecosystem includes GrowTheMusicTree (https://github.com/BehindTheMusicTree/grow-the-music-tree) for collaborative genre classification, TheMusicTreeAPI (https://github.com/BehindTheMusicTree/the-music-tree-api) for genre hierarchy, and HearTheMusicTree (https://github.com/BehindTheMusicTree/hear-the-music-tree-api) for cloud-based music library management. Each project demonstrates commitment to building production-ready tools with deep passion for music.
 
@@ -18,7 +18,7 @@ Dec. 2022 – Present
 
 Developed GrowTheMusicTree (https://github.com/BehindTheMusicTree/grow-the-music-tree) using Next.js, TypeScript, and React, building collaborative platform.
 Implemented TheMusicTreeAPI (https://github.com/BehindTheMusicTree/the-music-tree-api) using Django REST Framework and PostgreSQL, providing genre hierarchy.
-Created AudioMeta Python (https://pypi.org/project/audiometa-python/) library achieving 18k+ downloads, with test suite of 1500+ unit tests.
+Created AudioMeta Python (https://pypi.org/project/audiometa-python/) library achieving 20k+ downloads, with test suite of 1500+ unit tests.
 Developed HearTheMusicTree (https://github.com/BehindTheMusicTree/hear-the-music-tree-api) for cloud-based music library management with smart playlists.
 
 **Links:**

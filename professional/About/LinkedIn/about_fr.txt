@@ -11,7 +11,7 @@ Réalisations et projets :
 J'ai développé des outils, bibliothèques, plateformes et services dans divers contextes :
 
 - TheMusicTree (Fondateur et Développeur Principal) :
-  - AudioMeta Python : bibliothèque de métadonnées audio, 1500+ tests, 18k+ téléchargements
+  - AudioMeta Python : bibliothèque de métadonnées audio, 1500+ tests, 20k+ téléchargements
   - GrowTheMusicTree : plateforme communautaire de classification de genres musicaux (Next.js, TypeScript, React)
   - TheMusicTreeAPI : API REST pour l'accès à la hiérarchie des genres et aux métadonnées (Django REST Framework, PostgreSQL)
   - HearTheMusicTree : gestionnaire de bibliothèque musicale cloud

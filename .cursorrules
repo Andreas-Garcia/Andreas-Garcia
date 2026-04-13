@@ -2,11 +2,13 @@
 
 **Ecosystem naming:** The public name of the music metadata ecosystem is **TheMusicTree**. **Primary link (portfolio):** `https://themusictree.org`. Open-source repositories are under the GitHub organization **BehindTheMusicTree**—use **TheMusicTree** in narrative copy (CV, motivation letters); when a single URL is needed for the venture, prefer the portfolio; add `https://github.com/BehindTheMusicTree` when code or the org is the point.
 
+**Git branching terminology:** Write **GitFlow** as one word (camelCase). Do **not** write "Git Flow" (two words). If the lighter GitHub-centric workflow is meant, use **GitHub Flow**, not "Light Git Flow" or "git flow".
+
 ## CV and Motivation Letter Generation Process
 
 When the user asks to generate a CV and/or motivation letter for a job application:
 
-1. **Locate the job description**: The job description should be at `professional/CV/Job Descriptions/[job title]/Job Description.md` or `Professional/CV/Jobs/[job title]/Job Description.md`. If the user provides a job description path or mentions a job title, use that location.
+1. **Locate the job folder**: Each posting has a **dedicated directory** under `professional/CV/Jobs/[job title]/`. The job description is typically `Job Description.md` in that folder (alternatively `Description.txt` if already present). If the user gives a path or job title, use that folder under `Jobs/`.
 
 2. **Read required files**:
 
@@ -16,7 +18,8 @@ When the user asks to generate a CV and/or motivation letter for a job applicati
 
 3. **Generate cv.md**:
 
-   - Create `professional/CV/Job Descriptions/[job title]/cv.md` in the same directory as the job description
+   - Create `professional/CV/Jobs/[job title]/cv.md` in the same directory as the job description
+   - **Do not name the employer, their products, programmes, brands, or internal project names** as they appear in the job description (e.g. recruiter company, product codename, programme label). The CV must stay **portable**: align skills and experience with the JD **without** echoing those names. Optional **Open to** line stays generic (sectors, stacks), not “poste chez X”. **motivation_letter.md** may name the employer and role (cover letter context).
    - Follow the format specified in `professional/CV/cv_format_spec.md`:
      - **Intro Section**: Opening line with title/role tags, 2 paragraphs about professional identity, optional key achievements. Must be between 570 and 580 characters in length (excluding project links in parentheses). **Best practice:** Write both paragraphs as **full, narrative sentences** with clear subject and verb (e.g. "Je construis…", "J'ai travaillé…"). Do **not** use a telegram-style or list-like second paragraph (e.g. chaining noun phrases or fragments separated only by periods: "APIs REST et modèles. Projet A. Expérience X. Langues."). Prefer 1–2 complete sentences per paragraph that tell a short narrative (what you build, with what, what it shows). Use real, flowing sentences, not fragmented bullet-style text.
      - **Skills Section**: Technical skills (Techniques) and project/process skills (Workflow) relevant to the job description, selected from README.md. Format: "Techniques: [comma-separated list]" and "Workflow: [comma-separated list]". Maximum 9 keywords for Techniques and maximum 9 keywords for Workflow. The language should match the job description language.
@@ -30,7 +33,7 @@ When the user asks to generate a CV and/or motivation letter for a job applicati
 
 4. **Generate motivation_letter.md**:
 
-   - Create `professional/CV/Job Descriptions/[job title]/motivation_letter.md` in the same directory as the job description
+   - Create `professional/CV/Jobs/[job title]/motivation_letter.md` in the same directory as the job description
    - Follow a concise 2-3 paragraph structure:
      - **Paragraph 1**: Opening & Interest - express genuine interest, mention discovery, align with career goals
      - **Paragraph 2**: Relevant Experience & Skills - reference 2-3 key requirements from job description, connect to README experiences, highlight matching technical skills, include metrics
@@ -43,7 +46,7 @@ When the user asks to generate a CV and/or motivation letter for a job applicati
 
 5. **Validation step** - After generating cv.md:
 
-   - **Run the validation script**: Execute `python3 professional/CV/validate_cv.py professional/CV/Job Descriptions/[job title]/cv.md` to validate the CV format
+   - **Run the validation script**: Execute `python3 professional/CV/validate_cv.py professional/CV/Jobs/[job title]/cv.md` to validate the CV format
    - The script checks:
      - Intro section is between 570 and 580 characters in length (excluding project links in parentheses)
      - All bullet points in the job experiences section are approximately 95 characters in length (excluding project links in parentheses, target range: 85-105 characters)
@@ -52,6 +55,7 @@ When the user asks to generate a CV and/or motivation letter for a job applicati
 
 6. **Key principles**:
 
+   - **CV vs job description names**: In **cv.md** only, never cite names taken from the posting (company, product, ministry programme, incubator label, etc.); express fit through **domains**, **stacks**, and **outcomes** instead. **motivation_letter.md** is where naming the organisation and mission is appropriate.
    - **TheMusicTree ecosystem**: Use **TheMusicTree** as the ecosystem/venture name in generated CV and motivation letter text (not “BehindTheMusicTree”). Job experience line format: `[ICON] TheMusicTree - Founder & Lead Developer` (or equivalent in the job description language). In the Links section, list the portfolio first: `TheMusicTree: https://themusictree.org`; include `https://github.com/BehindTheMusicTree` when the org or code is relevant.
    - **Bold important words**: In cv.md only, make important words **bold** (e.g. key skills, technologies, role titles, and achievements that match the job description). Do not use bold in motivation_letter.md.
    - All content must be based on information from README.md
@@ -66,4 +70,4 @@ When the user asks to generate a CV and/or motivation letter for a job applicati
    - **Phrasing for job experience bullet points**: Write complete, natural sentences that start with past participles (e.g., "Développé", "Créé", "Implémenté", "Contribué", "Collaboré"). Do not use "Je" or "J'ai" at the beginning of bullet points. Ensure sentences are real, flowing formulations, not fragmented bullet-style text.
    - The output language (for both cv.md and motivation_letter.md) must match the language of the job description. If the job description is in French, output in French. If in English, output in English.
 
-7. **Output**: Both files should be created in `professional/CV/Job Descriptions/[job title]/` directory alongside the job description.
+7. **Output**: Put `Job Description.md`, `cv.md`, and `motivation_letter.md` together in `professional/CV/Jobs/[job title]/` (one subdirectory per posting).

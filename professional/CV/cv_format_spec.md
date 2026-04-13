@@ -2,33 +2,35 @@
 
 ## PROCESS
 
-Given a job description located at `professional/CV/Job Descriptions/[job title]/Description.txt`, follow the formats below to generate:
+Given a job description in `professional/CV/Jobs/[job title]/` (typically `Job Description.md`, or `Description.txt` if used), follow the formats below to generate:
 
-1. **cv.txt** - Contains:
+1. **cv.md** - Contains:
    - Intro section (following INTRO SECTION format)
    - Skills section (following SKILLS SECTION format)
    - Job experiences section (following JOB EXPERIENCES SECTION format, max 3 experiences from README.md)
    - More info section (following MORE INFO SECTION format)
 
-2. **motivation_letter.txt** - Contains:
+2. **motivation_letter.md** - Contains:
    - A tailored motivation letter (following MOTIVATION LETTER TEMPLATE format)
    - Must reference specific requirements from the job description
    - Must connect experiences from README.md to job requirements
 
-3. **Validation step** - After generating cv.txt:
+3. **Validation step** - After generating cv.md:
    - Verify that all mentions of projects in the intro section and job experiences section have links in parentheses (format: `ProjectName (https://url.com)`)
    - Verify that all bullet points in the job experiences section are approximately 95 characters in length (excluding project links in parentheses)
    - Verify that the intro section is between 570 and 580 characters in length (excluding all project links in parentheses) and consists of 2 paragraphs
    - **Important:** Project links in parentheses do not count toward character limits for validation purposes
    - Adjust any bullet points or intro section that do not meet these requirements
 
-Both files should be created in the same directory as the job description: `professional/CV/Job Descriptions/[job title]/`
+Both files should be created in the same directory as the job description: `professional/CV/Jobs/[job title]/`
+
+**CV portability (cv.md):** Do not name the employer, their products, programmes, or brands as written in the job description. Tailor the CV using domains, stacks, and outcomes from **README.md** only; the motivation letter is where the organisation and role can be named explicitly.
 
 **Source of truth:** All job experiences, projects, achievements, and skills should be referenced from `README.md` in the repository root.
 
 **Ecosystem name:** The music metadata ecosystem is **TheMusicTree**. **Primary link (portfolio):** https://themusictree.org. Use **TheMusicTree** in CV copy; prefer that URL for the venture; open-source repos are under the GitHub organization **BehindTheMusicTree**—link there when referring to code or the org.
 
-**Language:** The output language (for both cv.txt and motivation_letter.txt) must match the language of the job description. If the job description is in French, output in French. If in English, output in English.
+**Language:** The output language (for both cv.md and motivation_letter.md) must match the language of the job description. If the job description is in French, output in French. If in English, output in English.
 
 **Writing style:** Avoid overusing the words "expert" or "expertise". Use alternative phrasing such as "experienced in", "skilled in", "proficient with", or describe specific achievements and capabilities instead.
 
@@ -59,6 +61,8 @@ Format:
 - **Workflow:** List project/process skills relevant to the job description (e.g., GitFlow, Test Driven Development, Assurance Qualité, Agile/SCRUM). **Maximum 9 keywords.**
 
 **Important:** Skills should be selected based on relevance to the job description and should reference skills from README.md. The language should match the job description language (French or English).
+
+**Terminology:** Use **GitFlow** (one word), not "Git Flow". For the GitHub workflow, use **GitHub Flow** if needed.
 
 Example:
 
