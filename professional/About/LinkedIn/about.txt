@@ -20,7 +20,7 @@ I've developed tools, libraries, platforms, and services in various contexts:
 Technical stack:
 
 - Backend: Python, Django REST Framework, Java Spring Boot
-- Frontend: Next.js, TypeScript, React
+- Frontend: Next.js, TypeScript, React, Vercel (TheMusicTree web apps)
 - Database: PostgreSQL
 - DevOps & Tools: Docker, GitFlow, CI/CD (GitHub Actions)
 - Methodologies: SCRUM, test-driven development (TDD)

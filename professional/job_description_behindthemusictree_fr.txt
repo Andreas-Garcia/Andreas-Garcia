@@ -14,13 +14,13 @@ En tant que Fondateur & Lead Developer de TheMusicTree, je dirige le développem
 	🔄 Gestion projets end-to-end : architecture, développement, tests, déploiement
     💡 Participation au programme d'entrepreneurship de La Ruche
 	🔌 Intégration APIs externes (Spotify, MusicBrainz)
-	🐳 Docker, GitFlow, CI/CD (GitHub Actions)
+	🐳 Docker, GitFlow, CI/CD (GitHub Actions), frontends Next.js sur Vercel
 
 
 🚀 PROJETS DÉVELOPPÉS :
 
 	🎵 AudioMeta Python : Bibliothèque métadonnées (ID3v1, ID3v2, Vorbis, RIFF), 1500+ tests, 20k+ téléchargements PyPI
-	🌳 GrowTheMusicTree : Plateforme communautaire genres musicaux (Next.js, TypeScript, React)
+	🌳 GrowTheMusicTree : Plateforme communautaire genres musicaux (Next.js, TypeScript, React), frontend sur Vercel
 	🎧 HearTheMusicTree : Gestionnaire bibliothèque musicale cloud avec playlists intelligentes
 	🔌 TheMusicTreeAPI : API REST genres et métadonnées (Django REST Framework, PostgreSQL)
 
@@ -39,7 +39,7 @@ En tant que Fondateur & Lead Developer de TheMusicTree, je dirige le développem
 	Backend : Python, Django REST Framework
 	Frontend : Next.js, TypeScript, React
 	Base de données : PostgreSQL
-	DevOps : Docker, GitFlow, CI/CD (GitHub Actions)
+	DevOps : Docker, GitFlow, CI/CD (GitHub Actions), Vercel (frontends Next.js)
 	Méthodologies : SCRUM, TDD
 
 

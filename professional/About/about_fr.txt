@@ -20,9 +20,9 @@ J'ai développé des outils, bibliothèques, plateformes et services dans diffé
 **Stack technique :**
 
 - **Backend** : Python, Django REST Framework, Java Spring Boot
-- **Frontend** : Next.js, TypeScript, React
+- **Frontend** : Next.js, TypeScript, React, Vercel (applications web TheMusicTree)
 - **Base de données** : PostgreSQL
-- **DevOps & Outils** : Docker, GitFlow, CI/CD (GitHub Actions)
+- **DevOps & Outils** : Docker, GitFlow, CI/CD (GitHub Actions), Vercel (frontends Next.js)
 - **Méthodologies** : SCRUM, développement piloté par les tests (TDD)
 
 🎓 Formation : Diplôme d'ingénieur en Informatique de l'INSA Lyon (2014) | Programme d'entrepreneuriat à La Ruche (2025)

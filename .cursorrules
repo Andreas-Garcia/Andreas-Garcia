@@ -2,6 +2,8 @@
 
 **Ecosystem naming:** The public name of the music metadata ecosystem is **TheMusicTree**. **Primary link (portfolio):** `https://themusictree.org`. Open-source repositories are under the GitHub organization **BehindTheMusicTree**—use **TheMusicTree** in narrative copy (CV, motivation letters); when a single URL is needed for the venture, prefer the portfolio; add `https://github.com/BehindTheMusicTree` when code or the org is the point.
 
+**TheMusicTree frontends (Vercel):** User-facing **Next.js** apps are deployed on **Vercel**, including the portfolio (**themusictree.org**), **GrowTheMusicTree** (**grow.themusictree.org**), and **AudioMeta Webapp** (**audiometa.themusictree.org**). Mention **Vercel** when describing these products or the frontend stack—not for backend-only services (e.g. Django APIs, Flask microservices) unless the copy is explicitly about those apps.
+
 **Git branching terminology:** Write **GitFlow** as one word (camelCase). Do **not** write "Git Flow" (two words). If the lighter GitHub-centric workflow is meant, use **GitHub Flow**, not "Light Git Flow" or "git flow".
 
 ## CV and Motivation Letter Generation Process
@@ -27,7 +29,7 @@ When the user asks to generate a CV and/or motivation letter for a job applicati
        - `[ICON]` Company/Project Name - Role Title (use `[ICON]` placeholder instead of markdown links)
        - Date Range (e.g., "Dec. 2022 – Present")
        - 2-3 bullet points written as plain text sentences without bullet markers (no "-" prefix). Each bullet point must be a complete, real sentence (not fragmented bullet-style text). Bullet points should start with past participles (e.g., "Développé", "Créé", "Implémenté") rather than using "Je" or "J'ai". Each bullet point should be approximately 95 characters in length (excluding project links in parentheses).
-       - When mentioning specific projects, include project link(s) in parentheses immediately after the project name: `ProjectName (https://url.com)`. Priority order for links: website > PyPI > GitHub. **Available links (first priority, mention systematically they are wip where applicable):** AudioMeta Webapp: https://themusictree.org/projects/audiometa-webapp or https://audiometa.themusictree.org/ ; GrowTheMusicTree: https://grow.themusictree.org/ ; HearTheMusicTree: https://hear-api.themusictree.org/docs/ . Only one link per project in intro section.
+       - When mentioning specific projects, include project link(s) in parentheses immediately after the project name: `ProjectName (https://url.com)`. Priority order for links: website > PyPI > GitHub. **Available links (first priority, mention systematically they are wip where applicable):** AudioMeta Webapp: https://themusictree.org/projects/audiometa-webapp or https://audiometa.themusictree.org/ (Next.js on **Vercel**) ; GrowTheMusicTree: https://grow.themusictree.org/ (Next.js on **Vercel**) ; portfolio: https://themusictree.org/ (Next.js on **Vercel**) ; HearTheMusicTree: https://hear-api.themusictree.org/docs/ . Only one link per project in intro section.
      - **Links Section**: After the job experiences section, include a "Links" subsection listing all URLs in the format: `Project/Company Name: https://url.com`
      - **More Info Section**: Technical stack (grouped by Backend/Frontend/Database/DevOps), Education, Languages, Open to opportunities
 

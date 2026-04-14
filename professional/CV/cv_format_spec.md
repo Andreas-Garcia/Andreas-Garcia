@@ -91,8 +91,9 @@ Format:
 **Project links:** **All mentions of specific projects** (e.g., AudioMeta Python, AudioMeta Webapp, TheMusicTreeAPI, OpenSILEX, GrowTheMusicTree) **must include the project link(s) in parentheses immediately after the project name**: `ProjectName (https://url.com)`. Priority order for links: website > PyPI > GitHub. **Note:** Links in parentheses do not count toward the character limit. **Multiple project links with icon placeholders are allowed in the job experiences section.**
 
 **Available links (first priority):** Use these URLs when mentioning the following projects (override GitHub/repo links). Mention systematically that they are wip:
-- **AudioMeta Webapp:** https://themusictree.org/projects/audiometa-webapp (portfolio page) or https://audiometa.themusictree.org/ (live app)
-- **GrowTheMusicTree:** https://grow.themusictree.org/ (wip)
+- **AudioMeta Webapp:** https://themusictree.org/projects/audiometa-webapp (portfolio page) or https://audiometa.themusictree.org/ (live app). **Next.js on Vercel.**
+- **GrowTheMusicTree:** https://grow.themusictree.org/ (wip). **Next.js on Vercel.**
+- **Portfolio / marketing site:** https://themusictree.org/ — **Next.js on Vercel** (when relevant).
 - **HearTheMusicTree:** https://hear-api.themusictree.org/docs/ (wip)
 
 **Links:** After the job experiences section, include a "Links" subsection listing all URLs in the format: `Project/Company Name: https://url.com`

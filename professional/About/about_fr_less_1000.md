@@ -8,4 +8,4 @@ Développeur full-stack passionné par les outils open-source combinant excellen
 
 Réalisations : AudioMeta Python (1500+ tests, 20k+ téléchargements), GrowTheMusicTree (Next.js), TheMusicTreeAPI (Django, PostgreSQL), OpenSILEX (INRAE, Java).
 
-Stack: Python, Django, Java, Next.js, TypeScript, React, PostgreSQL, Docker, CI/CD. 🎓 INSA Lyon (2014) | La Ruche (2025) | 🇫🇷🇬🇧🇪🇸🇩🇪
+Stack: Python, Django, Java, Next.js, TypeScript, React, Vercel, PostgreSQL, Docker, CI/CD. 🎓 INSA Lyon (2014) | La Ruche (2025) | 🇫🇷🇬🇧🇪🇸🇩🇪

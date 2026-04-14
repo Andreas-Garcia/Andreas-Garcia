@@ -7,6 +7,6 @@ Full-Stack Developer and Founder of [TheMusicTree](https://themusictree.org) ([G
 - **[TheMusicTreeApi](https://github.com/BehindTheMusicTree/the-music-tree-api)**: RESTful API for genre hierarchy, metadata integration, and data-driven recommendations, built with Django REST Framework and PostgreSQL.
 - **[InTheMusicTree](https://github.com/BehindTheMusicTree/in-the-music-tree)**: Cloud-based music library manager with smart playlists, cross-platform sync, and universal format support.
 
-Expertise in Python, Django REST Framework, Next.js, TypeScript, and React. Passionate about democratizing access to music culture while contributing to environmental and social impact.
+Expertise in Python, Django REST Framework, Next.js, TypeScript, and React, with TheMusicTree Next.js frontends deployed on **Vercel**. Passionate about democratizing access to music culture while contributing to environmental and social impact.
 
 Languages: French (Native), English (Advanced), Spanish (Advanced).

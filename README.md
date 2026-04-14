@@ -34,11 +34,11 @@ I'm a full-stack engineer, founder, and open-source maintainer focused on music 
 
 Core strengths:
 
-- Technical: Python (Django REST Framework), Java (Spring Boot), Next.js, TypeScript, React, PostgreSQL
+- Technical: Python (Django REST Framework), Java (Spring Boot), Next.js, TypeScript, React, PostgreSQL, Vercel
 - Dev practices: robust test suites (pytest), type-checking (mypy), linting (ruff), CI/CD, Docker, Docker Hub, GitFlow — Adheres to Robert C. Martin's "Clean Code" principles
-- Product: API design, metadata systems, containerised deployments (Docker, Docker Hub), and user-centered products
+- Product: API design, metadata systems, containerised deployments (Docker, Docker Hub)
 
-I founded **[TheMusicTree](https://themusictree.org)** ([GitHub organization](https://github.com/BehindTheMusicTree)) for music metadata and an evolving genre reference. The **live portfolio** (project pages, demos, status) is **[themusictree.org](https://themusictree.org)** — maintained in **[the-music-tree-frontend](https://github.com/BehindTheMusicTree/the-music-tree-frontend)** so READMEs stay lean. Flagship library: [AudioMeta Python](https://github.com/BehindTheMusicTree/audiometa) (16,000+ PyPI downloads, [web demo](https://audiometa.themusictree.org)). All project links: [Featured Projects](#-featured-projects).
+I founded **[TheMusicTree](https://themusictree.org)** ([GitHub organization](https://github.com/BehindTheMusicTree)) for music metadata and an evolving genre reference. The **live portfolio** (project pages, live products, status) is **[themusictree.org](https://themusictree.org)**. Core library: [AudioMeta Python](https://github.com/BehindTheMusicTree/audiometa) (20k+ PyPI downloads), used by **[AudioMeta Webapp](https://themusictree.org/projects/audiometa-webapp)** at [audiometa.themusictree.org](https://audiometa.themusictree.org). All project links: [Featured Projects](#-featured-projects).
 
 I also collaborate on open-source projects and programs (e.g., [OpenSILEX](https://github.com/OpenSILEX/opensilex)) that emphasize sustainability 🌍, reproducibility, and community-driven curation.
 
@@ -46,18 +46,20 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 ## 🚀 Featured Projects
 
-**TheMusicTree** is my ecosystem for music metadata and genre reference. A dedicated public portfolio covers every project, demos, and status: **[themusictree.org](https://themusictree.org)** · **[Projects](https://themusictree.org/projects)**.
+**TheMusicTree** is my ecosystem for music metadata and genre reference. A dedicated public portfolio covers every project, live products, and status: **[themusictree.org](https://themusictree.org)** · **[Projects](https://themusictree.org/projects)** (Next.js on **Vercel**).
 
 ### TheMusicTree — quick pointers (one line each)
 
 - [**AudioMeta Python**](https://themusictree.org/projects/audiometa) — Library for reading/writing audio tags (ID3, Vorbis, RIFF).  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audiometa) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audiometa/issues) [![PyPI version](https://img.shields.io/pypi/v/audiometa-python?style=flat-square)](https://pypi.org/project/audiometa-python/) [![Downloads](https://img.shields.io/pepy/dt/audiometa-python?style=flat-square)](https://pepy.tech/project/audiometa-python)
-- [**AudioMeta Webapp**](https://themusictree.org/projects/audiometa-webapp) — Next.js UI to inspect and edit file metadata in the browser.  
+- [**AudioMeta Webapp**](https://themusictree.org/projects/audiometa-webapp) — Next.js app to inspect and edit audio file metadata in the browser ([audiometa.themusictree.org](https://audiometa.themusictree.org)).  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audiometa-frontend) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audiometa-frontend/issues) <a href="https://audiometa.themusictree.org/" title="AudioMeta live app"><img src="https://raw.githubusercontent.com/BehindTheMusicTree/organization-assets/main/src/icons/behind-the-music-tree/audiometa-logo.svg" alt="AudioMeta live app" width="22" height="22"></a>
-- [**GrowTheMusicTree**](https://themusictree.org/projects/grow-the-music-tree) — Web app for the collaborative global genre map.  
+- [**GrowTheMusicTree**](https://themusictree.org/projects/grow-the-music-tree) — Web app for the collaborative global genre map ([grow.themusictree.org](https://grow.themusictree.org)).  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/grow-the-music-tree) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/grow-the-music-tree/issues)
 - [**TheMusicTreeAPI**](https://themusictree.org/projects/the-music-tree-api) — Django REST API for genre data and detection.  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/the-music-tree-api) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/the-music-tree-api/issues)
+- [**Audio Fingerprinter**](https://github.com/BehindTheMusicTree/audio-fingerprinter) — Dockerized Flask microservice for Chromaprint/fpcalc audio fingerprints.  
+  [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audio-fingerprinter) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audio-fingerprinter/issues)
 - [**HearTheMusicTree**](https://themusictree.org/projects/hear-the-music-tree) — Cloud audio library and playlist-oriented backend.  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/hear-the-music-tree-api) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/hear-the-music-tree-api/issues)
 
@@ -101,6 +103,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 ![Docker Hub](https://img.shields.io/badge/Docker%20Hub-2496ED?style=flat-square&logo=dockerhub&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
 ![GitFlow](https://img.shields.io/badge/GitFlow-F05032?style=flat-square&logo=git&logoColor=white)
 ![GitHub Flow](https://img.shields.io/badge/GitHub%20Flow-6DB33F?style=flat-square&logo=git&logoColor=white)
 ![PyPI](https://img.shields.io/badge/PyPI-3775A9?style=flat-square&logo=pypi&logoColor=white)
@@ -158,8 +161,8 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 ##### 🖥️ [**AudioMeta Webapp**](https://themusictree.org/projects/audiometa-webapp)
 
 - Building a Next.js web application for inspecting and editing audio file metadata directly in the browser
-- Implemented the UI with TypeScript and React, aligned with the AudioMeta Python library’s capabilities (ID3, Vorbis, RIFF, and related formats)
-- Shipped a live app at [audiometa.themusictree.org](https://audiometa.themusictree.org/) so users can try metadata workflows without installing software
+- Implemented the product UI with Next.js, TypeScript, and React, with full support for major tagging formats (ID3, Vorbis, RIFF, and related formats)
+- Shipped production deployment on **Vercel** at [audiometa.themusictree.org](https://audiometa.themusictree.org/) for end-to-end metadata workflows in the browser
 - Developing in the open in [audiometa-frontend](https://github.com/BehindTheMusicTree/audiometa-frontend) with iterative releases and issue-driven improvements
 
 ##### 🌳 [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree)
@@ -168,7 +171,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 - Designed interactive genre tree visualization enabling users to build and explore music genres
 - Implementing community contribution system for submitting, validating, and curating genre data
 - Integrated with TheMusicTreeAPI, MusicBrainz, and Spotify for real-time genre data, intelligent recommendations, and music discovery
-- Deployed with Docker containerization and automated CI/CD pipelines using GitHub Actions and Docker Hub
+- Shipped the web app on **Vercel** ([grow.themusictree.org](https://grow.themusictree.org)) with CI/CD via GitHub Actions
 
 ##### 🔌 [**TheMusicTreeAPI**](https://github.com/BehindTheMusicTree/the-music-tree-api)
 
@@ -186,6 +189,12 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 - Implemented microservices architecture with audio fingerprinting via Dockerized Flask API
 - Integrated MusicBrainz API for automatic track identification and metadata enrichment
 - Deployed with Docker containerization and automated CI/CD pipelines using GitHub Actions and Docker Hub
+
+##### 🔬 [**Audio Fingerprinter**](https://github.com/BehindTheMusicTree/audio-fingerprinter)
+
+- Built a Flask microservice exposing `/fingerprint-audio` to generate Chromaprint (fpcalc) fingerprints and duration
+- Implemented robust validation and structured error handling for invalid files, wrong formats, and short/corrupted audio
+- Containerized deployment with Docker + Gunicorn, health checks, runtime env validation, and CI publish workflow
 
 #### Major Music Events Company - Consultant
 
