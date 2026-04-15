@@ -52,20 +52,20 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 - [**AudioMeta Python**](https://themusictree.org/projects/audiometa) — Library for reading/writing audio tags (ID3, Vorbis, RIFF).  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audiometa) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audiometa/issues) [![PyPI version](https://img.shields.io/pypi/v/audiometa-python?style=flat-square)](https://pypi.org/project/audiometa-python/) [![Downloads](https://img.shields.io/pepy/dt/audiometa-python?style=flat-square)](https://pepy.tech/project/audiometa-python)
-- [**AudioMeta Webapp**](https://themusictree.org/projects/audiometa-webapp) — Next.js app to inspect and edit audio file metadata in the browser ([audiometa.themusictree.org](https://audiometa.themusictree.org)).  
+- [**AudioMeta Webapp**](https://themusictree.org/projects/audiometa-webapp) — Next.js app to inspect and edit audio file metadata in the browser on **Vercel** ([audiometa.themusictree.org](https://audiometa.themusictree.org)).  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audiometa-frontend) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audiometa-frontend/issues) <a href="https://audiometa.themusictree.org/" title="AudioMeta live app"><img src="https://raw.githubusercontent.com/BehindTheMusicTree/organization-assets/main/src/icons/behind-the-music-tree/audiometa-logo.svg" alt="AudioMeta live app" width="22" height="22"></a>
-- [**GrowTheMusicTree**](https://themusictree.org/projects/grow-the-music-tree) — Web app for the collaborative global genre map ([grow.themusictree.org](https://grow.themusictree.org)).  
+- [**GrowTheMusicTree**](https://themusictree.org/projects/grow-the-music-tree) — Web app for the collaborative global genre map on **Vercel** ([grow.themusictree.org](https://grow.themusictree.org)).  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/grow-the-music-tree) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/grow-the-music-tree/issues)
 - [**TheMusicTreeAPI**](https://themusictree.org/projects/the-music-tree-api) — Django REST API for genre data and detection.  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/the-music-tree-api) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/the-music-tree-api/issues)
-- [**Audio Fingerprinter**](https://github.com/BehindTheMusicTree/audio-fingerprinter) — Dockerized Flask microservice for Chromaprint/fpcalc audio fingerprints.  
+- [**Audio Fingerprinter**](https://github.com/BehindTheMusicTree/audio-fingerprinter) — **Shipped** Dockerized Flask microservice for Chromaprint/fpcalc audio fingerprints (`/fingerprint-audio`, Docker + Gunicorn).  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audio-fingerprinter) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audio-fingerprinter/issues)
 - [**HearTheMusicTree**](https://themusictree.org/projects/hear-the-music-tree) — Cloud audio library and playlist-oriented backend.  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/hear-the-music-tree-api) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/hear-the-music-tree-api/issues)
 
 ### Other featured open source
 
-- [**OpenSILEX**](https://opensilex.org/) — Open information system for **FAIR** research data (life sciences, agronomy); contributor on backend services and ontology work.
+- [**OpenSILEX**](https://opensilex.org/) — Open information system for **FAIR** research data (life sciences, agronomy); contributor on backend services, ontology work, and frontend integration in **PHP/JavaScript**.
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/OpenSILEX/opensilex) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/OpenSILEX/opensilex/issues) <a href="https://opensilex.org/" title="OpenSILEX"><img src="https://raw.githubusercontent.com/Andreas-Garcia/Andreas-Garcia/main/professional/CV/assets/opensilex.png" alt="OpenSILEX" width="22" height="22"></a>
 
 ## 📚 Curriculum
@@ -192,7 +192,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 ##### 🔬 [**Audio Fingerprinter**](https://github.com/BehindTheMusicTree/audio-fingerprinter)
 
-- Built a Flask microservice exposing `/fingerprint-audio` to generate Chromaprint (fpcalc) fingerprints and duration
+- Delivered a production Flask microservice exposing `/fingerprint-audio` to generate Chromaprint (fpcalc) fingerprints and duration
 - Implemented robust validation and structured error handling for invalid files, wrong formats, and short/corrupted audio
 - Containerized deployment with Docker + Gunicorn, health checks, runtime env validation, and CI publish workflow
 
