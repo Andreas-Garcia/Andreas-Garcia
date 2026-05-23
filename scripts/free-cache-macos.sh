@@ -82,7 +82,10 @@ clear_cache "$HOME/Library/Caches" "User Library Caches"
 # clear_cache "$HOME/Library/Caches/com.apple.Safari" "Safari Cache"
 # clear_cache "$HOME/Library/Caches/com.mozilla.firefox" "Firefox Cache"
 
-# Google Updater crx_cache (Chrome extension cache, can be hundreds of MB)
+# Google Chrome caches
+clear_cache "$HOME/Library/Application Support/Google/Chrome/Default/Cache" "Chrome Cache"
+clear_cache "$HOME/Library/Application Support/Google/Chrome/Default/Code Cache" "Chrome Code Cache"
+clear_cache "$HOME/Library/Application Support/Google/Chrome/Default/GPUCache" "Chrome GPU Cache"
 clear_cache "$HOME/Library/Application Support/Google/GoogleUpdater/crx_cache" "Google Updater crx_cache"
 
 # Xcode derived data (if exists)
@@ -120,6 +123,21 @@ if command -v docker &> /dev/null && docker info &>/dev/null; then
     echo -e "${YELLOW}Clearing: Docker system cache${NC}"
     docker system prune -af --volumes || true
     echo -e "${GREEN}  ✓ Docker cache cleared${NC}"
+    echo ""
+fi
+
+# VS Code caches (if exists)
+VSCODE_DIR="$HOME/Library/Application Support/Code"
+if [ -d "$VSCODE_DIR" ]; then
+    if pgrep -f "Visual Studio Code" > /dev/null; then
+        echo -e "${YELLOW}⚠️  VS Code appears to be running. Cache clearing may be incomplete.${NC}"
+        echo ""
+    fi
+    clear_cache "$VSCODE_DIR/Cache" "VS Code Cache"
+    clear_cache "$VSCODE_DIR/CachedData" "VS Code CachedData"
+    clear_cache "$VSCODE_DIR/CachedExtensionVSIXs" "VS Code Extension Cache"
+    clear_cache "$VSCODE_DIR/logs" "VS Code Logs"
+    echo -e "${GREEN}  ✓ VS Code caches cleared${NC}"
     echo ""
 fi
 
@@ -170,7 +188,50 @@ if [ -d "$CURSOR_DIR" ]; then
         echo ""
     fi
 
+    # Cursor Dawn GPU caches
+    clear_cache "$CURSOR_DIR/DawnWebGPUCache" "Cursor DawnWebGPU Cache"
+    clear_cache "$CURSOR_DIR/DawnGraphiteCache" "Cursor DawnGraphite Cache"
+    clear_cache "$CURSOR_DIR/Partitions" "Cursor Partitions Cache"
+
+    # Prune workspaceStorage for workspaces that no longer exist on disk
+    WORKSPACE_STORAGE="$CURSOR_DIR/User/workspaceStorage"
+    if [ -d "$WORKSPACE_STORAGE" ]; then
+        echo -e "${YELLOW}Pruning: Cursor workspaceStorage (orphaned workspaces)${NC}"
+        pruned=0
+        for ws_dir in "$WORKSPACE_STORAGE"/*/; do
+            workspace_json="$ws_dir/workspace.json"
+            if [ ! -f "$workspace_json" ]; then
+                continue
+            fi
+            folder=$(grep -o '"folder":"[^"]*"' "$workspace_json" 2>/dev/null | head -1 | sed 's/"folder":"//;s/"//' | sed 's|^file://||')
+            if [ -n "$folder" ] && [ ! -d "$folder" ]; then
+                size_kb=$(du -sk "$ws_dir" 2>/dev/null | awk '{print $1}')
+                rm -rf "$ws_dir"
+                pruned=$((pruned + size_kb))
+            fi
+        done
+        if [ "$pruned" -gt 0 ]; then
+            echo -e "${GREEN}  ✓ Freed: $((pruned / 1024))MB (orphaned workspaces)${NC}"
+        else
+            echo -e "${GREEN}  ✓ No orphaned workspaces found${NC}"
+        fi
+        echo ""
+    fi
+
     echo -e "${GREEN}  ✓ Cursor caches cleared${NC}"
+    echo ""
+fi
+
+# Claude app caches
+CLAUDE_DIR="$HOME/Library/Application Support/Claude"
+if [ -d "$CLAUDE_DIR" ]; then
+    echo -e "${YELLOW}Clearing: Claude app caches${NC}"
+    clear_cache "$CLAUDE_DIR/Cache" "Claude Cache"
+    clear_cache "$CLAUDE_DIR/Code Cache" "Claude Code Cache"
+    clear_cache "$CLAUDE_DIR/GPUCache" "Claude GPU Cache"
+    clear_cache "$CLAUDE_DIR/DawnWebGPUCache" "Claude DawnWebGPU Cache"
+    clear_cache "$CLAUDE_DIR/DawnGraphiteCache" "Claude DawnGraphite Cache"
+    echo -e "${GREEN}  ✓ Claude caches cleared${NC}"
     echo ""
 fi
 

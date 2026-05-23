@@ -62,6 +62,10 @@ I’m driven by real-world impact—building tools that are well-tested, documen
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audio-fingerprinter) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audio-fingerprinter/issues)
 - [**HearTheMusicTree**](https://themusictree.org/projects/hear-the-music-tree) — Cloud audio library and playlist-oriented backend.  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/hear-the-music-tree-api) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/hear-the-music-tree-api/issues)
+- [**The Music Deck**](https://github.com/BehindTheMusicTree/the-music-deck) — Collectible music card game: open boosters, build lineups, and battle through genre-based strategy (Expo / React Native + Web).  
+  [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/the-music-deck) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/the-music-deck/issues)
+- [**The Music Deck Admin**](https://github.com/BehindTheMusicTree/the-music-deck-admin) — Design system, visual charter (Next.js), and NestJS API for The Music Deck, with Docker + VPS deployment.  
+  [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/the-music-deck-admin) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/the-music-deck-admin/issues)
 
 ### Other featured open source
 
@@ -195,6 +199,14 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 - Delivered a production Flask microservice exposing `/fingerprint-audio` to generate Chromaprint (fpcalc) fingerprints and duration
 - Implemented robust validation and structured error handling for invalid files, wrong formats, and short/corrupted audio
 - Containerized deployment with Docker + Gunicorn, health checks, runtime env validation, and CI publish workflow
+
+##### 🎮 [**The Music Deck**](https://github.com/BehindTheMusicTree/the-music-deck) & [**The Music Deck Admin**](https://github.com/BehindTheMusicTree/the-music-deck-admin)
+
+- Building a collectible music card game combining music discovery with card-game mechanics (boosters, lineups, genre-based battles)
+- Developed cross-platform client with Expo, React Native, and React Native Web, targeting iOS, Android, and web from a single TypeScript codebase
+- Designed game systems: pack/booster economy, subgenre stacking rules (`+15%` per stacked card), point-driven progression, and daily enigmas
+- Built a companion admin monorepo (Turborepo + pnpm): Next.js visual charter/admin UI and NestJS REST API, deployed via Docker to a self-hosted VPS
+- Automated release pipeline with GitHub Actions: GHCR image builds, semver tagging, and webhook-driven redeployment to staging and production environments
 
 #### Major Music Events Company - Consultant
 
