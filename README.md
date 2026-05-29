@@ -34,9 +34,17 @@ I'm a full-stack engineer, founder, and open-source maintainer focused on music 
 
 Core strengths:
 
-- Technical: Python (Django REST Framework), Java (Spring Boot), Next.js, TypeScript, React, PostgreSQL, Vercel
-- Dev practices: robust test suites (pytest), type-checking (mypy), linting (ruff), CI/CD, Docker, Docker Hub, GitFlow — Adheres to Robert C. Martin's "Clean Code" principles
-- Product: API design, metadata systems, containerised deployments (Docker, Docker Hub)
+- Front‑end engineering — Next.js, React, TypeScript, Vercel, D3.js.
+  Skilled at building fast, accessible, and elegant interfaces, with a strong sense of product design and user experience.
+
+- Backend systems — Python (Django REST Framework, Flask), Node.js, NestJS, PostgreSQL.
+  Experienced in designing robust APIs, distributed services, and scalable backend architectures aligned with business needs.
+
+- DevOps & automation — Docker Compose, CI/CD pipelines, GitFlow, Ansible, Vercel, observability with Loki & Grafana.
+  Strong automation culture with rigorous application of Clean Code, monitoring, and quality‑driven engineering practices.
+
+- Architecture & systems design — API design, microservices, containerized deployments.
+  Ability to structure coherent, evolutive architectures with a deep understanding of both technical constraints and product strategy.
 
 I founded **[TheMusicTree](https://themusictree.org)** ([GitHub organization](https://github.com/BehindTheMusicTree)) for music metadata and an evolving genre reference. The **live portfolio** (project pages, live products, status) is **[themusictree.org](https://themusictree.org)**. Core library: [AudioMeta Python](https://github.com/BehindTheMusicTree/audiometa) (20k+ PyPI downloads), used by **[AudioMeta Webapp](https://themusictree.org/projects/audiometa-webapp)** at [audiometa.themusictree.org](https://audiometa.themusictree.org). Main product: **[GrowTheMusicTree](https://grow.themusictree.org)**, the collaborative genre-map web app. All project links: [Featured Projects](#-featured-projects).
 
@@ -64,7 +72,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/hear-the-music-tree-api) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/hear-the-music-tree-api/issues)
 - [**The Music Deck**](https://github.com/BehindTheMusicTree/the-music-deck) — Collectible music card game: open boosters, build lineups, and battle through genre-based strategy (Expo / React Native + Web).  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/the-music-deck) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/the-music-deck/issues)
-- [**The Music Deck Admin**](https://github.com/BehindTheMusicTree/the-music-deck-admin) — Design system, visual charter (Next.js), and NestJS API for The Music Deck, with Docker + VPS deployment.  
+- [**The Music Deck Admin**](https://github.com/BehindTheMusicTree/the-music-deck-admin) — Design system, visual charter (Next.js), and NestJS (Node.js) API for The Music Deck, with Docker + VPS deployment.  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/the-music-deck-admin) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/the-music-deck-admin/issues)
 
 ### Other featured open source
@@ -91,6 +99,8 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 ![Python](https://img.shields.io/badge/Python-3.12+-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Django](https://img.shields.io/badge/Django_REST_Framework-092E20?style=flat-square&logo=django&logoColor=white)
 ![Java](https://img.shields.io/badge/Java_Spring_Boot-ED8B00?style=flat-square&logo=spring&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
+![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
 
@@ -200,12 +210,12 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 - Implemented robust validation and structured error handling for invalid files, wrong formats, and short/corrupted audio
 - Containerized deployment with Docker + Gunicorn, health checks, runtime env validation, and CI publish workflow
 
-##### 🎮 [**The Music Deck**](https://github.com/BehindTheMusicTree/the-music-deck) & [**The Music Deck Admin**](https://github.com/BehindTheMusicTree/the-music-deck-admin)
+##### 🎮 [**The Music Deck**](https://deck-showcase.themusictree.org/)
 
 - Building a collectible music card game combining music discovery with card-game mechanics (boosters, lineups, genre-based battles)
-- Developed cross-platform client with Expo, React Native, and React Native Web, targeting iOS, Android, and web from a single TypeScript codebase
-- Designed game systems: pack/booster economy, subgenre stacking rules (`+15%` per stacked card), point-driven progression, and daily enigmas
-- Built a companion admin monorepo (Turborepo + pnpm): Next.js visual charter/admin UI and NestJS REST API, deployed via Docker to a self-hosted VPS
+- Developing cross-platform client with Expo, React Native, and React Native Web, targeting iOS, Android, and web from a single TypeScript codebase
+- Designed game systems: pack/booster economy, subgenre stacking rules, point-driven progression, and daily enigmas
+- Built a companion admin monorepo (Turborepo + pnpm): Next.js visual charter/admin UI and NestJS (Node.js) REST API, deployed via Docker to a self-hosted VPS
 - Automated release pipeline with GitHub Actions: GHCR image builds, semver tagging, and webhook-driven redeployment to staging and production environments
 
 #### Major Music Events Company - Consultant
