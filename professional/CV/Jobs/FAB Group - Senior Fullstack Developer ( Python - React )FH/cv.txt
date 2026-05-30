@@ -2,7 +2,7 @@ Développeur Fullstack Senior | Python & React | Fondateur Open Source
 
 Ingénieur full-stack avec plus de 5 ans d'expérience, je me spécialise dans Python/Django et React/Next.js. Je conçois des applications robustes et scalables, en privilégiant la qualité du code et les déploiements Docker/CI/CD pour garantir des solutions performantes.
 
-J'ai créé AudioMeta Python (https://pypi.org/project/audiometa-python/) avec plus de 20k téléchargements PyPI. Je suis le fondateur de l'écosystème TheMusicTree (https://github.com/BehindTheMusicTree), incluant plusieurs projets open-source en production. Passionné par les bonnes pratiques et les outils modernes pour accélérer le développement tout en maintenant une haute qualité.
+J'ai créé AudioMeta Python (https://pypi.org/project/audiometa-python/) avec plus de 23k téléchargements PyPI. Je suis le fondateur de l'écosystème TheMusicTree (https://github.com/BehindTheMusicTree), incluant plusieurs projets open-source en production. Passionné par les bonnes pratiques et les outils modernes pour accélérer le développement tout en maintenant une haute qualité.
 
 ---
 
@@ -13,7 +13,7 @@ J'ai créé AudioMeta Python (https://pypi.org/project/audiometa-python/) avec p
 Déc. 2022 – Présent
 
 Développé applications full-stack Django/PostgreSQL et Next.js/React/TypeScript.
-Créé AudioMeta Python (https://pypi.org/project/audiometa-python/) avec 1500+ tests pytest, 20k+ téléchargements PyPI.
+Créé AudioMeta Python (https://pypi.org/project/audiometa-python/) avec 1500+ tests pytest, 23k+ téléchargements PyPI.
 Implémenté TheMusicTreeAPI Django REST avec PostgreSQL et intégrations APIs.
 
 ### [ICON] INRAE - Ingénieur de Recherche

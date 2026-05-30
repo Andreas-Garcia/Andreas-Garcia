@@ -2,7 +2,7 @@ Développeur Backend | Ingénieur Full-Stack | Contributeur Open Source
 
 Ingénieur logiciel expérimenté en développement backend avec Python et Django REST Framework. Spécialisé dans la conception d'APIs REST pour applications web et mobiles, la gestion de bases de données PostgreSQL et le déploiement automatisé via Docker et CI/CD.
 
-Passionné par le développement de qualité production, j'ai fondé l'écosystème TheMusicTree (https://github.com/BehindTheMusicTree) incluant AudioMeta Python (https://pypi.org/project/audiometa-python/) avec 20k+ téléchargements. Mon expérience couvre l'implémentation de fonctionnalités backend, la maintenance et l'amélioration de l'existant, la mise en place de tests complets avec pytest, ainsi que l'optimisation de schémas de base de données et l'amélioration de l'architecture.
+Passionné par le développement de qualité production, j'ai fondé l'écosystème TheMusicTree (https://github.com/BehindTheMusicTree) incluant AudioMeta Python (https://pypi.org/project/audiometa-python/) avec 23k+ téléchargements. Mon expérience couvre l'implémentation de fonctionnalités backend, la maintenance et l'amélioration de l'existant, la mise en place de tests complets avec pytest, ainsi que l'optimisation de schémas de base de données et l'amélioration de l'architecture.
 
 Techniques: Python, Django REST Framework, PostgreSQL, API REST, Docker, CI/CD, pytest, mypy, ruff
 
