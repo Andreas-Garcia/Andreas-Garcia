@@ -235,6 +235,9 @@ if [ -d "$CLAUDE_DIR" ]; then
     echo ""
 fi
 
+# Claude Code scratch space
+clear_cache "/private/tmp/claude-scratch" "Claude Code Scratch"
+
 # Stremio server cache (if exists)
 clear_cache "$HOME/Library/Application Support/stremio-server" "Stremio Server"
 
