@@ -17,7 +17,7 @@ Workflow: GitFlow, CI/CD, Unit Tests, Code Review, Agile/SCRUM, Clean Code, Open
 Dec. 2022 – Present
 
 Built **TheMusicTreeAPI** (https://github.com/BehindTheMusicTree/the-music-tree-api) as a **REST Django API** with **PostgreSQL**, **Docker**, and automated **CI/CD** pipelines.
-Published **AudioMeta Python** (https://pypi.org/project/audiometa-python/) with **1500+ unit tests** as an open-source library with **23k+ downloads**.
+Published **AudioMeta Python** (https://pypi.org/project/audiometa-python/) with **1500+ unit tests** as an open-source library with **24k+ downloads**.
 Shipped **HearTheMusicTree** (https://hear-api.themusictree.org/docs/) with **Django REST Framework**, **PostgreSQL**, **Docker**, and **GitHub Actions CI/CD**.
 
 **Links:**
