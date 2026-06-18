@@ -1,20 +1,18 @@
 
-🎵 FONDATEUR & LEAD DEVELOPER - TheMusicTree
+🎵 FONDATEUR & DEVELOPPEUR - TheMusicTree
 
-📅 DATE : Déc. 2022 – Présent
+📅 DATE : Jan. 2022 – Présent
 
 💼 DESCRIPTION DU POSTE :
 En tant que Fondateur & Lead Developer de TheMusicTree, je dirige le développement d'un écosystème de projets interconnectés transformant l'exploration et l'organisation de la musique. Je définis la vision, la mission et la direction stratégique.
 
 🔑 RESPONSABILITÉS PRINCIPALES :
-
-	🎯 Vision, mission et direction stratégique
 	🚀 Développement d'outils, bibliothèques, plateformes et services open-source
-	👥 Leadership technique sur écosystème de 4 projets interconnectés
+	👥 Leadership technique sur écosystème de 5 projets interconnectés
 	🔄 Gestion projets end-to-end : architecture, développement, tests, déploiement
     💡 Participation au programme d'entrepreneurship de La Ruche
 	🔌 Intégration APIs externes (Spotify, MusicBrainz)
-	🐳 Docker, GitFlow, CI/CD (GitHub Actions), frontends Next.js sur Vercel
+	🐳 Docker, GitFlow, CI/CD (GitHub Actions)
 
 
 🚀 PROJETS DÉVELOPPÉS :
@@ -23,24 +21,20 @@ En tant que Fondateur & Lead Developer de TheMusicTree, je dirige le développem
 	🌳 GrowTheMusicTree : Plateforme communautaire genres musicaux (Next.js, TypeScript, React), frontend sur Vercel
 	🎧 HearTheMusicTree : Gestionnaire bibliothèque musicale cloud avec playlists intelligentes
 	🔌 TheMusicTreeAPI : API REST genres et métadonnées (Django REST Framework, PostgreSQL)
+	🃏 The Music Deck : Jeu de cartes collectionnables musical avec stratégie de combat basée sur les genres (Expo, React Native, TypeScript, Node.js, NestJS)
 
 
 ⭐ COMPÉTENCES CLÉS :
-
-	🎯 Leadership technique et vision stratégique
 	💻 Développement full-stack
 	🏗️ Architecture logicielle et conception de systèmes
-	⚡ Gestion projet agile (SCRUM, TDD)
 	🚀 Entrepreneuriat et développement produit
 
 
 🛠️ TECHNOLOGIES UTILISÉES :
-
-	Backend : Python, Django REST Framework
-	Frontend : Next.js, TypeScript, React
+	Backend : Python, Django REST Framework, Node.js, NestJS
+	Frontend : TypeScript, React, Next.js
 	Base de données : PostgreSQL
-	DevOps : Docker, GitFlow, CI/CD (GitHub Actions), Vercel (frontends Next.js)
-	Méthodologies : SCRUM, TDD
+	DevOps : Docker, GitFlow, CI/CD (GitHub Actions)
 
 
 🌍 IMPACT :

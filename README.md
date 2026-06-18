@@ -330,7 +330,7 @@ I'm passionate about open-source development and believe in building tools that 
 
 ### 🎯 Active Projects
 
-- **[TheMusicTree](https://themusictree.org)** — Founder & Lead Developer (portfolio). Code: **[BehindTheMusicTree on GitHub](https://github.com/BehindTheMusicTree)** · site repo **[the-music-tree-frontend](https://github.com/BehindTheMusicTree/the-music-tree-frontend)** · per-project links in [Featured Projects](#-featured-projects) above.
+- **[TheMusicTree](https://themusictree.org)** — Founder & Lead Developer (portfolio). Code: **[TheMusicTree on GitHub](https://github.com/BehindTheMusicTree)** · site repo **[the-music-tree-frontend](https://github.com/BehindTheMusicTree/the-music-tree-frontend)** · per-project links in [Featured Projects](#-featured-projects) above.
 
 ### 🌿 Contributions to Other Projects
 

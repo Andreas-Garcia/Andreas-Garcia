@@ -22,7 +22,7 @@ Shipped **HearTheMusicTree** (https://hear-api.themusictree.org/docs/) with **Dj
 
 **Links:**
 TheMusicTree: https://themusictree.org
-BehindTheMusicTree (code): https://github.com/BehindTheMusicTree
+TheMusicTree (code): https://github.com/BehindTheMusicTree
 TheMusicTreeAPI: https://github.com/BehindTheMusicTree/the-music-tree-api
 AudioMeta Python: https://pypi.org/project/audiometa-python/
 HearTheMusicTree: https://hear-api.themusictree.org/docs/

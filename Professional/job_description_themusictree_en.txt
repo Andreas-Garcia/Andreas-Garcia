@@ -1,40 +1,37 @@
 
 
-🎵 FOUNDER & LEAD DEVELOPER - TheMusicTree
+🎵 FOUNDER & DEVELOPER - TheMusicTree
 
-📅 DATE: Dec. 2022 – Present
+📅 DATE: Jan. 2022 – Present
 
 💼 JOB DESCRIPTION:
 Lead the development of an ecosystem of interconnected projects transforming music exploration and organization. Responsible for defining the company’s vision, mission, and strategic direction.
 
 🔑 KEY RESPONSIBILITIES:
-    🎯 Definition of vision, mission, and strategy
     🚀 Design and development of open-source tools, libraries, platforms, and services
-    👥 Technical leadership across 4 interconnected projects
+    👥 Technical leadership across 5 interconnected projects
     🔄 End-to-end project management: architecture, development, testing, deployment
     💡 Participation in entrepreneurship programs (La Ruche, 2025): market research and persona creation
     🔌 Integration of external APIs (Spotify, MusicBrainz) to enrich metadata
-    🐳 DevOps: Docker, GitFlow, CI/CD (GitHub Actions), Next.js frontends on Vercel
+    🐳 Docker, GitFlow, CI/CD (GitHub Actions)
 
 🚀 PROJECTS DEVELOPED:
     🎵 AudioMeta Python: Audio metadata library (ID3v1, ID3v2, Vorbis, RIFF), 1500+ tests, 24k+ PyPI downloads
     🌳 GrowTheMusicTree: Community music genre classification platform (Next.js, TypeScript, React), frontend on Vercel
     🎧 HearTheMusicTree: Cloud music library manager with intelligent playlists
     🔌 TheMusicTreeAPI: REST API for genre hierarchy and metadata (Django REST Framework, PostgreSQL)
+    🃏 The Music Deck: Collectible music card game with genre-based battle strategy (Expo, React Native, TypeScript, Node.js, NestJS)
 
 ⭐ KEY COMPETENCIES:
-    🎯 Technical leadership and strategic vision
     💻 Full-stack development
     🏗️ Software architecture and system design
-    ⚡ Agile project management (SCRUM, TDD)
     🚀 Entrepreneurship and product development
 
 🛠️ TECHNOLOGIES USED:
-    Backend: Python, Django REST Framework
-    Frontend: Next.js, TypeScript, React
+    Backend: Python, Django REST Framework, Node.js, NestJS
+    Frontend: TypeScript, React, Next.js
     Database: PostgreSQL
-    DevOps: Docker, GitFlow, CI/CD (GitHub Actions), Vercel (Next.js frontends)
-    Methodologies: SCRUM, TDD
+    DevOps: Docker, GitFlow, CI/CD (GitHub Actions)
 
 🌍 IMPACT:
     🌐 Open-source ecosystem democratizing access to music culture

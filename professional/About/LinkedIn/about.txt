@@ -15,11 +15,12 @@ I've developed tools, libraries, platforms, and services in various contexts:
   - GrowTheMusicTree: community music genre classification platform (Next.js, TypeScript, React)
   - TheMusicTreeAPI: REST API for access to genre hierarchy and metadata (Django REST Framework, PostgreSQL)
   - HearTheMusicTree: cloud music library manager
+  - The Music Deck: collectible music card game with genre-based battle strategy (Expo, React Native, TypeScript)
 - OpenSILEX (INRAE): open-source information system for FAIR data (Java Spring Boot, RDF4J), backend REST API services and frontend (PHP, JavaScript)
 
 Technical stack:
 
-- Backend: Python, Django REST Framework, Java Spring Boot
+- Backend: Python, Django REST Framework, Java Spring Boot, Node.js, NestJS
 - Frontend: Next.js, TypeScript, React, Vercel (TheMusicTree web apps)
 - Database: PostgreSQL
 - DevOps & Tools: Docker, GitFlow, CI/CD (GitHub Actions)
