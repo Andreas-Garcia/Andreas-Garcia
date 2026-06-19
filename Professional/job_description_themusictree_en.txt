@@ -1,11 +1,4 @@
-
-
-🎵 FOUNDER & DEVELOPER - TheMusicTree
-
-📅 DATE: Jan. 2022 – Present
-
-💼 JOB DESCRIPTION:
-Lead the development of an ecosystem of interconnected projects transforming music exploration and organization. Responsible for defining the company’s vision, mission, and strategic direction.
+Lead the development of an ecosystem of interconnected projects transforming music exploration and organization. 
 
 🔑 KEY RESPONSIBILITIES:
     🚀 Design and development of open-source tools, libraries, platforms, and services

@@ -1,4 +1,4 @@
-Full-Stack Developer | Founder & Lead Developer | Music Technology Innovator | Open Source Contributor
+Full-Stack Developer | Founder & Lead Developer | Open Source Contributor
 
 I'm a full-stack developer passionate about building open-source tools and platforms that combine technical excellence with real-world impact, with a particular commitment to environmental, social, and cultural dimensions.
 
@@ -19,7 +19,7 @@ I've developed tools, libraries, platforms, and services in various contexts:
 
 **Technical stack:**
 
-- **Backend**: Python, Django REST Framework, Java Spring Boot
+- **Backend**: Python, Django REST Framework, Java Spring Boot, Node.js, NestJS
 - **Frontend**: Next.js, TypeScript, React, Vercel (TheMusicTree web apps)
 - **Database**: PostgreSQL
 - **DevOps & Tools**: Docker, GitFlow, CI/CD (GitHub Actions), Vercel (Next.js frontends)
@@ -29,4 +29,4 @@ I've developed tools, libraries, platforms, and services in various contexts:
 
 Languages: 🇫🇷 French (Native) | 🇬🇧 English (Advanced) | 🇪🇸 Spanish (Advanced) | 🇩🇪 German (Basic)
 
-Open to: Job opportunities, collaborations, consulting opportunities, and connecting with fellow developers and music technology enthusiasts.
+Open to: Job opportunities, collaborations, consulting opportunities, and connecting with fellow developers.

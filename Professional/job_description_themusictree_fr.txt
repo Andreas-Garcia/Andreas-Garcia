@@ -1,10 +1,4 @@
-
-🎵 FONDATEUR & DEVELOPPEUR - TheMusicTree
-
-📅 DATE : Jan. 2022 – Présent
-
-💼 DESCRIPTION DU POSTE :
-En tant que Fondateur & Lead Developer de TheMusicTree, je dirige le développement d'un écosystème de projets interconnectés transformant l'exploration et l'organisation de la musique. Je définis la vision, la mission et la direction stratégique.
+En tant que Fondateur & Lead Developer de TheMusicTree, je dirige le développement d'un écosystème de projets interconnectés transformant l'exploration et l'organisation de la musique.
 
 🔑 RESPONSABILITÉS PRINCIPALES :
 	🚀 Développement d'outils, bibliothèques, plateformes et services open-source

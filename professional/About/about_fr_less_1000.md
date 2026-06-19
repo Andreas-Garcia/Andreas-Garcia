@@ -1,4 +1,4 @@
-Développeur Full-Stack | Fondateur et Développeur Principal | Innovateur en Technologie Musicale | Contributeur Open Source
+Développeur Full-Stack | Fondateur et Développeur Principal | Contributeur Open Source
 
 Développeur full-stack passionné par les outils open-source combinant excellence technique et impact réel, engagé pour l'environnement, le social et la culture.
 
@@ -8,4 +8,5 @@ Développeur full-stack passionné par les outils open-source combinant excellen
 
 Réalisations : AudioMeta Python (1500+ tests, 24k+ téléchargements), GrowTheMusicTree (Next.js), TheMusicTreeAPI (Django, PostgreSQL), OpenSILEX (INRAE, Java).
 
-Stack: Python, Django, Java, Next.js, TypeScript, React, Vercel, PostgreSQL, Docker, CI/CD. 🎓 INSA Lyon (2014) | La Ruche (2025) | 🇫🇷🇬🇧🇪🇸🇩🇪
+Stack: Python, Django, TypeScript, React, Next.js, Vercel, Node.js, NestJS, PostgreSQL, Docker, CI/CD.
+🎓 INSA Lyon (2014) | La Ruche (2025) | 🇫🇷🇬🇧🇪🇸🇩🇪
