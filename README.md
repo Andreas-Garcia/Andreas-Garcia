@@ -158,7 +158,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 #### [TheMusicTree](https://themusictree.org) - Founder & Lead Developer
 
-**Dec. 2022 – Present**
+**Dec. 2021 – Present**
 
 - Defined the vision, mission, and strategic direction of the company to guide product development
 - Programme d'entrepreneuriat de 3 mois. 9 ateliers sur la stratégie, le juridique, le financement et la propriété intellectuelle
