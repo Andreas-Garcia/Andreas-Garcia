@@ -10,7 +10,7 @@ Workflow: GitFlow, Test Driven Development, CI/CD, Méthodes d'analyse et de con
 
 [ICON] TheMusicTree - Founder & Lead Developer
 
-Dec. 2022 – Present
+Dec. 2021 – Present
 
 Développé et maintenu AudioMeta Python (https://pypi.org/project/audiometa-python/), bibliothèque avec 1500+ tests et 24k+ téléchargements.
 Implémenté des stratégies de test complètes avec pytest, mypy et ruff pour garantir la fiabilité.

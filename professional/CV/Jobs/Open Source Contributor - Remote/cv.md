@@ -14,7 +14,7 @@ Workflow: Clean Code, GitFlow, pull requests, code reviews, unit testing, CI/CD,
 
 ### [ICON] TheMusicTree - Founder & Lead Developer
 
-Dec. 2022 – Present
+Dec. 2021 – Present
 
 Developed **AudioMeta Python** (https://pypi.org/project/audiometa-python/) with 1500+ unit tests, executable test runners, and full PyPI packaging for production use.
 Implemented **TheMusicTreeAPI** (https://github.com/BehindTheMusicTree/the-music-tree-api) and **GrowTheMusicTree** (https://grow.themusictree.org/) with Docker and GitHub Actions CI/CD.

@@ -14,7 +14,7 @@ Workflow: GitFlow, CI/CD, Unit Tests, Code Review, Agile/SCRUM, Clean Code, Open
 
 ### [ICON] TheMusicTree - Founder & Lead Developer
 
-Dec. 2022 – Present
+Dec. 2021 – Present
 
 Built **TheMusicTreeAPI** (https://github.com/BehindTheMusicTree/the-music-tree-api) as a **REST Django API** with **PostgreSQL**, **Docker**, and automated **CI/CD** pipelines.
 Published **AudioMeta Python** (https://pypi.org/project/audiometa-python/) with **1500+ unit tests** as an open-source library with **24k+ downloads**.

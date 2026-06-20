@@ -79,7 +79,7 @@ Workflow: GitFlow, Test Driven Development, Assurance Qualité, Agile/SCRUM
 Format:
 
 - `[ICON]` Company/Project Name - Role Title (use `[ICON]` placeholder instead of markdown links)
-- Date Range (e.g., "Dec. 2022 – Present")
+- Date Range (e.g., "Dec. 2021 – Present")
 - 2-3 bullet points describing:
   - Key responsibilities
   - Technical achievements
@@ -91,6 +91,7 @@ Format:
 **Project links:** **All mentions of specific projects** (e.g., AudioMeta Python, AudioMeta Webapp, TheMusicTreeAPI, OpenSILEX, GrowTheMusicTree) **must include the project link(s) in parentheses immediately after the project name**: `ProjectName (https://url.com)`. Priority order for links: website > PyPI > GitHub. **Note:** Links in parentheses do not count toward the character limit. **Multiple project links with icon placeholders are allowed in the job experiences section.**
 
 **Available links (first priority):** Use these URLs when mentioning the following projects (override GitHub/repo links). Mention systematically that they are wip:
+
 - **AudioMeta Webapp:** https://themusictree.org/projects/audiometa-webapp (portfolio page) or https://audiometa.themusictree.org/ (live app). **Next.js on Vercel.**
 - **GrowTheMusicTree:** https://grow.themusictree.org/ (wip). **Next.js on Vercel.**
 - **Portfolio / marketing site:** https://themusictree.org/ — **Next.js on Vercel** (when relevant).
@@ -104,7 +105,7 @@ Example:
 
 ### [ICON] Company Name - Role Title
 
-Dec. 2022 – Present
+Dec. 2021 – Present
 
 Implemented cost-effective solutions, resulting in a 20% reduction in project expenses.
 Streamlined project workflows, enhancing overall efficiency by 25%.

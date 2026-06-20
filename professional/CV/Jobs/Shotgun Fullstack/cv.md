@@ -14,7 +14,7 @@ Workflow: GitFlow, Test Driven Development, CI/CD, Agile/SCRUM, Clean Code, API 
 
 ### [ICON] TheMusicTree - Founder & Lead Developer
 
-Dec. 2022 – Present
+Dec. 2021 – Present
 
 Developed GrowTheMusicTree (https://github.com/BehindTheMusicTree/grow-the-music-tree) using Next.js, TypeScript, and React, building collaborative platform.
 Implemented TheMusicTreeAPI (https://github.com/BehindTheMusicTree/the-music-tree-api) using Django REST Framework and PostgreSQL, providing genre hierarchy.

@@ -14,7 +14,7 @@ Workflow: Clean Code, GitFlow, fault-tolerant design, unit testing, CI/CD, SCRUM
 
 ### [ICON] TheMusicTree - Founder & Lead Developer
 
-Dec. 2022 – Present
+Dec. 2021 – Present
 
 Developed **REST APIs** with **Django REST Framework** and **PostgreSQL** for TheMusicTreeAPI and **HearTheMusicTree** (https://hear-api.themusictree.org/docs/).
 Implemented a **robust** Python library with 1500+ tests (AudioMeta Python) and PyPI deployment for production use.

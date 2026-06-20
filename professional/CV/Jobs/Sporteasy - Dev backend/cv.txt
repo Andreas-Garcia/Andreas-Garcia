@@ -10,7 +10,7 @@ Workflow: GitFlow, Test Driven Development, SCRUM, CI/CD, Déploiement en produc
 
 [ICON] TheMusicTree (https://github.com/BehindTheMusicTree) - Founder & Lead Developer
 
-Dec. 2022 – Present
+Dec. 2021 – Present
 
 Développé TheMusicTreeAPI (https://github.com/BehindTheMusicTree/the-music-tree-api) avec Django REST Framework et PostgreSQL, fournissant des APIs REST.
 Implémenté des stratégies de test complètes avec pytest, assurant une couverture optimale.
