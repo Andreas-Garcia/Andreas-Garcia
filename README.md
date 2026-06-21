@@ -121,6 +121,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 ![GitFlow](https://img.shields.io/badge/GitFlow-F05032?style=flat-square&logo=git&logoColor=white)
 ![GitHub Flow](https://img.shields.io/badge/GitHub%20Flow-6DB33F?style=flat-square&logo=git&logoColor=white)
 ![PyPI](https://img.shields.io/badge/PyPI-3775A9?style=flat-square&logo=pypi&logoColor=white)
+![Website Carbon](https://img.shields.io/badge/Website%20Carbon-2E7D32?style=flat-square&logo=leaflet&logoColor=white)
 
 #### Testing & Quality
 
@@ -163,6 +164,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 - Defined the vision, mission, and strategic direction of the company to guide product development
 - Programme d'entrepreneuriat de 3 mois. 9 ateliers sur la stratégie, le juridique, le financement et la propriété intellectuelle
 - Développé un plan d'affaires. Réalisé des études de marché et créé des personas utilisateurs
+- Monitored the carbon footprint of all TheMusicTree web apps using [Website Carbon](https://www.websitecarbon.co)
 
 ##### 🎵 [**AudioMeta Python**](https://github.com/BehindTheMusicTree/audiometa)
 
