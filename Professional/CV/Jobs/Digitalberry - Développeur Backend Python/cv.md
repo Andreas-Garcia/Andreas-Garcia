@@ -10,7 +10,7 @@ garcia.andreas.1991@gmail.com · [ICON] LinkedIn · [ICON] GitHub · [ICON] Port
 
 Ingénieur full-stack diplômé de l'INSA Lyon, je me spécialise dans le développement backend Python et la conception d'API REST robustes et sécurisées. J'ai conçu et déployé des architectures orientées services dans des environnements exigeant fiabilité, maintenabilité et qualité logicielle.
 
-Fondateur de TheMusicTree (https://themusictree.org), j'ai développé HearTheMusicTree (https://github.com/BehindTheMusicTree/hear-the-music-tree-api), gestionnaire de bibliothèque musicale avec API Django REST, PostgreSQL et microservice audio Dockerisés en Flask API, ainsi qu'AudioMeta Python (https://pypi.org/project/audiometa-python/), bibliothèque publiée sur PyPI avec 24k téléchargements et pipelines CI/CD automatisés.
+Fondateur de TheMusicTree (https://themusictree.org), j'ai développé HearTheMusicTree (https://github.com/BehindTheMusicTree/hear-the-music-tree-api), gestionnaire de bibliothèque musicale avec API Django REST, PostgreSQL et microservice audio Dockerisés en Flask API, ainsi qu'AudioMeta Python (https://pypi.org/project/audiometa-python/), bibliothèque publiée sur PyPI avec 25k téléchargements et pipelines CI/CD automatisés.
 
 ---
 
@@ -28,7 +28,7 @@ Fondateur de TheMusicTree (https://themusictree.org), j'ai développé HearTheMu
 
 Déc. 2022 – Présent
 
-Conçu AudioMeta Python (https://pypi.org/project/audiometa-python/), bibliothèque Python publiée sur PyPI dépassant 24k téléchargements.
+Conçu AudioMeta Python (https://pypi.org/project/audiometa-python/), bibliothèque Python publiée sur PyPI dépassant 25k téléchargements.
 Développé TheMusicTreeAPI (https://themusictree.org/projects/the-music-tree-api), une API REST Django avec PostgreSQL et intégration de services tiers.
 Livré Audio Fingerprinter (https://github.com/BehindTheMusicTree/audio-fingerprinter), microservice Flask pour le fingerprinting audio, Dockerisé avec CI/CD.
 

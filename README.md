@@ -46,7 +46,7 @@ Core strengths:
 - Architecture & systems design — API design, microservices, containerized deployments.
   Ability to structure coherent, evolutive architectures with a deep understanding of both technical constraints and product strategy.
 
-I founded **[TheMusicTree](https://themusictree.org)** ([GitHub organization](https://github.com/BehindTheMusicTree)) for music metadata and an evolving genre reference. The **live portfolio** (project pages, live products, status) is **[themusictree.org](https://themusictree.org)**. Core library: [AudioMeta Python](https://github.com/BehindTheMusicTree/audiometa) (24k+ PyPI downloads), used by **[AudioMeta Webapp](https://themusictree.org/projects/audiometa-webapp)** at [audiometa.themusictree.org](https://audiometa.themusictree.org). Main product: **[GrowTheMusicTree](https://grow.themusictree.org)**, the collaborative genre-map web app. All project links: [Featured Projects](#-featured-projects).
+I founded **[TheMusicTree](https://themusictree.org)** ([GitHub organization](https://github.com/BehindTheMusicTree)) for music metadata and an evolving genre reference. The **live portfolio** (project pages, live products, status) is **[themusictree.org](https://themusictree.org)**. Core library: [AudioMeta Python](https://github.com/BehindTheMusicTree/audiometa) (25k+ PyPI downloads), used by **[AudioMeta Webapp](https://themusictree.org/projects/audiometa-webapp)** at [audiometa.themusictree.org](https://audiometa.themusictree.org). Main product: **[GrowTheMusicTree](https://grow.themusictree.org)**, the collaborative genre-map web app. All project links: [Featured Projects](#-featured-projects).
 
 I also collaborate on open-source projects and programs (e.g., [OpenSILEX](https://github.com/OpenSILEX/opensilex)) that emphasize sustainability 🌍, reproducibility, and community-driven curation.
 
@@ -84,7 +84,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 ### 🌱 My Impacts
 
-**🌍 Environmental Impact:** I've worked on impactful projects like agrivoltaism research at INRAE, combining agriculture and photovoltaics to combat climate change. I'm passionate about finding technical solutions to environmental challenges and contributing to open science initiatives that make research data FAIR (Findable, Accessible, Interoperable, and Reusable). My engagement extends beyond work through hands-on experiences with sustainable agriculture via WWOOFing (World Wide Opportunities on Organic Farms), where I've learned about organic farming practices and sustainable living, as well as eco-construction projects that promote environmentally responsible building methods.
+**🌍 Environmental Impact:** I've worked on impactful projects like agrivoltaics research at INRAE, combining agriculture and photovoltaics to combat climate change. I'm passionate about finding technical solutions to environmental challenges and contributing to open science initiatives that make research data FAIR (Findable, Accessible, Interoperable, and Reusable). My engagement extends beyond work through hands-on experiences with sustainable agriculture via WWOOFing (World Wide Opportunities on Organic Farms), where I've learned about organic farming practices and sustainable living, as well as eco-construction projects that promote environmentally responsible building methods.
 
 **🤝 Social Impact:** Through my work on open-source projects and community-driven platforms like TheMusicTree, I aim to democratize access to music culture and knowledge. I've contributed to making research more accessible and collaborated on projects that serve the public good. I've worked in home care, providing direct assistance and support to individuals in need, which has given me firsthand experience with social challenges and the importance of community support. My experience also includes public service work, reflecting my commitment to social causes and contributing to the well-being of others.
 
@@ -217,7 +217,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 - Building a collectible music card game combining music discovery with card-game mechanics (boosters, lineups, genre-based battles)
 - Developing cross-platform client with Expo, React Native, and React Native Web, targeting iOS, Android, and web from a single TypeScript codebase
 - Designed game systems: pack/booster economy, subgenre stacking rules, point-driven progression, and daily enigmas
-- Built a companion admin monorepo (Turborepo + pnpm): Next.js visual charter/admin UI and NestJS (Node.js) REST API, deployed via Docker to a self-hosted VPS
+- Built a companion admin monorepo (Nx + pnpm): Next.js visual charter/admin UI and NestJS (Node.js) REST API, deployed via Docker to a self-hosted VPS
 - Automated release pipeline with GitHub Actions: GHCR image builds, semver tagging, and webhook-driven redeployment to staging and production environments
 
 #### Major Music Events Company - Consultant
@@ -241,7 +241,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 **Oct. 2018 – Dec. 2019 | Montpellier, France**
 
-- Assisted researchers to efficiently share their data using a common vocabulary and structure for a cross-disciplinary agrivoltaism research project combining agriculture and photovoltaics
+- Assisted researchers to efficiently share their data using a common vocabulary and structure for a cross-disciplinary agrivoltaics research project combining agriculture and photovoltaics
 - Contributed to an open-source information system to make research data FAIR (Findable, Accessible, Interoperable, and Reusable)
 - Collaborated within a SCRUM team on an open-source program hosted on GitHub
 - Manipulated complex data structures within the RDF4J graph database and improved ontologies (graph structures)
@@ -253,9 +253,9 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 **Apr. 2015 – Oct. 2017 | Paris**
 
-- Collaborated at every stage of BI projects, from conception (client exchanges) to completion (dashboard presentations in Tableau), in addition to managing data transfers in data warehouses with SSIS and SQL Server
-- Technical development on ERP projects as an ETL expert, specifying and implementing 62 critical accounting interfaces
-- Technical point of contact for the client (annual revenue > €4B), leading specification workshops and training developers
+- Collaborated at every stage of BI projects for clients including a major retail chain, a rail catering services company, and a fashion retailer, from conception (client exchanges) to completion (dashboard presentations in Tableau), in addition to managing data transfers in data warehouses with SSIS and SQL Server
+- Technical development on an ERP project as an ETL expert, specifying and implementing 62 critical accounting interfaces
+- Technical point of contact on the ERP project for the client (annual revenue > €4B), leading specification workshops and training developers
 
 #### Sopra Steria - Developer
 

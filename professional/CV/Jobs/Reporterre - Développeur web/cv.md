@@ -2,7 +2,7 @@ Développeur Full-Stack | Fondateur & Lead Developer | Contributeur Open Source
 
 Développeur fullstack passionné par les projets à impact environnemental, avec plus de dix ans d'expérience en développement d'applications web robustes. Maîtrise de l'écosystème JavaScript, de Docker et des pratiques DevOps incluant CI/CD et déploiement sur serveurs GNU/Linux.
 
-Fondateur de l'écosystème TheMusicTree (https://themusictree.org), couvrant la découverte et classification musicale (GrowTheMusicTree — cartographie collaborative des genres), la gestion de collections audio (HearTheMusicTree), les outils de métadonnées (AudioMeta Python à plus de 24k téléchargements PyPI), et un jeu de cartes musical cross-platform (The Music Deck) — plusieurs projets en production déployés sous Docker avec pipelines CI/CD. Contributeur à OpenSILEX (https://github.com/OpenSILEX/opensilex), système d'information open source pour la recherche FAIR, dans un projet d'agrivoltaïsme à l'INRAE.
+Fondateur de l'écosystème TheMusicTree (https://themusictree.org), couvrant la découverte et classification musicale (GrowTheMusicTree — cartographie collaborative des genres), la gestion de collections audio (HearTheMusicTree), les outils de métadonnées (AudioMeta Python à plus de 25k téléchargements PyPI), et un jeu de cartes musical cross-platform (The Music Deck) — plusieurs projets en production déployés sous Docker avec pipelines CI/CD. Contributeur à OpenSILEX (https://github.com/OpenSILEX/opensilex), système d'information open source pour la recherche FAIR, dans un projet d'agrivoltaïsme à l'INRAE.
 
 Techniques: JavaScript, TypeScript, HTML, CSS, React, Next.js, Node.js, NestJS, Python, Docker, PostgreSQL
 
@@ -13,7 +13,7 @@ Workflow: GitFlow, CI/CD, GitHub Actions, Test Driven Development, Agile/SCRUM, 
 Déc. 2022 – Présent
 
 Conçu et mis en production GrowTheMusicTree (https://grow.themusictree.org/) avec Next.js, TypeScript, Django et PostgreSQL.
-Déployé The Music Deck (https://github.com/BehindTheMusicTree/the-music-deck-admin) sur VPS via Docker avec pipeline GitHub Actions et webhooks — API NestJS (Node.js) et interface Next.js dans un monorepo Turborepo.
+Déployé The Music Deck (https://github.com/BehindTheMusicTree/the-music-deck-admin) sur VPS via Docker avec pipeline GitHub Actions et webhooks — API NestJS (Node.js) et interface Next.js dans un monorepo Nx.
 Développé une suite de 1500+ tests unitaires pour AudioMeta Python (https://pypi.org/project/audiometa-python/) avec pytest, mypy et ruff.
 
 **Links:**

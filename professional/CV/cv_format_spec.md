@@ -57,7 +57,7 @@ Seeking a challenging executive role to leverage technical skills and drive engi
 
 Format:
 
-- **Techniques:** List technical skills relevant to the job description (e.g., Javascript, React, Next.js, Python, Django DRF, RESTfull API, SGBD, CI/CD). **Maximum 9 keywords.**
+- **Techniques:** List technical skills relevant to the job description (e.g., Javascript, React, Next.js, Python, Django DRF, RESTful API, SGBD, CI/CD). **Maximum 9 keywords.**
 - **Workflow:** List project/process skills relevant to the job description (e.g., GitFlow, Test Driven Development, Assurance Qualité, Agile/SCRUM). **Maximum 9 keywords.**
 
 **Important:** Skills should be selected based on relevance to the job description and should reference skills from README.md. The language should match the job description language (French or English).
@@ -66,7 +66,7 @@ Format:
 
 Example:
 
-Techniques: Javascript, React, Next.js, Python, Django DRF, RESTfull API, SGBD, CI/CD
+Techniques: Javascript, React, Next.js, Python, Django DRF, RESTful API, SGBD, CI/CD
 
 Workflow: GitFlow, Test Driven Development, Assurance Qualité, Agile/SCRUM
 

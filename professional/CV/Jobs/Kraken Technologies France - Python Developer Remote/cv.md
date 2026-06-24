@@ -1,6 +1,6 @@
 # Full-Stack Developer | Python & Django Engineer | Domain Modelling & APIs
 
-**Open-source maintainer** with 4+ years in **Python** and **Django**. Founded TheMusicTree; published **AudioMeta Python** (https://pypi.org/project/audiometa-python/) (24k+ downloads, **1500+ tests**). Builds **robust** software with **clean code** and tests. **Sustainability** and **music culture** matter to me.
+**Open-source maintainer** with 4+ years in **Python** and **Django**. Founded TheMusicTree; published **AudioMeta Python** (https://pypi.org/project/audiometa-python/) (25k+ downloads, **1500+ tests**). Builds **robust** software with **clean code** and tests. **Sustainability** and **music culture** matter to me.
 
 Built **REST APIs** and **domain** systems with **Django** and **PostgreSQL**—TheMusicTreeAPI, **GrowTheMusicTree** (https://grow.themusictree.org/), **HearTheMusicTree** (https://hear-api.themusictree.org/docs/). **Domain modelling**, **DevOps** (**Docker Compose**, **Grafana**, auto deploy). Contributed to **OpenSILEX** for FAIR data. **Native French**, advanced English.
 

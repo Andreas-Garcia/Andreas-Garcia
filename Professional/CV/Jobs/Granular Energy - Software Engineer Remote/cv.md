@@ -1,8 +1,8 @@
 # Backend Engineer | Python, PostgreSQL & REST APIs | Domain Modelling for Climate Tech
 
-Open-source maintainer with 4+ years building **Python** REST APIs and **PostgreSQL**-backed domain systems for production. Founded TheMusicTree; published **AudioMeta Python** (https://pypi.org/project/audiometa-python/) (24k+ downloads, **1500+ tests**). Climate impact and **clean code** matter to me.
+Open-source maintainer with 4+ years building **Python** REST APIs and **PostgreSQL**-backed domain systems for production. Founded TheMusicTree; published **AudioMeta Python** (https://pypi.org/project/audiometa-python/) (25k+ downloads, **1500+ tests**). Contributed to **agrivoltaics** research at INRAE; climate impact and **clean code** matter to me.
 
-Built **REST APIs** and **domain models** with **Django** and **PostgreSQL** for TheMusicTreeAPI, **GrowTheMusicTree** (https://grow.themusictree.org/), and **HearTheMusicTree** (https://hear-api.themusictree.org/docs/), with **Docker** and CI/CD pipelines. Normalised and classified **1,300+** data records into a scalable taxonomy for a matching tool. Native French, advanced English.
+Built **REST APIs** and **domain models** with **Django** and **PostgreSQL** for TheMusicTreeAPI, **GrowTheMusicTree** (https://grow.themusictree.org/), and **HearTheMusicTree** (https://hear-api.themusictree.org/docs/), and with **Node.js**/**NestJS** for The Music Deck, all with **Docker** and CI/CD pipelines. Native French, advanced English.
 
 ## Skills
 
@@ -17,7 +17,7 @@ Workflow: GitFlow, CI/CD, Unit Testing, Code Review, Agile/SCRUM, Clean Code, Op
 Dec. 2021 – Present
 
 Built **REST APIs** with **Django REST Framework** and **PostgreSQL** for TheMusicTreeAPI and **HearTheMusicTree** (https://hear-api.themusictree.org/docs/).
-Shipped a production Python library with **1500+ tests** (AudioMeta Python) and 24k+ PyPI downloads.
+Shipped a production Python library with **1500+ tests** (AudioMeta Python) and 25k+ PyPI downloads.
 Designed **domain models** and algorithms for **GrowTheMusicTree** (https://grow.themusictree.org/), deployed with Docker and CI/CD.
 
 **Links:**
@@ -39,7 +39,7 @@ Combined domain expertise and structured data modelling to improve matching and 
 
 Oct. 2018 – Dec. 2019
 
-Contributed to an **open-source** information system for **FAIR** research data and ontology design.
+Contributed to an **open-source** information system for **FAIR** research data, supporting an **agrivoltaics** research project combining agriculture and photovoltaics.
 Implemented **REST API** services in Java (DTO pattern) and event handling in PHP and JavaScript.
 Collaborated in a **SCRUM** team on complex data structures and **domain modelling** (RDF4J, ontologies).
 
