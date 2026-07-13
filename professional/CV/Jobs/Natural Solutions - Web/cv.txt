@@ -2,7 +2,7 @@ Développeur Full-Stack | Fondateur & Lead Developer | Contributeur Open Source
 
 Développeur full-stack passionné par les technologies et l'impact environnemental, avec une solide expérience dans le développement d'applications web modernes. Expérimenté dans la création d'écosystèmes techniques complets alliant React, TypeScript, Python et Django REST Framework, avec un focus sur la qualité du code et les tests automatisés.
 
-Fondateur de TheMusicTree (https://github.com/BehindTheMusicTree), écosystème open source dédié à la découverte et l'organisation musicale, incluant AudioMeta Python (https://github.com/BehindTheMusicTree/audiometa) avec 25k+ téléchargements, et contributeur à OpenSILEX (https://github.com/OpenSILEX/opensilex) pour la gestion de données de recherche FAIR (https://www.go-fair.org/).
+Fondateur de TheMusicTree (https://github.com/BehindTheMusicTree), écosystème open source dédié à la découverte et l'organisation musicale, incluant AudioMeta Python (https://github.com/BehindTheMusicTree/audiometa) avec 26k téléchargements, et contributeur à OpenSILEX (https://github.com/OpenSILEX/opensilex) pour la gestion de données de recherche FAIR (https://www.go-fair.org/).
 
 Techniques: React, TypeScript, JavaScript, Python, Django REST Framework, PostgreSQL, SQL, JSON, HTML, CSS
 

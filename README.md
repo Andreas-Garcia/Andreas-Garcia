@@ -34,7 +34,7 @@ I'm a full-stack engineer, founder, and open-source maintainer focused on music 
 
 Core strengths:
 
-- Front‑end engineering — Next.js, React, TypeScript, Vercel, D3.js.
+- Front‑end engineering — Next.js, React, TypeScript, Vercel, D3.js, MapLibre GL.
   Skilled at building fast, accessible, and elegant interfaces, with a strong sense of product design and user experience.
 
 - Backend systems — Python (Django REST Framework, Flask), Node.js, NestJS, PostgreSQL.
@@ -46,7 +46,7 @@ Core strengths:
 - Architecture & systems design — API design, microservices, containerized deployments.
   Ability to structure coherent, evolutive architectures with a deep understanding of both technical constraints and product strategy.
 
-I founded **[TheMusicTree](https://themusictree.org)** ([GitHub organization](https://github.com/BehindTheMusicTree)) for music metadata and an evolving genre reference. The **live portfolio** (project pages, live products, status) is **[themusictree.org](https://themusictree.org)**. Core library: [AudioMeta Python](https://github.com/BehindTheMusicTree/audiometa) (25k+ PyPI downloads), used by **[AudioMeta Webapp](https://themusictree.org/projects/audiometa-webapp)** at [audiometa.themusictree.org](https://audiometa.themusictree.org). Main product: **[GrowTheMusicTree](https://grow.themusictree.org)**, the collaborative genre-map web app. All project links: [Featured Projects](#-featured-projects).
+I founded **[TheMusicTree](https://themusictree.org)** ([GitHub organization](https://github.com/BehindTheMusicTree)) for music metadata and an evolving genre reference. The **live portfolio** (project pages, live products, status) is **[themusictree.org](https://themusictree.org)**. Core library: [AudioMeta Python](https://github.com/BehindTheMusicTree/audiometa) (26k PyPI downloads), used by **[AudioMeta Webapp](https://themusictree.org/projects/audiometa-webapp)** at [audiometa.themusictree.org](https://audiometa.themusictree.org). Main product: **[GrowTheMusicTree](https://grow.themusictree.org)**, the collaborative genre-map web app. All project links: [Featured Projects](#-featured-projects).
 
 I also collaborate on open-source projects and programs (e.g., [OpenSILEX](https://github.com/OpenSILEX/opensilex)) that emphasize sustainability 🌍, reproducibility, and community-driven curation.
 
@@ -110,6 +110,8 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![D3.js](https://img.shields.io/badge/D3.js-F9A03C?style=flat-square&logo=d3.js&logoColor=white)
+![MapLibre GL](https://img.shields.io/badge/MapLibre_GL-396CB2?style=flat-square&logo=maplibre&logoColor=white)
 
 #### DevOps & Tools
 
@@ -184,7 +186,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 ##### 🌳 [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree)
 
 - Building a collaborative platform for music genre classification using Next.js, TypeScript, and React
-- Designed interactive genre tree visualization enabling users to build and explore music genres
+- Designed interactive genre tree visualization with **D3.js** enabling users to build and explore music genres
 - Implementing community contribution system for submitting, validating, and curating genre data
 - Integrated with TheMusicTreeAPI, MusicBrainz, and Spotify for real-time genre data, intelligent recommendations, and music discovery
 - Shipped the web app on **Vercel** ([grow.themusictree.org](https://grow.themusictree.org)) with CI/CD via GitHub Actions
@@ -215,9 +217,10 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 ##### 🎮 [**The Music Deck**](https://deck-showcase.themusictree.org/)
 
 - Building a collectible music card game combining music discovery with card-game mechanics (boosters, lineups, genre-based battles)
-- Developing cross-platform client with Expo, React Native, and React Native Web, targeting iOS, Android, and web from a single TypeScript codebase
+- Developing cross-platform client with Expo (**Metro** bundler), React Native, and React Native Web, targeting iOS, Android, and web from a single TypeScript codebase
 - Designed game systems: pack/booster economy, subgenre stacking rules, point-driven progression, and daily enigmas
-- Built a companion admin monorepo (Nx + pnpm): Next.js visual charter/admin UI and NestJS (Node.js) REST API, deployed via Docker to a self-hosted VPS
+- Built a companion admin monorepo (Nx + pnpm): Next.js (**Turbopack**) visual charter/admin UI and NestJS (Node.js) REST API, deployed via Docker to a self-hosted VPS
+- Implemented a **MapLibre GL** interactive world map coloring subgenres by region and an SVG-based "Genre Wheel" visualizing genre intensity and transitions
 - Automated release pipeline with GitHub Actions: GHCR image builds, semver tagging, and webhook-driven redeployment to staging and production environments
 
 #### Major Music Events Company - Consultant

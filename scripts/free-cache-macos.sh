@@ -30,9 +30,12 @@ get_size_bytes() {
 }
 
 # Function to clear cache directory
+# Optional third arg: name of an entry directly under cache_dir to skip (e.g. a cache
+# that's expensive to redownload, like Playwright's browser binaries).
 clear_cache() {
     local cache_dir=$1
     local description=$2
+    local exclude=$3
 
     if [ ! -d "$cache_dir" ]; then
         echo -e "${YELLOW}⚠️  $description: Directory not found, skipping${NC}"
@@ -47,7 +50,11 @@ clear_cache() {
     echo "  Size before: $size_before_human"
 
     # Remove contents but keep directory structure
-    find "$cache_dir" -mindepth 1 -maxdepth 1 -exec rm -rf {} + 2>/dev/null || true
+    if [ -n "$exclude" ]; then
+        find "$cache_dir" -mindepth 1 -maxdepth 1 ! -name "$exclude" -exec rm -rf {} + 2>/dev/null || true
+    else
+        find "$cache_dir" -mindepth 1 -maxdepth 1 -exec rm -rf {} + 2>/dev/null || true
+    fi
 
     local size_after=$(get_size_bytes "$cache_dir")
     local size_freed=$((size_before - size_after))
@@ -74,8 +81,8 @@ echo ""
 # Get initial free space
 initial_free=$(df -k / | tail -1 | awk '{print $4}')
 
-# User caches
-clear_cache "$HOME/Library/Caches" "User Library Caches"
+# User caches (keep ms-playwright — browser binaries are slow/flaky to redownload)
+clear_cache "$HOME/Library/Caches" "User Library Caches" "ms-playwright"
 
 # Browser caches (optional - uncomment if needed)
 # clear_cache "$HOME/Library/Caches/Google/Chrome" "Chrome Cache"

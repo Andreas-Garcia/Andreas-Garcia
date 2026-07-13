@@ -2,7 +2,7 @@ Expert en Ingénierie Logicielle | Développeur Full-Stack | Contributeur Open S
 
 Ingénieur logiciel expérimenté en développement full-stack et ingénierie logicielle. Spécialisé dans la conception et le déploiement de solutions robustes avec Python, TypeScript et PostgreSQL, maîtrisant les méthodes DevOps et la virtualisation.
 
-Passionné par le développement de qualité production, j'ai fondé l'écosystème TheMusicTree incluant AudioMeta Python (https://pypi.org/project/audiometa-python/) avec 25k+ téléchargements. Mon expérience couvre la maintenance corrective et évolutive, les stratégies de test, le déploiement automatisé via Docker et CI/CD, ainsi que la documentation technique.
+Passionné par le développement de qualité production, j'ai fondé l'écosystème TheMusicTree incluant AudioMeta Python (https://pypi.org/project/audiometa-python/) avec 26k téléchargements. Mon expérience couvre la maintenance corrective et évolutive, les stratégies de test, le déploiement automatisé via Docker et CI/CD, ainsi que la documentation technique.
 
 Techniques: Python, TypeScript, JavaScript, PostgreSQL, Docker, Git, GitLab CI, Django REST Framework, React
 
@@ -12,7 +12,7 @@ Workflow: GitFlow, Test Driven Development, CI/CD, Méthodes d'analyse et de con
 
 Dec. 2021 – Present
 
-Développé et maintenu AudioMeta Python (https://pypi.org/project/audiometa-python/), bibliothèque avec 1500+ tests et 25k+ téléchargements.
+Développé et maintenu AudioMeta Python (https://pypi.org/project/audiometa-python/), bibliothèque avec 1500+ tests et 26k téléchargements.
 Implémenté des stratégies de test complètes avec pytest, mypy et ruff pour garantir la fiabilité.
 Créé et déployé des packages containerisés avec Docker, automatisant les pipelines CI/CD.
 Conçu TheMusicTreeAPI avec Django REST Framework et PostgreSQL, optimisant les schémas de base de données.

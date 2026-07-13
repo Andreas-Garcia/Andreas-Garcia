@@ -1,6 +1,6 @@
 # Développeur Full-Stack | Python & React | Données fiables & systèmes scalables
 
-**Ingénieur logiciel** avec 4+ ans en **Python**, **Django**, **React** et **Next.js**. Fondateur de TheMusicTree ; a publié **AudioMeta Python** (https://pypi.org/project/audiometa-python/) (25k+ téléchargements, **1500+ tests**). Conçoit **systèmes fiables** avec **clean code**, tests. Animé par données structurées, interopérabilité (FAIR) et systèmes robustes.
+**Ingénieur logiciel** avec 4+ ans en **Python**, **Django**, **React** et **Next.js**. Fondateur de TheMusicTree ; a publié **AudioMeta Python** (https://pypi.org/project/audiometa-python/) (26k téléchargements, **1500+ tests**). Conçoit **systèmes fiables** avec **clean code**, tests. Animé par données structurées, interopérabilité (FAIR) et systèmes robustes.
 
 Je construis des **APIs REST** et modèles de **données** avec **Django** et **PostgreSQL** (TheMusicTreeAPI, **GrowTheMusicTree** (https://grow.themusictree.org/), **HearTheMusicTree** (https://hear-api.themusictree.org/docs/)). Expérience **données FAIR** (INRAE). **DevOps** (Docker, CI/CD). Français natif, anglais avancé.
 
