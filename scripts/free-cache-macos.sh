@@ -5,6 +5,11 @@
 
 set -e
 
+# Claude Code conversation transcripts (*.jsonl) older than this are proposed for
+# deletion in the final alert below (opt-in, never automatic). Only the transcript
+# files are targeted — memory notes (memory/*.md) are untouched either way.
+CLAUDE_CONV_PURGE_DAYS=7
+
 # Colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -30,12 +35,14 @@ get_size_bytes() {
 }
 
 # Function to clear cache directory
-# Optional third arg: name of an entry directly under cache_dir to skip (e.g. a cache
-# that's expensive to redownload, like Playwright's browser binaries).
+# Optional remaining args: names of entries directly under cache_dir to skip (e.g. a
+# cache that's expensive to redownload, like Playwright's browser binaries, or one
+# managed by its own tool, like Homebrew's).
 clear_cache() {
     local cache_dir=$1
     local description=$2
-    local exclude=$3
+    shift 2
+    local excludes=("$@")
 
     if [ ! -d "$cache_dir" ]; then
         echo -e "${YELLOW}⚠️  $description: Directory not found, skipping${NC}"
@@ -50,8 +57,12 @@ clear_cache() {
     echo "  Size before: $size_before_human"
 
     # Remove contents but keep directory structure
-    if [ -n "$exclude" ]; then
-        find "$cache_dir" -mindepth 1 -maxdepth 1 ! -name "$exclude" -exec rm -rf {} + 2>/dev/null || true
+    if [ "${#excludes[@]}" -gt 0 ]; then
+        local prune_args=()
+        for name in "${excludes[@]}"; do
+            prune_args+=(! -name "$name")
+        done
+        find "$cache_dir" -mindepth 1 -maxdepth 1 "${prune_args[@]}" -exec rm -rf {} + 2>/dev/null || true
     else
         find "$cache_dir" -mindepth 1 -maxdepth 1 -exec rm -rf {} + 2>/dev/null || true
     fi
@@ -81,8 +92,10 @@ echo ""
 # Get initial free space
 initial_free=$(df -k / | tail -1 | awk '{print $4}')
 
-# User caches (keep ms-playwright — browser binaries are slow/flaky to redownload)
-clear_cache "$HOME/Library/Caches" "User Library Caches" "ms-playwright"
+# User caches (keep ms-playwright — browser binaries are slow/flaky to redownload;
+# keep Homebrew — "brew cleanup" below manages its own cache, otherwise it has to
+# re-download the ~15MB API JSON on every run)
+clear_cache "$HOME/Library/Caches" "User Library Caches" "ms-playwright" "Homebrew"
 
 # Browser caches (optional - uncomment if needed)
 # clear_cache "$HOME/Library/Caches/Google/Chrome" "Chrome Cache"
@@ -117,6 +130,15 @@ if command -v pip &> /dev/null; then
     echo ""
 fi
 
+# pnpm store (if exists) — only removes packages no longer referenced by any
+# project's lockfile; worst case is a slower re-download on next install, no data loss
+if command -v pnpm &> /dev/null; then
+    echo -e "${YELLOW}Clearing: pnpm store (unreferenced packages)${NC}"
+    pnpm store prune 2>/dev/null || true
+    echo -e "${GREEN}  ✓ pnpm store pruned${NC}"
+    echo ""
+fi
+
 # Homebrew cache (if exists)
 if command -v brew &> /dev/null; then
     echo -e "${YELLOW}Clearing: Homebrew cache${NC}"
@@ -126,11 +148,45 @@ if command -v brew &> /dev/null; then
 fi
 
 # Docker cache (if Docker is running)
-if command -v docker &> /dev/null && docker info &>/dev/null; then
-    echo -e "${YELLOW}Clearing: Docker system cache${NC}"
-    docker system prune -af --volumes || true
-    echo -e "${GREEN}  ✓ Docker cache cleared${NC}"
+# "docker info" gathers metadata from every installed CLI plugin (e.g. docker-ai /
+# "Ask Gordon") and has no built-in timeout, so a stuck plugin hangs it forever.
+# Bound it with timeout so a broken plugin can't stall the whole script.
+if command -v docker &> /dev/null && timeout 5 docker info &>/dev/null; then
+    # Images and build cache are regenerable (re-pull/re-build), safe to auto-prune.
+    # Volumes are NOT included here — they can hold real data (dev databases, etc.)
+    # for a project that's just not running right now. See the confirmation prompt below.
+    echo -e "${YELLOW}Clearing: Docker images and build cache${NC}"
+    docker system prune -af || true
+    echo -e "${GREEN}  ✓ Docker images/build cache cleared${NC}"
     echo ""
+
+    # Unused volumes (not attached to any container, LINKS = 0): list + confirm before deleting
+    unused_volumes=()
+    unused_volume_sizes=()
+    while IFS=$'\t' read -r vname vlinks vsize; do
+        [ "$vlinks" = "0" ] || continue
+        unused_volumes+=("$vname")
+        unused_volume_sizes+=("$vsize")
+    done < <(timeout 15 docker system df -v 2>/dev/null | awk '/^VOLUME NAME/{f=1;next} /^$/{f=0} f{print $1"\t"$2"\t"$3}')
+
+    if [ "${#unused_volumes[@]}" -gt 0 ]; then
+        echo -e "${RED}⚠️  Unused Docker volumes (no attached container)${NC}"
+        echo -e "${YELLOW}These may hold real data (dev databases, uploads, etc.) for a stopped project.${NC}"
+        for i in "${!unused_volumes[@]}"; do
+            echo "  $((i+1)). ${unused_volumes[$i]} (${unused_volume_sizes[$i]})"
+        done
+        echo ""
+        read -p "Delete all ${#unused_volumes[@]} unused volumes now? [y/N] " confirm
+        if [[ "$confirm" =~ ^[Yy]$ ]]; then
+            for vname in "${unused_volumes[@]}"; do
+                docker volume rm "$vname" &>/dev/null || true
+            done
+            echo -e "${GREEN}  ✓ Deleted ${#unused_volumes[@]} unused volume(s)${NC}"
+        else
+            echo -e "${YELLOW}  Skipped. Run 'docker volume rm <name>' manually if desired.${NC}"
+        fi
+        echo ""
+    fi
 fi
 
 # VS Code caches (if exists)
@@ -245,6 +301,36 @@ fi
 # Claude Code scratch space
 clear_cache "/private/tmp/claude-scratch" "Claude Code Scratch"
 
+# Claude Code local caches (safe/regenerable: undo history, telemetry, paste buffer, shell snapshots, debug logs)
+clear_cache "$HOME/.claude/file-history" "Claude Code File History (undo backups)"
+clear_cache "$HOME/.claude/telemetry" "Claude Code Telemetry"
+clear_cache "$HOME/.claude/cache" "Claude Code Cache"
+clear_cache "$HOME/.claude/paste-cache" "Claude Code Paste Cache"
+clear_cache "$HOME/.claude/shell-snapshots" "Claude Code Shell Snapshots"
+clear_cache "$HOME/.claude/debug" "Claude Code Debug Logs"
+
+# Detect Claude Code project transcripts (~/.claude/projects) whose source repo is
+# gone. Not cleared above: these hold real conversation history and any saved memory
+# notes for a project, so deletion is deferred to the final alert + confirmation below.
+CLAUDE_PROJECTS_DIR="$HOME/.claude/projects"
+orphan_dirs=()
+orphan_sources=()
+if [ -d "$CLAUDE_PROJECTS_DIR" ]; then
+    for proj_dir in "$CLAUDE_PROJECTS_DIR"/*/; do
+        [ -d "$proj_dir" ] || continue
+        # Read the real source directory from a transcript's "cwd" field
+        # (folder names have "-" escaped from "/", which is ambiguous to reverse
+        # since real paths also contain literal hyphens).
+        sample_jsonl=$(find "$proj_dir" -maxdepth 1 -name "*.jsonl" | head -1)
+        [ -n "$sample_jsonl" ] || continue
+        source_path=$(grep -o '"cwd":"[^"]*"' "$sample_jsonl" | head -1 | sed 's/"cwd":"//;s/"//')
+        if [ -n "$source_path" ] && [ ! -d "$source_path" ]; then
+            orphan_dirs+=("$proj_dir")
+            orphan_sources+=("$source_path")
+        fi
+    done
+fi
+
 # Stremio server cache (if exists)
 clear_cache "$HOME/Library/Application Support/stremio-server" "Stremio Server"
 
@@ -278,3 +364,69 @@ else
     echo -e "${YELLOW}No significant space was freed (may need admin privileges for system caches)${NC}"
 fi
 echo ""
+
+# Final alert: orphaned Claude Code project transcripts (source repo no longer exists)
+if [ "${#orphan_dirs[@]}" -gt 0 ]; then
+    echo -e "${RED}========================================${NC}"
+    echo -e "${RED}⚠️  Orphaned Claude Code project transcripts${NC}"
+    echo -e "${RED}========================================${NC}"
+    echo -e "${YELLOW}These transcript folders reference a source repo that no longer exists.${NC}"
+    echo -e "${YELLOW}They may contain saved memory notes — review before deleting.${NC}"
+    echo ""
+    total_kb=0
+    for i in "${!orphan_dirs[@]}"; do
+        size=$(get_size "${orphan_dirs[$i]}")
+        size_kb=$(get_size_bytes "${orphan_dirs[$i]}")
+        total_kb=$((total_kb + size_kb))
+        echo "  $((i+1)). ${orphan_dirs[$i]} ($size) -> was ${orphan_sources[$i]}"
+    done
+    echo ""
+    echo -e "${YELLOW}Total: $((total_kb / 1024))MB across ${#orphan_dirs[@]} folder(s)${NC}"
+    echo ""
+    read -p "Delete all of these now? [y/N] " confirm
+    if [[ "$confirm" =~ ^[Yy]$ ]]; then
+        for proj_dir in "${orphan_dirs[@]}"; do
+            rm -rf "$proj_dir"
+        done
+        echo -e "${GREEN}  ✓ Deleted ${#orphan_dirs[@]} orphaned project folder(s)${NC}"
+    else
+        echo -e "${YELLOW}  Skipped. Delete manually later with 'rm -rf <path>' if desired.${NC}"
+    fi
+    echo ""
+fi
+
+# Final alert: Claude Code conversation transcripts older than CLAUDE_CONV_PURGE_DAYS.
+# Only *.jsonl transcript files are listed/removed — memory/*.md notes are never touched
+# since they're a different file type living alongside the transcripts.
+old_convs=()
+if [ -d "$CLAUDE_PROJECTS_DIR" ]; then
+    while IFS= read -r -d '' f; do
+        old_convs+=("$f")
+    done < <(find "$CLAUDE_PROJECTS_DIR" -name "*.jsonl" -mtime "+${CLAUDE_CONV_PURGE_DAYS}" -print0 2>/dev/null)
+fi
+
+if [ "${#old_convs[@]}" -gt 0 ]; then
+    echo -e "${RED}========================================${NC}"
+    echo -e "${RED}⚠️  Claude Code conversations older than ${CLAUDE_CONV_PURGE_DAYS} days${NC}"
+    echo -e "${RED}========================================${NC}"
+    echo -e "${YELLOW}These are session transcripts, not memory notes (memory/*.md is never touched).${NC}"
+    echo -e "${YELLOW}Deleting them removes the ability to --resume those sessions.${NC}"
+    echo ""
+    total_kb=0
+    for f in "${old_convs[@]}"; do
+        size_kb=$(du -sk "$f" 2>/dev/null | awk '{print $1}')
+        total_kb=$((total_kb + ${size_kb:-0}))
+    done
+    echo -e "${YELLOW}Total: $((total_kb / 1024))MB across ${#old_convs[@]} conversation(s)${NC}"
+    echo ""
+    read -p "Delete all of these now? [y/N] " confirm
+    if [[ "$confirm" =~ ^[Yy]$ ]]; then
+        for f in "${old_convs[@]}"; do
+            rm -f "$f"
+        done
+        echo -e "${GREEN}  ✓ Deleted ${#old_convs[@]} conversation transcript(s)${NC}"
+    else
+        echo -e "${YELLOW}  Skipped. Adjust CLAUDE_CONV_PURGE_DAYS at the top of the script to change the threshold.${NC}"
+    fi
+    echo ""
+fi

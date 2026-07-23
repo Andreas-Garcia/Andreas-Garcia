@@ -1,0 +1,617 @@
+<html>
+  <head>
+    <style></style>
+  </head>
+  <body>
+    <div id="grid"></div>
+    <script>
+      var GRID_WIDTH = 40;
+      var GRID_HEIGHT = 30;
+      var TOLERANCE = 110;
+
+      var grid = document.getElementById("grid");
+      var images = [];
+      var loadedCount = 0;
+      var total = GRID_WIDTH * GRID_HEIGHT;
+
+      for (var i = 1; i <= total; i++) {
+        var img = document.createElement("img");
+        img.onload = function () {
+          loadedCount++;
+          if (loadedCount === total) onAllLoaded();
+        };
+        img.src = `(${i}).png`;
+        images.push(img);
+      }
+
+      function getEdgeColumn(img, side) {
+        var canvas = document.createElement("canvas");
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+        var ctx = canvas.getContext("2d", { willReadFrequently: true });
+        ctx.drawImage(img, 0, 0);
+        var x = side === "right" ? img.naturalWidth - 1 : 0;
+        return ctx.getImageData(x, 0, 1, img.naturalHeight).data;
+      }
+
+      function compareColumns(colA, colB) {
+        var len = Math.min(colA.length, colB.length);
+        var totalDiff = 0;
+        for (var i = 0; i < len; i++) {
+          totalDiff += Math.abs(colA[i] - colB[i]);
+        }
+        return totalDiff / len;
+      }
+
+      function findBestRightMatch(
+        tailIndex,
+        poolIndices,
+        rightEdges,
+        leftEdges,
+        tolerance,
+      ) {
+        var bestScore = Infinity;
+        var bestPos = -1;
+        for (var i = 0; i < poolIndices.length; i++) {
+          var score = compareColumns(
+            rightEdges[tailIndex],
+            leftEdges[poolIndices[i]],
+          );
+          if (score < bestScore) {
+            bestScore = score;
+            bestPos = i;
+          }
+        }
+        if (bestPos === -1 || bestScore > tolerance) {
+          console.log(
+            "no right match for",
+            tailIndex,
+            "best score was",
+            bestScore,
+          );
+          return null;
+        }
+        return { index: poolIndices[bestPos], pos: bestPos, score: bestScore };
+      }
+
+      function buildLines(
+        images,
+        rightEdges,
+        leftEdges,
+        tolerance,
+        targetWidth,
+      ) {
+        var pool = images.map(function (_, i) {
+          return i;
+        });
+        var completeLines = [];
+
+        while (pool.length > 0) {
+          var seedIndex = pool.shift();
+          var line = [seedIndex];
+
+          while (line.length < targetWidth) {
+            var tailIndex = line[line.length - 1];
+            var match = findBestRightMatch(
+              tailIndex,
+              pool,
+              rightEdges,
+              leftEdges,
+              tolerance,
+            );
+            if (!match) break;
+            line.push(match.index);
+            pool.splice(match.pos, 1);
+          }
+
+          completeLines.push(line);
+        }
+
+        return completeLines.map(function (line) {
+          return line.map(function (i) {
+            return images[i];
+          });
+        });
+      }
+
+      function getEdgeRow(img, side) {
+        var canvas = document.createElement("canvas");
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+        var ctx = canvas.getContext("2d", { willReadFrequently: true });
+        ctx.drawImage(img, 0, 0);
+        var y = side === "bottom" ? img.naturalHeight - 1 : 0;
+        return ctx.getImageData(0, y, img.naturalWidth, 1).data;
+      }
+
+      function sampleIndices(length) {
+        var count = 10;
+        var indices = [];
+        for (var k = 1; k <= count; k++) {
+          indices.push(Math.min(Math.floor((length * k) / (count + 1)), length - 1));
+        }
+        return indices;
+      }
+
+      function compareEdgeSets(bottomSet, topSet) {
+        var total = 0;
+        for (var i = 0; i < bottomSet.length; i++) {
+          total += compareColumns(bottomSet[i], topSet[i]);
+        }
+        return total / bottomSet.length;
+      }
+
+      function orderLines(lines, tolerance) {
+        var topEdgesSets = lines.map(function (line) {
+          return sampleIndices(line.length).map(function (i) {
+            return getEdgeRow(line[i], "top");
+          });
+        });
+        var bottomEdgesSets = lines.map(function (line) {
+          return sampleIndices(line.length).map(function (i) {
+            return getEdgeRow(line[i], "bottom");
+          });
+        });
+
+        var indices = lines.map(function (_, i) {
+          return i;
+        });
+
+        var chains = buildGlobalChains(
+          indices,
+          function (i, j) {
+            return compareEdgeSets(bottomEdgesSets[i], topEdgesSets[j]);
+          },
+          tolerance,
+          lines.length,
+          lines.length,
+        );
+
+        console.log(
+          "line order chain starts:",
+          chains.chainStarts.length,
+          "(expect 1 for a fully connected order)",
+        );
+
+        var order = [];
+        if (chains.chainStarts.length > 0) {
+          var current = chains.chainStarts[0];
+          while (current !== undefined) {
+            order.push(current);
+            current = chains.nextNeighbor[current];
+          }
+        }
+
+        return order.map(function (i) {
+          return lines[i];
+        });
+      }
+
+      var BLACK_THRESHOLD = 1;
+
+      function averageBrightness(edge) {
+        var sum = 0;
+        var count = 0;
+        for (var i = 0; i < edge.length; i += 4) {
+          sum += (edge[i] + edge[i + 1] + edge[i + 2]) / 3;
+          count++;
+        }
+        return sum / count;
+      }
+
+      function classifyBorders(rightEdges, leftEdges, topEdges, bottomEdges) {
+        return rightEdges.map(function (_, i) {
+          return {
+            index: i,
+            top: averageBrightness(topEdges[i]) < BLACK_THRESHOLD,
+            bottom: averageBrightness(bottomEdges[i]) < BLACK_THRESHOLD,
+            left: averageBrightness(leftEdges[i]) < BLACK_THRESHOLD,
+            right: averageBrightness(rightEdges[i]) < BLACK_THRESHOLD,
+          };
+        });
+      }
+
+      function classifySide(c) {
+        if (c.top && c.left) return "top-left";
+        if (c.top && c.right) return "top-right";
+        if (c.bottom && c.left) return "bottom-left";
+        if (c.bottom && c.right) return "bottom-right";
+        if (c.top) return "top";
+        if (c.bottom) return "bottom";
+        if (c.left) return "left";
+        if (c.right) return "right";
+        return "interior";
+      }
+
+      function chainRight(
+        startIndex,
+        poolIndices,
+        rightEdges,
+        leftEdges,
+        tolerance,
+      ) {
+        var order = [startIndex];
+        var pool = poolIndices.slice();
+        while (pool.length > 0) {
+          var tailIndex = order[order.length - 1];
+          var match = findBestRightMatch(
+            tailIndex,
+            pool,
+            rightEdges,
+            leftEdges,
+            tolerance,
+          );
+          if (!match) break;
+          order.push(match.index);
+          pool.splice(match.pos, 1);
+        }
+        return order;
+      }
+
+      function buildBorder(classifications, rightEdges, leftEdges, tolerance) {
+        var sides = classifications.map(classifySide);
+
+        function indicesOf(side) {
+          var result = [];
+          sides.forEach(function (s, i) {
+            if (s === side) result.push(i);
+          });
+          return result;
+        }
+
+        var topLeft = indicesOf("top-left")[0];
+        var topRight = indicesOf("top-right")[0];
+        var bottomLeft = indicesOf("bottom-left")[0];
+        var bottomRight = indicesOf("bottom-right")[0];
+
+        var topRow = chainRight(
+          topLeft,
+          indicesOf("top"),
+          rightEdges,
+          leftEdges,
+          tolerance,
+        );
+        topRow.push(topRight);
+
+        var bottomRow = chainRight(
+          bottomLeft,
+          indicesOf("bottom"),
+          rightEdges,
+          leftEdges,
+          tolerance,
+        );
+        bottomRow.push(bottomRight);
+
+        return {
+          topRow: topRow,
+          bottomRow: bottomRow,
+          leftSet: indicesOf("left"),
+          rightSet: indicesOf("right"),
+          sides: sides,
+        };
+      }
+
+      function makeUnionFind(size) {
+        var parent = new Array(size);
+        for (var i = 0; i < size; i++) parent[i] = i;
+
+        function find(x) {
+          while (parent[x] !== x) {
+            parent[x] = parent[parent[x]];
+            x = parent[x];
+          }
+          return x;
+        }
+
+        function union(a, b) {
+          var ra = find(a);
+          var rb = find(b);
+          if (ra !== rb) parent[ra] = rb;
+        }
+
+        return { find: find, union: union };
+      }
+
+      function buildGlobalChains(indices, scoreFn, tolerance, unionFindSize, maxChainLength) {
+        var edges = [];
+        for (var a = 0; a < indices.length; a++) {
+          var i = indices[a];
+          for (var b = 0; b < indices.length; b++) {
+            if (a === b) continue;
+            var j = indices[b];
+            var score = scoreFn(i, j);
+            if (score <= tolerance) {
+              edges.push({ i: i, j: j, score: score });
+            }
+          }
+        }
+
+        edges.sort(function (e1, e2) {
+          return e1.score - e2.score;
+        });
+
+        var uf = makeUnionFind(unionFindSize);
+        var nextNeighbor = {};
+        var prevNeighbor = {};
+        var chainLength = {};
+        indices.forEach(function (i) {
+          chainLength[i] = 1;
+        });
+
+        edges.forEach(function (e) {
+          if (nextNeighbor[e.i] !== undefined) return;
+          if (prevNeighbor[e.j] !== undefined) return;
+          var rootI = uf.find(e.i);
+          var rootJ = uf.find(e.j);
+          if (rootI === rootJ) return;
+          var combinedLength = chainLength[rootI] + chainLength[rootJ];
+          if (combinedLength > maxChainLength) return;
+
+          nextNeighbor[e.i] = e.j;
+          prevNeighbor[e.j] = e.i;
+          uf.union(e.i, e.j);
+          chainLength[uf.find(e.i)] = combinedLength;
+        });
+
+        var chainStarts = indices.filter(function (i) {
+          return prevNeighbor[i] === undefined;
+        });
+
+        return { nextNeighbor: nextNeighbor, chainStarts: chainStarts };
+      }
+
+      function buildGlobalRightChains(interiorIndices, rightEdges, leftEdges, tolerance, unionFindSize, maxChainLength) {
+        return buildGlobalChains(
+          interiorIndices,
+          function (i, j) {
+            return compareColumns(rightEdges[i], leftEdges[j]);
+          },
+          tolerance,
+          unionFindSize,
+          maxChainLength,
+        );
+      }
+
+      function buildInteriorLines(
+        leftSet,
+        rightSet,
+        interiorIndices,
+        rightEdges,
+        leftEdges,
+        tolerance,
+      ) {
+        var targetInteriorWidth = GRID_WIDTH - 2;
+        var chains = buildGlobalRightChains(interiorIndices, rightEdges, leftEdges, tolerance, images.length, targetInteriorWidth);
+        var availableStarts = chains.chainStarts.slice();
+        var availableRights = rightSet.slice();
+        var lines = [];
+
+        leftSet.forEach(function (seedIndex, r) {
+          var startMatch = findBestRightMatch(seedIndex, availableStarts, rightEdges, leftEdges, tolerance);
+
+          var interior = [];
+          if (startMatch) {
+            availableStarts.splice(startMatch.pos, 1);
+            var current = startMatch.index;
+            while (current !== undefined && interior.length < targetInteriorWidth) {
+              interior.push(current);
+              current = chains.nextNeighbor[current];
+            }
+          }
+
+          var lastIndex = interior.length > 0 ? interior[interior.length - 1] : seedIndex;
+          var rightMatch = findBestRightMatch(lastIndex, availableRights, rightEdges, leftEdges, tolerance);
+          var row = [seedIndex].concat(interior);
+          if (rightMatch) {
+            availableRights.splice(rightMatch.pos, 1);
+            row.push(rightMatch.index);
+          }
+
+          console.log(
+            "row",
+            r,
+            "length",
+            row.length,
+            "(expected",
+            GRID_WIDTH,
+            ") closure score:",
+            rightMatch ? rightMatch.score : Infinity,
+          );
+
+          lines.push(row);
+        });
+
+        return lines;
+      }
+
+      function makeBlankCell() {
+        var div = document.createElement("div");
+        div.style.background = "#333";
+        div.style.aspectRatio = "1 / 1";
+        return div;
+      }
+
+      var currentLines = [];
+
+      function swapRows(index, direction) {
+        var targetIndex = index + direction;
+        if (targetIndex < 0 || targetIndex >= currentLines.length) return;
+        var temp = currentLines[index];
+        currentLines[index] = currentLines[targetIndex];
+        currentLines[targetIndex] = temp;
+        renderGrid(currentLines);
+      }
+
+      function renderGrid(lines) {
+        currentLines = lines;
+        grid.innerHTML = "";
+        grid.style.display = "flex";
+        grid.style.flexDirection = "column";
+
+        for (var r = 0; r < lines.length; r++) {
+          (function (r) {
+            if (lines[r].length !== GRID_WIDTH) {
+              console.log("row", r, "has length", lines[r].length, "instead of", GRID_WIDTH, "- padding with blanks");
+            }
+
+            var rowWrapper = document.createElement("div");
+            rowWrapper.style.display = "flex";
+            rowWrapper.style.alignItems = "center";
+
+            var buttons = document.createElement("div");
+            buttons.style.display = "flex";
+            buttons.style.flexDirection = "column";
+
+            var upBtn = document.createElement("button");
+            upBtn.textContent = "↑";
+            upBtn.onclick = function () {
+              swapRows(r, -1);
+            };
+
+            var downBtn = document.createElement("button");
+            downBtn.textContent = "↓";
+            downBtn.onclick = function () {
+              swapRows(r, 1);
+            };
+
+            buttons.appendChild(upBtn);
+            buttons.appendChild(downBtn);
+
+            var rowGrid = document.createElement("div");
+            rowGrid.style.display = "grid";
+            rowGrid.style.gridTemplateColumns = `repeat(${GRID_WIDTH}, 1fr)`;
+            rowGrid.style.flex = "1";
+
+            for (var c = 0; c < GRID_WIDTH; c++) {
+              rowGrid.appendChild(c < lines[r].length ? lines[r][c] : makeBlankCell());
+            }
+
+            rowWrapper.appendChild(buttons);
+            rowWrapper.appendChild(rowGrid);
+            grid.appendChild(rowWrapper);
+          })(r);
+        }
+      }
+
+      function onAllLoaded() {
+        console.log("all images loaded, precomputing edges...");
+        var rightEdges = images.map(function (img) {
+          return getEdgeColumn(img, "right");
+        });
+        var leftEdges = images.map(function (img) {
+          return getEdgeColumn(img, "left");
+        });
+        var topEdges = images.map(function (img) {
+          return getEdgeRow(img, "top");
+        });
+        var bottomEdges = images.map(function (img) {
+          return getEdgeRow(img, "bottom");
+        });
+
+        var classifications = classifyBorders(
+          rightEdges,
+          leftEdges,
+          topEdges,
+          bottomEdges,
+        );
+        var blackEdgeCount = function (c) {
+          return (
+            (c.top ? 1 : 0) +
+            (c.bottom ? 1 : 0) +
+            (c.left ? 1 : 0) +
+            (c.right ? 1 : 0)
+          );
+        };
+        var corners = classifications.filter(function (c) {
+          return blackEdgeCount(c) >= 2;
+        });
+        var edges = classifications.filter(function (c) {
+          return blackEdgeCount(c) === 1;
+        });
+        var interior = classifications.filter(function (c) {
+          return blackEdgeCount(c) === 0;
+        });
+        console.log(
+          "corners:",
+          corners.length,
+          "edges:",
+          edges.length,
+          "interior:",
+          interior.length,
+        );
+
+        var allBrightness = [];
+        [rightEdges, leftEdges, topEdges, bottomEdges].forEach(
+          function (edgeSet) {
+            edgeSet.forEach(function (edge) {
+              allBrightness.push(averageBrightness(edge));
+            });
+          },
+        );
+        allBrightness.sort(function (a, b) {
+          return a - b;
+        });
+        console.log(
+          "brightness percentiles (0, 0.5, 1, 1.5, 2, 2.5, 3, 4, 5%):",
+          allBrightness[0],
+          allBrightness[Math.floor(allBrightness.length * 0.005)],
+          allBrightness[Math.floor(allBrightness.length * 0.01)],
+          allBrightness[Math.floor(allBrightness.length * 0.015)],
+          allBrightness[Math.floor(allBrightness.length * 0.02)],
+          allBrightness[Math.floor(allBrightness.length * 0.025)],
+          allBrightness[Math.floor(allBrightness.length * 0.03)],
+          allBrightness[Math.floor(allBrightness.length * 0.04)],
+          allBrightness[Math.floor(allBrightness.length * 0.05)],
+        );
+
+        console.log("1. building border (top/bottom rows, left/right sets, unordered)...");
+        var border = buildBorder(classifications, rightEdges, leftEdges, TOLERANCE);
+        console.log(
+          "border lengths - top:",
+          border.topRow.length,
+          "bottom:",
+          border.bottomRow.length,
+          "left set:",
+          border.leftSet.length,
+          "right set:",
+          border.rightSet.length,
+        );
+
+        var interiorIndices = [];
+        classifications.forEach(function (c, i) {
+          if (border.sides[i] === "interior") interiorIndices.push(i);
+        });
+
+        console.log("2. completing lines with center (interior) images...");
+        var middleRows = buildInteriorLines(
+          border.leftSet,
+          border.rightSet,
+          interiorIndices,
+          rightEdges,
+          leftEdges,
+          TOLERANCE,
+        );
+
+        var middleRowElements = middleRows.map(function (row) {
+          return row.map(function (i) {
+            return images[i];
+          });
+        });
+
+        console.log("3. ordering lines using 3 sample images (1/3, 1/2, 2/3)...");
+        var orderedMiddleRows = orderLines(middleRowElements, TOLERANCE);
+        console.log("ordered middle rows:", orderedMiddleRows.length, "(expected", GRID_HEIGHT - 2, ")");
+
+        console.log("4. building final grid...");
+        var topRowElements = border.topRow.map(function (i) {
+          return images[i];
+        });
+        var bottomRowElements = border.bottomRow.map(function (i) {
+          return images[i];
+        });
+        var imageLines = [topRowElements].concat(orderedMiddleRows).concat([bottomRowElements]);
+        renderGrid(imageLines);
+      }
+    </script>
+  </body>
+</html>
