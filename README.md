@@ -155,7 +155,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 **Certifications:** La Ruche - Programme Itinéraire (Entrepreneurship Program, 2025)
 
-**Awards/Activities:** Organized Music Micro Festival (80+ attendees, 2021), Open Source Contributor (AudioMeta Python: 16 000+ downloads), Founder & Lead Developer of TheMusicTree ecosystem
+**Awards/Activities:** Organized Music Micro Festival (80+ attendees, 2021), Open Source Contributor (AudioMeta Python: 27k+ downloads), Founder & Lead Developer of TheMusicTree ecosystem
 
 ### 💼 Professional Experience
 
@@ -173,7 +173,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 - Developed a unified Python library for reading and writing audio metadata across multiple formats (ID3v1, ID3v2, Vorbis, RIFF)
 - Implemented comprehensive test suite with 1500+ unit tests ensuring reliability and edge case coverage
 - Created extensive documentation and usage examples to facilitate developer adoption
-- Published on [PyPI](https://pypi.org/project/audiometa-python/) achieving 16 000+ downloads, establishing it as a production-ready tool
+- Published on [PyPI](https://pypi.org/project/audiometa-python/) achieving 27k+ downloads, establishing it as a production-ready tool
 - Maintained active development with community contributions, issue tracking, and continuous improvements
 
 ##### 🖥️ [**AudioMeta Webapp**](https://themusictree.org/projects/audiometa-webapp)
@@ -185,11 +185,12 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 ##### 🌳 [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree)
 
-- Building a collaborative platform for music genre classification using Next.js, TypeScript, and React
+- Building a collaborative platform for music genre classification using Next.js 15 (App Router), TypeScript, Tailwind CSS, and React
 - Designed interactive genre tree visualization with **D3.js** enabling users to build and explore music genres
+- Implemented Spotify and Google OAuth login to connect and analyze users' listening habits
 - Implementing community contribution system for submitting, validating, and curating genre data
-- Integrated with TheMusicTreeAPI, MusicBrainz, and Spotify for real-time genre data, intelligent recommendations, and music discovery
-- Shipped the web app on **Vercel** ([grow.themusictree.org](https://grow.themusictree.org)) with CI/CD via GitHub Actions
+- Integrated with HearTheMusicTree/TheMusicTreeAPI, MusicBrainz, and Spotify for real-time genre data, intelligent recommendations, and music discovery
+- Tested with Vitest; shipped on **Vercel** ([grow.themusictree.org](https://grow.themusictree.org)), with CI (GitHub Actions) running lint/test/build on every PR and production deploys triggered by semver release tags
 
 ##### 🔌 [**TheMusicTreeAPI**](https://github.com/BehindTheMusicTree/the-music-tree-api)
 
@@ -202,11 +203,11 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 ##### 🎧 HearTheMusicTree
 
-- Developing cloud-based music library manager using Django REST Framework and PostgreSQL
-- Implemented smart playlist generation algorithms based on genre intelligence and user preferences
-- Implemented microservices architecture with audio fingerprinting via Dockerized Flask API
-- Integrated MusicBrainz API for automatic track identification and metadata enrichment
-- Deployed with Docker containerization and automated CI/CD pipelines using GitHub Actions and Docker Hub
+- Developing cloud-based music library manager using Django REST Framework and PostgreSQL, exposing 80+ REST endpoints (library, metadata, genres, tags, playlists, search) documented via OpenAPI/Swagger
+- Implemented JWT authentication with Spotify and Google OAuth login
+- Implemented smart playlist generation algorithms based on genre and tag intelligence
+- Implemented microservices architecture with audio fingerprinting (Chromaprint/AcoustID) via a Dockerized Flask API, integrated with MusicBrainz for automatic track identification and metadata enrichment
+- Covered by 1,100+ automated tests (pytest) run in CI via GitHub Actions on a Dockerized Compose stack (API + PostgreSQL + fingerprinting service)
 
 ##### 🔬 [**Audio Fingerprinter**](https://github.com/BehindTheMusicTree/audio-fingerprinter)
 
