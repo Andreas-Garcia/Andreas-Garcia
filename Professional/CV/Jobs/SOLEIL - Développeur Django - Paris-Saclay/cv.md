@@ -2,7 +2,7 @@
 
 Développeur Full Stack, plus de 10 ans d'expérience, spécialisé en backend Django (Django REST Framework), avec une expérience de contribution à des systèmes d'information scientifiques open source (INRAE, OpenSILEX (https://opensilex.org/)) et une pratique complémentaire du frontend web (Next.js/React).
 
-Fondateur de TheMusicTree, j'ai conçu des APIs REST avec PostgreSQL pour TheMusicTreeAPI (https://github.com/BehindTheMusicTree/the-music-tree-api), avec structuration de données complexes, sécurisation en production et documentation technique. Contributeur open source engagé, j'apporte une exigence de qualité et de collaboration en équipe projet.
+Fondateur de TheMusicTree, j'ai conçu des APIs REST avec PostgreSQL pour TheMusicTreeAPI (https://github.com/BehindTheMusicTree/the-music-tree-api), avec structuration de données complexes, sécurisation d'infrastructure (Zero Trust, fail2ban) et documentation. Contributeur open source engagé, exigence de qualité et de collaboration en équipe projet.
 
 ## Skills
 
@@ -18,12 +18,13 @@ Dec. 2021 – Present
 
 Développé des APIs REST avec Django REST Framework et PostgreSQL pour TheMusicTreeAPI, avec CI/CD.
 Conçu, en complément, des interfaces web avec Next.js et React pour GrowTheMusicTree (https://grow.themusictree.org/), en production.
-Piloté l'architecture, la sécurité et les pipelines CI/CD (Docker, GitHub Actions) de l'écosystème.
+Sécurisé l'infrastructure (Infrastructure (https://github.com/BehindTheMusicTree/infrastructure)) avec Zero Trust, fail2ban et SSL automatisé, en production.
 
 **Links:**
 TheMusicTree: https://themusictree.org
 TheMusicTreeAPI: https://github.com/BehindTheMusicTree/the-music-tree-api
 GrowTheMusicTree: https://grow.themusictree.org/
+Infrastructure: https://github.com/BehindTheMusicTree/infrastructure
 
 ### [ICON] INRAE - Ingénieur de Recherche
 
