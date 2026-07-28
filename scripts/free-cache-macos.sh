@@ -10,6 +10,11 @@ set -e
 # files are targeted — memory notes (memory/*.md) are untouched either way.
 CLAUDE_CONV_PURGE_DAYS=7
 
+# Running total of space actually freed (KB), tracked per-operation rather than
+# inferred from a before/after `df` snapshot — `df` on APFS is unreliable for this
+# since deleted blocks can stay "purgeable" (not yet reported as free) for a while.
+TOTAL_FREED_KB=0
+
 # Colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -70,6 +75,10 @@ clear_cache() {
     local size_after=$(get_size_bytes "$cache_dir")
     local size_freed=$((size_before - size_after))
     local size_freed_mb=$((size_freed / 1024))
+
+    if [ "$size_freed" -gt 0 ]; then
+        TOTAL_FREED_KB=$((TOTAL_FREED_KB + size_freed))
+    fi
 
     if [ $size_freed_mb -gt 0 ]; then
         echo -e "${GREEN}  ✓ Freed: ${size_freed_mb}MB${NC}"
@@ -244,6 +253,7 @@ if [ -d "$CURSOR_DIR" ]; then
         echo -e "${YELLOW}Clearing: Cursor state DB (globalStorage)${NC}"
         echo "  Location: $CURSOR_GLOBAL_STATE/state.vscdb*"
         if [ "$size_before" -gt 0 ]; then
+            TOTAL_FREED_KB=$((TOTAL_FREED_KB + size_before))
             echo -e "${GREEN}  ✓ Freed: $((size_before / 1024))MB${NC}"
         else
             echo -e "${GREEN}  ✓ Removed${NC}"
@@ -274,6 +284,7 @@ if [ -d "$CURSOR_DIR" ]; then
             fi
         done
         if [ "$pruned" -gt 0 ]; then
+            TOTAL_FREED_KB=$((TOTAL_FREED_KB + pruned))
             echo -e "${GREEN}  ✓ Freed: $((pruned / 1024))MB (orphaned workspaces)${NC}"
         else
             echo -e "${GREEN}  ✓ No orphaned workspaces found${NC}"
@@ -335,34 +346,13 @@ fi
 clear_cache "$HOME/Library/Application Support/stremio-server" "Stremio Server"
 
 # Empty Trash
+trash_size_kb=$(get_size_bytes "$HOME/.Trash")
 echo -e "${YELLOW}Emptying Trash...${NC}"
 rm -rf ~/.Trash/* 2>/dev/null || true
-echo -e "${GREEN}  ✓ Trash emptied${NC}"
-echo ""
-
-# Get final free space
-final_free=$(df -k / | tail -1 | awk '{print $4}')
-space_freed=$((final_free - initial_free))
-space_freed_mb=$((space_freed / 1024))
-space_freed_gb=$(echo "scale=2; $space_freed / 1048576" | bc)
-
-echo -e "${GREEN}========================================${NC}"
-echo -e "${GREEN}Cleanup Complete!${NC}"
-echo -e "${GREEN}========================================${NC}"
-echo ""
-echo -e "${YELLOW}Final disk space:${NC}"
-df -h / | tail -1
-echo ""
-
-if [ $space_freed_mb -gt 0 ]; then
-    if [ $space_freed_mb -gt 1024 ]; then
-        echo -e "${GREEN}Total space freed: ${space_freed_gb}GB${NC}"
-    else
-        echo -e "${GREEN}Total space freed: ${space_freed_mb}MB${NC}"
-    fi
-else
-    echo -e "${YELLOW}No significant space was freed (may need admin privileges for system caches)${NC}"
+if [ "$trash_size_kb" -gt 0 ]; then
+    TOTAL_FREED_KB=$((TOTAL_FREED_KB + trash_size_kb))
 fi
+echo -e "${GREEN}  ✓ Trash emptied${NC}"
 echo ""
 
 # Final alert: orphaned Claude Code project transcripts (source repo no longer exists)
@@ -388,6 +378,7 @@ if [ "${#orphan_dirs[@]}" -gt 0 ]; then
         for proj_dir in "${orphan_dirs[@]}"; do
             rm -rf "$proj_dir"
         done
+        TOTAL_FREED_KB=$((TOTAL_FREED_KB + total_kb))
         echo -e "${GREEN}  ✓ Deleted ${#orphan_dirs[@]} orphaned project folder(s)${NC}"
     else
         echo -e "${YELLOW}  Skipped. Delete manually later with 'rm -rf <path>' if desired.${NC}"
@@ -424,9 +415,44 @@ if [ "${#old_convs[@]}" -gt 0 ]; then
         for f in "${old_convs[@]}"; do
             rm -f "$f"
         done
+        TOTAL_FREED_KB=$((TOTAL_FREED_KB + total_kb))
         echo -e "${GREEN}  ✓ Deleted ${#old_convs[@]} conversation transcript(s)${NC}"
     else
         echo -e "${YELLOW}  Skipped. Adjust CLAUDE_CONV_PURGE_DAYS at the top of the script to change the threshold.${NC}"
     fi
     echo ""
 fi
+
+# Final summary — printed after every step (including the interactive orphan/old-conversation
+# purges above) so it reflects everything that actually happened, not just the automatic part.
+final_free=$(df -k / | tail -1 | awk '{print $4}')
+space_freed_df=$((final_free - initial_free))
+
+echo -e "${GREEN}========================================${NC}"
+echo -e "${GREEN}Cleanup Complete!${NC}"
+echo -e "${GREEN}========================================${NC}"
+echo ""
+echo -e "${YELLOW}Final disk space:${NC}"
+df -h / | tail -1
+echo ""
+
+if [ "$TOTAL_FREED_KB" -gt 0 ]; then
+    total_freed_mb=$((TOTAL_FREED_KB / 1024))
+    if [ "$total_freed_mb" -gt 1024 ]; then
+        total_freed_gb=$(echo "scale=2; $TOTAL_FREED_KB / 1048576" | bc)
+        echo -e "${GREEN}Total space freed: ${total_freed_gb}GB${NC}"
+    else
+        echo -e "${GREEN}Total space freed: ${total_freed_mb}MB${NC}"
+    fi
+else
+    echo -e "${GREEN}Nothing to clean — caches were already empty${NC}"
+fi
+
+# `df`'s free-space delta can lag behind (or diverge from) the tracked total above:
+# APFS reclaims deleted blocks as "purgeable" space asynchronously, not instantly.
+# This script never needs sudo — everything it touches is user-owned — so a gap here
+# is reporting lag, not a permissions issue.
+if [ "$TOTAL_FREED_KB" -gt 0 ] && [ $((TOTAL_FREED_KB - space_freed_df)) -gt $((512 * 1024)) ]; then
+    echo -e "${YELLOW}Note: reported free disk space hasn't fully caught up yet — APFS reclaims purgeable space asynchronously and it should settle within a few minutes.${NC}"
+fi
+echo ""
