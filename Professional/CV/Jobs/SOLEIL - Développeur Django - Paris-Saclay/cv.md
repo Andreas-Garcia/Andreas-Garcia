@@ -16,8 +16,8 @@ Workflow: CI/CD, Sécurité applicative, Documentation technique, Open Source, A
 
 Dec. 2021 – Present
 
-Développé des APIs REST avec Django REST Framework et PostgreSQL pour HearTheMusicTree, avec CI/CD.
-Conçu des interfaces web complémentaires avec Next.js et React pour GrowTheMusicTree (https://grow.themusictree.org/), en production.
+Développé 80+ endpoints REST (Django REST Framework, PostgreSQL, JWT/OAuth) pour HearTheMusicTree, couverts par 1 100+ tests automatisés (CI GitHub Actions, Docker Compose).
+Conçu des interfaces web complémentaires (Next.js 15, TypeScript, D3.js) pour GrowTheMusicTree (https://grow.themusictree.org/), déployées en continu sur Vercel.
 Développé AudioMeta, application Next.js, et AudioMeta Python, bibliothèque open source de métadonnées audio (27k+ téléchargements PyPI).
 
 **Liens :**
