@@ -1,6 +1,6 @@
 # Full-Stack Developer | Python & Django Engineer | REST APIs & PostgreSQL
 
-**Full-Stack Developer** with 4+ years building production systems in **Python** and **Django**. Founded TheMusicTree; published **AudioMeta Python** (https://pypi.org/project/audiometa-python/) (26k downloads, **1500+ tests**). Builds **robust**, well-tested software and cares about **clean code**.
+**Full-Stack Developer** with 4+ years building production systems in **Python** and **Django**. Founded TheMusicTree; published **AudioMeta Python** (https://pypi.org/project/audiometa-python/) (27k downloads, **1500+ tests**). Builds **robust**, well-tested software and cares about **clean code**.
 
 Designed **REST APIs** and **PostgreSQL** schemas for TheMusicTreeAPI and **GrowTheMusicTree** (https://grow.themusictree.org/), and shipped a Dockerized Flask **microservice** (https://github.com/BehindTheMusicTree/audio-fingerprinter) alongside **HearTheMusicTree** (https://hear-api.themusictree.org/docs/). Experienced in **domain modelling** and **CI/CD**, comfortable in fully **remote**, distributed teams. **Native French**, advanced English.
 

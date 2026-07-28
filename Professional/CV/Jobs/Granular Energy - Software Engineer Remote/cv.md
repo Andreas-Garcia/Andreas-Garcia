@@ -1,6 +1,6 @@
 # Backend Engineer | Python, PostgreSQL & REST APIs | Domain Modelling for Climate Tech
 
-Open-source maintainer with 4+ years building **Python** REST APIs and **PostgreSQL**-backed domain systems for production. Founded TheMusicTree; published **AudioMeta Python** (https://pypi.org/project/audiometa-python/) (26k downloads, **1500+ tests**). Contributed to **agrivoltaics** research at INRAE; climate impact and **clean code** matter to me.
+Open-source maintainer with 4+ years building **Python** REST APIs and **PostgreSQL**-backed domain systems for production. Founded TheMusicTree; published **AudioMeta Python** (https://pypi.org/project/audiometa-python/) (27k downloads, **1500+ tests**). Contributed to **agrivoltaics** research at INRAE; climate impact and **clean code** matter to me.
 
 Built **REST APIs** and **domain models** with **Django** and **PostgreSQL** for TheMusicTreeAPI, **GrowTheMusicTree** (https://grow.themusictree.org/), and **HearTheMusicTree** (https://hear-api.themusictree.org/docs/), and with **Node.js**/**NestJS** for The Music Deck, all with **Docker** and CI/CD pipelines. Native French, advanced English.
 
@@ -17,7 +17,7 @@ Workflow: GitFlow, CI/CD, Unit Testing, Code Review, Agile/SCRUM, Clean Code, Op
 Dec. 2021 – Present
 
 Built **REST APIs** with **Django REST Framework** and **PostgreSQL** for TheMusicTreeAPI and **HearTheMusicTree** (https://hear-api.themusictree.org/docs/).
-Shipped a production Python library with **1500+ tests** (AudioMeta Python) and 26k PyPI downloads.
+Shipped a production Python library with **1500+ tests** (AudioMeta Python) and 27k PyPI downloads.
 Designed **domain models** and algorithms for **GrowTheMusicTree** (https://grow.themusictree.org/), deployed with Docker and CI/CD.
 
 **Links:**

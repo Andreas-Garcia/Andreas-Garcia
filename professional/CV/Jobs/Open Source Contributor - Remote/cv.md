@@ -1,6 +1,6 @@
 # Full-Stack Developer | Open Source Contributor | Backend Engineer
 
-Backend engineer and **open-source maintainer** with a strong record of building **production-ready** libraries and APIs. Founded the TheMusicTree ecosystem and published **AudioMeta Python** (https://pypi.org/project/audiometa-python/) with 26k downloads and **1500+ unit tests**, demonstrating **clean code**, **modular design**, and high-coverage testing.
+Backend engineer and **open-source maintainer** with a strong record of building **production-ready** libraries and APIs. Founded the TheMusicTree ecosystem and published **AudioMeta Python** (https://pypi.org/project/audiometa-python/) with 27k downloads and **1500+ unit tests**, demonstrating **clean code**, **modular design**, and high-coverage testing.
 
 Contributions to **OpenSILEX** (https://github.com/OpenSILEX/opensilex) and **TheMusicTree** (https://github.com/BehindTheMusicTree)—**GrowTheMusicTree** (https://grow.themusictree.org/), TheMusicTreeAPI, **HearTheMusicTree** (https://hear-api.themusictree.org/docs/). Experienced with **Docker**, **GitHub Actions\*\*, pull requests, code reviews, and collaborative development on backend systems and tools.
 

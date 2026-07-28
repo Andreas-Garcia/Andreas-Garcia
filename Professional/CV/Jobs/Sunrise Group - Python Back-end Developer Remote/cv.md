@@ -1,6 +1,6 @@
 # Backend Engineer | Python, Django & PostgreSQL | Secure APIs for Healthcare Tech
 
-Open-source maintainer with 4+ years building **Python** and **Django** backend systems for production. Founded TheMusicTree; published **AudioMeta Python** (https://pypi.org/project/audiometa-python/) (26k downloads, **1500+ tests**). Reliability, data integrity, and **clean code** matter to me in every system I ship.
+Open-source maintainer with 4+ years building **Python** and **Django** backend systems for production. Founded TheMusicTree; published **AudioMeta Python** (https://pypi.org/project/audiometa-python/) (27k downloads, **1500+ tests**). Reliability, data integrity, and **clean code** matter to me in every system I ship.
 
 Built **REST APIs** and **domain models** with **Django** and **PostgreSQL** for TheMusicTreeAPI, **GrowTheMusicTree** (https://grow.themusictree.org/), and **HearTheMusicTree** (https://hear-api.themusictree.org/docs/), integrating external partner APIs (MusicBrainz, Spotify) and normalising **1,300+** records into a scalable taxonomy. Native French, advanced English.
 
@@ -18,7 +18,7 @@ Dec. 2022 – Present
 
 Built **REST APIs** with **Django REST Framework** and **PostgreSQL** for TheMusicTreeAPI and **HearTheMusicTree** (https://hear-api.themusictree.org/docs/).
 Integrated external partner APIs (MusicBrainz, Spotify) to synchronise data across services reliably.
-Shipped a production Python library with **1500+ tests** (AudioMeta Python) and 26k PyPI downloads.
+Shipped a production Python library with **1500+ tests** (AudioMeta Python) and 27k PyPI downloads.
 
 **Links:**
 TheMusicTree: https://themusictree.org

@@ -13,7 +13,7 @@ J'ai créé AudioMeta Python (https://pypi.org/project/audiometa-python/) avec p
 Déc. 2022 – Présent
 
 Développé applications full-stack Django/PostgreSQL et Next.js/React/TypeScript.
-Créé AudioMeta Python (https://pypi.org/project/audiometa-python/) avec 1500+ tests pytest, 26k téléchargements PyPI.
+Créé AudioMeta Python (https://pypi.org/project/audiometa-python/) avec 1500+ tests pytest, 27k téléchargements PyPI.
 Implémenté TheMusicTreeAPI Django REST avec PostgreSQL et intégrations APIs.
 
 ### [ICON] INRAE - Ingénieur de Recherche

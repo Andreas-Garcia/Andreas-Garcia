@@ -1,6 +1,6 @@
 # Concepteur Développeur / Tech Lead | Architecture Full Stack & Développement Augmenté par l'IA
 
-Concepteur Développeur / Tech Lead, 10+ ans d'expérience en architecture full stack et pilotage de bout en bout. Fondateur de TheMusicTree, j'ai conçu des APIs REST (Django, PostgreSQL) et des interfaces Next.js/React, notamment AudioMeta Python (https://pypi.org/project/audiometa-python/) (26k téléchargements, 1500+ tests) et GrowTheMusicTree (https://grow.themusictree.org/).
+Concepteur Développeur / Tech Lead, 10+ ans d'expérience en architecture full stack et pilotage de bout en bout. Fondateur de TheMusicTree, j'ai conçu des APIs REST (Django, PostgreSQL) et des interfaces Next.js/React, notamment AudioMeta Python (https://pypi.org/project/audiometa-python/) (27k téléchargements, 1500+ tests) et GrowTheMusicTree (https://grow.themusictree.org/).
 
 J'utilise au quotidien des outils d'IA générative pour accélérer le développement, avec des pipelines CI/CD (Docker, GitHub Actions) et une exigence qualité forte. Contributeur open source (OpenSILEX), force de proposition sur l'architecture. Français natif, anglais courant.
 

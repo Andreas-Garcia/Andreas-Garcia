@@ -1,6 +1,6 @@
 # Full-Stack Developer | React/TypeScript Web | Data-Driven Interfaces
 
-**Full-stack developer** with 4+ years shipping **React/TypeScript** products for the web. Founded TheMusicTree, an open-source ecosystem including the **Next.js** app AudioMeta Webapp (https://themusictree.org/projects/audiometa-webapp), powered by **PostgreSQL**-backed REST APIs built with **Python**/**Django**, and **AudioMeta Python**, my open-source audio metadata library with 26k+ PyPI downloads, deployed on **Vercel**, with backend services on my own **VPS** (**Ansible**, **Coolify**, **GitHub Actions**).
+**Full-stack developer** with 4+ years shipping **React/TypeScript** products for the web. Founded TheMusicTree, an open-source ecosystem including the **Next.js** app AudioMeta Webapp (https://themusictree.org/projects/audiometa-webapp), powered by **PostgreSQL**-backed REST APIs built with **Python**/**Django**, and **AudioMeta Python**, my open-source audio metadata library with 27k+ PyPI downloads, deployed on **Vercel**, with backend services on my own **VPS** (**Ansible**, **Coolify**, **GitHub Actions**).
 
 Experienced in scientific and environmental data, having contributed at INRAE to an open-source **FAIR** research system for an agrivoltaics project. I care about intuitive, **data-driven** interfaces backed by rigorous **data modelling**, **clean code** and automated testing.
 
