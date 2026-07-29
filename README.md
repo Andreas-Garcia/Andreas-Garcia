@@ -34,10 +34,10 @@ I'm a full-stack engineer, founder, and open-source maintainer focused on music 
 
 Core strengths:
 
-- Front‑end engineering — Next.js, React, TypeScript, Vercel, D3.js, MapLibre GL.
+- Front‑end engineering — React (3+ years), Next.js (2+ years), TypeScript (3+ years), Vercel, D3.js, MapLibre GL.
   Skilled at building fast, accessible, and elegant interfaces, with a strong sense of product design and user experience.
 
-- Backend systems — Python (Django REST Framework, Flask), Node.js, NestJS, PostgreSQL.
+- Backend systems — Python (4+ years), Django REST Framework (4+ years), Flask, Node.js/NestJS (1+ year), PostgreSQL (5+ years).
   Experienced in designing robust APIs, distributed services, and scalable backend architectures aligned with business needs.
 
 - DevOps & automation — Docker Compose, CI/CD pipelines, GitFlow, Ansible, Vercel, observability with Loki & Grafana.
