@@ -229,8 +229,9 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 - Built and maintain the provisioning pipeline for the whole TheMusicTree ecosystem: Ansible + GitHub Actions, tag-triggered, applying root → staging → prod in sequence (a failed staging apply blocks prod)
 - Single-VPS orchestration via Coolify with Traefik routing every app (APIs, fronts, admin, game, MusicBrainz mirror) by hostname
 - Set up a full observability stack (Prometheus, Grafana, Loki, Grafana Alloy, cAdvisor, node_exporter) provisioned automatically alongside the apps
-- Automated offsite backups to Cloudflare R2 with a monthly automated restore drill
-- Implemented Zero Trust access (Cloudflare Access) in front of Grafana/Coolify, plus fail2ban and separated root/deploy SSH users
+- Automated Cloudflare DNS record management (A/CNAME) via Ansible, idempotent and declarative
+- Implemented Zero Trust access (Cloudflare Access) in front of Grafana/Coolify, hardened by dynamically fetching Cloudflare's edge IP ranges to allowlist the origin and block direct-IP bypass, plus fail2ban and separated root/deploy SSH users
+- Automated offsite backups to Cloudflare R2 (S3-compatible) with a monthly automated restore drill, plus CORS policy and custom-domain management for app-facing R2 asset buckets
 - Automated SSL certificate renewal via systemd timer
 
 #### Major Music Events Company - Consultant
@@ -256,7 +257,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 - Assisted researchers to efficiently share their data using a common vocabulary and structure for a cross-disciplinary agrivoltaics research project combining agriculture and photovoltaics
 - Contributed to an open-source information system to make research data FAIR (Findable, Accessible, Interoperable, and Reusable)
-- Collaborated within a SCRUM team on an open-source program hosted on GitHub
+- Collaborated within a SCRUM team on an open-source program hosted on GitHub, including peer code reviews on the OpenSILEX codebase
 - Manipulated complex data structures within the RDF4J graph database and improved ontologies (graph structures)
 - Implemented new event-handling services in Java (REST API) using the Data Transfer Object (DTO) pattern
 - Added event handling in PHP and JavaScript on the website layer (three-tier architecture) using API calls
