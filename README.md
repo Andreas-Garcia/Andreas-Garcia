@@ -224,13 +224,13 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 - Implemented a **MapLibre GL** interactive world map coloring subgenres by region and an SVG-based "Genre Wheel" visualizing genre intensity and transitions
 - Automated release pipeline with GitHub Actions: GHCR image builds, semver tagging, and webhook-driven redeployment to staging and production environments
 
-##### 🛠️ [**Infrastructure**](https://github.com/BehindTheMusicTree/infrastructure)
+##### 🛠️ [**Infrastructure**](https://themusictree.org/projects/infrastructure)
 
 - Built and maintain the provisioning pipeline for the whole TheMusicTree ecosystem: Ansible + GitHub Actions, tag-triggered, applying root → staging → prod in sequence (a failed staging apply blocks prod)
-- Single-VPS orchestration via Coolify with Traefik routing every app (APIs, fronts, admin, game, MusicBrainz mirror) by hostname
-- Set up a full observability stack (Prometheus, Grafana, Loki, Grafana Alloy, cAdvisor, node_exporter) provisioned automatically alongside the apps
+- Container orchestration via Coolify with Traefik routing every app (APIs, fronts, admin, game, MusicBrainz mirror) by hostname
+- Set up a full observability stack (Prometheus, Grafana, Loki) provisioned automatically alongside the apps
 - Automated Cloudflare DNS record management (A/CNAME) via Ansible, idempotent and declarative
-- Implemented Zero Trust access (Cloudflare Access) in front of Grafana/Coolify, hardened by dynamically fetching Cloudflare's edge IP ranges to allowlist the origin and block direct-IP bypass, plus fail2ban and separated root/deploy SSH users
+- Implemented Zero Trust access control, hardened origin protection against direct-IP bypass, brute-force protection, and least-privilege SSH accounts
 - Automated offsite backups to Cloudflare R2 (S3-compatible) with a monthly automated restore drill, plus CORS policy and custom-domain management for app-facing R2 asset buckets
 - Automated SSL certificate renewal via systemd timer
 
