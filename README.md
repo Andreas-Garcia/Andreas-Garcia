@@ -77,7 +77,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 ### Other featured open source
 
-- [**OpenSILEX**](https://opensilex.org/) — Open information system for **FAIR** research data (life sciences, agronomy); contributor on backend services, ontology work, and frontend integration in **PHP/JavaScript**.
+- [**OpenSILEX**](https://opensilex.org/) — Open information system for **FAIR** research data (life sciences, agronomy); contributor on backend services, ontology work, and frontend integration in **PHP (Yii2)/JavaScript**.
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/OpenSILEX/opensilex) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/OpenSILEX/opensilex/issues) <a href="https://opensilex.org/" title="OpenSILEX"><img src="https://raw.githubusercontent.com/Andreas-Garcia/Andreas-Garcia/main/professional/CV/assets/opensilex.png" alt="OpenSILEX" width="22" height="22"></a>
 
 ## 📚 Curriculum
@@ -260,7 +260,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 - Collaborated within a SCRUM team on an open-source program hosted on GitHub, including peer code reviews on the OpenSILEX codebase
 - Manipulated complex data structures within the RDF4J graph database and improved ontologies (graph structures)
 - Implemented new event-handling services in Java (REST API) using the Data Transfer Object (DTO) pattern
-- Added event handling in PHP and JavaScript on the website layer (three-tier architecture) using API calls
+- Added event handling in PHP 7 (Yii2 framework) and JavaScript on the website layer (three-tier architecture) using API calls
 - Worked on topics I remain passionate about: climate change mitigation and open science
 
 #### Cleversys (acquired by Deloitte) - BI/ERP Consultant
