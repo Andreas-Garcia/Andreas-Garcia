@@ -104,6 +104,11 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
 
+#### Data Engineering
+
+![Polars](https://img.shields.io/badge/Polars-CD792C?style=flat-square&logo=polars&logoColor=white)
+![DuckDB](https://img.shields.io/badge/DuckDB-FFF000?style=flat-square&logo=duckdb&logoColor=black)
+
 #### Frontend
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
@@ -120,6 +125,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
+![uv](https://img.shields.io/badge/uv-DE5FE9?style=flat-square&logo=uv&logoColor=white)
 ![GitFlow](https://img.shields.io/badge/GitFlow-F05032?style=flat-square&logo=git&logoColor=white)
 ![GitHub Flow](https://img.shields.io/badge/GitHub%20Flow-6DB33F?style=flat-square&logo=git&logoColor=white)
 ![PyPI](https://img.shields.io/badge/PyPI-3775A9?style=flat-square&logo=pypi&logoColor=white)
@@ -200,6 +206,13 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 - Implemented advanced genre detection algorithms leveraging machine learning and music analysis
 - Ensured API scalability, security, and performance through comprehensive testing and monitoring
 - Deployed with Docker containerization and automated CI/CD pipelines using GitHub Actions
+
+##### 🧬 [**the-music-tree-pipelines**](https://github.com/BehindTheMusicTree/the-music-tree-pipelines)
+
+- Built a Python/Polars/Postgres ETL pipeline reconstructing a genre hierarchy (root genre → subgenre → recording) from MusicBrainz's flat genre list, using Wikidata's subclass/genre relations as a reference taxonomy
+- Designed a bronze → silver architecture: raw MusicBrainz tables ingested to Parquet via Polars, then cleaned and joined into `recording_genre`, `genre_hierarchy`, and `recording_genre_path` datasets, queryable directly with DuckDB
+- Structured as a `uv` workspace monorepo (one pipeline per source/target data product, shared lockfile and dev toolchain), with Ruff, pytest (unit/e2e/integration tiers), and `actionlint` enforced via pre-commit and CI
+- Publishes an independent dataset intended for ingestion by TheMusicTreeAPI, the ecosystem's authoritative genre reference
 
 ##### 🎧 HearTheMusicTree
 
