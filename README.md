@@ -207,11 +207,12 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 - Ensured API scalability, security, and performance through comprehensive testing and monitoring
 - Deployed with Docker containerization and automated CI/CD pipelines using GitHub Actions
 
-##### 🧬 [**the-music-tree-pipelines**](https://github.com/BehindTheMusicTree/the-music-tree-pipelines)
+##### 🧬 [**TheMusicTreePipelines**](https://github.com/BehindTheMusicTree/the-music-tree-pipelines)
 
-- Built a Python/Polars/Postgres ETL pipeline reconstructing a genre hierarchy (root genre → subgenre → recording) from MusicBrainz's flat genre list, using Wikidata's subclass/genre relations as a reference taxonomy
-- Designed a bronze → silver architecture: raw MusicBrainz tables ingested to Parquet via Polars, then cleaned and joined into `recording_genre`, `genre_hierarchy`, and `recording_genre_path` datasets, queryable directly with DuckDB
-- Structured as a `uv` workspace monorepo (one pipeline per source/target data product, shared lockfile and dev toolchain), with Ruff, pytest (unit/e2e/integration tiers), and `actionlint` enforced via pre-commit and CI
+- Building a Python/Polars/Postgres ETL pipeline reconstructing a genre hierarchy (root genre → subgenre → recording) from MusicBrainz's flat genre list, using Wikidata's subclass/genre relations as a reference taxonomy
+- Built the bronze layer (raw MusicBrainz tables ingested to Parquet via Polars, queryable directly with DuckDB); designing the silver layer (`recording_genre`, `genre_hierarchy`, `recording_genre_path`) on top of it
+- Structured as a `uv` workspace monorepo (one pipeline per source/target data product, shared lockfile and dev toolchain), with Ruff, pytest (unit/e2e/integration tiers) enforcing a 90% combined coverage threshold, and `actionlint` enforced via pre-commit and CI
+- Integration-tested against a real MusicBrainz Postgres sample dataset, loaded via a vendored `musicbrainz-docker` submodule and cached in CI
 - Publishes an independent dataset intended for ingestion by TheMusicTreeAPI, the ecosystem's authoritative genre reference
 
 ##### 🎧 HearTheMusicTree
