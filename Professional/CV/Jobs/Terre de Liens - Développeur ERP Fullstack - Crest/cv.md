@@ -28,14 +28,15 @@ Sensible aux enjeux environnementaux, j'ai développé à l'INRAE pour OpenSILEX
 
 Déc. 2021 – Présent
 
-Développé HearTheMusicTree (https://hear-api.themusictree.org/docs/), API Django REST avec ORM PostgreSQL exposant 80+ endpoints métier.
-Automatisé le déploiement infrastructure (https://themusictree.org/projects/infrastructure) sur environnements staging/prod avec Ansible et GitHub Actions.
-Couvert 1100+ tests automatisés (pytest) garantissant fiabilité et large couverture du code.
+Développé des outils open source dont AudioMeta Python (https://pypi.org/project/audiometa-python/), bibliothèque de lecture/écriture de métadonnées audio multi-formats, 27k+ téléchargements PyPI, couverte par 1500+ tests unitaires.
+Développé GrowTheMusicTree (https://grow.themusictree.org), application web de crowdsourcing pour la cartographie des genres musicaux, en Next.js/React/TypeScript avec visualisation interactive D3.js.
+Conçu un pipeline ETL Python/Polars/PostgreSQL (https://github.com/BehindTheMusicTree/the-music-tree-pipelines) reconstruisant une hiérarchie de genres musicaux à partir de données MusicBrainz et Wikidata.
 
 **Liens :**
 TheMusicTree : https://themusictree.org
-HearTheMusicTree : https://hear-api.themusictree.org/docs/
-Infrastructure : https://themusictree.org/projects/infrastructure
+AudioMeta Python : https://pypi.org/project/audiometa-python/
+GrowTheMusicTree : https://grow.themusictree.org
+the-music-tree-pipelines : https://github.com/BehindTheMusicTree/the-music-tree-pipelines
 
 ---
 
@@ -43,8 +44,8 @@ Infrastructure : https://themusictree.org/projects/infrastructure
 
 Oct. 2018 – Déc. 2019 | Montpellier
 
-Échangé avec des chercheurs pour traduire leurs besoins métier en modèles de données structurés.
-Implémenté des services REST Java (DTO) et manipulé des structures de données complexes via RDF4J.
+Échangé avec des chercheurs pour traduire leurs besoins métier en modèles de données structurés, sous forme d'ontologies RDF exploitées via une base de données graphe.
+Contribué à un projet de recherche en agrivoltaïsme, alliant agriculture et photovoltaïque pour lutter contre le changement climatique.
 Collaboré en équipe Agile/SCRUM sur OpenSILEX (https://opensilex.org/), pratiquant la revue de code entre pairs.
 
 **Liens :**

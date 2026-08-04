@@ -122,3 +122,7 @@ avez un bon esprit d'analyse des besoins métier
 n'avez pas peur de questionner des demandes si la complexité technique n'en vaut pas le coup (détecteur d'usine à gaz)
 aimez le beau code et le refactoring
 êtes rigoureux.se et organisé.e sur les tests
+
+Annexe : alignement ESS / environnemental
+
+Le poste valorise l'intérêt pour les métiers de Terre de Liens et/ou de l'ESS et l'adhésion à ses principes (agriculture biologique et paysanne, terre comme bien commun), dans un territoire (Crest) en transition écologique. Point d'accroche côté candidat : expérience à l'INRAE sur un projet de recherche en agrivoltaïsme (agriculture + photovoltaïque, lutte contre le changement climatique), complétée par du WWOOFing (agriculture durable) et de l'éco-construction — cf. cv.md, sections Présentation et INRAE.
