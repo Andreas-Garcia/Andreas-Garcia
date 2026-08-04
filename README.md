@@ -283,7 +283,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 - Collaborated at every stage of BI projects for clients including a major retail chain, a rail catering services company, and a fashion retailer, from conception (client exchanges) to completion (dashboard presentations in Tableau), in addition to managing data transfers in data warehouses with SSIS and SQL Server
 - Technical development on an ERP project as an ETL expert, specifying and implementing 62 critical accounting interfaces
-- Technical point of contact on the ERP project for the client (annual revenue > €4B), leading specification workshops and training developers on the ERP's ETL tools
+- Technical point of contact on the ERP project for the client (annual revenue > €4B), leading technical-functional specification workshops and training developers on the ERP's ETL tools
 
 #### Sopra Steria - Developer
 
