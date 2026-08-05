@@ -282,8 +282,12 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 **Apr. 2015 – Oct. 2017 | Paris**
 
 - Collaborated at every stage of BI projects for clients including a major retail chain, a rail catering services company, and a fashion retailer, from conception (client exchanges) to completion (dashboard presentations in Tableau), in addition to managing data transfers in data warehouses with SSIS and SQL Server
-- Technical development on an ERP project as an ETL expert, specifying and implementing 62 critical accounting interfaces as complex SQL scripts
+- Technical development on an ERP migration project as an ETL expert, specifying and implementing 62 critical accounting interfaces as complex SQL scripts
 - Technical point of contact on the ERP project for the client (annual revenue > €4B), leading technical-functional specification workshops and training developers on the ERP's ETL tools
+- Tracked and managed version releases of the ERP's ETL processes
+- Authored development guides for the ERP migration project's ETL tooling
+- Wrote production deployment procedures
+- Direct contact with the ERP editor's developers, suggesting new features and fixes
 
 #### Sopra Steria - Developer
 
