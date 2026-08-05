@@ -58,9 +58,9 @@ OpenSILEX : https://opensilex.org/
 
 Avr. 2015 – Oct. 2017 | Paris
 
-Spécifié et développé 62 interfaces comptables critiques (scripts SQL complexes), référent technique ETL sur un projet ERP.
-Animé des ateliers de spécification technico-fonctionnels avec les référents métier d'un grand compte (CA > 4 Md€), en les formant sur les outils ETL.
-Piloté les transferts de données vers les entrepôts BI via SSIS et SQL Server, pour des clients grands comptes (retail, restauration ferroviaire, mode), jusqu'aux tableaux de bord Tableau, pour un reporting fiable.
+Spécifié et développé 62 interfaces comptables critiques (scripts SQL complexes), référent technique ETL sur un projet ERP, assurant le suivi des versions et les déploiements en production.
+Animé des ateliers de spécification technico-fonctionnels avec les référents métier d'un grand compte (CA > 4 Md€), rédigé des guides ETL, en lien avec l'éditeur pour évolutions et correctifs.
+Piloté les transferts de données vers les entrepôts BI via SSIS et SQL Server, pour clients grands comptes (retail, restauration ferroviaire, mode), jusqu'aux tableaux de bord Tableau pour un reporting fiable.
 
 ---
 
