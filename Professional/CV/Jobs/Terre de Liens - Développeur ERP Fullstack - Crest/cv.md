@@ -30,13 +30,14 @@ Depuis 2021, je fonde et développe TheMusicTree (https://themusictree.org), éc
 
 Déc. 2021 – Présent
 
-Développé des outils open source dont AudioMeta Python (https://pypi.org/project/audiometa-python/), bibliothèque de lecture/écriture de métadonnées audio multi-formats, 27k+ téléchargements PyPI, couverte par 1500+ tests unitaires.
-Développé GrowTheMusicTree (https://grow.themusictree.org), plateforme collaborative de cartographie des genres musicaux (Next.js/React/TypeScript), connectée à un backend Django REST (TheMusicTreeAPI) et PostgreSQL.
+Développé AudioMeta Python (https://pypi.org/project/audiometa-python/) - bibliothèque open source de lecture/écriture de métadonnées audio multi-formats, 27k+ téléchargements PyPI, couverte par 1500+ tests unitaires - et sa démo live (https://audiometa.themusictree.org/, wip), en GitHub Flow.
+Développé GrowTheMusicTree (https://grow.themusictree.org), plateforme collaborative de cartographie des genres musicaux (Next.js/React/TypeScript) en GitFlow, connectée à un backend Django REST (TheMusicTreeAPI) et PostgreSQL.
 Conçu pipeline ETL Python/Polars/Postgres recréant une hiérarchie de genres (racine → sous-genre → morceau) à partir du référentiel plat MusicBrainz, structurée via les relations de sous-classes Wikidata.
 
 **Liens :**
 TheMusicTree : https://themusictree.org
 AudioMeta Python : https://pypi.org/project/audiometa-python/
+AudioMeta Webapp (démo live, wip) : https://audiometa.themusictree.org/
 GrowTheMusicTree : https://grow.themusictree.org
 
 ---
