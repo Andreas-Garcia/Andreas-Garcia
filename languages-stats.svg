@@ -3,15 +3,15 @@
   <rect width="495" height="195" fill="#0d1117" rx="8" />
   <rect x="10" y="10" width="475" height="175" fill="#161b22" rx="6" />
   <text x="247" y="35" text-anchor="middle" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="18" font-weight="700" fill="#ff6e96">Most Used Languages</text>
-  <rect x="20" y="60" width="160.91333949269608" height="10" fill="#3776ab" rx="2" />
-  <rect x="180.91333949269608" y="60" width="91.5869606730104" height="10" fill="#ed8b00" rx="2" />
-  <rect x="272.50030016570645" y="60" width="82.05584015214903" height="10" fill="#f7df1e" rx="2" />
-  <rect x="354.55614031785547" y="60" width="50.27672784577333" height="10" fill="#3178c6" rx="2" />
-  <rect x="404.8328681636288" y="60" width="31.279535487737498" height="10" fill="#3178c6" rx="2" />
-  <rect x="436.1124036513663" y="60" width="19.00897724709089" height="10" fill="#89e051" rx="2" />
-  <rect x="455.12138089845723" y="60" width="10.482573416724433" height="10" fill="#1572b6" rx="2" />
-  <rect x="465.6039543151817" y="60" width="6.298986600892437" height="10" fill="#3776ab" rx="2" />
-  <rect x="471.9029409160741" y="60" width="1.0177947454297191" height="10" fill="#012456" rx="2" />
+  <rect x="20" y="60" width="160.91214007464112" height="10" fill="#3776ab" rx="2" />
+  <rect x="180.91214007464112" y="60" width="91.58627800086786" height="10" fill="#ed8b00" rx="2" />
+  <rect x="272.498418075509" y="60" width="82.05522852320324" height="10" fill="#f7df1e" rx="2" />
+  <rect x="354.55364659871225" y="60" width="50.27974457764546" height="10" fill="#3178c6" rx="2" />
+  <rect x="404.83339117635774" y="60" width="31.279302335907243" height="10" fill="#3178c6" rx="2" />
+  <rect x="436.11269351226497" y="60" width="19.00883555771579" height="10" fill="#89e051" rx="2" />
+  <rect x="455.12152906998074" y="60" width="10.482495281575051" height="10" fill="#1572b6" rx="2" />
+  <rect x="465.6040243515558" y="60" width="6.298939649419793" height="10" fill="#3776ab" rx="2" />
+  <rect x="471.90296400097554" y="60" width="1.0177871589772982" height="10" fill="#012456" rx="2" />
   <circle cx="26.0" cy="96" r="5" fill="#3776ab" />
   <text x="38.0" y="100" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#c9d1d9">Python 35.37%</text>
   <circle cx="177.66666666666666" cy="96" r="5" fill="#ed8b00" />
