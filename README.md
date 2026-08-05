@@ -267,7 +267,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 #### INRAE - Research Engineer
 
-**Oct. 2018 – Dec. 2019 | Montpellier, France**
+**Oct. 2018 – Jan. 2020 | Montpellier, France**
 
 - Assisted researchers to efficiently share their data using a common vocabulary and structure for a cross-disciplinary agrivoltaics research project combining agriculture and photovoltaics
 - Contributed to an open-source information system to make research data FAIR (Findable, Accessible, Interoperable, and Reusable)
