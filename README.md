@@ -180,7 +180,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 - Implemented comprehensive test suite with 1500+ unit tests ensuring reliability and edge case coverage
 - Created extensive documentation and usage examples to facilitate developer adoption
 - Published on [PyPI](https://pypi.org/project/audiometa-python/) achieving 27k+ downloads, establishing it as a production-ready tool
-- Maintained active development with community contributions, issue tracking, and continuous improvements
+- Maintained active development with community contributions, issue tracking, and continuous improvements, using GitHub Flow for streamlined feature branching and continuous releases
 
 ##### 🖥️ [**AudioMeta Webapp**](https://themusictree.org/projects/audiometa-webapp)
 
@@ -196,7 +196,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 - Implemented Spotify and Google OAuth login to connect and analyze users' listening habits
 - Implementing community contribution system for submitting, validating, and curating genre data
 - Integrated with HearTheMusicTree/TheMusicTreeAPI, MusicBrainz, and Spotify for real-time genre data, intelligent recommendations, and music discovery
-- Tested with Vitest; shipped on **Vercel** ([grow.themusictree.org](https://grow.themusictree.org)), with CI (GitHub Actions) running lint/test/build on every PR and production deploys triggered by semver release tags
+- Tested with Vitest; shipped on **Vercel** ([grow.themusictree.org](https://grow.themusictree.org)), with CI (GitHub Actions) running lint/test/build on every PR and production deploys triggered by semver release tags, using GitFlow for branching and release management
 
 ##### 🔌 [**TheMusicTreeAPI**](https://github.com/BehindTheMusicTree/the-music-tree-api)
 
