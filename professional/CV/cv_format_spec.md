@@ -17,8 +17,8 @@ Given a job description in `professional/CV/Jobs/[job title]/` (typically `Job D
 
 3. **Validation step** - After generating cv.md:
    - Verify that all mentions of projects in the intro section and job experiences section have links in parentheses (format: `ProjectName (https://url.com)`)
-   - Verify that all bullet points in the job experiences section are approximately 95 characters in length (excluding project links in parentheses)
-   - Verify that the intro section is between 570 and 580 characters in length (excluding all project links in parentheses) and consists of 2 paragraphs
+   - Verify that all bullet points in the job experiences section are approximately 190 characters in length (excluding project links in parentheses)
+   - Verify that the intro section is between 760 and 773 characters in length (excluding all project links in parentheses) and consists of 2 paragraphs
    - **Important:** Project links in parentheses do not count toward character limits for validation purposes
    - Adjust any bullet points or intro section that do not meet these requirements
 
@@ -44,7 +44,7 @@ Format:
 - 2 paragraphs about your professional identity
 - Optional: Brief mention of key achievements
 
-**Important:** The intro section should be between 570 and 580 characters in length (excluding project links in parentheses). **All mentions of projects must include a link in parentheses** (format: `ProjectName (https://url.com)`). **Multiple projects can be mentioned, but only one link per project should be included** (priority order: website > PyPI > GitHub). The character count should be verified excluding all links in parentheses. Use real, flowing sentences, not fragmented bullet-style text.
+**Important:** The intro section should be between 760 and 773 characters in length (excluding project links in parentheses). **All mentions of projects must include a link in parentheses** (format: `ProjectName (https://url.com)`). **Multiple projects can be mentioned, but only one link per project should be included** (priority order: website > PyPI > GitHub). The character count should be verified excluding all links in parentheses. Use real, flowing sentences, not fragmented bullet-style text.
 
 **Best practice:** Write both paragraphs as full, narrative sentences with clear subject and verb (e.g. "Je construis…", "J'ai travaillé…"). Avoid a telegram-style or list-like second paragraph (e.g. chaining noun phrases or fragments separated only by periods). Prefer 1–2 complete sentences per paragraph that tell a short narrative.
 
@@ -99,7 +99,7 @@ Format:
 
 **Links:** After the job experiences section, include a "Links" subsection listing all URLs in the format: `Project/Company Name: https://url.com`
 
-**Important:** Each bullet point sentence should be approximately 95 characters in length (excluding project links in parentheses).
+**Important:** Each bullet point sentence should be approximately 190 characters in length (excluding project links in parentheses).
 
 Example:
 

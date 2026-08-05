@@ -8,9 +8,11 @@ garcia.andreas.1991@gmail.com · [ICON] LinkedIn · [ICON] GitHub · [ICON] Port
 
 ## Présentation
 
-Ingénieur full-stack diplômé de l'INSA Lyon, je conçois des applications métier sur base de données relationnelle avec un ORM, en Python/Django. J'ai aussi été consultant BI/ERP, configurant des progiciels ERP, spécifiant des interfaces critiques et animant des ateliers avec des référents métier de grands comptes.
+Ingénieur full-stack diplômé de l'INSA Lyon, je conçois des applications métier sur base de données relationnelle avec un ORM, en Python/Django. J'ai aussi été consultant BI/ERP, configurant des progiciels ERP, spécifiant des interfaces comptables critiques (SSIS/SQL Server) et animant des ateliers avec des référents métier de grands comptes (CA > 4 Md€).
 
-Sensible aux enjeux environnementaux, j'ai développé à l'INRAE pour OpenSILEX (https://opensilex.org/), système FAIR en agronomie, dans un projet de recherche agrivoltaïque. Je me suis aussi engagé en WWOOFing et en éco-construction, pour l'agriculture durable et le bâti écologique.
+Sensible aux enjeux environnementaux, j'ai développé à l'INRAE pour OpenSILEX (https://opensilex.org/), système FAIR en agronomie, pour un projet de recherche évaluant l'impact de dispositifs agrivoltaïques sur la croissance des plantes et les économies d'eau. Je me suis aussi engagé en WWOOFing et en éco-construction, pour l'agriculture durable et le bâti écologique.
+
+Depuis 2021, je fonde et développe TheMusicTree (https://themusictree.org), écosystème open source de cartographie des genres musicaux et de gestion de métadonnées audio, pour la préservation de la diversité musicale mondiale.
 
 ---
 
@@ -30,13 +32,12 @@ Déc. 2021 – Présent
 
 Développé des outils open source dont AudioMeta Python (https://pypi.org/project/audiometa-python/), bibliothèque de lecture/écriture de métadonnées audio multi-formats, 27k+ téléchargements PyPI, couverte par 1500+ tests unitaires.
 Développé GrowTheMusicTree (https://grow.themusictree.org), application web de crowdsourcing pour la cartographie des genres musicaux, en Next.js/React/TypeScript avec visualisation interactive D3.js.
-Conçu un pipeline ETL Python/Polars/PostgreSQL (https://github.com/BehindTheMusicTree/the-music-tree-pipelines) reconstruisant une hiérarchie de genres musicaux à partir de données MusicBrainz et Wikidata.
+Conçu pipeline ETL Python/Polars/Postgres recréant une hiérarchie de genres (racine → sous-genre → morceau) à partir du référentiel plat MusicBrainz, structurée via les relations de sous-classes Wikidata.
 
 **Liens :**
 TheMusicTree : https://themusictree.org
 AudioMeta Python : https://pypi.org/project/audiometa-python/
 GrowTheMusicTree : https://grow.themusictree.org
-the-music-tree-pipelines : https://github.com/BehindTheMusicTree/the-music-tree-pipelines
 
 ---
 
@@ -45,8 +46,8 @@ the-music-tree-pipelines : https://github.com/BehindTheMusicTree/the-music-tree-
 Oct. 2018 – Déc. 2019 | Montpellier
 
 Échangé avec des chercheurs pour traduire leurs besoins métier en modèles de données structurés, sous forme d'ontologies RDF exploitées via une base de données graphe.
-Contribué à un projet de recherche en agrivoltaïsme, alliant agriculture et photovoltaïque pour lutter contre le changement climatique.
-Collaboré en équipe Agile/SCRUM sur OpenSILEX (https://opensilex.org/), pratiquant la revue de code entre pairs.
+Contribué à un projet de recherche évaluant l'impact de dispositifs agrivoltaïques, en quantifiant la production d'énergie, la croissance des plantes et la consommation d'eau.
+Collaboré en équipe Agile/SCRUM sur OpenSILEX (https://opensilex.org/), système d'information open source rendant les données de recherche FAIR, contribuant au backend API REST et frontend, pratiquant la revue de code entre pairs.
 
 **Liens :**
 OpenSILEX : https://opensilex.org/
@@ -57,9 +58,9 @@ OpenSILEX : https://opensilex.org/
 
 Avr. 2015 – Oct. 2017 | Paris
 
-Spécifié et développé 62 interfaces comptables critiques, référent technique ETL sur un projet ERP.
-Animé des ateliers de spécification avec les référents métier d'un grand compte (CA > 4 Md€).
-Assuré la configuration du progiciel ERP et les transferts de données via SSIS et SQL Server.
+Spécifié et développé 62 interfaces comptables critiques (scripts SQL complexes), référent technique ETL sur un projet ERP.
+Animé des ateliers de spécification technico-fonctionnels avec les référents métier d'un grand compte (CA > 4 Md€), en les formant sur les outils ETL.
+Piloté les transferts de données vers les entrepôts BI via SSIS et SQL Server, pour des clients grands comptes (retail, restauration ferroviaire, mode), jusqu'aux tableaux de bord Tableau, pour un reporting fiable.
 
 ---
 
