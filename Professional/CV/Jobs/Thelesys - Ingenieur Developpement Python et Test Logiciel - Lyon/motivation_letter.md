@@ -1,0 +1,14 @@
+Madame, Monsieur,
+
+C'est avec un vif intérêt que je vous soumets ma candidature au poste d'Ingénieur Développement Python et Test Logiciel Pytest chez Thelesys, à Lyon. Rejoindre un programme R&D dédié au développement de nouvelles fonctionnalités embarquées et applicatives pour le transport ferroviaire est une perspective qui m'enthousiasme particulièrement, à la croisée de mon goût pour les environnements techniques exigeants et de ma pratique quotidienne du test logiciel.
+
+Votre annonce recherche un ingénieur combinant développement Python et forte pratique de Pytest, capable de définir un environnement de test et sa procédure, d'automatiser les tests et d'analyser les résultats en environnement virtualisé et conteneurisé. C'est précisément la culture que j'ai développée sur TheMusicTree : j'ai construit AudioMeta Python, bibliothèque couverte par plus de 1 500 tests unitaires pytest et téléchargée plus de 27 000 fois sur PyPI, ainsi que HearTheMusicTree, une API Django REST Framework couverte par plus de 1 100 tests automatisés exécutés en CI GitHub Actions sur une stack Docker Compose. Sur TheMusicTreePipelines, j'ai structuré une suite pytest à trois niveaux (unitaire, e2e, intégration) imposant un seuil de couverture combinée de 90%, avec des tests d'intégration exécutés contre une base de données réelle. Cette discipline de test et d'automatisation en environnement conteneurisé, associée à mon expérience du travail en équipe projet Agile, correspond directement aux missions que vous décrivez, et je serais heureux de la mettre au service d'applications ferroviaires aux exigences de fiabilité élevées.
+
+Le secteur industriel n'est pas un terrain nouveau pour moi : chez Cleversys (racheté par Deloitte), j'ai été point de contact technique sur un projet ERP pour un client de plus de 4 milliards d'euros de chiffre d'affaires incluant une activité de restauration ferroviaire, animant des ateliers de spécification technico-fonctionnelle et rédigeant guides de développement et procédures de déploiement — une rigueur documentaire que je retrouve dans les exigences de votre poste. Chez INRAE, j'ai contribué en équipe Agile/SCRUM à OpenSILEX, système d'information open source pour la recherche, ce qui m'a habitué à la revue de code entre pairs et à la collaboration technique exigeante. J'apprécie particulièrement l'engagement de Thelesys pour la Transition Environnementale, un sujet auquel je suis moi-même attaché : je surveille l'empreinte carbone de chaque application que je développe sur TheMusicTree et je me suis investi dans des projets d'agriculture durable (WWOOFing, éco-construction).
+
+Je serais ravi d'échanger avec vous sur la manière dont mon profil peut contribuer à vos projets ferroviaires. Je reste disponible pour un entretien à votre convenance.
+
+Dans l'attente de votre retour, veuillez agréer, Madame, Monsieur, l'expression de mes sincères salutations.
+
+Andreas Garcia
+garcia.andreas.1991@gmail.com
