@@ -37,7 +37,7 @@ Core strengths:
 - Front‑end engineering — React (3+ years), Next.js (2+ years), TypeScript (3+ years), Vercel, D3.js, MapLibre GL.
   Skilled at building fast, accessible, and elegant interfaces, with a strong sense of product design and user experience.
 
-- Backend systems — Python (4+ years), Django REST Framework (4+ years), Flask, Node.js/NestJS (1+ year), PostgreSQL (5+ years).
+- Backend systems — Python (4+ years), Django REST Framework (4+ years), Flask, Node.js/NestJS (1+ year), PostgreSQL (5+ years), `uv` for dependency management.
   Experienced in designing robust APIs, distributed services, and scalable backend architectures aligned with business needs.
 
 - DevOps & automation — Docker Compose, CI/CD pipelines, GitFlow, Ansible, Vercel, observability with Loki & Grafana.
@@ -136,6 +136,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 ![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
 ![mypy](https://img.shields.io/badge/mypy-000000?style=flat-square&logo=python&logoColor=white)
 ![ruff](https://img.shields.io/badge/ruff-000000?style=flat-square&logo=ruff&logoColor=white)
+![pre-commit](https://img.shields.io/badge/pre--commit-FAB040?style=flat-square&logo=pre-commit&logoColor=black)
 
 #### Methodologies
 
@@ -181,6 +182,8 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 - Created extensive documentation and usage examples to facilitate developer adoption
 - Published on [PyPI](https://pypi.org/project/audiometa-python/) achieving 27k+ downloads, establishing it as a production-ready tool
 - Maintained active development with community contributions, issue tracking, and continuous improvements, using GitHub Flow for streamlined feature branching and continuous releases
+- Enforced code quality with Ruff (lint + format) and mypy (strict typing) via pre-commit hooks and CI, including custom checks (banned `assert` in production code, pinned tool-version verification)
+- Managed dependencies and packaging with `uv`, using a locked `uv.lock` for reproducible builds and PyPI releases
 
 ##### 🖥️ [**AudioMeta Webapp**](https://themusictree.org/projects/audiometa-webapp)
 
@@ -206,6 +209,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 - Implemented advanced genre detection algorithms leveraging machine learning and music analysis
 - Ensured API scalability, security, and performance through comprehensive testing and monitoring
 - Deployed with Docker containerization and automated CI/CD pipelines using GitHub Actions
+- Managed dependencies with `uv`, replacing pip/requirements.txt with a locked `uv.lock` for reproducible installs in dev and CI
 
 ##### 🧬 [**TheMusicTreePipelines**](https://github.com/BehindTheMusicTree/the-music-tree-pipelines)
 
@@ -222,12 +226,15 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 - Implemented smart playlist generation algorithms based on genre and tag intelligence
 - Implemented microservices architecture with audio fingerprinting (Chromaprint/AcoustID) via a Dockerized Flask API, integrated with MusicBrainz for automatic track identification and metadata enrichment
 - Covered by 1,100+ automated tests (pytest) run in CI via GitHub Actions on a Dockerized Compose stack (API + PostgreSQL + fingerprinting service)
+- Enforced code quality with Ruff and mypy (django-stubs) against a shared baseline config, via pre-commit hooks and CI, including custom checks (banned `assert`, StrEnum preference, actionlint)
+- Managed dependencies with `uv` and a locked `uv.lock`, shared across the repo's dev toolchain for reproducible installs
 
 ##### 🔬 [**Audio Fingerprinter**](https://github.com/BehindTheMusicTree/audio-fingerprinter)
 
 - Delivered a production Flask microservice exposing `/fingerprint-audio` to generate Chromaprint (fpcalc) fingerprints and duration
 - Implemented robust validation and structured error handling for invalid files, wrong formats, and short/corrupted audio
 - Containerized deployment with Docker + Gunicorn, health checks, runtime env validation, and CI publish workflow
+- Managed dependencies with `uv` for reproducible, faster container builds
 
 ##### 🎮 [**The Music Deck**](https://deck-showcase.themusictree.org/)
 
