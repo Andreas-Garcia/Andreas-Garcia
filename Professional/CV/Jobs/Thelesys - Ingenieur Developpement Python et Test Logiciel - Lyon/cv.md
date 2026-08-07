@@ -10,15 +10,15 @@ garcia.andreas.1991@gmail.com · +33 7 70 31 81 05 · [ICON] LinkedIn · [ICON] 
 
 Ingénieur logiciel avec une solide expérience en développement Python et tests automatisés, je conçois des API REST robustes avec Django REST Framework et je couvre systématiquement mon code par des suites de tests approfondies avec pytest, comme les plus de 1 500 tests unitaires d'AudioMeta Python (https://pypi.org/project/audiometa-python/), bibliothèque téléchargée plus de 27 000 fois sur PyPI et adoptée en production.
 
-Je travaille au quotidien dans des environnements virtualisés et conteneurisés avec Docker, en appliquant une culture d'automatisation rigoureuse : définition de procédures de test fonctionnel et d'intégration, intégration continue via GitHub Actions, analyse des résultats et documentation technique pour garantir la fiabilité des applications que je développe au sein d'équipes projet Agile.
+Je travaille au quotidien dans des environnements conteneurisés avec Docker Compose, en appliquant une culture d'automatisation rigoureuse : suites pytest structurées en paliers unitaires, e2e et intégration, avec un seuil de couverture de 90%, intégration continue via GitHub Actions, et documentation technique, pour garantir la fiabilité des applications, au sein d'équipes Agile/SCRUM.
 
 ---
 
 ## Compétences
 
-**Techniques :** Python, pytest, Django REST Framework, Docker, Docker Compose, API REST, PostgreSQL, CI/CD, GitHub Actions
+**Techniques :** Python, pytest, Django REST Framework, Docker Compose, PostgreSQL, CI/CD, GitHub Actions
 
-**Workflow :** Tests automatisés, Automatisation de tests, Analyse fonctionnelle, Documentation technique, Agile/SCRUM, GitFlow, Revues de code, Qualité logicielle
+**Workflow :** Tests automatisés, Analyse fonctionnelle, Documentation technique, Agile/SCRUM, GitFlow, Revues de code, Qualité logicielle, pre-commit
 
 ---
 
@@ -30,7 +30,7 @@ Déc. 2021 – Présent
 
 Développé AudioMeta Python (https://pypi.org/project/audiometa-python/), bibliothèque testée par plus de 1 500 tests unitaires (pytest), publiée sur PyPI avec plus de 27 000 téléchargements et une documentation technique complète.
 Développé HearTheMusicTree (https://hear-api.themusictree.org/docs/, wip), API Django REST Framework couverte par plus de 1 100 tests automatisés (pytest) exécutés en CI (GitHub Actions) sur une stack Docker Compose conteneurisée.
-Structuré TheMusicTreePipelines (https://github.com/BehindTheMusicTree/the-music-tree-pipelines) en monorepo uv avec Ruff et pytest (tests unitaires, e2e, intégration), imposant un seuil de couverture combinée de 90% sur chaque pipeline.
+Structuré TheMusicTreePipelines (https://github.com/BehindTheMusicTree/the-music-tree-pipelines) en monorepo uv avec Ruff, mypy et pytest (tests unitaires, e2e, intégration), imposant un seuil de couverture combinée de 90%, avec hooks pre-commit en CI.
 
 **Liens :**
 AudioMeta Python : https://pypi.org/project/audiometa-python/
