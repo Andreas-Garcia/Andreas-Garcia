@@ -10,13 +10,13 @@ garcia.andreas.1991@gmail.com · +33 7 70 31 81 05 · [ICON] LinkedIn · [ICON] 
 
 Ingénieur logiciel avec une solide expérience en développement Python et tests automatisés, je conçois des API REST robustes avec Django REST Framework et je couvre systématiquement mon code par des suites de tests approfondies avec pytest, comme les plus de 1 500 tests unitaires d'AudioMeta Python (https://pypi.org/project/audiometa-python/), bibliothèque téléchargée plus de 27 000 fois sur PyPI et adoptée en production.
 
-Je travaille au quotidien dans des environnements conteneurisés avec Docker Compose, en appliquant une culture d'automatisation rigoureuse : suites pytest structurées en paliers unitaires, e2e et intégration, avec un seuil de couverture de 90%, intégration continue via GitHub Actions, et documentation technique, pour garantir la fiabilité des applications, au sein d'équipes Agile/SCRUM.
+Je travaille au quotidien dans des environnements conteneurisés avec Docker Compose, en appliquant une culture d'automatisation rigoureuse : suites pytest structurées en paliers unitaires, e2e et intégration, avec un seuil de couverture de 90%, intégration continue via GitHub Actions, et documentation technique, pour garantir la fiabilité des applications que je développe et maintiens seul.
 
 ---
 
 ## Compétences
 
-**Techniques :** Python, pytest, Django REST Framework, Docker Compose, PostgreSQL, CI/CD, GitHub Actions
+**Techniques :** Python, pytest-cov, Django REST Framework, Docker Compose, PostgreSQL, CI/CD, GitHub Actions
 
 **Workflow :** Tests automatisés, Analyse fonctionnelle, Documentation technique, Agile/SCRUM, GitFlow, Revues de code, Qualité logicielle, pre-commit
 
