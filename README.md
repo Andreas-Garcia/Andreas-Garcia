@@ -215,14 +215,14 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 - Building a Python/Polars/Postgres ETL pipeline reconstructing a genre hierarchy (root genre → subgenre → recording) from MusicBrainz's flat genre list, using Wikidata's subclass/genre relations as a reference taxonomy
 - Built the bronze layer (raw MusicBrainz tables ingested to Parquet via Polars, queryable directly with DuckDB); designing the silver layer (`recording_genre`, `genre_hierarchy`, `recording_genre_path`) on top of it
-- Structured as a `uv` workspace monorepo (one pipeline per source/target data product, shared lockfile and dev toolchain), with Ruff, pytest (unit/e2e/integration tiers) enforcing a 90% combined coverage threshold, and `actionlint` enforced via pre-commit and CI
+- Structured as a `uv` workspace monorepo (one pipeline per source/target data product, shared lockfile and dev toolchain), with Ruff, pytest (unit/e2e/integration tiers) and `pytest-cov` enforcing a 90% combined coverage threshold, and `actionlint` enforced via pre-commit and CI
 - Integration-tested against a real MusicBrainz Postgres sample dataset, loaded via a vendored `musicbrainz-docker` submodule and cached in CI
 - Publishes an independent dataset intended for ingestion by TheMusicTreeAPI, the ecosystem's authoritative genre reference
 
 ##### 🎧 HearTheMusicTree
 
 - Developing cloud-based music library manager using Django REST Framework and PostgreSQL, exposing 80+ REST endpoints (library, metadata, genres, tags, playlists, search) documented via OpenAPI/Swagger
-- Implemented JWT authentication with Spotify and Google OAuth login
+- Implemented Bearer JWT authentication (`djangorestframework-simplejwt`, short-lived access + refresh tokens) issued after Google/Spotify OAuth authorization-code exchange, with accounts matched by email
 - Implemented smart playlist generation algorithms based on genre and tag intelligence
 - Implemented microservices architecture with audio fingerprinting (Chromaprint/AcoustID) via a Dockerized Flask API, integrated with MusicBrainz for automatic track identification and metadata enrichment
 - Covered by 1,100+ automated tests (pytest) run in CI via GitHub Actions on a Dockerized Compose stack (API + PostgreSQL + fingerprinting service)
