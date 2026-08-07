@@ -6,7 +6,7 @@ I design RESTful APIs and PostgreSQL schemas with Django REST Framework, and bui
 
 ## Skills
 
-Techniques: Python, Django REST Framework, PostgreSQL, RESTful APIs, React, TypeScript, React Native, Docker, CI/CD
+Techniques: Python, Django REST Framework, PostgreSQL, RESTful APIs, JWT, OAuth, React, TypeScript, React Native, Docker, CI/CD
 
 Workflow: GitFlow, Clean Code, Unit Testing, Agile/SCRUM, Code Reviews, Continuous Deployment
 
@@ -16,13 +16,14 @@ Workflow: GitFlow, Clean Code, Unit Testing, Agile/SCRUM, Code Reviews, Continuo
 
 Dec. 2021 – Present
 
-Built RESTful APIs with Django REST Framework and PostgreSQL for TheMusicTreeAPI (https://github.com/BehindTheMusicTree/the-music-tree-api), including machine-learning-based genre detection and query-optimized schemas.
+Built RESTful APIs with Django REST Framework and PostgreSQL for TheMusicTreeAPI (https://github.com/BehindTheMusicTree/the-music-tree-api) and HearTheMusicTree (https://hear-api.themusictree.org/docs/, wip), securing endpoints with Bearer JWT issued after Google/Spotify OAuth.
 Built responsive web UIs with React, TypeScript and Tailwind CSS for GrowTheMusicTree (https://grow.themusictree.org/), with OAuth login, and a cross-platform game with React Native/Expo, The Music Deck (https://github.com/BehindTheMusicTree/the-music-deck).
 Published AudioMeta Python (https://pypi.org/project/audiometa-python/), a library backed by 1500+ automated tests with 27k+ PyPI downloads, and deployed CI/CD pipelines with Docker and GitHub Actions across the stack.
 
 Links:
 TheMusicTree: https://github.com/BehindTheMusicTree
 TheMusicTreeAPI: https://github.com/BehindTheMusicTree/the-music-tree-api
+HearTheMusicTree: https://hear-api.themusictree.org/docs/
 GrowTheMusicTree: https://grow.themusictree.org/
 The Music Deck: https://github.com/BehindTheMusicTree/the-music-deck
 AudioMeta Python: https://pypi.org/project/audiometa-python/
