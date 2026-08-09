@@ -51,3 +51,24 @@ Nice-to-Haves
 
 Experience with AWS (ECS/EKS), Docker.
 Familiarity with Generative AI and LLMs
+
+## Company Description
+
+Effvision (also branded EfficientVision) is a global technology consulting and software development company that helps organizations accelerate digital transformation through custom software, cloud services, AI, CRM, and managed IT solutions. It positions itself as an end-to-end technology partner, providing strategy, implementation, and ongoing support.
+
+Its main service areas include:
+
+- Custom software and web application development
+- AI-powered data analytics and business intelligence
+- CRM integration and management
+- Microsoft technologies and cloud solutions
+- IT consulting and managed services
+- Digital marketing and customer experience solutions
+- Healthcare and pharmaceutical digital solutions
+
+According to the company, it has:
+
+- Over 10 years of experience
+- More than 200 projects delivered
+- A 95% client rehire rate
+- Multiple delivery centers serving customers globally
