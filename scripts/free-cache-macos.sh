@@ -33,7 +33,9 @@ get_size() {
 # Function to get directory size in bytes (for calculation)
 get_size_bytes() {
     if [ -d "$1" ]; then
-        du -sk "$1" 2>/dev/null | awk '{print $1}'
+        local size
+        size=$(du -sk "$1" 2>/dev/null | awk '{print $1}')
+        echo "${size:-0}"
     else
         echo "0"
     fi
