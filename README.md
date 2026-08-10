@@ -171,8 +171,8 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 **Dec. 2021 – Present | Paris, France**
 
 - Defined the vision, mission, and strategic direction of the company to guide product development
-- Programme d'entrepreneuriat de 3 mois. 9 ateliers sur la stratégie, le juridique, le financement et la propriété intellectuelle
-- Développé un plan d'affaires. Réalisé des études de marché et créé des personas utilisateurs
+- Programme d'entrepreneuriat de 3 mois avec suivi individualisé. 9 ateliers sur la stratégie, le juridique, le financement et la propriété intellectuelle
+- Réalisé des études de marché et créé des personas utilisateurs ; travail sur un plan d'affaires non abouti
 - Monitored the carbon footprint of all TheMusicTree web apps using [Website Carbon](https://www.websitecarbon.co)
 
 ##### 🎵 [**AudioMeta Python**](https://github.com/BehindTheMusicTree/audiometa)
