@@ -168,7 +168,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 #### [TheMusicTree](https://themusictree.org) - Founder & Lead Developer
 
-**Dec. 2021 – Present**
+**Dec. 2021 – Present | Paris, France**
 
 - Defined the vision, mission, and strategic direction of the company to guide product development
 - Programme d'entrepreneuriat de 3 mois. 9 ateliers sur la stratégie, le juridique, le financement et la propriété intellectuelle
@@ -207,7 +207,6 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 - Developed PostgreSQL database schema optimized for efficient storage and querying of genre relationships
 - Integrated external APIs (Spotify, MusicBrainz) to enrich metadata and enhance user experience
 - Implemented advanced genre detection algorithms leveraging machine learning and music analysis
-- Ensured API scalability, security, and performance through comprehensive testing and monitoring
 - Deployed with Docker containerization and automated CI/CD pipelines using GitHub Actions
 - Managed dependencies with `uv`, replacing pip/requirements.txt with a locked `uv.lock` for reproducible installs in dev and CI
 
