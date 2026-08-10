@@ -283,9 +283,9 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 - Added event handling in PHP 7 (Yii2 framework) and JavaScript on the website layer (three-tier architecture) using API calls
 - Worked on topics I remain passionate about: climate change mitigation and open science
 
-#### Cleversys (acquired by Deloitte) - BI/ERP Consultant
+#### Cleversys → Deloitte - BI/ERP Consultant
 
-**Apr. 2015 – Oct. 2017 | Paris**
+**Apr. 2015 – Oct. 2017 | Paris** (1 year at Cleversys, then 1.5 years at Deloitte following its acquisition of Cleversys)
 
 - Collaborated at every stage of BI projects for clients including a major retail chain, a rail catering services company, and a fashion retailer, from conception (client exchanges) to completion (dashboard presentations in Tableau), in addition to managing data transfers in data warehouses with SSIS and SQL Server
 - Technical development on an ERP migration project as an ETL expert, specifying and implementing 62 critical accounting interfaces as complex SQL scripts
