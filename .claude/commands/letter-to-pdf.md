@@ -22,7 +22,7 @@ Resolve `$ARGUMENTS` to a job folder under `Professional/CV/Jobs/`. Find the mot
 Transform the letter's body into an HTML file with:
 
 - **Sender block** (top-right): name (bold), phone, email as a `mailto:` link.
-- **Date line**: "Paris, le [today's date in French, e.g. 29 juillet 2026]".
+- **Date line**: "Névez, le [today's date in French, e.g. 29 juillet 2026]". Always Névez, never Paris or any other city.
 - **Object line** (bold): "Objet : Candidature au poste de [role] — [company/organization]".
 - **Greeting**: "Madame, Monsieur," by default. If the job description names a specific recruiter and their apparent gender is unambiguous from the name/title, use "Madame [Nom]," or "Monsieur [Nom]," instead — never guess when ambiguous.
 - **Body**: one `<p>` per source paragraph, justified text.
