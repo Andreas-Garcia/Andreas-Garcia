@@ -141,6 +141,14 @@ if command -v pip &> /dev/null; then
     echo ""
 fi
 
+# uv cache (if exists)
+if command -v uv &> /dev/null; then
+    echo -e "${YELLOW}Clearing: uv cache${NC}"
+    uv cache clean 2>/dev/null || true
+    echo -e "${GREEN}  ✓ uv cache cleared${NC}"
+    echo ""
+fi
+
 # pnpm store (if exists) — only removes packages no longer referenced by any
 # project's lockfile; worst case is a slower re-download on next install, no data loss
 if command -v pnpm &> /dev/null; then
