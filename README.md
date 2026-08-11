@@ -451,7 +451,7 @@ For **AudioMeta Python**, see the [Contributing Guidelines](https://github.com/A
 
 - 💼 **LinkedIn**: [Connect on LinkedIn](https://www.linkedin.com/in/andreas-garcia/)
 - 🎵 **TheMusicTree**: [/themusictree.org] (https://themusictree.org) · [GitHub organization](https://github.com/BehindTheMusicTree)
-- 📧 **Email**: garcia.andreas.1991@gmail.com
+- 📧 **Email**: andreas.garcia@themusictree.org
 - 🐛 **Issues**: [Report bugs or suggest features](https://github.com/Andreas-Garcia/audiometa/issues)
 - 💬 **Discussions**: [Join the conversation](https://github.com/Andreas-Garcia/audiometa/discussions)
 
