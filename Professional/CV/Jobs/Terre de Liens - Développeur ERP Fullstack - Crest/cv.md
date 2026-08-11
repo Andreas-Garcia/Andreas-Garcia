@@ -47,7 +47,7 @@ GrowTheMusicTree : https://grow.themusictree.org
 Oct. 2018 – Déc. 2019 | Montpellier
 
 Échangé avec des chercheurs pour traduire leurs besoins métier en modèles de données structurés, sous forme d'ontologies RDF exploitées via une base de données graphe.
-Contribué à un projet de recherche évaluant l'impact de dispositifs agrivoltaïques, en quantifiant la production d'énergie, la croissance des plantes et la consommation d'eau.
+Contribué à un projet de recherche évaluant l'impact de dispositifs agrivoltaïques sur la production d'énergie, la croissance des plantes et la consommation d'eau.
 Collaboré en équipe Agile/SCRUM sur OpenSILEX (https://opensilex.org/), système d'information open source rendant les données de recherche FAIR, contribuant au backend API REST et frontend, pratiquant la revue de code entre pairs.
 
 **Liens :**
