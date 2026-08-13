@@ -8,7 +8,7 @@ set -e
 # Claude Code conversation transcripts (*.jsonl) older than this are proposed for
 # deletion in the final alert below (opt-in, never automatic). Only the transcript
 # files are targeted — memory notes (memory/*.md) are untouched either way.
-CLAUDE_CONV_PURGE_DAYS=7
+CLAUDE_CONV_PURGE_DAYS=21
 
 # Running total of space actually freed (KB), tracked per-operation rather than
 # inferred from a before/after `df` snapshot — `df` on APFS is unreliable for this
