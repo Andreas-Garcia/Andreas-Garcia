@@ -8,7 +8,7 @@ garcia.andreas.1991@gmail.com · [ICON] LinkedIn · [ICON] GitHub · [ICON] Port
 
 ## Introduction
 
-Full-stack engineer with a strong backend background in Python and Django REST Framework, I design and maintain robust, well-tested APIs and services for production systems. I have experience building RESTful APIs backed by PostgreSQL, writing comprehensive unit test suites, and collaborating with front-end and plugin developers to deliver features on schedule.
+Backend engineer with a strong background in Python and Django REST Framework, I design and maintain robust, well-tested APIs and services for production systems. I have experience building RESTful APIs backed by PostgreSQL and writing comprehensive unit test suites. I am drawn to projects with societal impact, in culture, social causes, or the environment.
 
 I founded TheMusicTree (https://themusictree.org), where I built HearTheMusicTree, a Django REST API exposing 80+ endpoints backed by PostgreSQL and covered by 1,100+ automated tests, and AudioMeta Python (https://pypi.org/project/audiometa-python/), a library published on PyPI with 27k+ downloads. I also contributed to OpenSILEX (https://opensilex.org/), an open-source research data platform, developing REST services and improving relational data structures within a SCRUM team.
 
@@ -16,9 +16,9 @@ I founded TheMusicTree (https://themusictree.org), where I built HearTheMusicTre
 
 ## Skills
 
-**Techniques:** Python, Django REST Framework, REST API, GraphQL, PostgreSQL, Docker, CI/CD, Git, pytest
+**Techniques:** Python, Django REST Framework, REST API, PostgreSQL, Docker, CI/CD, Git, pytest
 
-**Workflow:** GitFlow, Test Driven Development, Agile/SCRUM, Code Review, Documentation, Bug Fixing
+**Workflow:** GitFlow, Test Driven Development, Agile/SCRUM, Code Review, Documentation
 
 ---
 
