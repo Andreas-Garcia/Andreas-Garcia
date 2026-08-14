@@ -181,7 +181,8 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 - **Technical:**
   - Frontend:
     - Next.js 15 (App Router), TypeScript, Tailwind CSS, React
-    - Extracted the interactive **D3.js** genre-tree visualization and shared transport/auth/player/UI plumbing into standalone published packages (`@behindthemusictree/genre-tree-view`, `@behindthemusictree/app-kit`), now consumed by the app itself
+    - Interactive **D3.js** genre-tree visualization, published as a standalone package (`@behindthemusictree/genre-tree-view`) and consumed by the app
+    - Shared transport/auth/player/UI plumbing, published as a standalone package (`@behindthemusictree/app-kit`) and consumed by the app
     - Tested with Vitest
     - Shipped on **Vercel** ([grow.themusictree.org](https://grow.themusictree.org)), with CI (GitHub Actions) running lint/test/build on every PR and production deploys triggered by semver release tags, using GitFlow for branching and release management
   - Backend: Django REST Framework, PostgreSQL, consuming the shared genre/tag package to serve genre-tree data to the frontend
@@ -199,12 +200,13 @@ I’m driven by real-world impact—building tools that are well-tested, documen
   - Backend:
     - Django REST Framework and PostgreSQL, exposing 80+ REST endpoints (library, metadata, genres, tags, playlists, search) documented via OpenAPI/Swagger
     - Bearer JWT authentication (`djangorestframework-simplejwt`, short-lived access + refresh tokens) issued after OAuth authorization-code exchange
-    - Refactored to extract generic HTTP-layer infrastructure (pagination, filtering, permissions, viewsets, error handling) and genre/tag/criteria domain logic into two shared Django packages — see [Shared Packages](#-shared-packages) below
+    - Generic HTTP-layer infrastructure (pagination, filtering, permissions, viewsets, error handling) lives in a shared Django package — see [Shared Packages](#-shared-packages) below
+    - Genre/tag/criteria domain logic lives in a shared Django package — see [Shared Packages](#-shared-packages) below
     - Microservices architecture with the fingerprinting service running as a Dockerized Flask API
     - Covered by 1,100+ automated tests (pytest) run in CI via GitHub Actions on a Dockerized Compose stack (API + PostgreSQL + fingerprinting service)
     - Code quality enforced with Ruff and mypy (django-stubs) against a shared baseline config, via pre-commit hooks and CI, including custom checks (banned `assert`, StrEnum preference, actionlint)
     - Dependencies managed with `uv` and a locked `uv.lock`, shared across the repo's dev toolchain for reproducible installs
-    - Deployment migrated to self-hosted **Coolify**
+    - Deployed to self-hosted **Coolify**
 
 ##### 🎵 [**AudioMeta Python**](https://github.com/BehindTheMusicTree/audiometa)
 
@@ -258,8 +260,10 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 ##### 📦 Shared Packages
 
-- Extracted generic HTTP-layer Django infrastructure (pagination, filtering, permissions, viewsets, error handling) and genre/tag/criteria domain logic out of HearTheMusicTree's API into two installable packages, [`the-music-tree-api-kit`](https://github.com/BehindTheMusicTree/the-music-tree-api-kit) and [`the-music-tree-genre-kit`](https://github.com/BehindTheMusicTree/the-music-tree-genre-kit), now consumed by both HearTheMusicTree and GrowTheMusicTreeAPI
-- Extracted GrowTheMusicTree's D3 genre-tree visualization and shared transport/auth/player/UI plumbing into two published TypeScript packages, [`@behindthemusictree/genre-tree-view`](https://github.com/BehindTheMusicTree/genre-tree-view) and [`@behindthemusictree/app-kit`](https://github.com/BehindTheMusicTree/app-kit), now consumed by both GrowTheMusicTree and HearTheMusicTree frontends
+- Generic HTTP-layer Django infrastructure (pagination, filtering, permissions, viewsets, error handling), packaged as [`the-music-tree-api-kit`](https://github.com/BehindTheMusicTree/the-music-tree-api-kit), consumed by both HearTheMusicTree and GrowTheMusicTreeAPI
+- Genre/tag/criteria domain logic, packaged as [`the-music-tree-genre-kit`](https://github.com/BehindTheMusicTree/the-music-tree-genre-kit), consumed by both HearTheMusicTree and GrowTheMusicTreeAPI
+- GrowTheMusicTree's D3 genre-tree visualization, published as [`@behindthemusictree/genre-tree-view`](https://github.com/BehindTheMusicTree/genre-tree-view), consumed by GrowTheMusicTree
+- Shared transport/auth/player/UI plumbing, published as [`@behindthemusictree/app-kit`](https://github.com/BehindTheMusicTree/app-kit), consumed by both GrowTheMusicTree and HearTheMusicTree frontends
 - Maintaining [`@behindthemusictree/brand`](https://github.com/BehindTheMusicTree/the-music-tree-brand), a shared design-token/asset package (colors, components, marks) consumed across all TheMusicTree React apps
 - Extracting a design-system-only `@behindthemusictree/ui` package (Button, Input, Table, Pagination, and other primitives) out of app-kit for independent versioning (in progress)
 
