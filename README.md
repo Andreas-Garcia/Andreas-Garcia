@@ -173,58 +173,73 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 ##### 🌳 [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree-frontend)
 
-- Building a collaborative platform for music genre classification using Next.js 15 (App Router), TypeScript, Tailwind CSS, and React
-- **Frontend:**
-  - Implemented Spotify and Google OAuth login to connect and analyze users' listening habits
-  - Implementing community contribution system for submitting, validating, and curating genre data
-  - Redesigned the audio player as a minimal "now playing" strip and added a TheMusicTree footer badge
-  - Extracted the interactive **D3.js** genre-tree visualization and shared transport/auth/player/UI plumbing into standalone published packages (`@behindthemusictree/genre-tree-view`, `@behindthemusictree/app-kit`), now consumed by the app itself
-  - Tested with Vitest; shipped on **Vercel** ([grow.themusictree.org](https://grow.themusictree.org)), with CI (GitHub Actions) running lint/test/build on every PR and production deploys triggered by semver release tags, using GitFlow for branching and release management
-- **Backend** ([**GrowTheMusicTreeAPI**](https://github.com/BehindTheMusicTree/grow-the-music-tree-api) — Django REST Framework, PostgreSQL):
-  - Built a companion reference API, consuming the shared genre/tag package to serve genre-tree data to the frontend
-  - Integrated with HearTheMusicTree, MusicBrainz, and Spotify for real-time genre data, intelligent recommendations, and music discovery
+- Building a collaborative platform for music genre classification, backed by a companion reference API, [**GrowTheMusicTreeAPI**](https://github.com/BehindTheMusicTree/grow-the-music-tree-api)
+- **Features:**
+  - Spotify and Google OAuth login to connect and analyze users' listening habits
+  - Community contribution system for submitting, validating, and curating genre data (in progress)
+  - Built-in audio player to listen while exploring the genre tree
+- **Technical:**
+  - Frontend:
+    - Next.js 15 (App Router), TypeScript, Tailwind CSS, React
+    - Extracted the interactive **D3.js** genre-tree visualization and shared transport/auth/player/UI plumbing into standalone published packages (`@behindthemusictree/genre-tree-view`, `@behindthemusictree/app-kit`), now consumed by the app itself
+    - Tested with Vitest
+    - Shipped on **Vercel** ([grow.themusictree.org](https://grow.themusictree.org)), with CI (GitHub Actions) running lint/test/build on every PR and production deploys triggered by semver release tags, using GitFlow for branching and release management
+  - Backend: Django REST Framework, PostgreSQL, consuming the shared genre/tag package to serve genre-tree data to the frontend
 
 ##### 🎧 [**HearTheMusicTree**](https://github.com/BehindTheMusicTree/hear-the-music-tree-api)
 
-- Developing cloud-based music library manager using Django REST Framework and PostgreSQL
-- **Frontend** ([hear-the-music-tree-frontend](https://github.com/BehindTheMusicTree/hear-the-music-tree-frontend)):
-  - Consuming the shared `@behindthemusictree/app-kit` package and TheMusicTree brand theme tokens
-- **Backend:**
-  - Exposing 80+ REST endpoints (library, metadata, genres, tags, playlists, search) documented via OpenAPI/Swagger
-  - Refactored to extract generic HTTP-layer infrastructure (pagination, filtering, permissions, viewsets, error handling) and genre/tag/criteria domain logic into two shared Django packages — see [Shared Packages](#-shared-packages) below
-  - Implemented Bearer JWT authentication (`djangorestframework-simplejwt`, short-lived access + refresh tokens) issued after Google/Spotify OAuth authorization-code exchange, with accounts matched by email
-  - Implemented smart playlist generation algorithms based on genre and tag intelligence
-  - Implemented microservices architecture with audio fingerprinting (Chromaprint/AcoustID) via a Dockerized Flask API, integrated with MusicBrainz for automatic track identification and metadata enrichment
-  - Covered by 1,100+ automated tests (pytest) run in CI via GitHub Actions on a Dockerized Compose stack (API + PostgreSQL + fingerprinting service)
-  - Enforced code quality with Ruff and mypy (django-stubs) against a shared baseline config, via pre-commit hooks and CI, including custom checks (banned `assert`, StrEnum preference, actionlint)
-  - Managed dependencies with `uv` and a locked `uv.lock`, shared across the repo's dev toolchain for reproducible installs
-  - Migrated deployment to self-hosted **Coolify**
+- Developing a cloud-based music library manager, with a companion Next.js frontend, [hear-the-music-tree-frontend](https://github.com/BehindTheMusicTree/hear-the-music-tree-frontend)
+- **Features:**
+  - Google/Spotify OAuth login, with accounts matched by email
+  - Smart playlist generation algorithms based on genre and tag intelligence
+  - Automatic track identification and metadata enrichment via audio fingerprinting (Chromaprint/AcoustID), integrated with MusicBrainz
+  - In-app audio player
+- **Technical:**
+  - Frontend: consuming the shared `@behindthemusictree/app-kit` package and TheMusicTree brand theme tokens
+  - Backend:
+    - Django REST Framework and PostgreSQL, exposing 80+ REST endpoints (library, metadata, genres, tags, playlists, search) documented via OpenAPI/Swagger
+    - Bearer JWT authentication (`djangorestframework-simplejwt`, short-lived access + refresh tokens) issued after OAuth authorization-code exchange
+    - Refactored to extract generic HTTP-layer infrastructure (pagination, filtering, permissions, viewsets, error handling) and genre/tag/criteria domain logic into two shared Django packages — see [Shared Packages](#-shared-packages) below
+    - Microservices architecture with the fingerprinting service running as a Dockerized Flask API
+    - Covered by 1,100+ automated tests (pytest) run in CI via GitHub Actions on a Dockerized Compose stack (API + PostgreSQL + fingerprinting service)
+    - Code quality enforced with Ruff and mypy (django-stubs) against a shared baseline config, via pre-commit hooks and CI, including custom checks (banned `assert`, StrEnum preference, actionlint)
+    - Dependencies managed with `uv` and a locked `uv.lock`, shared across the repo's dev toolchain for reproducible installs
+    - Deployment migrated to self-hosted **Coolify**
 
 ##### 🎵 [**AudioMeta Python**](https://github.com/BehindTheMusicTree/audiometa)
 
 - Developed a unified Python library for reading and writing audio metadata across multiple formats (ID3v1, ID3v2, Vorbis, RIFF)
-- Implemented comprehensive test suite with 1500+ unit tests ensuring reliability and edge case coverage
-- Created extensive documentation and usage examples to facilitate developer adoption
-- Published on [PyPI](https://pypi.org/project/audiometa-python/) achieving 27k+ downloads, establishing it as a production-ready tool
-- Maintained active development with community contributions, issue tracking, and continuous improvements, using GitHub Flow for streamlined feature branching and continuous releases
-- Enforced code quality with Ruff (lint + format) and mypy (strict typing) via pre-commit hooks and CI, including custom checks (banned `assert` in production code, pinned tool-version verification)
-- Managed dependencies and packaging with `uv`, using a locked `uv.lock` for reproducible builds and PyPI releases
+- **Features:**
+  - Read/write support across ID3v1, ID3v2, Vorbis, and RIFF tag formats
+  - Extensive documentation and usage examples to facilitate developer adoption
+- **Technical:**
+  - Comprehensive test suite with 1500+ unit tests ensuring reliability and edge case coverage
+  - Published on [PyPI](https://pypi.org/project/audiometa-python/) achieving 27k+ downloads, establishing it as a production-ready tool
+  - Maintained active development with community contributions, issue tracking, and continuous improvements, using GitHub Flow for streamlined feature branching and continuous releases
+  - Enforced code quality with Ruff (lint + format) and mypy (strict typing) via pre-commit hooks and CI, including custom checks (banned `assert` in production code, pinned tool-version verification)
+  - Managed dependencies and packaging with `uv`, using a locked `uv.lock` for reproducible builds and PyPI releases
 
 ##### 🖥️ [**AudioMeta Webapp**](https://themusictree.org/projects/audiometa-webapp)
 
-- Building a Next.js web application for inspecting and editing audio file metadata directly in the browser
-- Implemented the product UI with Next.js, TypeScript, and React, with full support for major tagging formats (ID3, Vorbis, RIFF, and related formats)
-- Shipped production deployment on **Vercel** at [audiometa.themusictree.org](https://audiometa.themusictree.org/) for end-to-end metadata workflows in the browser
-- Developing in the open in [audiometa-frontend](https://github.com/BehindTheMusicTree/audiometa-frontend) with iterative releases and issue-driven improvements
+- Building a Next.js web application for inspecting and editing audio file metadata directly in the browser, developed in the open in [audiometa-frontend](https://github.com/BehindTheMusicTree/audiometa-frontend)
+- **Features:**
+  - Full support for major tagging formats (ID3, Vorbis, RIFF, and related formats) directly in the browser
+- **Technical:**
+  - Next.js, TypeScript, and React
+  - Shipped production deployment on **Vercel** at [audiometa.themusictree.org](https://audiometa.themusictree.org/)
+  - Iterative releases and issue-driven improvements
 
 ##### 🎮 [**The Music Deck**](https://deck-showcase.themusictree.org/)
 
-- Building a collectible music card game combining music discovery with card-game mechanics (boosters, lineups, genre-based battles)
-- Developing cross-platform client with Expo (**Metro** bundler), React Native, and React Native Web, targeting iOS, Android, and web from a single TypeScript codebase
-- Designed game systems: pack/booster economy, subgenre stacking rules, point-driven progression, and daily enigmas
-- Built a companion admin monorepo (Nx + pnpm): Next.js (**Turbopack**) visual charter/admin UI and NestJS (Node.js) REST API, deployed via Docker to a self-hosted VPS
-- Implemented a **MapLibre GL** interactive world map coloring subgenres by region and an SVG-based "Genre Wheel" visualizing genre intensity and transitions
-- Automated release pipeline with GitHub Actions: GHCR image builds, semver tagging, and webhook-driven redeployment to staging and production environments
+- Building a collectible music card game combining music discovery with card-game mechanics, with a companion admin monorepo (design system + NestJS API)
+- **Features:**
+  - Open boosters, build lineups, and battle through genre-based strategy
+  - Game systems: pack/booster economy, subgenre stacking rules, point-driven progression, and daily enigmas
+  - **MapLibre GL** interactive world map coloring subgenres by region, and an SVG-based "Genre Wheel" visualizing genre intensity and transitions
+- **Technical:**
+  - Cross-platform client with Expo (**Metro** bundler), React Native, and React Native Web, targeting iOS, Android, and web from a single TypeScript codebase
+  - Admin monorepo (Nx + pnpm): Next.js (**Turbopack**) visual charter/admin UI and NestJS (Node.js) REST API, deployed via Docker to a self-hosted VPS
+  - Automated release pipeline with GitHub Actions: GHCR image builds, semver tagging, and webhook-driven redeployment to staging and production environments
 
 ##### 🔬 [**Audio Fingerprinter**](https://github.com/BehindTheMusicTree/audio-fingerprinter)
 
