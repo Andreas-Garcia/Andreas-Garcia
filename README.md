@@ -56,24 +56,20 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 **TheMusicTree** is my ecosystem for music metadata and genre reference. A dedicated public portfolio covers every project, live products, and status: **[themusictree.org](https://themusictree.org)** · **[Projects](https://themusictree.org/projects)** (Next.js on **Vercel**).
 
-### TheMusicTree — quick pointers (one line each)
+### TheMusicTree — quick pointers
 
+- [**GrowTheMusicTree**](https://themusictree.org/projects/grow-the-music-tree) — Web app for the collaborative global genre map on **Vercel** ([grow.themusictree.org](https://grow.themusictree.org)), backed by a companion reference API (GrowTheMusicTreeAPI).  
+  [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/grow-the-music-tree-frontend) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/grow-the-music-tree-frontend/issues)
+- [**HearTheMusicTree**](https://themusictree.org/projects/hear-the-music-tree) — Cloud audio library and playlist-oriented platform, with a Django REST API and a Next.js frontend.  
+  [![GitHub — API repository](https://img.shields.io/badge/api-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/hear-the-music-tree-api) [![GitHub — API issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/hear-the-music-tree-api/issues) [![GitHub — frontend repository](https://img.shields.io/badge/frontend-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/hear-the-music-tree-frontend) [![GitHub — frontend issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/hear-the-music-tree-frontend/issues)
 - [**AudioMeta Python**](https://themusictree.org/projects/audiometa) — Library for reading/writing audio tags (ID3, Vorbis, RIFF).  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audiometa) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audiometa/issues) [![PyPI version](https://img.shields.io/pypi/v/audiometa-python?style=flat-square)](https://pypi.org/project/audiometa-python/) [![Downloads](https://img.shields.io/pepy/dt/audiometa-python?style=flat-square)](https://pepy.tech/project/audiometa-python)
 - [**AudioMeta Webapp**](https://themusictree.org/projects/audiometa-webapp) — Next.js app to inspect and edit audio file metadata in the browser on **Vercel** ([audiometa.themusictree.org](https://audiometa.themusictree.org)).  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audiometa-frontend) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audiometa-frontend/issues) <a href="https://audiometa.themusictree.org/" title="AudioMeta live app"><img src="https://raw.githubusercontent.com/BehindTheMusicTree/organization-assets/main/src/icons/behind-the-music-tree/audiometa-logo.svg" alt="AudioMeta live app" width="22" height="22"></a>
-- [**GrowTheMusicTree**](https://themusictree.org/projects/grow-the-music-tree) — Web app for the collaborative global genre map on **Vercel** ([grow.themusictree.org](https://grow.themusictree.org)).  
-  [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/grow-the-music-tree) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/grow-the-music-tree/issues)
-- [**TheMusicTreeAPI**](https://themusictree.org/projects/the-music-tree-api) — Django REST API for genre data and detection.  
-  [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/the-music-tree-api) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/the-music-tree-api/issues)
+- [**The Music Deck**](https://github.com/BehindTheMusicTree/the-music-deck) — Collectible music card game: open boosters, build lineups, and battle through genre-based strategy (Expo / React Native + Web), with a companion admin monorepo (design system + NestJS API).  
+  [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/the-music-deck) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/the-music-deck/issues) [![GitHub — admin repository](https://img.shields.io/badge/admin-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/the-music-deck-admin) [![GitHub — admin issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/the-music-deck-admin/issues)
 - [**Audio Fingerprinter**](https://github.com/BehindTheMusicTree/audio-fingerprinter) — **Shipped** Dockerized Flask microservice for Chromaprint/fpcalc audio fingerprints (`/fingerprint-audio`, Docker + Gunicorn).  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audio-fingerprinter) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audio-fingerprinter/issues)
-- [**HearTheMusicTree**](https://themusictree.org/projects/hear-the-music-tree) — Cloud audio library and playlist-oriented backend.  
-  [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/hear-the-music-tree-api) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/hear-the-music-tree-api/issues)
-- [**The Music Deck**](https://github.com/BehindTheMusicTree/the-music-deck) — Collectible music card game: open boosters, build lineups, and battle through genre-based strategy (Expo / React Native + Web).  
-  [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/the-music-deck) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/the-music-deck/issues)
-- [**The Music Deck Admin**](https://github.com/BehindTheMusicTree/the-music-deck-admin) — Design system, visual charter (Next.js), and NestJS (Node.js) API for The Music Deck, with Docker + VPS deployment.  
-  [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/the-music-deck-admin) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/the-music-deck-admin/issues)
 
 ### Other featured open source
 
@@ -175,6 +171,30 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 - Réalisé des études de marché et créé des personas utilisateurs ; travail sur un plan d'affaires non abouti
 - Monitored the carbon footprint of all TheMusicTree web apps using [Website Carbon](https://www.websitecarbon.co)
 
+##### 🌳 [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree-frontend)
+
+- Building a collaborative platform for music genre classification using Next.js 15 (App Router), TypeScript, Tailwind CSS, and React
+- Implemented Spotify and Google OAuth login to connect and analyze users' listening habits
+- Implementing community contribution system for submitting, validating, and curating genre data
+- Redesigned the audio player as a minimal "now playing" strip and added a TheMusicTree footer badge
+- Extracted the interactive **D3.js** genre-tree visualization and shared transport/auth/player/UI plumbing into standalone published packages (`@behindthemusictree/genre-tree-view`, `@behindthemusictree/app-kit`), now consumed by the app itself
+- Built a companion reference API, [**GrowTheMusicTreeAPI**](https://github.com/BehindTheMusicTree/grow-the-music-tree-api) (Django REST Framework, PostgreSQL), consuming the shared genre/tag package to serve genre-tree data to the frontend
+- Integrated with HearTheMusicTree, MusicBrainz, and Spotify for real-time genre data, intelligent recommendations, and music discovery
+- Tested with Vitest; shipped on **Vercel** ([grow.themusictree.org](https://grow.themusictree.org)), with CI (GitHub Actions) running lint/test/build on every PR and production deploys triggered by semver release tags, using GitFlow for branching and release management
+
+##### 🎧 [**HearTheMusicTree**](https://github.com/BehindTheMusicTree/hear-the-music-tree-api)
+
+- Developing cloud-based music library manager using Django REST Framework and PostgreSQL, exposing 80+ REST endpoints (library, metadata, genres, tags, playlists, search) documented via OpenAPI/Swagger
+- Building a Next.js frontend, [hear-the-music-tree-frontend](https://github.com/BehindTheMusicTree/hear-the-music-tree-frontend), consuming the shared `@behindthemusictree/app-kit` package and TheMusicTree brand theme tokens
+- Refactored the backend to extract generic HTTP-layer infrastructure (pagination, filtering, permissions, viewsets, error handling) and genre/tag/criteria domain logic into two shared Django packages — see [Shared Packages](#-shared-packages) below
+- Implemented Bearer JWT authentication (`djangorestframework-simplejwt`, short-lived access + refresh tokens) issued after Google/Spotify OAuth authorization-code exchange, with accounts matched by email
+- Implemented smart playlist generation algorithms based on genre and tag intelligence
+- Implemented microservices architecture with audio fingerprinting (Chromaprint/AcoustID) via a Dockerized Flask API, integrated with MusicBrainz for automatic track identification and metadata enrichment
+- Covered by 1,100+ automated tests (pytest) run in CI via GitHub Actions on a Dockerized Compose stack (API + PostgreSQL + fingerprinting service)
+- Enforced code quality with Ruff and mypy (django-stubs) against a shared baseline config, via pre-commit hooks and CI, including custom checks (banned `assert`, StrEnum preference, actionlint)
+- Managed dependencies with `uv` and a locked `uv.lock`, shared across the repo's dev toolchain for reproducible installs
+- Migrated deployment to self-hosted **Coolify**
+
 ##### 🎵 [**AudioMeta Python**](https://github.com/BehindTheMusicTree/audiometa)
 
 - Developed a unified Python library for reading and writing audio metadata across multiple formats (ID3v1, ID3v2, Vorbis, RIFF)
@@ -192,49 +212,6 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 - Shipped production deployment on **Vercel** at [audiometa.themusictree.org](https://audiometa.themusictree.org/) for end-to-end metadata workflows in the browser
 - Developing in the open in [audiometa-frontend](https://github.com/BehindTheMusicTree/audiometa-frontend) with iterative releases and issue-driven improvements
 
-##### 🌳 [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree)
-
-- Building a collaborative platform for music genre classification using Next.js 15 (App Router), TypeScript, Tailwind CSS, and React
-- Designed interactive genre tree visualization with **D3.js** enabling users to build and explore music genres
-- Implemented Spotify and Google OAuth login to connect and analyze users' listening habits
-- Implementing community contribution system for submitting, validating, and curating genre data
-- Integrated with HearTheMusicTree/TheMusicTreeAPI, MusicBrainz, and Spotify for real-time genre data, intelligent recommendations, and music discovery
-- Tested with Vitest; shipped on **Vercel** ([grow.themusictree.org](https://grow.themusictree.org)), with CI (GitHub Actions) running lint/test/build on every PR and production deploys triggered by semver release tags, using GitFlow for branching and release management
-
-##### 🔌 [**TheMusicTreeAPI**](https://github.com/BehindTheMusicTree/the-music-tree-api)
-
-- Created RESTful Django API providing access to genre hierarchy, metadata, and intelligent genre detection
-- Developed PostgreSQL database schema optimized for efficient storage and querying of genre relationships
-- Integrated external APIs (Spotify, MusicBrainz) to enrich metadata and enhance user experience
-- Implemented advanced genre detection algorithms leveraging machine learning and music analysis
-- Deployed with Docker containerization and automated CI/CD pipelines using GitHub Actions
-- Managed dependencies with `uv`, replacing pip/requirements.txt with a locked `uv.lock` for reproducible installs in dev and CI
-
-##### 🧬 [**TheMusicTreePipelines**](https://github.com/BehindTheMusicTree/the-music-tree-pipelines)
-
-- Building a Python/Polars/Postgres ETL pipeline reconstructing a genre hierarchy (root genre → subgenre → recording) from MusicBrainz's flat genre list, using Wikidata's subclass/genre relations as a reference taxonomy
-- Built the bronze layer (raw MusicBrainz tables ingested to Parquet via Polars, queryable directly with DuckDB); designing the silver layer (`recording_genre`, `genre_hierarchy`, `recording_genre_path`) on top of it
-- Structured as a `uv` workspace monorepo (one pipeline per source/target data product, shared lockfile and dev toolchain), with Ruff, pytest (unit/e2e/integration tiers) and `pytest-cov` enforcing a 90% combined coverage threshold, and `actionlint` enforced via pre-commit and CI
-- Integration-tested against a real MusicBrainz Postgres sample dataset, loaded via a vendored `musicbrainz-docker` submodule and cached in CI
-- Publishes an independent dataset intended for ingestion by TheMusicTreeAPI, the ecosystem's authoritative genre reference
-
-##### 🎧 HearTheMusicTree
-
-- Developing cloud-based music library manager using Django REST Framework and PostgreSQL, exposing 80+ REST endpoints (library, metadata, genres, tags, playlists, search) documented via OpenAPI/Swagger
-- Implemented Bearer JWT authentication (`djangorestframework-simplejwt`, short-lived access + refresh tokens) issued after Google/Spotify OAuth authorization-code exchange, with accounts matched by email
-- Implemented smart playlist generation algorithms based on genre and tag intelligence
-- Implemented microservices architecture with audio fingerprinting (Chromaprint/AcoustID) via a Dockerized Flask API, integrated with MusicBrainz for automatic track identification and metadata enrichment
-- Covered by 1,100+ automated tests (pytest) run in CI via GitHub Actions on a Dockerized Compose stack (API + PostgreSQL + fingerprinting service)
-- Enforced code quality with Ruff and mypy (django-stubs) against a shared baseline config, via pre-commit hooks and CI, including custom checks (banned `assert`, StrEnum preference, actionlint)
-- Managed dependencies with `uv` and a locked `uv.lock`, shared across the repo's dev toolchain for reproducible installs
-
-##### 🔬 [**Audio Fingerprinter**](https://github.com/BehindTheMusicTree/audio-fingerprinter)
-
-- Delivered a production Flask microservice exposing `/fingerprint-audio` to generate Chromaprint (fpcalc) fingerprints and duration
-- Implemented robust validation and structured error handling for invalid files, wrong formats, and short/corrupted audio
-- Containerized deployment with Docker + Gunicorn, health checks, runtime env validation, and CI publish workflow
-- Managed dependencies with `uv` for reproducible, faster container builds
-
 ##### 🎮 [**The Music Deck**](https://deck-showcase.themusictree.org/)
 
 - Building a collectible music card game combining music discovery with card-game mechanics (boosters, lineups, genre-based battles)
@@ -243,6 +220,32 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 - Built a companion admin monorepo (Nx + pnpm): Next.js (**Turbopack**) visual charter/admin UI and NestJS (Node.js) REST API, deployed via Docker to a self-hosted VPS
 - Implemented a **MapLibre GL** interactive world map coloring subgenres by region and an SVG-based "Genre Wheel" visualizing genre intensity and transitions
 - Automated release pipeline with GitHub Actions: GHCR image builds, semver tagging, and webhook-driven redeployment to staging and production environments
+
+##### 🔬 [**Audio Fingerprinter**](https://github.com/BehindTheMusicTree/audio-fingerprinter)
+
+- Delivered a production Flask microservice exposing `/fingerprint-audio` to generate Chromaprint (fpcalc) fingerprints and duration
+- Implemented robust validation and structured error handling for invalid files, wrong formats, and short/corrupted audio
+- Containerized deployment with Docker + Gunicorn, health checks, runtime env validation, and CI publish workflow
+- Managed dependencies with `uv` for reproducible, faster container builds
+
+##### 🧬 [**TheMusicTreePipelines**](https://github.com/BehindTheMusicTree/the-music-tree-pipelines)
+
+- Building a Python/Polars/Postgres ETL pipeline reconstructing a genre hierarchy (root genre → subgenre → recording) from MusicBrainz's flat genre list, using Wikidata's subclass/genre relations as a reference taxonomy
+- Built the bronze layer (raw MusicBrainz tables ingested to Parquet via Polars, queryable directly with DuckDB); designing the silver layer (`recording_genre`, `genre_hierarchy`, `recording_genre_path`) on top of it
+- Structured as a `uv` workspace monorepo (one pipeline per source/target data product, shared lockfile and dev toolchain), with Ruff, pytest (unit/e2e/integration tiers) and `pytest-cov` enforcing a 90% combined coverage threshold, and `actionlint` enforced via pre-commit and CI
+- Integration-tested against a real MusicBrainz Postgres sample dataset, loaded via a vendored `musicbrainz-docker` submodule and cached in CI
+- Publishes an independent dataset intended for future ingestion by TheMusicTreeAPI
+
+##### 📦 Shared Packages
+
+- Extracted generic HTTP-layer Django infrastructure (pagination, filtering, permissions, viewsets, error handling) and genre/tag/criteria domain logic out of HearTheMusicTree's API into two installable packages, [`the-music-tree-api-kit`](https://github.com/BehindTheMusicTree/the-music-tree-api-kit) and [`the-music-tree-genre-kit`](https://github.com/BehindTheMusicTree/the-music-tree-genre-kit), now consumed by both HearTheMusicTree and GrowTheMusicTreeAPI
+- Extracted GrowTheMusicTree's D3 genre-tree visualization and shared transport/auth/player/UI plumbing into two published TypeScript packages, [`@behindthemusictree/genre-tree-view`](https://github.com/BehindTheMusicTree/genre-tree-view) and [`@behindthemusictree/app-kit`](https://github.com/BehindTheMusicTree/app-kit), now consumed by both GrowTheMusicTree and HearTheMusicTree frontends
+- Maintaining [`@behindthemusictree/brand`](https://github.com/BehindTheMusicTree/the-music-tree-brand), a shared design-token/asset package (colors, components, marks) consumed across all TheMusicTree React apps
+- Extracting a design-system-only `@behindthemusictree/ui` package (Button, Input, Table, Pagination, and other primitives) out of app-kit for independent versioning (in progress)
+
+##### 🔌 [**TheMusicTreeAPI**](https://github.com/BehindTheMusicTree/the-music-tree-api)
+
+- Planned: a dedicated genre hierarchy/metadata/detection API meant to become the ecosystem's authoritative genre reference, consumed by TheMusicTreePipelines' output and other TheMusicTree apps — not yet started
 
 ##### 🛠️ [**Infrastructure**](https://themusictree.org/projects/infrastructure)
 
