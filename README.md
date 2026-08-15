@@ -171,9 +171,9 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 - Réalisé des études de marché et créé des personas utilisateurs ; travail sur un plan d'affaires non abouti
 - Monitored the carbon footprint of all TheMusicTree web apps using [Website Carbon](https://www.websitecarbon.co)
 
-##### 🌳 [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree-frontend)
+##### 🌳 [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree-frontend) · [**GrowTheMusicTreeAPI**](https://github.com/BehindTheMusicTree/grow-the-music-tree-api)
 
-- Building a collaborative platform for music genre classification, backed by a companion reference API, [**GrowTheMusicTreeAPI**](https://github.com/BehindTheMusicTree/grow-the-music-tree-api)
+- Building a collaborative platform for music genre classification, backed by a companion reference API
 - **Features:**
   - Spotify and Google OAuth login to connect and analyze users' listening habits
   - Community contribution system for submitting, validating, and curating genre data (in progress)
@@ -187,9 +187,9 @@ I’m driven by real-world impact—building tools that are well-tested, documen
     - Shipped on **Vercel** ([grow.themusictree.org](https://grow.themusictree.org)), with CI (GitHub Actions) running lint/test/build on every PR and production deploys triggered by semver release tags, using GitFlow for branching and release management
   - Backend: Django REST Framework, PostgreSQL, consuming the shared genre/tag package to serve genre-tree data to the frontend
 
-##### 🎧 [**HearTheMusicTree**](https://github.com/BehindTheMusicTree/hear-the-music-tree-api)
+##### 🎧 [**HearTheMusicTree**](https://github.com/BehindTheMusicTree/hear-the-music-tree-api) · [**hear-the-music-tree-frontend**](https://github.com/BehindTheMusicTree/hear-the-music-tree-frontend)
 
-- Developing a cloud-based music library manager, with a companion Next.js frontend, [hear-the-music-tree-frontend](https://github.com/BehindTheMusicTree/hear-the-music-tree-frontend)
+- Developing a cloud-based music library manager, with a companion Next.js frontend
 - **Features:**
   - Google/Spotify OAuth login, with accounts matched by email
   - Smart playlist generation algorithms based on genre and tag intelligence
