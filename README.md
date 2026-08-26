@@ -103,6 +103,8 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 ![Polars](https://img.shields.io/badge/Polars-CD792C?style=flat-square&logo=polars&logoColor=white)
 ![DuckDB](https://img.shields.io/badge/DuckDB-FFF000?style=flat-square&logo=duckdb&logoColor=black)
+![SPARQL](https://img.shields.io/badge/SPARQL-4C4C4C?style=flat-square&logo=wikidata&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white)
 
 #### Frontend
 
@@ -252,8 +254,12 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 ##### 🧬 [**TheMusicTreePipelines**](https://github.com/BehindTheMusicTree/the-music-tree-pipelines)
 
 - Structured as a `uv` workspace monorepo (one pipeline per source/target data product, shared lockfile and dev toolchain), with Ruff, pytest (unit/integration tiers) and `pytest-cov` enforcing a 90% combined coverage threshold, and `actionlint` enforced via pre-commit and CI
-- **musicbrainz**: Python/Polars/Postgres ETL reconstructing a genre hierarchy (root genre → subgenre → recording) from MusicBrainz's flat genre list, using Wikidata as a reference taxonomy; bronze layer built (raw MusicBrainz tables to Parquet via Polars, queryable directly with DuckDB), silver layer (`recording_genre`, `genre_hierarchy`, `recording_genre_path`) not yet built; integration-tested against a real MusicBrainz Postgres sample dataset, loaded via a vendored `musicbrainz-docker` submodule and cached in CI
-- **wikidata**: ingests Wikidata's music genre taxonomy (`P279`/`P361`, rooted at `Q188451`) live from the public SPARQL endpoint into a bronze layer, then a 5-step Polars silver pipeline (item-link enrichment, regional-overview and cascaded regional classification, genre-parent flagging, final pruning) splitting it into canonical and regional genre hierarchies; explored via a Jupyter notebook (`notebooks/explore_genre_tree.ipynb`) doing tabular and `networkx` graph analysis of the bronze genre tree
+- **musicbrainz** — Python/Polars/Postgres ETL reconstructing a genre hierarchy (root genre → subgenre → recording) from MusicBrainz's flat genre list, using Wikidata as a reference taxonomy
+  - Bronze layer built (raw MusicBrainz tables to Parquet via Polars, queryable directly with DuckDB); silver layer (`recording_genre`, `genre_hierarchy`, `recording_genre_path`) not yet built
+  - Integration-tested against a real MusicBrainz Postgres sample dataset, loaded via a vendored `musicbrainz-docker` submodule and cached in CI
+- **wikidata** — ingests Wikidata's music genre taxonomy live from the public SPARQL endpoint, rooted at `Q188451` ("music genre") and walking its `P279` ("subclass of") / `P361` ("part of") edges
+  - Bronze: raw genre edges as queried; Silver: a 5-step Polars pipeline (item-link enrichment, regional-overview and cascaded regional classification, genre-parent flagging, final pruning) splitting the taxonomy into canonical and regional genre hierarchies
+  - Explored via a Jupyter notebook (`notebooks/explore_genre_tree.ipynb`) doing tabular and `networkx` graph analysis of the bronze genre tree
 - Publishes independent datasets intended for future ingestion by TheMusicTreeAPI
 
 ##### 📦 Shared Packages
