@@ -103,10 +103,12 @@ echo ""
 # Get initial free space
 initial_free=$(df -k / | tail -1 | awk '{print $4}')
 
-# User caches (keep ms-playwright — browser binaries are slow/flaky to redownload;
-# keep Homebrew — "brew cleanup" below manages its own cache, otherwise it has to
-# re-download the ~15MB API JSON on every run)
-clear_cache "$HOME/Library/Caches" "User Library Caches" "ms-playwright" "Homebrew"
+# User caches (keep Homebrew — "brew cleanup" below manages its own cache, otherwise
+# it has to re-download the ~15MB API JSON on every run)
+clear_cache "$HOME/Library/Caches" "User Library Caches" "Homebrew"
+
+# Playwright browser binaries (re-downloaded on next `npx playwright install`/test run)
+clear_cache "$HOME/Library/Caches/ms-playwright" "Playwright Browser Binaries"
 
 # Browser caches (optional - uncomment if needed)
 # clear_cache "$HOME/Library/Caches/Google/Chrome" "Chrome Cache"
