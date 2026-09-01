@@ -10,7 +10,7 @@ garcia.andreas.1991@gmail.com · [ICON] LinkedIn · [ICON] GitHub · [ICON] Port
 
 Backend engineer with a strong background in Python and Django REST Framework, I design and maintain robust, well-tested APIs and services for production systems. I have experience building RESTful APIs backed by PostgreSQL and writing comprehensive unit test suites. I am drawn to projects with societal impact, in culture, social causes, or the environment.
 
-I founded TheMusicTree (https://themusictree.org), where I built HearTheMusicTree, a Django REST API exposing 80+ endpoints backed by PostgreSQL and covered by 1,100+ automated tests, and AudioMeta Python (https://pypi.org/project/audiometa-python/), a library published on PyPI with 27k+ downloads. I also contributed to OpenSILEX (https://opensilex.org/), an open-source research data platform, developing REST services and improving relational data structures within a SCRUM team.
+I founded TheMusicTree (https://themusictree.org), where I built GrowTheMusicTreeAPI (https://github.com/BehindTheMusicTree/grow-the-music-tree-api), a Django REST Framework API backing GrowTheMusicTree (https://grow.themusictree.org), a Next.js and React frontend for collaborative genre-tree exploration, and AudioMeta Python (https://pypi.org/project/audiometa-python/), a library published on PyPI with 27k+ downloads. I also contributed to OpenSILEX (https://opensilex.org/), an open-source research data platform, developing REST services and improving relational data structures within a SCRUM team.
 
 ---
 
@@ -28,14 +28,14 @@ I founded TheMusicTree (https://themusictree.org), where I built HearTheMusicTre
 
 Dec. 2021 – Present
 
-Developed HearTheMusicTree (https://hear-api.themusictree.org/docs/), a Django REST Framework API exposing 80+ endpoints backed by PostgreSQL, documented via OpenAPI/Swagger, and covered by 1,100+ automated pytest tests run in CI.
-Built TheMusicTreeAPI (https://themusictree.org/projects/the-music-tree-api), a Django REST API providing genre hierarchy and detection endpoints, with a PostgreSQL schema optimized for relational queries and Docker-based CI/CD deployment.
+Built GrowTheMusicTreeAPI (https://github.com/BehindTheMusicTree/grow-the-music-tree-api), a Django REST Framework API backed by PostgreSQL, serving genre-hierarchy data via REST endpoints to a collaborative genre-classification platform, with Docker CI/CD.
+Developed GrowTheMusicTree (https://grow.themusictree.org), a Next.js and React frontend with an interactive D3.js genre-tree visualization, tested with Vitest and deployed on Vercel via GitHub Actions CI/CD.
 Published AudioMeta Python (https://pypi.org/project/audiometa-python/) on PyPI, a Python library with 1,500+ unit tests reaching 27k+ downloads, maintained with Ruff, mypy, and pre-commit-enforced code quality checks and CI.
 
 **Links:**
 TheMusicTree: https://themusictree.org
-HearTheMusicTree: https://hear-api.themusictree.org/docs/
-TheMusicTreeAPI: https://themusictree.org/projects/the-music-tree-api
+GrowTheMusicTreeAPI: https://github.com/BehindTheMusicTree/grow-the-music-tree-api
+GrowTheMusicTree: https://grow.themusictree.org
 AudioMeta Python: https://pypi.org/project/audiometa-python/
 
 ---
