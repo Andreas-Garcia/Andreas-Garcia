@@ -90,7 +90,7 @@ Format:
 
 **Project links:** **All mentions of specific projects** (e.g., AudioMeta Python, AudioMeta Webapp, TheMusicTreeAPI, OpenSILEX, GrowTheMusicTree) **must include the project link(s) in parentheses immediately after the project name**: `ProjectName (https://url.com)`. Priority order for links: website > PyPI > GitHub. **Note:** Links in parentheses do not count toward the character limit. **Multiple project links with icon placeholders are allowed in the job experiences section.**
 
-**Available links (first priority):** Use these URLs when mentioning the following projects (override GitHub/repo links). Mention systematically that they are wip:
+**Available links (first priority):** Use these URLs when mentioning the following projects (override GitHub/repo links). Mention systematically that they are wip: use a present-participle (-ing) verb for the bullet (e.g. "Building GrowTheMusicTree…", not "Built GrowTheMusicTree…") instead of past tense, since the work is ongoing.
 
 - **AudioMeta Webapp:** https://themusictree.org/projects/audiometa-webapp (portfolio page) or https://audiometa.themusictree.org/ (live app). **Next.js on Vercel.**
 - **GrowTheMusicTree:** https://grow.themusictree.org/ (wip). **Next.js on Vercel.**
