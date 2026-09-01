@@ -28,8 +28,8 @@ I founded TheMusicTree (https://themusictree.org), where I built GrowTheMusicTre
 
 Dec. 2021 – Present
 
-Built GrowTheMusicTreeAPI (https://github.com/BehindTheMusicTree/grow-the-music-tree-api), a Django REST Framework API backed by PostgreSQL, serving genre-hierarchy data via REST endpoints to a collaborative genre-classification platform, with Docker CI/CD.
-Developed GrowTheMusicTree (https://grow.themusictree.org), a Next.js and React frontend with an interactive D3.js genre-tree visualization, tested with Vitest and deployed on Vercel via GitHub Actions CI/CD.
+Building GrowTheMusicTreeAPI (https://github.com/BehindTheMusicTree/grow-the-music-tree-api), a Django REST Framework API backed by PostgreSQL, serving genre-hierarchy data via REST endpoints to a collaborative genre-classification platform, with Docker CI/CD.
+Developing GrowTheMusicTree (https://grow.themusictree.org), a Next.js and React frontend with an interactive D3.js genre-tree visualization, tested with Vitest and deployed on Vercel via GitHub Actions CI/CD.
 Published AudioMeta Python (https://pypi.org/project/audiometa-python/) on PyPI, a Python library with 1,500+ unit tests reaching 27k+ downloads, maintained with Ruff, mypy, and pre-commit-enforced code quality checks and CI.
 
 **Links:**
