@@ -90,12 +90,14 @@ Format:
 
 **Project links:** **All mentions of specific projects** (e.g., AudioMeta Python, AudioMeta Webapp, TheMusicTreeAPI, OpenSILEX, GrowTheMusicTree) **must include the project link(s) in parentheses immediately after the project name**: `ProjectName (https://url.com)`. Priority order for links: website > PyPI > GitHub. **Note:** Links in parentheses do not count toward the character limit. **Multiple project links with icon placeholders are allowed in the job experiences section.**
 
-**Available links (first priority):** Use these URLs when mentioning the following projects (override GitHub/repo links). Mention systematically that they are wip: use a present-participle (-ing) verb for the bullet (e.g. "Building GrowTheMusicTree…", not "Built GrowTheMusicTree…") instead of past tense, since the work is ongoing.
+**Available links (first priority):** Use these URLs when mentioning the following projects (override GitHub/repo links). For projects marked wip, use a present-participle (-ing) verb for the bullet (e.g. "Building GrowTheMusicTree…", not "Built GrowTheMusicTree…") instead of past tense, since the work is ongoing. **Keep this wip list in sync with README.md if a project's status changes.**
 
-- **AudioMeta Webapp:** https://themusictree.org/projects/audiometa-webapp (portfolio page) or https://audiometa.themusictree.org/ (live app). **Next.js on Vercel.**
-- **GrowTheMusicTree:** https://grow.themusictree.org/ (wip). **Next.js on Vercel.**
+- **AudioMeta Webapp:** https://themusictree.org/projects/audiometa-webapp (portfolio page) or https://audiometa.themusictree.org/ (live app). **Next.js on Vercel.** (wip)
+- **GrowTheMusicTree / GrowTheMusicTreeAPI:** https://grow.themusictree.org/ (wip). **Next.js on Vercel.**
 - **Portfolio / marketing site:** https://themusictree.org/ — **Next.js on Vercel** (when relevant).
 - **HearTheMusicTree:** https://hear-api.themusictree.org/docs/ (wip)
+- **AudioMeta Python:** https://pypi.org/project/audiometa-python/ (not wip — published, completed)
+- **The Music Deck:** https://deck-showcase.themusictree.org/ (wip)
 
 **Links:** After the job experiences section, include a "Links" subsection listing all URLs in the format: `Project/Company Name: https://url.com`
 
