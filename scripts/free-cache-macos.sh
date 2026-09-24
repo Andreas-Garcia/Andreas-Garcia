@@ -10,6 +10,9 @@ set -e
 # files are targeted — memory notes (memory/*.md) are untouched either way.
 CLAUDE_CONV_PURGE_DAYS=21
 
+# Root scanned for repo-local build caches (Nx, Turbo, Next, node_modules/.cache, Python tool caches)
+CODE_ROOT="$HOME/git"
+
 # Running total of space actually freed (KB), tracked per-operation rather than
 # inferred from a before/after `df` snapshot — `df` on APFS is unreliable for this
 # since deleted blocks can stay "purgeable" (not yet reported as free) for a while.
@@ -126,6 +129,24 @@ clear_cache "$HOME/Library/Developer/Xcode/DerivedData" "Xcode Derived Data"
 
 # Xcode archives (if exists)
 clear_cache "$HOME/Library/Developer/Xcode/Archives" "Xcode Archives"
+
+# Repo-local build caches — all regenerated on next build/lint/test; only cost is a cold rebuild.
+# node_modules is pruned (except its .cache) so the scan stays fast; depth covers
+# <repo>/.claude/worktrees/<wt>/packages/<pkg>/.turbo.
+if [ -d "$CODE_ROOT" ]; then
+    while IFS= read -r dir; do
+        [ "$(get_size_bytes "$dir")" -gt 0 ] || continue
+        clear_cache "$dir" "Repo build cache"
+    done < <(find "$CODE_ROOT" -maxdepth 7 \
+        \( -name .git -o \( -path '*/node_modules/*' ! -path '*/node_modules/.cache' \) \) -prune -o \
+        -type d \( -path '*/.nx/cache' -o -path '*/.nx/workspace-data' -o -name .turbo \
+            -o -path '*/node_modules/.cache' -o -path '*/.next/cache' \
+            -o -name .pytest_cache -o -name .mypy_cache -o -name .ruff_cache \) \
+        -print -prune 2>/dev/null)
+else
+    echo -e "${YELLOW}⚠️  Repo build caches: $CODE_ROOT not found, skipping${NC}"
+    echo ""
+fi
 
 # npm cache (if exists)
 if command -v npm &> /dev/null; then
