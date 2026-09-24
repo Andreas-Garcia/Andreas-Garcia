@@ -15,7 +15,7 @@ if [[ $1 == --check ]]; then
   alive 15 && { rm -f $state; exit 0; }
   fails=$(( $(cat $state 2>/dev/null || echo 0) + 1 ))
   echo $fails > $state
-  (( fails == 3 )) && notify "Looks stuck — run docker-unstick"
+  (( fails % 15 == 3 )) && notify "Looks stuck — run docker-unstick"
   exit 0
 fi
 
@@ -27,7 +27,7 @@ sleep 3
 open -a Docker
 
 for _ in {1..36}; do
-  alive 5 && { notify "Restarted, up ✅"; echo up; exit 0; }
+  alive 5 && { echo up; docker system prune -af | tail -1; notify "Restarted, up ✅, cache pruned"; exit 0; }
   sleep 5
 done
 notify "Restart FAILED ❌"; echo "restart failed" >&2; exit 1
