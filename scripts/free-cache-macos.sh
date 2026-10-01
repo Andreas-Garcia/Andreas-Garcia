@@ -93,6 +93,34 @@ clear_cache() {
     echo ""
 }
 
+# Prune VS Code-style workspaceStorage entries whose folder no longer exists on disk.
+# Only local file:// folders without URL-encoding are judged; remote/encoded URIs are kept
+# since their path can't be checked with a plain -d test.
+prune_workspace_storage() {
+    local storage_dir=$1
+    local app=$2
+    [ -d "$storage_dir" ] || return 0
+    echo -e "${YELLOW}Pruning: $app workspaceStorage (orphaned workspaces)${NC}"
+    local pruned=0 ws_dir folder size_kb
+    for ws_dir in "$storage_dir"/*/; do
+        [ -f "$ws_dir/workspace.json" ] || continue
+        folder=$(grep -o '"folder":"file://[^"]*"' "$ws_dir/workspace.json" 2>/dev/null | head -1 | sed 's/"folder":"file:\/\///;s/"//')
+        [[ -n "$folder" && "$folder" != *%* ]] || continue
+        if [ ! -d "$folder" ]; then
+            size_kb=$(du -sk "$ws_dir" 2>/dev/null | awk '{print $1}')
+            rm -rf "$ws_dir"
+            pruned=$((pruned + ${size_kb:-0}))
+        fi
+    done
+    if [ "$pruned" -gt 0 ]; then
+        TOTAL_FREED_KB=$((TOTAL_FREED_KB + pruned))
+        echo -e "${GREEN}  ✓ Freed: $((pruned / 1024))MB (orphaned workspaces)${NC}"
+    else
+        echo -e "${GREEN}  ✓ No orphaned workspaces found${NC}"
+    fi
+    echo ""
+}
+
 echo -e "${GREEN}========================================${NC}"
 echo -e "${GREEN}macOS Cache Cleanup Script${NC}"
 echo -e "${GREEN}========================================${NC}"
@@ -119,9 +147,13 @@ clear_cache "$HOME/Library/Caches/ms-playwright" "Playwright Browser Binaries"
 # clear_cache "$HOME/Library/Caches/com.mozilla.firefox" "Firefox Cache"
 
 # Google Chrome caches
-clear_cache "$HOME/Library/Application Support/Google/Chrome/Default/Cache" "Chrome Cache"
-clear_cache "$HOME/Library/Application Support/Google/Chrome/Default/Code Cache" "Chrome Code Cache"
-clear_cache "$HOME/Library/Application Support/Google/Chrome/Default/GPUCache" "Chrome GPU Cache"
+for chrome_profile in "$HOME/Library/Application Support/Google/Chrome/Default" "$HOME/Library/Application Support/Google/Chrome/Profile "*; do
+    [ -d "$chrome_profile" ] || continue
+    profile_name=$(basename "$chrome_profile")
+    clear_cache "$chrome_profile/Cache" "Chrome Cache ($profile_name)"
+    clear_cache "$chrome_profile/Code Cache" "Chrome Code Cache ($profile_name)"
+    clear_cache "$chrome_profile/GPUCache" "Chrome GPU Cache ($profile_name)"
+done
 clear_cache "$HOME/Library/Application Support/Google/GoogleUpdater/crx_cache" "Google Updater crx_cache"
 
 # Xcode derived data (if exists)
@@ -140,7 +172,7 @@ if [ -d "$CODE_ROOT" ]; then
     done < <(find "$CODE_ROOT" -maxdepth 7 \
         \( -name .git -o \( -path '*/node_modules/*' ! -path '*/node_modules/.cache' \) \) -prune -o \
         -type d \( -path '*/.nx/cache' -o -path '*/.nx/workspace-data' -o -name .turbo \
-            -o -path '*/node_modules/.cache' -o -path '*/.next/cache' \
+            -o -path '*/node_modules/.cache' -o -path '*/.next/cache' -o -path '*/.next/dev' \
             -o -name .pytest_cache -o -name .mypy_cache -o -name .ruff_cache \) \
         -print -prune 2>/dev/null)
 else
@@ -150,6 +182,8 @@ fi
 
 # npm cache (if exists)
 if command -v npm &> /dev/null; then
+    # `npm cache clean` doesn't touch npx's package installs
+    clear_cache "$HOME/.npm/_npx" "npx cache"
     echo -e "${YELLOW}Clearing: npm cache${NC}"
     npm cache clean --force 2>/dev/null || true
     echo -e "${GREEN}  ✓ npm cache cleared${NC}"
@@ -181,11 +215,32 @@ if command -v pnpm &> /dev/null; then
     echo ""
 fi
 
+# pre-commit hook envs — gc only drops envs no longer referenced by any known repo config
+if command -v pre-commit &> /dev/null; then
+    size_before=$(get_size_bytes "$HOME/.cache/pre-commit")
+    echo -e "${YELLOW}Clearing: pre-commit unused hook envs${NC}"
+    pre-commit gc 2>/dev/null || true
+    size_freed=$((size_before - $(get_size_bytes "$HOME/.cache/pre-commit")))
+    [ "$size_freed" -gt 0 ] && TOTAL_FREED_KB=$((TOTAL_FREED_KB + size_freed))
+    echo -e "${GREEN}  ✓ Freed: $((size_freed / 1024))MB${NC}"
+    echo ""
+fi
+
 # Homebrew cache (if exists)
 if command -v brew &> /dev/null; then
     echo -e "${YELLOW}Clearing: Homebrew cache${NC}"
     brew cleanup --prune=all || true
     echo -e "${GREEN}  ✓ Homebrew cache cleared${NC}"
+    echo ""
+
+    # Truncate (not delete) so running services keep writing to the same file.
+    # A crash-looping service (e.g. php-fpm failing to bind its port) can grow its log to GBs.
+    while IFS= read -r -d '' log; do
+        size_kb=$(du -sk "$log" 2>/dev/null | awk '{print $1}')
+        : > "$log"
+        TOTAL_FREED_KB=$((TOTAL_FREED_KB + ${size_kb:-0}))
+        echo -e "${GREEN}  ✓ Truncated $log (freed $((${size_kb:-0} / 1024))MB)${NC}"
+    done < <(find "$(brew --prefix)/var/log" -maxdepth 2 -type f -size +100M -print0 2>/dev/null)
     echo ""
 fi
 
@@ -242,6 +297,12 @@ if [ -d "$VSCODE_DIR" ]; then
     clear_cache "$VSCODE_DIR/CachedData" "VS Code CachedData"
     clear_cache "$VSCODE_DIR/CachedExtensionVSIXs" "VS Code Extension Cache"
     clear_cache "$VSCODE_DIR/logs" "VS Code Logs"
+    clear_cache "$VSCODE_DIR/Code Cache" "VS Code Code Cache"
+    clear_cache "$VSCODE_DIR/GPUCache" "VS Code GPU Cache"
+    clear_cache "$VSCODE_DIR/WebStorage" "VS Code Web Storage"
+    clear_cache "$VSCODE_DIR/Crashpad" "VS Code Crash Reports"
+    clear_cache "$VSCODE_DIR/Partitions" "VS Code Partitions Cache"
+    prune_workspace_storage "$VSCODE_DIR/User/workspaceStorage" "VS Code"
     echo -e "${GREEN}  ✓ VS Code caches cleared${NC}"
     echo ""
 fi
@@ -299,31 +360,7 @@ if [ -d "$CURSOR_DIR" ]; then
     clear_cache "$CURSOR_DIR/DawnGraphiteCache" "Cursor DawnGraphite Cache"
     clear_cache "$CURSOR_DIR/Partitions" "Cursor Partitions Cache"
 
-    # Prune workspaceStorage for workspaces that no longer exist on disk
-    WORKSPACE_STORAGE="$CURSOR_DIR/User/workspaceStorage"
-    if [ -d "$WORKSPACE_STORAGE" ]; then
-        echo -e "${YELLOW}Pruning: Cursor workspaceStorage (orphaned workspaces)${NC}"
-        pruned=0
-        for ws_dir in "$WORKSPACE_STORAGE"/*/; do
-            workspace_json="$ws_dir/workspace.json"
-            if [ ! -f "$workspace_json" ]; then
-                continue
-            fi
-            folder=$(grep -o '"folder":"[^"]*"' "$workspace_json" 2>/dev/null | head -1 | sed 's/"folder":"//;s/"//' | sed 's|^file://||')
-            if [ -n "$folder" ] && [ ! -d "$folder" ]; then
-                size_kb=$(du -sk "$ws_dir" 2>/dev/null | awk '{print $1}')
-                rm -rf "$ws_dir"
-                pruned=$((pruned + size_kb))
-            fi
-        done
-        if [ "$pruned" -gt 0 ]; then
-            TOTAL_FREED_KB=$((TOTAL_FREED_KB + pruned))
-            echo -e "${GREEN}  ✓ Freed: $((pruned / 1024))MB (orphaned workspaces)${NC}"
-        else
-            echo -e "${GREEN}  ✓ No orphaned workspaces found${NC}"
-        fi
-        echo ""
-    fi
+    prune_workspace_storage "$CURSOR_DIR/User/workspaceStorage" "Cursor"
 
     echo -e "${GREEN}  ✓ Cursor caches cleared${NC}"
     echo ""
