@@ -13,6 +13,9 @@ CLAUDE_CONV_PURGE_DAYS=21
 # Root scanned for repo-local build caches (Nx, Turbo, Next, node_modules/.cache, Python tool caches)
 CODE_ROOT="$HOME/git"
 
+# Worktrees with no file modified in this many days get node_modules/.venv/dist etc. removed
+STALE_WORKTREE_DAYS=1
+
 # Running total of space actually freed (KB), tracked per-operation rather than
 # inferred from a before/after `df` snapshot — `df` on APFS is unreliable for this
 # since deleted blocks can stay "purgeable" (not yet reported as free) for a while.
@@ -179,6 +182,33 @@ else
     echo -e "${YELLOW}⚠️  Repo build caches: $CODE_ROOT not found, skipping${NC}"
     echo ""
 fi
+
+# Dependency/build dirs in git worktrees with no file edited for STALE_WORKTREE_DAYS.
+# Only gitignored dirs are removed; reinstall/rebuild if the worktree is picked up again.
+# Submodules also have a .git file, so only gitdirs pointing into .git/worktrees count.
+if [ -d "$CODE_ROOT" ]; then
+    echo -e "${YELLOW}Clearing: deps/build output in worktrees untouched for ${STALE_WORKTREE_DAYS}+ days${NC}"
+    STALE_PRUNE=(-name .git -o -name node_modules -o -name .venv -o -name venv -o -name dist -o -name .expo -o -name .next -o -name .turbo)
+    while IFS= read -r gitfile; do
+        grep -q '/worktrees/' "$gitfile" 2>/dev/null || continue
+        wt=$(dirname "$gitfile")
+        [ -z "$(find "$wt" \( "${STALE_PRUNE[@]}" \) -prune -o -type f -mtime "-${STALE_WORKTREE_DAYS}" -print -quit 2>/dev/null)" ] || continue
+        while IFS= read -r dir; do
+            git -C "$wt" check-ignore -q "$dir" 2>/dev/null || continue
+            size_kb=$(get_size_bytes "$dir")
+            rm -rf "$dir"
+            TOTAL_FREED_KB=$((TOTAL_FREED_KB + size_kb))
+            echo -e "${GREEN}  ✓ Removed $dir ($((size_kb / 1024))MB)${NC}"
+        done < <(find "$wt" -maxdepth 4 -name .git -prune -o -type d \
+            \( -name node_modules -o -name .venv -o -name venv -o -name dist -o -name .expo \) -print -prune 2>/dev/null)
+    done < <(find "$CODE_ROOT" -maxdepth 5 -name .git -type f 2>/dev/null)
+    echo ""
+fi
+
+# Jest cache lives in $TMPDIR (jest_<hash>), not in the repo
+for jest_dir in "${TMPDIR:-/tmp}"/jest_*; do
+    [ -d "$jest_dir" ] && clear_cache "$jest_dir" "Jest cache"
+done
 
 # npm cache (if exists)
 if command -v npm &> /dev/null; then
