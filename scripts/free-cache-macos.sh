@@ -188,7 +188,7 @@ fi
 # Submodules also have a .git file, so only gitdirs pointing into .git/worktrees count.
 if [ -d "$CODE_ROOT" ]; then
     echo -e "${YELLOW}Clearing: deps/build output in worktrees untouched for ${STALE_WORKTREE_DAYS}+ days${NC}"
-    STALE_PRUNE=(-name .git -o -name node_modules -o -name .venv -o -name venv -o -name dist -o -name .expo -o -name .next -o -name .turbo)
+    STALE_PRUNE=(-name .git -o -name node_modules -o -name .venv -o -name venv -o -name dist -o -name .expo -o -name .next -o -name .turbo -o -name build)
     while IFS= read -r gitfile; do
         grep -q '/worktrees/' "$gitfile" 2>/dev/null || continue
         wt=$(dirname "$gitfile")
@@ -200,15 +200,21 @@ if [ -d "$CODE_ROOT" ]; then
             TOTAL_FREED_KB=$((TOTAL_FREED_KB + size_kb))
             echo -e "${GREEN}  ✓ Removed $dir ($((size_kb / 1024))MB)${NC}"
         done < <(find "$wt" -maxdepth 4 -name .git -prune -o -type d \
-            \( -name node_modules -o -name .venv -o -name venv -o -name dist -o -name .expo \) -print -prune 2>/dev/null)
+            \( -name node_modules -o -name .venv -o -name venv -o -name dist -o -name build -o -name .expo -o -name .next \) -print -prune 2>/dev/null)
     done < <(find "$CODE_ROOT" -maxdepth 5 -name .git -type f 2>/dev/null)
     echo ""
 fi
 
-# Jest cache lives in $TMPDIR (jest_<hash>), not in the repo
-for jest_dir in "${TMPDIR:-/tmp}"/jest_*; do
-    [ -d "$jest_dir" ] && clear_cache "$jest_dir" "Jest cache"
+# Jest and Metro/haste-map caches live in $TMPDIR, not in the repo (same as `expo start -c`)
+echo -e "${YELLOW}Clearing: Jest / Metro / haste-map caches in \$TMPDIR${NC}"
+for tmp_cache in "${TMPDIR:-/tmp}"/jest_* "${TMPDIR:-/tmp}"/metro-* "${TMPDIR:-/tmp}"/haste-map-*; do
+    [ -e "$tmp_cache" ] || continue
+    size_kb=$(du -sk "$tmp_cache" 2>/dev/null | awk '{print $1}')
+    rm -rf "$tmp_cache"
+    TOTAL_FREED_KB=$((TOTAL_FREED_KB + ${size_kb:-0}))
+    echo -e "${GREEN}  ✓ Removed $tmp_cache ($((${size_kb:-0} / 1024))MB)${NC}"
 done
+echo ""
 
 # npm cache (if exists)
 if command -v npm &> /dev/null; then
