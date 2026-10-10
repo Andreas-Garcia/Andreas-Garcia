@@ -34,13 +34,13 @@ I'm a full-stack engineer, founder, and open-source maintainer focused on music 
 
 Core strengths:
 
-- Front‑end engineering — React (3+ years), Next.js (2+ years), TypeScript (3+ years), Vercel, D3.js, MapLibre GL.
+- Front‑end engineering — React (3+ years), Next.js (2+ years), TypeScript (3+ years), Expo / React Native, Vercel, D3.js, MapLibre GL.
   Skilled at building fast, accessible, and elegant interfaces, with a strong sense of product design and user experience.
 
 - Backend systems — Python (4+ years), Django REST Framework (4+ years), Flask, Node.js/NestJS (1+ year), PostgreSQL (5+ years), `uv` for dependency management.
   Experienced in designing robust APIs, distributed services, and scalable backend architectures aligned with business needs.
 
-- DevOps & automation — Docker Compose, CI/CD pipelines, GitFlow, Ansible, Vercel, observability with Loki & Grafana.
+- DevOps & automation — Docker Compose, CI/CD pipelines (GitHub Actions, GHCR), GitFlow, Ansible, Coolify, Vercel, observability with Prometheus & Grafana.
   Strong automation culture with rigorous application of Clean Code, monitoring, and quality‑driven engineering practices.
 
 - Architecture & systems design — API design, microservices, containerized deployments.
@@ -58,7 +58,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 ### TheMusicTree — quick pointers
 
-- [**GrowTheMusicTree**](https://themusictree.org/projects/grow-the-music-tree) — Web app for the collaborative global genre map on **Vercel** ([grow.themusictree.org](https://grow.themusictree.org)), backed by a companion reference API (GrowTheMusicTreeAPI).  
+- [**GrowTheMusicTree**](https://themusictree.org/projects/grow-the-music-tree) — Web app for the global genre map ([grow.themusictree.org](https://grow.themusictree.org)), backed by GrowTheMusicTreeAPI and fed by TheMusicTreePipelines.  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/grow-the-music-tree-frontend) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/grow-the-music-tree-frontend/issues)
 - [**HearTheMusicTree**](https://themusictree.org/projects/hear-the-music-tree) — Cloud audio library and playlist-oriented platform, with a Django REST API and a Next.js frontend.  
   [![GitHub — API repository](https://img.shields.io/badge/api-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/hear-the-music-tree-api) [![GitHub — API issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/hear-the-music-tree-api/issues) [![GitHub — frontend repository](https://img.shields.io/badge/frontend-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/hear-the-music-tree-frontend) [![GitHub — frontend issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/hear-the-music-tree-frontend/issues)
@@ -66,7 +66,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audiometa) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audiometa/issues) [![PyPI version](https://img.shields.io/pypi/v/audiometa-python?style=flat-square)](https://pypi.org/project/audiometa-python/) [![Downloads](https://img.shields.io/pepy/dt/audiometa-python?style=flat-square)](https://pepy.tech/project/audiometa-python)
 - [**AudioMeta Webapp**](https://themusictree.org/projects/audiometa-webapp) — Next.js app to inspect and edit audio file metadata in the browser on **Vercel** ([audiometa.themusictree.org](https://audiometa.themusictree.org)).  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audiometa-frontend) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audiometa-frontend/issues) <a href="https://audiometa.themusictree.org/" title="AudioMeta live app"><img src="https://raw.githubusercontent.com/BehindTheMusicTree/organization-assets/main/src/icons/behind-the-music-tree/audiometa-logo.svg" alt="AudioMeta live app" width="22" height="22"></a>
-- [**The Music Deck**](https://deck-showcase.themusictree.org/) — Collectible music card game: open boosters, build lineups, and battle through genre-based strategy (Expo / React Native + Web), with a companion admin monorepo (design system + NestJS API).
+- [**The Music Deck**](https://deck-showcase.themusictree.org/) — Collectible music card game: open boosters, build tracklists, and battle through genre-based strategy. Game monorepo (Expo / React Native client + NestJS game API, [deck.themusictree.org](https://deck.themusictree.org)) and admin monorepo (Next.js admin/showcase + NestJS catalog API).
 - [**Audio Fingerprinter**](https://github.com/BehindTheMusicTree/audio-fingerprinter) — **Shipped** Dockerized Flask microservice for Chromaprint/fpcalc audio fingerprints (`/fingerprint-audio`, Docker + Gunicorn).  
   [![GitHub — repository](https://img.shields.io/badge/code-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audio-fingerprinter) [![GitHub — issues](https://img.shields.io/badge/issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/BehindTheMusicTree/audio-fingerprinter/issues)
 
@@ -114,6 +114,7 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![D3.js](https://img.shields.io/badge/D3.js-F9A03C?style=flat-square&logo=d3.js&logoColor=white)
 ![MapLibre GL](https://img.shields.io/badge/MapLibre_GL-396CB2?style=flat-square&logo=maplibre&logoColor=white)
+![Expo](https://img.shields.io/badge/Expo_/_React_Native-000020?style=flat-square&logo=expo&logoColor=white)
 
 #### DevOps & Tools
 
@@ -122,6 +123,8 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
+![Coolify](https://img.shields.io/badge/Coolify-6B16ED?style=flat-square&logo=coolify&logoColor=white)
+![Ansible](https://img.shields.io/badge/Ansible-EE0000?style=flat-square&logo=ansible&logoColor=white)
 ![uv](https://img.shields.io/badge/uv-DE5FE9?style=flat-square&logo=uv&logoColor=white)
 ![GitFlow](https://img.shields.io/badge/GitFlow-F05032?style=flat-square&logo=git&logoColor=white)
 ![GitHub Flow](https://img.shields.io/badge/GitHub%20Flow-6DB33F?style=flat-square&logo=git&logoColor=white)
@@ -174,37 +177,41 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 ##### 🌳 [**GrowTheMusicTree**](https://github.com/BehindTheMusicTree/grow-the-music-tree-frontend) · [**GrowTheMusicTreeAPI**](https://github.com/BehindTheMusicTree/grow-the-music-tree-api)
 
-- Building a collaborative platform for music genre classification, backed by a companion reference API
+- Building the public map of global music genres (6,000+ genres, 30.9M songs, 1.46M artists in production), backed by a companion reference API, with an admin area to curate the genre tree
 - **Features:**
-  - Spotify and Google OAuth login to connect and analyze users' listening habits
-  - Community contribution system for submitting, validating, and curating genre data (in progress)
-  - Built-in audio player to listen while exploring the genre tree
+  - Interactive genre tree with a text outline view, Maps-style genre search, and a built-in audio player that skips unplayable YouTube tracks
+  - Admin curation area (Google sign-in): curation list editor, per-genre rules, edit history, pipeline sync status, and import monitoring
 - **Technical:**
   - Frontend:
-    - Next.js 15 (App Router), TypeScript, Tailwind CSS, React
+    - Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS
     - Interactive **D3.js** genre-tree visualization, published as a standalone package (`@behindthemusictree/genre-tree-view`) and consumed by the app
     - Shared transport/auth/player/UI plumbing, published as a standalone package (`@behindthemusictree/app-kit`) and consumed by the app
     - Tested with Vitest
-    - Shipped on **Vercel** ([grow.themusictree.org](https://grow.themusictree.org)), with CI (GitHub Actions) running lint/test/build on every PR and production deploys triggered by semver release tags, using GitFlow for branching and release management
-  - Backend: Django REST Framework, PostgreSQL, consuming the shared genre/tag package to serve genre-tree data to the frontend
+    - Deployed on self-hosted **Coolify** ([grow.themusictree.org](https://grow.themusictree.org)): CI (GitHub Actions) runs lint/typecheck/test/build on every PR, builds a Docker image pushed to GHCR, and deploys `develop` to staging and `main` to production, using GitFlow for branching and release management
+  - Backend (GrowTheMusicTreeAPI):
+    - Django REST Framework and PostgreSQL, consuming the shared genre/tag package to serve genre-tree data to the frontend, with the full tree served in one cached request
+    - Staged bulk song import runs fed by TheMusicTreePipelines (gzip NDJSON parts, Postgres `COPY`, set-based merge), loading 30.9M songs and 1.46M artists into a 19 GB production database
+    - Curation system turning admin genre edits into curation rules, with edit history and an advisory lock on writes
+    - CI on Postgres 16 with query-budget and latency checks
+    - Deployed to self-hosted **Coolify**
 
 ##### 🎧 [**HearTheMusicTree**](https://github.com/BehindTheMusicTree/hear-the-music-tree-api) · [**hear-the-music-tree-frontend**](https://github.com/BehindTheMusicTree/hear-the-music-tree-frontend)
 
-- Developing a cloud-based music library manager, with a companion Next.js frontend
+- Developing a cloud-based personal music library manager, with a companion Next.js frontend
 - **Features:**
   - Google/Spotify OAuth login, with accounts matched by email
   - Smart playlist generation algorithms based on genre and tag intelligence
   - Automatic track identification and metadata enrichment via audio fingerprinting (Chromaprint/AcoustID), integrated with MusicBrainz
   - In-app audio player
 - **Technical:**
-  - Frontend: consuming the shared `@behindthemusictree/app-kit` package and TheMusicTree brand theme tokens
+  - Frontend: Next.js 16 and React 19, consuming the shared `@behindthemusictree/app-kit` package and TheMusicTree brand theme tokens; Docker image built in CI, pushed to GHCR, and deployed on **Coolify**
   - Backend:
     - Django REST Framework and PostgreSQL, exposing 80+ REST endpoints (library, metadata, genres, tags, playlists, search) documented via OpenAPI/Swagger
     - Bearer JWT authentication (`djangorestframework-simplejwt`, short-lived access + refresh tokens) issued after OAuth authorization-code exchange
     - Generic HTTP-layer infrastructure (pagination, filtering, permissions, viewsets, error handling) lives in a shared Django package — see [Shared Packages](#-shared-packages) below
     - Genre/tag/criteria domain logic lives in a shared Django package — see [Shared Packages](#-shared-packages) below
     - Microservices architecture with the fingerprinting service running as a Dockerized Flask API
-    - Covered by 1,100+ automated tests (pytest) run in CI via GitHub Actions on a Dockerized Compose stack (API + PostgreSQL + fingerprinting service)
+    - Covered by 4,000+ automated tests (pytest) run in CI via GitHub Actions on a Dockerized Compose stack (API + PostgreSQL + fingerprinting service)
     - Code quality enforced with Ruff and mypy (django-stubs) against a shared baseline config, via pre-commit hooks and CI, including custom checks (banned `assert`, StrEnum preference, actionlint)
     - Dependencies managed with `uv` and a locked `uv.lock`, shared across the repo's dev toolchain for reproducible installs
     - Deployed to self-hosted **Coolify**
@@ -234,56 +241,57 @@ I’m driven by real-world impact—building tools that are well-tested, documen
 
 ##### 🎮 [**The Music Deck**](https://deck-showcase.themusictree.org/)
 
-- Building a collectible music card game combining music discovery with card-game mechanics, with a companion admin monorepo (design system + NestJS API)
+- Building a collectible music card game combining music discovery with card-game mechanics, split into a game monorepo and an admin monorepo
 - **Features:**
-  - Open boosters, build lineups, and battle through genre-based strategy
-  - Game systems: pack/booster economy, subgenre stacking rules, point-driven progression, and daily enigmas
-  - **MapLibre GL** interactive world map coloring subgenres by region, and an SVG-based "Genre Wheel" visualizing genre intensity and transitions
+  - Open boosters, build tracklists, and battle through genre-based strategy against a bot (server-authoritative battles)
+  - Game systems: pack/booster economy, eras and scene packs, subgenre stacking rules, point-driven progression, and daily challenges
+  - Collection binder and Tracklist Builder for player decks
+  - **MapLibre GL** interactive world map coloring subgenres by region, and an era-by-era "Genre Wheel" visualizing genre lineage and transitions
 - **Technical:**
-  - Cross-platform client with Expo (**Metro** bundler), React Native, and React Native Web, targeting iOS, Android, and web from a single TypeScript codebase
-  - Admin monorepo (Nx + pnpm): Next.js (**Turbopack**) visual charter/admin UI and NestJS (Node.js) REST API, deployed via Docker to a self-hosted VPS
-  - Automated release pipeline with GitHub Actions: GHCR image builds, semver tagging, and webhook-driven redeployment to staging and production environments
+  - Game monorepo: cross-platform client with Expo (Expo Router, NativeWind), React Native, and React Native Web, targeting iOS, Android, and web from a single TypeScript codebase ([deck.themusictree.org](https://deck.themusictree.org)); standalone NestJS game API with Google sign-in and cookie sessions; battle engine published as a package; Android builds with EAS
+  - Admin monorepo (Nx + pnpm): Next.js (**Turbopack**) admin and showcase apps, NestJS + Prisma catalog API, Style Dictionary design tokens, card rendering through a Postgres-backed render queue, and automatic publication of the game manifest
+  - Release pipeline with GitHub Actions deploying `develop` to staging and `main` to production on self-hosted **Coolify**
 
 ##### 🔬 [**Audio Fingerprinter**](https://github.com/BehindTheMusicTree/audio-fingerprinter)
 
 - Delivered a production Flask microservice exposing `/fingerprint-audio` to generate Chromaprint (fpcalc) fingerprints and duration
 - Implemented robust validation and structured error handling for invalid files, wrong formats, and short/corrupted audio
-- Containerized deployment with Docker + Gunicorn, health checks, runtime env validation, and CI publish workflow
+- Containerized deployment with Docker + Gunicorn, health checks, and runtime env validation; image built in CI, pushed to GHCR, and deployed on **Coolify**
 - Managed dependencies with `uv` for reproducible, faster container builds
 
 ##### 🧬 [**TheMusicTreePipelines**](https://github.com/BehindTheMusicTree/the-music-tree-pipelines)
 
-- Structured as a `uv` workspace monorepo (one pipeline per source/target data product, shared lockfile and dev toolchain), with Ruff, pytest (unit/integration tiers) and `pytest-cov` enforcing a 90% combined coverage threshold, and `actionlint` enforced via pre-commit and CI
+- Structured as a `uv` workspace monorepo (one pipeline per source/target data product, shared lockfile and dev toolchain), with Ruff, mypy, pytest (unit/integration tiers) and `pytest-cov` with a 90% coverage threshold, and `actionlint` enforced via pre-commit and CI
 - **musicbrainz** — Python/Polars/Postgres ETL reconstructing a genre hierarchy (root genre → subgenre → recording) from MusicBrainz's flat genre list, using Wikidata as a reference taxonomy
-  - Bronze layer built (raw MusicBrainz tables to Parquet via Polars, queryable directly with DuckDB); silver layer (`recording_genre`, `genre_hierarchy`, `recording_genre_path`) not yet built
+  - Bronze layer (raw MusicBrainz tables to Parquet via Polars, queryable directly with DuckDB) and silver layer (recording genres, links, YouTube playability status, songs export keyed by MusicBrainz recording ID)
   - Integration-tested against a real MusicBrainz Postgres sample dataset, loaded via a vendored `musicbrainz-docker` submodule and cached in CI
 - **wikidata** — ingests Wikidata's music genre taxonomy live from the public SPARQL endpoint, rooted at `Q188451` ("music genre") and walking its `P279` ("subclass of") / `P361` ("part of") edges
-  - Bronze: raw genre edges as queried; Silver: a 5-step Polars pipeline (item-link enrichment, regional-overview and cascaded regional classification, genre-parent flagging, final pruning) splitting the taxonomy into canonical and regional genre hierarchies
+  - Bronze: raw genre edges as queried; Silver: a multi-step Polars pipeline (item-link enrichment, regional classification, genre-parent flagging, pruning) splitting the taxonomy into canonical and regional genre hierarchies
   - Explored via a Jupyter notebook (`notebooks/explore_genre_tree.ipynb`) doing tabular and `networkx` graph analysis of the bronze genre tree
-- Publishes independent datasets intended for future ingestion by TheMusicTreeAPI
+- **curation** — pulls the curation rules edited in GrowTheMusicTree's admin back into the pipelines
+- **gold** — canonical and regional genre-tree exports (Wikidata QIDs, secondary parents), genre match report, and songs export as gzip NDJSON parts, with data-quality checks
+- Gold outputs are ingested by GrowTheMusicTreeAPI through staged bulk imports
 
 ##### 📦 Shared Packages
 
 - Generic HTTP-layer Django infrastructure (pagination, filtering, permissions, viewsets, error handling), packaged as [`the-music-tree-api-kit`](https://github.com/BehindTheMusicTree/the-music-tree-api-kit), consumed by both HearTheMusicTree and GrowTheMusicTreeAPI
-- Genre/tag/criteria domain logic, packaged as [`the-music-tree-genre-kit`](https://github.com/BehindTheMusicTree/the-music-tree-genre-kit), consumed by both HearTheMusicTree and GrowTheMusicTreeAPI
-- GrowTheMusicTree's D3 genre-tree visualization, published as [`@behindthemusictree/genre-tree-view`](https://github.com/BehindTheMusicTree/genre-tree-view), consumed by GrowTheMusicTree
+- Genre/tag/criteria domain logic (multi-parent genre hierarchy), packaged as [`the-music-tree-genre-kit`](https://github.com/BehindTheMusicTree/the-music-tree-genre-kit), consumed by both HearTheMusicTree and GrowTheMusicTreeAPI
+- GrowTheMusicTree's D3 genre-tree visualization and text outline view, published as [`@behindthemusictree/genre-tree-view`](https://github.com/BehindTheMusicTree/genre-tree-view), consumed by GrowTheMusicTree
 - Shared transport/auth/player/UI plumbing, published as [`@behindthemusictree/app-kit`](https://github.com/BehindTheMusicTree/app-kit), consumed by both GrowTheMusicTree and HearTheMusicTree frontends
 - Maintaining [`@behindthemusictree/brand`](https://github.com/BehindTheMusicTree/the-music-tree-brand), a shared design-token/asset package (colors, components, marks) consumed across all TheMusicTree React apps
-- Extracting a design-system-only `@behindthemusictree/ui` package (Button, Input, Table, Pagination, and other primitives) out of app-kit for independent versioning (in progress)
-
-##### 🔌 [**TheMusicTreeAPI**](https://github.com/BehindTheMusicTree/the-music-tree-api)
-
-- Planned: a dedicated genre hierarchy/metadata/detection API meant to become the ecosystem's authoritative genre reference, consumed by TheMusicTreePipelines' output and other TheMusicTree apps — not yet started
+- Extracted a design-system-only [`@behindthemusictree/ui`](https://github.com/BehindTheMusicTree/ui) package (Button, Input, Table, Pagination, and other primitives) out of app-kit for independent versioning, consumed by app-kit and both frontends
 
 ##### 🛠️ [**Infrastructure**](https://themusictree.org/projects/infrastructure)
 
 - Built and maintain the provisioning pipeline for the whole TheMusicTree ecosystem: Ansible + GitHub Actions, tag-triggered, applying root → staging → prod in sequence (a failed staging apply blocks prod)
-- Container orchestration via Coolify with Traefik routing every app (APIs, fronts, admin, game, MusicBrainz mirror) by hostname
-- Set up a full observability stack (Prometheus, Grafana, Loki) provisioned automatically alongside the apps
+- Container orchestration via Coolify with Traefik routing every app (APIs, fronts, admin, game, MusicBrainz mirror) by hostname; apps deployed from prebuilt GHCR images
+- Self-hosted GitHub Actions runners (including an Android runner for EAS builds) and a self-hosted Nx remote cache
+- Orchestrates TheMusicTreePipelines runs, syncing songs to GrowTheMusicTree through staged imports
+- Set up monitoring (Prometheus, Grafana) and alerting (Uptime Kuma to Discord) provisioned automatically alongside the apps
 - Automated Cloudflare DNS record management (A/CNAME) via Ansible, idempotent and declarative
 - Implemented Zero Trust access control, hardened origin protection against direct-IP bypass, brute-force protection, and least-privilege SSH accounts
-- Automated offsite backups to Cloudflare R2 (S3-compatible) with a monthly automated restore drill, plus CORS policy and custom-domain management for app-facing R2 asset buckets
-- Automated SSL certificate renewal via systemd timer
+- Automated offsite backups to Cloudflare R2 (S3-compatible) with an automated restore drill, plus CORS policy and custom-domain management for app-facing R2 asset buckets
+- Automated SSL certificates via Traefik ACME
 
 #### Major Music Events Company - Consultant
 

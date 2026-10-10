@@ -10,10 +10,8 @@ Lead the development of an ecosystem of interconnected projects transforming mus
 
 🚀 PROJECTS DEVELOPED:
     🎵 AudioMeta Python: Audio metadata library (ID3v1, ID3v2, Vorbis, RIFF), 1500+ tests, 27k PyPI downloads
-    🌳 GrowTheMusicTree: Community music genre classification platform (Next.js, TypeScript, React), frontend on Vercel
-    🎧 HearTheMusicTree: Cloud music library manager with intelligent playlists
-    🔌 TheMusicTreeAPI: REST API for genre hierarchy and metadata (Django REST Framework, PostgreSQL)
-    🃏 The Music Deck: Collectible music card game with genre-based battle strategy (Expo, React Native, TypeScript, Node.js, NestJS)
+    🌳 GrowTheMusicTree: Interactive music genre map with admin curation (Next.js, TypeScript, React, D3.js) and its API (Django REST Framework, PostgreSQL), deployed on Coolify
+    🎧 HearTheMusicTree: Cloud music library manager with intelligent playlists    🃏 The Music Deck: Collectible music card game with genre-based battle strategy (Expo, React Native, TypeScript, NestJS, Next.js admin)
 
 ⭐ KEY COMPETENCIES:
     💻 Full-stack development

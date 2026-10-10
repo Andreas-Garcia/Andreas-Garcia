@@ -86,18 +86,20 @@ Format:
   - Impact/Results (with metrics when possible)
   - Technologies used (if relevant)
 
+**One entry per organization, projects as bullets:** Each experience heading is an organization (e.g. TheMusicTree), never a single project or a project component. Projects (GrowTheMusicTree, AudioMeta Python…) appear as the subject of bullets inside that entry. Don't split one project into separate entries (e.g. "GrowTheMusicTree API" vs "GrowTheMusicTree Frontend") — tailor instead: order bullets so the JD-relevant side (e.g. API for a backend role) comes first, and adjust the role title to that focus only if accurate (e.g. "Founder & Backend Lead"). A separate "Projects" section is only for work not attached to any organization.
+
 **Important:** Do not use "-" as a bullet point marker. Write bullet points as plain text sentences without any bullet markers.
 
-**Project links:** **All mentions of specific projects** (e.g., AudioMeta Python, AudioMeta Webapp, TheMusicTreeAPI, OpenSILEX, GrowTheMusicTree) **must include the project link(s) in parentheses immediately after the project name**: `ProjectName (https://url.com)`. Priority order for links: website > PyPI > GitHub. **Note:** Links in parentheses do not count toward the character limit. **Multiple project links with icon placeholders are allowed in the job experiences section.**
+**Project links:** **All mentions of specific projects** (e.g., AudioMeta Python, AudioMeta Webapp, OpenSILEX, GrowTheMusicTree) **must include the project link(s) in parentheses immediately after the project name**: `ProjectName (https://url.com)`. Priority order for links: website > PyPI > GitHub. **Note:** Links in parentheses do not count toward the character limit. **Multiple project links with icon placeholders are allowed in the job experiences section.**
 
 **Available links (first priority):** Use these URLs when mentioning the following projects (override GitHub/repo links). For projects marked wip, use a present-participle (-ing) verb for the bullet (e.g. "Building GrowTheMusicTree…", not "Built GrowTheMusicTree…") instead of past tense, since the work is ongoing. **Keep this wip list in sync with README.md if a project's status changes.**
 
 - **AudioMeta Webapp:** https://themusictree.org/projects/audiometa-webapp (portfolio page) or https://audiometa.themusictree.org/ (live app). **Next.js on Vercel.** (wip)
-- **GrowTheMusicTree / GrowTheMusicTreeAPI:** https://grow.themusictree.org/ (wip). **Next.js on Vercel.**
+- **GrowTheMusicTree / GrowTheMusicTreeAPI:** https://grow.themusictree.org/ (wip). **Next.js on Coolify (Docker/GHCR).**
 - **Portfolio / marketing site:** https://themusictree.org/ — **Next.js on Vercel** (when relevant).
 - **HearTheMusicTree:** https://hear-api.themusictree.org/docs/ (wip)
 - **AudioMeta Python:** https://pypi.org/project/audiometa-python/ (not wip — published, completed)
-- **The Music Deck:** https://deck-showcase.themusictree.org/ (wip)
+- **The Music Deck:** https://deck.themusictree.org/ (game) or https://deck-showcase.themusictree.org/ (showcase) (wip)
 
 **Links:** After the job experiences section, include a "Links" subsection listing all URLs in the format: `Project/Company Name: https://url.com`
 

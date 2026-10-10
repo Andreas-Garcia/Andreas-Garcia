@@ -12,18 +12,17 @@ I've developed tools, libraries, platforms, and services in various contexts:
 
 - TheMusicTree (Founder & Lead Developer):
   - AudioMeta Python: audio metadata library, 1500+ tests, 27k downloads
-  - GrowTheMusicTree: community music genre classification platform (Next.js, TypeScript, React)
-  - TheMusicTreeAPI: REST API for access to genre hierarchy and metadata (Django REST Framework, PostgreSQL)
+  - GrowTheMusicTree: interactive global music genre map with admin curation (Next.js, TypeScript, React, D3.js) and its API (Django REST Framework, PostgreSQL)
   - HearTheMusicTree: cloud music library manager
-  - The Music Deck: collectible music card game with genre-based battle strategy (Expo, React Native, TypeScript)
+  - The Music Deck: collectible music card game with genre-based battle strategy (Expo, React Native, TypeScript, NestJS)
 - OpenSILEX (INRAE): open-source information system for FAIR data (Java Spring Boot, RDF4J), backend REST API services and frontend (PHP, JavaScript)
 
 Technical stack:
 
 - Backend: Python, Django REST Framework, Java Spring Boot, Node.js, NestJS
-- Frontend: Next.js, TypeScript, React, Vercel (TheMusicTree web apps)
+- Frontend: Next.js, TypeScript, React, Expo / React Native
 - Database: PostgreSQL
-- DevOps & Tools: Docker, GitFlow, CI/CD (GitHub Actions)
+- DevOps & Tools: Docker, GitFlow, CI/CD (GitHub Actions), Ansible, Coolify, Vercel
 - Methodologies: SCRUM, test-driven development (TDD)
 
 🎓 Education: Engineering degree in Computer Science from INSA Lyon (2014) | Entrepreneurship program at La Ruche (2025)

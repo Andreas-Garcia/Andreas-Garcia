@@ -4,17 +4,17 @@
 GrowTheMusicTree
 
 ## Descr (<2000 char)
-Plateforme collaborative pour construire la carte interactive et évolutive des genres musicaux. Objectif : devenir la référence pour explorer et comprendre les genres (passé, présent, futur) via un arbre de genres alimenté par la communauté et les experts. Fonctionnalités : arbre de genres dynamique, parcours personnalisés qui cartographient les habitudes d’écoute, détection de genre intelligente, accès API (TheMusicTreeAPI) pour intégrer l’intelligence des genres dans d’autres services. Frontend Next.js déployé sur **Vercel** ; CI/CD **GitHub Actions**. Intégrations : Spotify, MusicBrainz.
+Carte interactive des genres musicaux mondiaux. Objectif : devenir la référence pour explorer et comprendre les genres et leurs filiations. Fonctionnalités : arbre de genres interactif (D3.js) et vue texte, lecteur audio par genre, éditeur de curation admin (règles par genre, historique). Frontend Next.js + API Django REST Framework / PostgreSQL alimentée par des pipelines de données (Wikidata, MusicBrainz) via imports en masse : 6 000+ genres, 30,9 M de chansons et 1,46 M d'artistes en production. Images Docker (GitHub Actions → GHCR) déployées sur **Coolify**.
 
 ## 5 skills
 - Next.js
 - TypeScript
 - React
-- Vercel, Docker / CI-CD (GitHub Actions)
+- Docker / CI-CD (GitHub Actions, Coolify)
 - Modélisation de domaine (genres, arbre)
 
 ## Medias
 - **Site** — https://grow.themusictree.org  
-  Application en ligne : exploration de l’arbre des genres et parcours personnalisés.
-- **GitHub** — https://github.com/BehindTheMusicTree/grow-the-music-tree  
+  Application en ligne : exploration de l’arbre des genres.
+- **GitHub** — https://github.com/BehindTheMusicTree/grow-the-music-tree-frontend  
   Dépôt source du projet (Next.js, TypeScript, React).

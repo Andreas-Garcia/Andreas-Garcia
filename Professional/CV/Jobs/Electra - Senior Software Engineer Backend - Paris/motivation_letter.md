@@ -1,0 +1,12 @@
+Dear Hiring Team,
+
+I am writing to express my strong interest in the Senior Software Engineer Backend role in Electra's Roaming squad in Paris. Making electric mobility the obvious choice is exactly the kind of mission I want my engineering work to serve, and the squad's challenge of turning sessions from dozens of partner networks into correct invoices speaks directly to what I enjoy most: keeping data coherent across systems you don't fully control.
+
+Your posting asks for someone comfortable integrating with third-party systems while keeping internal data consistent. At TheMusicTree, which I founded, I am building GrowTheMusicTreeAPI, a Django REST Framework and PostgreSQL API whose staged bulk imports (Postgres COPY and set-based merge) load 30.9M songs and 1.46M artists across 6,000+ genres, fed by Python/Polars pipelines that ingest MusicBrainz data and query Wikidata's live SPARQL endpoint, with data-quality checks and a 90% coverage threshold enforced in CI. I also operate the whole ecosystem myself, with Ansible and GitHub Actions provisioning, Prometheus and Grafana monitoring, Uptime Kuma alerting and backups with an automated restore drill, which is how I approach observability and incident prevention. Regarding invoicing and finance, I specified and implemented 62 critical accounting interfaces as complex SQL scripts during an ERP migration at Cleversys (later Deloitte), acting as technical point of contact for a client with over €4B in annual revenue and working directly with the ERP editor's developers on fixes. Go and Ruby on Rails would be new to me, but I have moved between Python, Java, C#, PHP and TypeScript throughout my career and pick up new stacks and domains quickly.
+
+Beyond the technical fit, Electra's mission resonates with my own commitments. At INRAE, I worked on an agrivoltaics research project combining agriculture and photovoltaics, contributing to OpenSILEX, an open-source system for making research data interoperable, within a SCRUM team practising peer code reviews. Outside work, I have spent time WWOOFing and on eco-construction projects. I am fluent in French and English, and I value the close collaboration with operations, finance and partner teams that the role describes.
+
+I would welcome the opportunity to discuss how my backend experience and attention to data consistency could help Electra's roaming platform scale across Europe. Thank you for considering my application; I look forward to hearing from you.
+
+Best regards,
+Andreas Garcia
