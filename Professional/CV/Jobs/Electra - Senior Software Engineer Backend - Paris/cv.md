@@ -10,15 +10,15 @@ garcia.andreas.1991@gmail.com · [ICON] LinkedIn · [ICON] GitHub · [ICON] Port
 
 Backend engineer with a computer science engineering degree, I design, ship and operate production APIs, microservices and data pipelines in Python, Django REST Framework and PostgreSQL, deployed with Docker and CI/CD and monitored with Prometheus and Grafana. Implementing 62 accounting interfaces for an ERP migration taught me to care about data consistency between systems, and I enjoy learning complex business domains quickly.
 
-I founded TheMusicTree (https://themusictree.org), where I am building GrowTheMusicTreeAPI (https://grow.themusictree.org), a Django REST Framework API whose staged bulk imports load 30.9M songs and 6,000+ genres from pipelines ingesting MusicBrainz and Wikidata, and HearTheMusicTree (https://hear-api.themusictree.org/docs/), an API with 80+ endpoints covered by 4,000+ tests. I also published AudioMeta Python (https://pypi.org/project/audiometa-python/), with 27k+ downloads.
+I founded TheMusicTree (https://themusictree.org), where I am building the Django REST Framework backend of GrowTheMusicTree (https://grow.themusictree.org), whose staged bulk imports load 30.9M songs and 6,000+ genres from pipelines ingesting MusicBrainz and Wikidata. I run it myself, from Ansible provisioning to monitoring and backups. I also published AudioMeta Python (https://pypi.org/project/audiometa-python/), with 27k+ downloads.
 
 ---
 
 ## Skills
 
-**Techniques:** Python, Django REST Framework, REST API, PostgreSQL, SQL, Microservices, Docker, CI/CD (GitHub Actions), Prometheus & Grafana
+**Techniques:** Python, Django REST Framework, REST API, PostgreSQL, Microservices, Docker, CI/CD, Grafana
 
-**Workflow:** GitFlow, Automated Testing, Code Review, Monitoring & Alerting, Infrastructure as Code (Ansible), Technical Specification, Agile/SCRUM, Documentation, Clean Code
+**Workflow:** Automated Testing, Code Review, Monitoring & Alerting, Infrastructure as Code, Specification
 
 ---
 
@@ -28,14 +28,14 @@ I founded TheMusicTree (https://themusictree.org), where I am building GrowTheMu
 
 Dec. 2021 – Present
 
-Building GrowTheMusicTreeAPI (https://grow.themusictree.org), a Django REST Framework and PostgreSQL API whose staged bulk imports (Postgres COPY, set-based merge) load 30.9M songs and 1.46M artists across 6,000+ genres.
-Building TheMusicTreePipelines (https://github.com/BehindTheMusicTree/the-music-tree-pipelines), Python/Polars ETL pipelines ingesting MusicBrainz data and the live Wikidata SPARQL endpoint, with data-quality checks and a 90% coverage threshold enforced in CI.
+Building the Django REST Framework and PostgreSQL backend of GrowTheMusicTree (https://grow.themusictree.org), a world genre map whose staged bulk imports (Postgres COPY, set-based merge) load 30.9M songs and 1.46M artists.
+Building TheMusicTreePipelines (https://themusictree.org/projects/the-music-tree-pipelines), Python/Polars ETL pipelines ingesting MusicBrainz data and the live Wikidata SPARQL endpoint, with data-quality checks and a 90% coverage threshold enforced in CI.
 Operating the whole ecosystem with Ansible and GitHub Actions provisioning, Prometheus and Grafana monitoring, Uptime Kuma alerting, and offsite backups with an automated restore drill.
 
 **Links:**
 TheMusicTree: https://themusictree.org
-GrowTheMusicTreeAPI: https://grow.themusictree.org
-TheMusicTreePipelines: https://github.com/BehindTheMusicTree/the-music-tree-pipelines
+GrowTheMusicTree: https://grow.themusictree.org
+TheMusicTreePipelines: https://themusictree.org/projects/the-music-tree-pipelines
 
 ---
 

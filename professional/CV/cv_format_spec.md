@@ -18,6 +18,7 @@ Given a job description in `professional/CV/Jobs/[job title]/` (typically `Job D
 3. **Validation step** - After generating cv.md:
    - Verify that all mentions of projects in the intro section and job experiences section have links in parentheses (format: `ProjectName (https://url.com)`)
    - Verify that all bullet points in the job experiences section are approximately 190 characters in length (excluding project links in parentheses)
+   - Verify that each skills list (Techniques, Workflow) is 100 characters max, label excluded
    - Verify that the intro section is between 760 and 773 characters in length (excluding all project links in parentheses) and consists of 2 paragraphs
    - **Important:** Project links in parentheses do not count toward character limits for validation purposes
    - Adjust any bullet points or intro section that do not meet these requirements
@@ -60,6 +61,8 @@ Format:
 - **Techniques:** List technical skills relevant to the job description (e.g., Javascript, React, Next.js, Python, Django DRF, RESTful API, SGBD, CI/CD). **Maximum 11 keywords.**
 - **Workflow:** List project/process skills relevant to the job description (e.g., GitFlow, Test Driven Development, Assurance Qualité, Agile/SCRUM). **Maximum 11 keywords.**
 
+**Length:** Each list (Techniques, Workflow) is **100 characters max**, label excluded. Drop the least relevant keywords to fit.
+
 **Important:** Skills should be selected based on relevance to the job description and should reference skills from README.md. The language should match the job description language (French or English).
 
 **Terminology:** Use **GitFlow** (one word), not "Git Flow". For the GitHub workflow, use **GitHub Flow** if needed.
@@ -92,14 +95,16 @@ Format:
 
 **Project links:** **All mentions of specific projects** (e.g., AudioMeta Python, AudioMeta Webapp, OpenSILEX, GrowTheMusicTree) **must include the project link(s) in parentheses immediately after the project name**: `ProjectName (https://url.com)`. Priority order for links: website > PyPI > GitHub. **Note:** Links in parentheses do not count toward the character limit. **Multiple project links with icon placeholders are allowed in the job experiences section.**
 
+**Product names, not repo names:** Name projects by their product name (e.g. GrowTheMusicTree), never by a repo/component name (e.g. GrowTheMusicTreeAPI). Carry the side you worked on in the sentence instead (e.g. "Building the Django REST Framework backend of GrowTheMusicTree (https://grow.themusictree.org)…"). Recruiters remember a product, and the product link points to the live app, not the API.
+
 **Available links (first priority):** Use these URLs when mentioning the following projects (override GitHub/repo links). For projects marked wip, use a present-participle (-ing) verb for the bullet (e.g. "Building GrowTheMusicTree…", not "Built GrowTheMusicTree…") instead of past tense, since the work is ongoing. **Keep this wip list in sync with README.md if a project's status changes.**
 
 - **AudioMeta Webapp:** https://themusictree.org/projects/audiometa-webapp (portfolio page) or https://audiometa.themusictree.org/ (live app). **Next.js on Vercel.** (wip)
-- **GrowTheMusicTree / GrowTheMusicTreeAPI:** https://grow.themusictree.org/ (wip). **Next.js on Coolify (Docker/GHCR).**
+- **GrowTheMusicTree:** https://grow.themusictree.org/ (wip). **Next.js on Coolify (Docker/GHCR).**
 - **Portfolio / marketing site:** https://themusictree.org/ — **Next.js on Vercel** (when relevant).
-- **HearTheMusicTree:** https://hear-api.themusictree.org/docs/ (wip)
 - **AudioMeta Python:** https://pypi.org/project/audiometa-python/ (not wip — published, completed)
 - **The Music Deck:** https://deck.themusictree.org/ (game) or https://deck-showcase.themusictree.org/ (showcase) (wip)
+- **TheMusicTreePipelines:** https://themusictree.org/projects/the-music-tree-pipelines (wip)
 
 **Links:** After the job experiences section, include a "Links" subsection listing all URLs in the format: `Project/Company Name: https://url.com`
 
