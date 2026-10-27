@@ -47,6 +47,32 @@ get_size_bytes() {
     fi
 }
 
+# Allocated size of a single file in KB (0 if missing) — sparse files report their real footprint
+get_file_kb() {
+    if [ -f "$1" ]; then
+        du -sk "$1" 2>/dev/null | awk '{print $1}'
+    else
+        echo "0"
+    fi
+}
+
+# Human label for a pid. Claude Code CLI processes are all named "claude", so map them
+# to their session via ~/.claude/sessions/<pid>.json (name, cwd, tty, session id).
+describe_pid() {
+    local pid=$1 comm meta name cwd sid tty
+    comm=$(ps -p "$pid" -o comm= 2>/dev/null)
+    meta="$HOME/.claude/sessions/$pid.json"
+    if [ "${comm##*/}" = "claude" ] && [ -f "$meta" ]; then
+        name=$(grep -o '"name":"[^"]*"' "$meta" | head -1 | sed 's/"name":"//;s/"$//')
+        cwd=$(grep -o '"cwd":"[^"]*"' "$meta" | head -1 | sed 's/"cwd":"//;s/"$//')
+        sid=$(grep -o '"sessionId":"[^"]*"' "$meta" | head -1 | sed 's/"sessionId":"//;s/"$//')
+        tty=$(ps -p "$pid" -o tty= 2>/dev/null | tr -d ' ')
+        echo "claude \"${name:-unnamed}\" — ${cwd/#"$HOME"/\~} (tty $tty, session ${sid:0:8})"
+    else
+        echo "${comm##*/}"
+    fi
+}
+
 # Function to clear cache directory
 # Optional remaining args: names of entries directly under cache_dir to skip (e.g. a
 # cache that's expensive to redownload, like Playwright's browser binaries, or one
@@ -289,9 +315,26 @@ if command -v docker &> /dev/null && timeout 5 docker info &>/dev/null; then
     # Volumes are NOT included here — they can hold real data (dev databases, etc.)
     # for a project that's just not running right now. See the confirmation prompt below.
     echo -e "${YELLOW}Clearing: Docker images and build cache${NC}"
+    DOCKER_RAW="$HOME/Library/Containers/com.docker.docker/Data/vms/0/data/Docker.raw"
+    docker_raw_before=$(get_file_kb "$DOCKER_RAW")
     docker system prune -af || true
     echo -e "${GREEN}  ✓ Docker images/build cache cleared${NC}"
     echo ""
+
+    # Prune frees blocks inside the VM only; the sparse Docker.raw on the host shrinks
+    # once the VM issues TRIM, which otherwise only happens when Docker restarts.
+    if [ -f "$DOCKER_RAW" ]; then
+        echo -e "${YELLOW}Trimming: Docker VM disk (releases freed blocks to macOS)${NC}"
+        timeout 120 docker run --rm --privileged --pid=host alpine nsenter -t 1 -m -- fstrim -av &>/dev/null || true
+        docker_raw_freed=$((docker_raw_before - $(get_file_kb "$DOCKER_RAW")))
+        if [ "$docker_raw_freed" -gt 0 ]; then
+            TOTAL_FREED_KB=$((TOTAL_FREED_KB + docker_raw_freed))
+            echo -e "${GREEN}  ✓ Freed: $((docker_raw_freed / 1024))MB${NC}"
+        else
+            echo -e "${GREEN}  ✓ Already trimmed${NC}"
+        fi
+        echo ""
+    fi
 
     # Unused volumes (not attached to any container, LINKS = 0): list + confirm before deleting
     unused_volumes=()
@@ -461,6 +504,48 @@ fi
 echo -e "${GREEN}  ✓ Trash emptied${NC}"
 echo ""
 
+# Deleted files still held open: their blocks stay allocated until the holding process
+# exits, so an `rm` on a running app's cache (or a rotated log) frees nothing until then.
+# Runs after every cleanup step so it also catches what this script just deleted.
+echo -e "${YELLOW}Checking: deleted files still held open by running processes${NC}"
+held_lines=()
+held_apps=()
+while read -r kb pid; do
+    [ "${kb:-0}" -gt $((200 * 1024)) ] || continue
+    comm=$(ps -p "$pid" -o comm= 2>/dev/null)
+    app=""
+    if [[ "$comm" == *.app/* ]]; then
+        app=${comm%%.app/*}
+        app=${app##*/}
+        [[ " ${held_apps[*]} " == *" $app "* ]] || held_apps+=("$app")
+    fi
+    held_lines+=("$((kb / 1024))MB  pid $pid  ${app:-$(describe_pid "$pid")}")
+done < <(lsof -nP +L1 2>/dev/null | awk '$5=="REG" {kb[$2]+=$7/1024} END {for (p in kb) printf "%d %s\n", kb[p], p}' | sort -rn | head -5)
+
+if [ "${#held_lines[@]}" -gt 0 ]; then
+    echo -e "${RED}⚠️  Space not yet released — freed only when these processes exit:${NC}"
+    for line in "${held_lines[@]}"; do
+        echo "  $line"
+    done
+    echo ""
+    if [ "${#held_apps[@]}" -gt 0 ]; then
+        read -p "Quit ${held_apps[*]} now to release it? [y/N] " confirm
+        if [[ "$confirm" =~ ^[Yy]$ ]]; then
+            for app in "${held_apps[@]}"; do
+                osascript -e "quit app \"$app\"" &>/dev/null || true
+            done
+            echo -e "${GREEN}  ✓ Quit requested (apps save state and exit gracefully)${NC}"
+        else
+            echo -e "${YELLOW}  Skipped. Quit them yourself, or reboot, to release the space.${NC}"
+        fi
+    else
+        echo -e "${YELLOW}  Not GUI apps — restart the owning service(s) to release the space.${NC}"
+    fi
+else
+    echo -e "${GREEN}  ✓ Nothing held open${NC}"
+fi
+echo ""
+
 # Final alert: orphaned Claude Code project transcripts (source repo no longer exists)
 if [ "${#orphan_dirs[@]}" -gt 0 ]; then
     echo -e "${RED}========================================${NC}"
@@ -560,5 +645,21 @@ fi
 # is reporting lag, not a permissions issue.
 if [ "$TOTAL_FREED_KB" -gt 0 ] && [ $((TOTAL_FREED_KB - space_freed_df)) -gt $((512 * 1024)) ]; then
     echo -e "${YELLOW}Note: reported free disk space hasn't fully caught up yet — APFS reclaims purgeable space asynchronously and it should settle within a few minutes.${NC}"
+fi
+echo ""
+
+# Space only a reboot (or quitting apps) releases — root-owned or process-bound, so
+# report it rather than attempt it (this script never uses sudo).
+diskutil info / 2>/dev/null | grep "Container Free Space" | sed 's/^ *//;s/ (exactly.*//'
+swap_used_mb=$(sysctl -n vm.swapusage 2>/dev/null | sed -n 's/.*used = \([0-9]*\).*/\1/p')
+if [ "${swap_used_mb:-0}" -gt 1024 ]; then
+    echo -e "${YELLOW}⚠️  $((swap_used_mb / 1024))GB in swap (/private/var/vm) — released only by quitting memory-heavy apps or rebooting. Top memory users:${NC}"
+    while read -r rss pid; do
+        echo "  $((rss / 1024))MB  pid $pid  $(describe_pid "$pid")"
+    done < <(ps -axo rss=,pid= | sort -rn | head -3)
+fi
+snapshot_count=$(tmutil listlocalsnapshots / 2>/dev/null | grep -c "com.apple.TimeMachine" || true)
+if [ "${snapshot_count:-0}" -gt 0 ]; then
+    echo -e "${YELLOW}⚠️  $snapshot_count Time Machine local snapshot(s) holding space — thin with: tmutil thinlocalsnapshots / 999999999999 4${NC}"
 fi
 echo ""
