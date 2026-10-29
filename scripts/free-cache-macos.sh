@@ -5,16 +5,51 @@
 
 set -e
 
+# --dry-run: report what would be freed without deleting anything or answering prompts.
+# Space freed by tool-driven steps (pre-commit gc, git gc, Docker, brew, package managers)
+# can't be estimated in advance, so it is not included in the dry-run total.
+DRY_RUN=0
+case "${1:-}" in
+    "") ;;
+    --dry-run) DRY_RUN=1 ;;
+    *) echo "Usage: $0 [--dry-run]" >&2; exit 1 ;;
+esac
+
+# Run a destructive command unless in dry-run mode
+act() {
+    [ "$DRY_RUN" = 1 ] && return 0
+    "$@"
+}
+
+# read -p replacement: in dry-run, never prompts and answers "no"
+ask() {
+    if [ "$DRY_RUN" = 1 ]; then
+        echo "$1[dry-run: skipped]"
+        confirm=n
+    else
+        read -r -p "$1" confirm
+    fi
+}
+
 # Claude Code conversation transcripts (*.jsonl) older than this are proposed for
 # deletion in the final alert below (opt-in, never automatic). Only the transcript
 # files are targeted — memory notes (memory/*.md) are untouched either way.
-CLAUDE_CONV_PURGE_DAYS=21
+CLAUDE_CONV_PURGE_DAYS=7
 
 # Root scanned for repo-local build caches (Nx, Turbo, Next, node_modules/.cache, Python tool caches)
 CODE_ROOT="$HOME/git"
 
-# Worktrees with no file modified in this many days get node_modules/.venv/dist etc. removed
-STALE_WORKTREE_DAYS=1
+# Repos and worktrees with no source file modified in this many days get node_modules/.venv/dist etc. removed
+STALE_DAYS=1
+
+# Repos whose .git exceeds this size get `git gc` (at most once per GIT_GC_INTERVAL_DAYS)
+GIT_GC_MIN_KB=$((300 * 1024))
+GIT_GC_INTERVAL_DAYS=30
+GIT_GC_STAMP="$HOME/.cache/free-cache-git-gc.stamp"
+
+# Apps whose Electron/Chromium caches are cleared (dirs under ~/Library/Application Support)
+ELECTRON_APPS=(Postman)
+ELECTRON_CACHE_SUBDIRS=(Cache "Code Cache" GPUCache DawnCache DawnGraphiteCache DawnWebGPUCache "Service Worker/CacheStorage" "Service Worker/ScriptCache")
 
 # Running total of space actually freed (KB), tracked per-operation rather than
 # inferred from a before/after `df` snapshot — `df` on APFS is unreliable for this
@@ -95,19 +130,19 @@ clear_cache() {
     echo "  Location: $cache_dir"
     echo "  Size before: $size_before_human"
 
-    # Remove contents but keep directory structure
-    if [ "${#excludes[@]}" -gt 0 ]; then
-        local prune_args=()
-        for name in "${excludes[@]}"; do
-            prune_args+=(! -name "$name")
-        done
-        find "$cache_dir" -mindepth 1 -maxdepth 1 "${prune_args[@]}" -exec rm -rf {} + 2>/dev/null || true
-    else
-        find "$cache_dir" -mindepth 1 -maxdepth 1 -exec rm -rf {} + 2>/dev/null || true
-    fi
+    local prune_args=()
+    for name in ${excludes[@]+"${excludes[@]}"}; do
+        prune_args+=(! -name "$name")
+    done
 
-    local size_after=$(get_size_bytes "$cache_dir")
-    local size_freed=$((size_before - size_after))
+    # Remove contents but keep directory structure
+    local size_freed
+    if [ "$DRY_RUN" = 1 ]; then
+        size_freed=$(find "$cache_dir" -mindepth 1 -maxdepth 1 "${prune_args[@]}" -exec du -sk {} + 2>/dev/null | awk '{s+=$1} END {print s+0}')
+    else
+        find "$cache_dir" -mindepth 1 -maxdepth 1 "${prune_args[@]}" -exec rm -rf {} + 2>/dev/null || true
+        size_freed=$((size_before - $(get_size_bytes "$cache_dir")))
+    fi
     local size_freed_mb=$((size_freed / 1024))
 
     if [ "$size_freed" -gt 0 ]; then
@@ -137,7 +172,7 @@ prune_workspace_storage() {
         [[ -n "$folder" && "$folder" != *%* ]] || continue
         if [ ! -d "$folder" ]; then
             size_kb=$(du -sk "$ws_dir" 2>/dev/null | awk '{print $1}')
-            rm -rf "$ws_dir"
+            act rm -rf "$ws_dir"
             pruned=$((pruned + ${size_kb:-0}))
         fi
     done
@@ -182,8 +217,13 @@ for chrome_profile in "$HOME/Library/Application Support/Google/Chrome/Default" 
     clear_cache "$chrome_profile/Cache" "Chrome Cache ($profile_name)"
     clear_cache "$chrome_profile/Code Cache" "Chrome Code Cache ($profile_name)"
     clear_cache "$chrome_profile/GPUCache" "Chrome GPU Cache ($profile_name)"
+    clear_cache "$chrome_profile/Service Worker/CacheStorage" "Chrome Service Worker Cache ($profile_name)"
 done
+clear_cache "$HOME/Library/Application Support/Google/Chrome/OptGuideOnDeviceModel" "Chrome on-device AI model"
 clear_cache "$HOME/Library/Application Support/Google/GoogleUpdater/crx_cache" "Google Updater crx_cache"
+
+# Nx global task cache + project graph DB (rebuilt on next nx run)
+clear_cache "$HOME/.nx" "Nx global cache"
 
 # Xcode derived data (if exists)
 clear_cache "$HOME/Library/Developer/Xcode/DerivedData" "Xcode Derived Data"
@@ -209,25 +249,93 @@ else
     echo ""
 fi
 
-# Dependency/build dirs in git worktrees with no file edited for STALE_WORKTREE_DAYS.
-# Only gitignored dirs are removed; reinstall/rebuild if the worktree is picked up again.
+# Dependency/build dirs in git clones and worktrees with no source file edited for STALE_DAYS.
+# Only gitignored dirs are removed; reinstall/rebuild if the repo is picked up again.
 # Submodules also have a .git file, so only gitdirs pointing into .git/worktrees count.
+# A clone's own scan skips .claude/worktrees: each worktree is judged on its own activity.
 if [ -d "$CODE_ROOT" ]; then
-    echo -e "${YELLOW}Clearing: deps/build output in worktrees untouched for ${STALE_WORKTREE_DAYS}+ days${NC}"
-    STALE_PRUNE=(-name .git -o -name node_modules -o -name .venv -o -name venv -o -name dist -o -name .expo -o -name .next -o -name .turbo -o -name build)
-    while IFS= read -r gitfile; do
-        grep -q '/worktrees/' "$gitfile" 2>/dev/null || continue
-        wt=$(dirname "$gitfile")
-        [ -z "$(find "$wt" \( "${STALE_PRUNE[@]}" \) -prune -o -type f -mtime "-${STALE_WORKTREE_DAYS}" -print -quit 2>/dev/null)" ] || continue
+    echo -e "${YELLOW}Clearing: deps/build output in repos and worktrees untouched for ${STALE_DAYS}+ days${NC}"
+    STALE_PRUNE=(-name .git -o -name node_modules -o -name .venv -o -name venv -o -name dist -o -name .expo -o -name .next -o -name .turbo -o -name build -o -path '*/.claude/worktrees')
+    while IFS= read -r gitpath; do
+        if [ -f "$gitpath" ]; then
+            grep -q '/worktrees/' "$gitpath" 2>/dev/null || continue
+        fi
+        wt=$(dirname "$gitpath")
+        [ -z "$(find "$wt" \( "${STALE_PRUNE[@]}" \) -prune -o -type f -mtime "-${STALE_DAYS}" -print -quit 2>/dev/null)" ] || continue
         while IFS= read -r dir; do
             git -C "$wt" check-ignore -q "$dir" 2>/dev/null || continue
             size_kb=$(get_size_bytes "$dir")
-            rm -rf "$dir"
+            act rm -rf "$dir"
             TOTAL_FREED_KB=$((TOTAL_FREED_KB + size_kb))
             echo -e "${GREEN}  ✓ Removed $dir ($((size_kb / 1024))MB)${NC}"
-        done < <(find "$wt" -maxdepth 4 -name .git -prune -o -type d \
+        done < <(find "$wt" -maxdepth 4 \( -name .git -o -path '*/.claude/worktrees' \) -prune -o -type d \
             \( -name node_modules -o -name .venv -o -name venv -o -name dist -o -name build -o -name .expo -o -name .next \) -print -prune 2>/dev/null)
-    done < <(find "$CODE_ROOT" -maxdepth 5 -name .git -type f 2>/dev/null)
+    done < <(find "$CODE_ROOT" -maxdepth 5 -name node_modules -prune -o -name .git -prune -print 2>/dev/null)
+    echo ""
+fi
+
+# Worktrees under <repo>/.claude/worktrees whose branch is already merged into the remote default
+# branch and whose tree is clean. Stale registrations are pruned silently; removal is confirmed.
+if [ -d "$CODE_ROOT" ]; then
+    merged_wts=()
+    merged_wt_repos=()
+    while IFS= read -r gitdir; do
+        repo=$(dirname "$gitdir")
+        act git -C "$repo" worktree prune 2>/dev/null || true
+        trunk=$(git -C "$repo" symbolic-ref --short refs/remotes/origin/HEAD 2>/dev/null) || continue
+        wt_path=""
+        while IFS= read -r line; do
+            case "$line" in
+                "worktree "*) wt_path=${line#worktree } ;;
+                "branch "*)
+                    [[ "$wt_path" == "$repo/.claude/worktrees/"* ]] || continue
+                    git -C "$repo" merge-base --is-ancestor "${line#branch }" "$trunk" 2>/dev/null || continue
+                    [ -z "$(git -C "$wt_path" status --porcelain 2>/dev/null)" ] || continue
+                    merged_wts+=("$wt_path")
+                    merged_wt_repos+=("$repo")
+                    ;;
+            esac
+        done < <(git -C "$repo" worktree list --porcelain 2>/dev/null)
+    done < <(find "$CODE_ROOT" -maxdepth 2 -name .git -type d 2>/dev/null)
+
+    if [ "${#merged_wts[@]}" -gt 0 ]; then
+        echo -e "${RED}⚠️  Worktrees whose branch is merged into trunk (clean tree)${NC}"
+        total_kb=0
+        for i in "${!merged_wts[@]}"; do
+            size_kb=$(get_size_bytes "${merged_wts[$i]}")
+            total_kb=$((total_kb + size_kb))
+            echo "  $((i+1)). ${merged_wts[$i]} ($((size_kb / 1024))MB)"
+        done
+        echo ""
+        ask "Remove these ${#merged_wts[@]} worktree(s) now? [y/N] "
+        if [[ "$confirm" =~ ^[Yy]$ ]]; then
+            for i in "${!merged_wts[@]}"; do
+                act git -C "${merged_wt_repos[$i]}" worktree remove "${merged_wts[$i]}" 2>/dev/null || true
+            done
+            TOTAL_FREED_KB=$((TOTAL_FREED_KB + total_kb))
+            echo -e "${GREEN}  ✓ Worktrees removed${NC}"
+        else
+            echo -e "${YELLOW}  Skipped.${NC}"
+        fi
+        echo ""
+    fi
+fi
+
+# git gc on bloated .git dirs, throttled by a stamp file since it is slow
+if [ -d "$CODE_ROOT" ] && { [ ! -f "$GIT_GC_STAMP" ] || [ -n "$(find "$GIT_GC_STAMP" -mtime "+${GIT_GC_INTERVAL_DAYS}" 2>/dev/null)" ]; }; then
+    echo -e "${YELLOW}Running: git gc on repos with .git > $((GIT_GC_MIN_KB / 1024))MB${NC}"
+    while IFS= read -r gitdir; do
+        size_before=$(get_size_bytes "$gitdir")
+        [ "$size_before" -gt "$GIT_GC_MIN_KB" ] || continue
+        repo=$(dirname "$gitdir")
+        act timeout 30 git -C "$repo" remote prune origin &>/dev/null || true
+        act git -C "$repo" gc --prune=now --quiet 2>/dev/null || true
+        size_freed=$((size_before - $(get_size_bytes "$gitdir")))
+        [ "$size_freed" -gt 0 ] && TOTAL_FREED_KB=$((TOTAL_FREED_KB + size_freed))
+        echo -e "${GREEN}  ✓ $repo: freed $((size_freed / 1024))MB${NC}"
+    done < <(find "$CODE_ROOT" -maxdepth 2 -name .git -type d 2>/dev/null)
+    act mkdir -p "$(dirname "$GIT_GC_STAMP")"
+    act touch "$GIT_GC_STAMP"
     echo ""
 fi
 
@@ -236,9 +344,22 @@ echo -e "${YELLOW}Clearing: Jest / Metro / haste-map caches in \$TMPDIR${NC}"
 for tmp_cache in "${TMPDIR:-/tmp}"/jest_* "${TMPDIR:-/tmp}"/metro-* "${TMPDIR:-/tmp}"/haste-map-*; do
     [ -e "$tmp_cache" ] || continue
     size_kb=$(du -sk "$tmp_cache" 2>/dev/null | awk '{print $1}')
-    rm -rf "$tmp_cache"
+    act rm -rf "$tmp_cache"
     TOTAL_FREED_KB=$((TOTAL_FREED_KB + ${size_kb:-0}))
     echo -e "${GREEN}  ✓ Removed $tmp_cache ($((${size_kb:-0} / 1024))MB)${NC}"
+done
+echo ""
+
+# Stale entries in the per-user temp (T) and cache (C) dirs under /private/var/folders
+echo -e "${YELLOW}Clearing: entries untouched for 3+ days in user temp/cache dirs${NC}"
+for user_dir in "$(getconf DARWIN_USER_TEMP_DIR 2>/dev/null)" "$(getconf DARWIN_USER_CACHE_DIR 2>/dev/null)"; do
+    [ -d "$user_dir" ] || continue
+    while IFS= read -r -d '' entry; do
+        size_kb=$(du -sk "$entry" 2>/dev/null | awk '{print $1}')
+        act rm -rf "$entry" 2>/dev/null || continue
+        TOTAL_FREED_KB=$((TOTAL_FREED_KB + ${size_kb:-0}))
+        echo -e "${GREEN}  ✓ Removed $entry ($((${size_kb:-0} / 1024))MB)${NC}"
+    done < <(find "$user_dir" -mindepth 1 -maxdepth 1 -mtime +3 ! -name 'com.apple.*' ! -type s -print0 2>/dev/null)
 done
 echo ""
 
@@ -247,7 +368,7 @@ if command -v npm &> /dev/null; then
     # `npm cache clean` doesn't touch npx's package installs
     clear_cache "$HOME/.npm/_npx" "npx cache"
     echo -e "${YELLOW}Clearing: npm cache${NC}"
-    npm cache clean --force 2>/dev/null || true
+    act npm cache clean --force 2>/dev/null || true
     echo -e "${GREEN}  ✓ npm cache cleared${NC}"
     echo ""
 fi
@@ -255,7 +376,7 @@ fi
 # pip cache (if exists)
 if command -v pip &> /dev/null; then
     echo -e "${YELLOW}Clearing: pip cache${NC}"
-    pip cache purge 2>/dev/null || true
+    act pip cache purge 2>/dev/null || true
     echo -e "${GREEN}  ✓ pip cache cleared${NC}"
     echo ""
 fi
@@ -263,7 +384,7 @@ fi
 # uv cache (if exists)
 if command -v uv &> /dev/null; then
     echo -e "${YELLOW}Clearing: uv cache${NC}"
-    uv cache clean 2>/dev/null || true
+    act uv cache clean 2>/dev/null || true
     echo -e "${GREEN}  ✓ uv cache cleared${NC}"
     echo ""
 fi
@@ -272,7 +393,7 @@ fi
 # project's lockfile; worst case is a slower re-download on next install, no data loss
 if command -v pnpm &> /dev/null; then
     echo -e "${YELLOW}Clearing: pnpm store (unreferenced packages)${NC}"
-    pnpm store prune 2>/dev/null || true
+    act pnpm store prune 2>/dev/null || true
     echo -e "${GREEN}  ✓ pnpm store pruned${NC}"
     echo ""
 fi
@@ -281,7 +402,7 @@ fi
 if command -v pre-commit &> /dev/null; then
     size_before=$(get_size_bytes "$HOME/.cache/pre-commit")
     echo -e "${YELLOW}Clearing: pre-commit unused hook envs${NC}"
-    pre-commit gc 2>/dev/null || true
+    act pre-commit gc 2>/dev/null || true
     size_freed=$((size_before - $(get_size_bytes "$HOME/.cache/pre-commit")))
     [ "$size_freed" -gt 0 ] && TOTAL_FREED_KB=$((TOTAL_FREED_KB + size_freed))
     echo -e "${GREEN}  ✓ Freed: $((size_freed / 1024))MB${NC}"
@@ -291,7 +412,8 @@ fi
 # Homebrew cache (if exists)
 if command -v brew &> /dev/null; then
     echo -e "${YELLOW}Clearing: Homebrew cache${NC}"
-    brew cleanup --prune=all || true
+    act brew autoremove || true
+    act brew cleanup --prune=all || true
     echo -e "${GREEN}  ✓ Homebrew cache cleared${NC}"
     echo ""
 
@@ -299,7 +421,7 @@ if command -v brew &> /dev/null; then
     # A crash-looping service (e.g. php-fpm failing to bind its port) can grow its log to GBs.
     while IFS= read -r -d '' log; do
         size_kb=$(du -sk "$log" 2>/dev/null | awk '{print $1}')
-        : > "$log"
+        [ "$DRY_RUN" = 1 ] || : > "$log"
         TOTAL_FREED_KB=$((TOTAL_FREED_KB + ${size_kb:-0}))
         echo -e "${GREEN}  ✓ Truncated $log (freed $((${size_kb:-0} / 1024))MB)${NC}"
     done < <(find "$(brew --prefix)/var/log" -maxdepth 2 -type f -size +100M -print0 2>/dev/null)
@@ -317,7 +439,7 @@ if command -v docker &> /dev/null && timeout 5 docker info &>/dev/null; then
     echo -e "${YELLOW}Clearing: Docker images and build cache${NC}"
     DOCKER_RAW="$HOME/Library/Containers/com.docker.docker/Data/vms/0/data/Docker.raw"
     docker_raw_before=$(get_file_kb "$DOCKER_RAW")
-    docker system prune -af || true
+    act docker system prune -af || true
     echo -e "${GREEN}  ✓ Docker images/build cache cleared${NC}"
     echo ""
 
@@ -325,7 +447,7 @@ if command -v docker &> /dev/null && timeout 5 docker info &>/dev/null; then
     # once the VM issues TRIM, which otherwise only happens when Docker restarts.
     if [ -f "$DOCKER_RAW" ]; then
         echo -e "${YELLOW}Trimming: Docker VM disk (releases freed blocks to macOS)${NC}"
-        timeout 120 docker run --rm --privileged --pid=host alpine nsenter -t 1 -m -- fstrim -av &>/dev/null || true
+        act timeout 120 docker run --rm --privileged --pid=host alpine nsenter -t 1 -m -- fstrim -av &>/dev/null || true
         docker_raw_freed=$((docker_raw_before - $(get_file_kb "$DOCKER_RAW")))
         if [ "$docker_raw_freed" -gt 0 ]; then
             TOTAL_FREED_KB=$((TOTAL_FREED_KB + docker_raw_freed))
@@ -352,10 +474,10 @@ if command -v docker &> /dev/null && timeout 5 docker info &>/dev/null; then
             echo "  $((i+1)). ${unused_volumes[$i]} (${unused_volume_sizes[$i]})"
         done
         echo ""
-        read -p "Delete all ${#unused_volumes[@]} unused volumes now? [y/N] " confirm
+        ask "Delete all ${#unused_volumes[@]} unused volumes now? [y/N] "
         if [[ "$confirm" =~ ^[Yy]$ ]]; then
             for vname in "${unused_volumes[@]}"; do
-                docker volume rm "$vname" &>/dev/null || true
+                act docker volume rm "$vname" &>/dev/null || true
             done
             echo -e "${GREEN}  ✓ Deleted ${#unused_volumes[@]} unused volume(s)${NC}"
         else
@@ -386,64 +508,71 @@ if [ -d "$VSCODE_DIR" ]; then
     echo ""
 fi
 
-# Cursor IDE caches (if exists)
-CURSOR_DIR="$HOME/Library/Application Support/Cursor"
-if [ -d "$CURSOR_DIR" ]; then
-    # Check if Cursor is running
-    if pgrep -f "Cursor" > /dev/null; then
-        echo -e "${YELLOW}⚠️  Cursor appears to be running. Cache clearing may be incomplete.${NC}"
-        echo -e "${YELLOW}    Consider closing Cursor before running this script for best results.${NC}"
-        echo ""
+# Cursor is no longer used: remove its data entirely (confirmed, as it holds settings and chat history)
+cursor_paths=()
+for p in "$HOME/Library/Application Support/Cursor" "$HOME/.cursor" "$HOME/.local/share/cursor-agent" \
+    "$HOME/Library/Caches/com.todesktop.230313mzl4w4u92" "$HOME/Library/Saved Application State/com.todesktop.230313mzl4w4u92.savedState"; do
+    [ -e "$p" ] && cursor_paths+=("$p")
+done
+if [ "${#cursor_paths[@]}" -gt 0 ]; then
+    echo -e "${RED}⚠️  Leftover Cursor data${NC}"
+    total_kb=0
+    for p in "${cursor_paths[@]}"; do
+        size_kb=$(du -sk "$p" 2>/dev/null | awk '{print $1}')
+        total_kb=$((total_kb + ${size_kb:-0}))
+        echo "  $p ($((${size_kb:-0} / 1024))MB)"
+    done
+    echo ""
+    ask "Delete all Cursor data now? [y/N] "
+    if [[ "$confirm" =~ ^[Yy]$ ]]; then
+        act rm -rf "${cursor_paths[@]}"
+        TOTAL_FREED_KB=$((TOTAL_FREED_KB + total_kb))
+        echo -e "${GREEN}  ✓ Cursor data deleted${NC}"
+    else
+        echo -e "${YELLOW}  Skipped.${NC}"
     fi
-
-    echo -e "${YELLOW}Clearing: Cursor IDE caches${NC}"
-
-    # Safe cache directories to clear
-    clear_cache "$CURSOR_DIR/CachedData" "Cursor CachedData"
-    clear_cache "$CURSOR_DIR/Cache" "Cursor Cache"
-    clear_cache "$CURSOR_DIR/CachedExtensionVSIXs" "Cursor Extension Cache"
-    clear_cache "$CURSOR_DIR/GPUCache" "Cursor GPU Cache"
-    clear_cache "$CURSOR_DIR/Code Cache" "Cursor Code Cache"
-    clear_cache "$CURSOR_DIR/WebStorage" "Cursor Web Storage"
-    clear_cache "$CURSOR_DIR/logs" "Cursor Logs"
-
-    # Also check ~/Library/Caches for Cursor
-    if [ -d "$HOME/Library/Caches/com.todesktop.230313mzl4w4u92" ]; then
-        clear_cache "$HOME/Library/Caches/com.todesktop.230313mzl4w4u92" "Cursor System Cache"
-    fi
-
-    # Cursor globalStorage state DB (resets workspace/UI state; can grow large)
-    CURSOR_GLOBAL_STATE="$CURSOR_DIR/User/globalStorage"
-    if [ -d "$CURSOR_GLOBAL_STATE" ] && compgen -G "$CURSOR_GLOBAL_STATE/state.vscdb*" > /dev/null 2>&1; then
-        size_before=0
-        for f in "$CURSOR_GLOBAL_STATE"/state.vscdb*; do
-            if [ -e "$f" ]; then
-                s=$(du -sk "$f" 2>/dev/null | awk '{print $1}')
-                size_before=$((size_before + ${s:-0}))
-            fi
-        done
-        rm -f "$CURSOR_GLOBAL_STATE"/state.vscdb* 2>/dev/null || true
-        echo -e "${YELLOW}Clearing: Cursor state DB (globalStorage)${NC}"
-        echo "  Location: $CURSOR_GLOBAL_STATE/state.vscdb*"
-        if [ "$size_before" -gt 0 ]; then
-            TOTAL_FREED_KB=$((TOTAL_FREED_KB + size_before))
-            echo -e "${GREEN}  ✓ Freed: $((size_before / 1024))MB${NC}"
-        else
-            echo -e "${GREEN}  ✓ Removed${NC}"
-        fi
-        echo ""
-    fi
-
-    # Cursor Dawn GPU caches
-    clear_cache "$CURSOR_DIR/DawnWebGPUCache" "Cursor DawnWebGPU Cache"
-    clear_cache "$CURSOR_DIR/DawnGraphiteCache" "Cursor DawnGraphite Cache"
-    clear_cache "$CURSOR_DIR/Partitions" "Cursor Partitions Cache"
-
-    prune_workspace_storage "$CURSOR_DIR/User/workspaceStorage" "Cursor"
-
-    echo -e "${GREEN}  ✓ Cursor caches cleared${NC}"
     echo ""
 fi
+
+# Electron app caches
+for app in "${ELECTRON_APPS[@]}"; do
+    app_dir="$HOME/Library/Application Support/$app"
+    [ -d "$app_dir" ] || continue
+    for sub in "${ELECTRON_CACHE_SUBDIRS[@]}"; do
+        [ -d "$app_dir/$sub" ] && clear_cache "$app_dir/$sub" "$app $sub"
+    done
+done
+SLACK_DIR="$HOME/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/Application Support/Slack"
+if [ -d "$SLACK_DIR" ]; then
+    for sub in "${ELECTRON_CACHE_SUBDIRS[@]}"; do
+        [ -d "$SLACK_DIR/$sub" ] && clear_cache "$SLACK_DIR/$sub" "Slack $sub"
+    done
+fi
+
+# Superseded versions: old Claude Code binaries (keep the one ~/.local/bin/claude points to)
+# and VS Code extensions it already marked obsolete
+CLAUDE_VERSIONS_DIR="$HOME/.local/share/claude/versions"
+if [ -d "$CLAUDE_VERSIONS_DIR" ] && [ -L "$HOME/.local/bin/claude" ]; then
+    current_claude=$(readlink "$HOME/.local/bin/claude")
+    for v in "$CLAUDE_VERSIONS_DIR"/*; do
+        [ "$v" = "$current_claude" ] && continue
+        size_kb=$(get_file_kb "$v")
+        act rm -rf "$v"
+        TOTAL_FREED_KB=$((TOTAL_FREED_KB + size_kb))
+        echo -e "${GREEN}  ✓ Removed old Claude Code ${v##*/} ($((size_kb / 1024))MB)${NC}"
+    done
+fi
+VSCODE_EXT_DIR="$HOME/.vscode/extensions"
+if [ -f "$VSCODE_EXT_DIR/.obsolete" ]; then
+    while IFS= read -r ext; do
+        [ -d "$VSCODE_EXT_DIR/$ext" ] || continue
+        size_kb=$(get_size_bytes "$VSCODE_EXT_DIR/$ext")
+        act rm -rf "${VSCODE_EXT_DIR:?}/$ext"
+        TOTAL_FREED_KB=$((TOTAL_FREED_KB + size_kb))
+        echo -e "${GREEN}  ✓ Removed obsolete VS Code extension $ext ($((size_kb / 1024))MB)${NC}"
+    done < <(grep -o '"[^"]*":true' "$VSCODE_EXT_DIR/.obsolete" | sed 's/":true//;s/^"//')
+fi
+echo ""
 
 # Claude app caches
 CLAUDE_DIR="$HOME/Library/Application Support/Claude"
@@ -497,7 +626,7 @@ clear_cache "$HOME/Library/Application Support/stremio-server" "Stremio Server"
 # Empty Trash
 trash_size_kb=$(get_size_bytes "$HOME/.Trash")
 echo -e "${YELLOW}Emptying Trash...${NC}"
-rm -rf ~/.Trash/* 2>/dev/null || true
+act rm -rf ~/.Trash/* 2>/dev/null || true
 if [ "$trash_size_kb" -gt 0 ]; then
     TOTAL_FREED_KB=$((TOTAL_FREED_KB + trash_size_kb))
 fi
@@ -529,10 +658,10 @@ if [ "${#held_lines[@]}" -gt 0 ]; then
     done
     echo ""
     if [ "${#held_apps[@]}" -gt 0 ]; then
-        read -p "Quit ${held_apps[*]} now to release it? [y/N] " confirm
+        ask "Quit ${held_apps[*]} now to release it? [y/N] "
         if [[ "$confirm" =~ ^[Yy]$ ]]; then
             for app in "${held_apps[@]}"; do
-                osascript -e "quit app \"$app\"" &>/dev/null || true
+                act osascript -e "quit app \"$app\"" &>/dev/null || true
             done
             echo -e "${GREEN}  ✓ Quit requested (apps save state and exit gracefully)${NC}"
         else
@@ -564,10 +693,10 @@ if [ "${#orphan_dirs[@]}" -gt 0 ]; then
     echo ""
     echo -e "${YELLOW}Total: $((total_kb / 1024))MB across ${#orphan_dirs[@]} folder(s)${NC}"
     echo ""
-    read -p "Delete all of these now? [y/N] " confirm
+    ask "Delete all of these now? [y/N] "
     if [[ "$confirm" =~ ^[Yy]$ ]]; then
         for proj_dir in "${orphan_dirs[@]}"; do
-            rm -rf "$proj_dir"
+            act rm -rf "$proj_dir"
         done
         TOTAL_FREED_KB=$((TOTAL_FREED_KB + total_kb))
         echo -e "${GREEN}  ✓ Deleted ${#orphan_dirs[@]} orphaned project folder(s)${NC}"
@@ -601,10 +730,10 @@ if [ "${#old_convs[@]}" -gt 0 ]; then
     done
     echo -e "${YELLOW}Total: $((total_kb / 1024))MB across ${#old_convs[@]} conversation(s)${NC}"
     echo ""
-    read -p "Delete all of these now? [y/N] " confirm
+    ask "Delete all of these now? [y/N] "
     if [[ "$confirm" =~ ^[Yy]$ ]]; then
         for f in "${old_convs[@]}"; do
-            rm -f "$f"
+            act rm -f "$f"
         done
         TOTAL_FREED_KB=$((TOTAL_FREED_KB + total_kb))
         echo -e "${GREEN}  ✓ Deleted ${#old_convs[@]} conversation transcript(s)${NC}"
@@ -627,13 +756,15 @@ echo -e "${YELLOW}Final disk space:${NC}"
 df -h / | tail -1
 echo ""
 
+DRY_RUN_WORD="freed"
+[ "$DRY_RUN" = 1 ] && DRY_RUN_WORD="that would be freed (dry-run, nothing deleted)"
 if [ "$TOTAL_FREED_KB" -gt 0 ]; then
     total_freed_mb=$((TOTAL_FREED_KB / 1024))
     if [ "$total_freed_mb" -gt 1024 ]; then
         total_freed_gb=$(echo "scale=2; $TOTAL_FREED_KB / 1048576" | bc)
-        echo -e "${GREEN}Total space freed: ${total_freed_gb}GB${NC}"
+        echo -e "${GREEN}Total space ${DRY_RUN_WORD}: ${total_freed_gb}GB${NC}"
     else
-        echo -e "${GREEN}Total space freed: ${total_freed_mb}MB${NC}"
+        echo -e "${GREEN}Total space ${DRY_RUN_WORD}: ${total_freed_mb}MB${NC}"
     fi
 else
     echo -e "${GREEN}Nothing to clean — caches were already empty${NC}"
@@ -662,4 +793,8 @@ snapshot_count=$(tmutil listlocalsnapshots / 2>/dev/null | grep -c "com.apple.Ti
 if [ "${snapshot_count:-0}" -gt 0 ]; then
     echo -e "${YELLOW}⚠️  $snapshot_count Time Machine local snapshot(s) holding space — thin with: tmutil thinlocalsnapshots / 999999999999 4${NC}"
 fi
+echo ""
+
+echo -e "${YELLOW}Top 10 largest folders in ~ (depth 2):${NC}"
+du -xd 2 -k "$HOME" 2>/dev/null | sort -rn | sed -n '2,11p' | awk '{printf "  %6.1fGB  %s\n", $1/1048576, substr($0, index($0,$2))}'
 echo ""
