@@ -97,6 +97,8 @@ Format:
 
 **Product names, not repo names:** Name projects by their product name (e.g. GrowTheMusicTree), never by a repo/component name (e.g. GrowTheMusicTreeAPI). Carry the side you worked on in the sentence instead (e.g. "Building the Django REST Framework backend of GrowTheMusicTree (https://grow.themusictree.org)…"). Recruiters remember a product, and the product link points to the live app, not the API.
 
+Present The Music Deck as the end-user game or product; do not mention its admin or back-office tooling in the CV.
+
 **Available links (first priority):** Use these URLs when mentioning the following projects (override GitHub/repo links). For projects marked wip, use a present-participle (-ing) verb for the bullet (e.g. "Building GrowTheMusicTree…", not "Built GrowTheMusicTree…") instead of past tense, since the work is ongoing. **Keep this wip list in sync with README.md if a project's status changes.**
 
 - **AudioMeta Webapp:** https://themusictree.org/projects/audiometa-webapp (portfolio page) or https://audiometa.themusictree.org/ (live app). **Next.js on Vercel.** (wip)
