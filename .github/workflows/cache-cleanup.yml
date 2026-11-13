@@ -1,0 +1,16 @@
+name: Cache cleanup checks
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  cache-cleanup:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check shell syntax
+        run: bash -n scripts/free-cache-macos.sh scripts/tests/free-cache-stores.sh
+      - name: Check package-store cleanup boundaries
+        run: bash scripts/tests/free-cache-stores.sh
