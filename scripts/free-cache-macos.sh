@@ -374,9 +374,15 @@ if command -v npm &> /dev/null; then
 fi
 
 # pip cache (if exists)
+pip_command=""
 if command -v pip &> /dev/null; then
+    pip_command=pip
+elif command -v pip3 &> /dev/null; then
+    pip_command=pip3
+fi
+if [ -n "$pip_command" ]; then
     echo -e "${YELLOW}Clearing: pip cache${NC}"
-    act pip cache purge 2>/dev/null || true
+    act "$pip_command" cache purge
     echo -e "${GREEN}  ✓ pip cache cleared${NC}"
     echo ""
 fi
@@ -389,14 +395,44 @@ if command -v uv &> /dev/null; then
     echo ""
 fi
 
-# pnpm store (if exists) — only removes packages no longer referenced by any
-# project's lockfile; worst case is a slower re-download on next install, no data loss
+# pnpm store (if exists). Store versions describe the on-disk format, not the CLI
+# version. Older stores can be downloaded again if an older pnpm is used later.
 if command -v pnpm &> /dev/null; then
+    pnpm_store=$(pnpm store path)
+    pnpm_store_version=${pnpm_store##*/}
+    if [[ "$pnpm_store" != /* || ! "$pnpm_store_version" =~ ^v[0-9]+$ ]]; then
+        echo "Cannot identify the active pnpm store: $pnpm_store" >&2
+        exit 1
+    fi
+
     echo -e "${YELLOW}Clearing: pnpm store (unreferenced packages)${NC}"
-    act pnpm store prune 2>/dev/null || true
+    act pnpm store prune
     echo -e "${GREEN}  ✓ pnpm store pruned${NC}"
     echo ""
+
+    for old_pnpm_store in "${pnpm_store%/*}"/v*; do
+        [ -d "$old_pnpm_store" ] && [ ! -L "$old_pnpm_store" ] || continue
+        old_pnpm_version=${old_pnpm_store##*/}
+        [[ "$old_pnpm_version" =~ ^v[0-9]+$ ]] || continue
+        if (( 10#${old_pnpm_version#v} < 10#${pnpm_store_version#v} )); then
+            clear_cache "$old_pnpm_store" "pnpm older store ($old_pnpm_version)"
+        fi
+    done
 fi
+
+# Corepack downloads package-manager executables here, independently of their
+# package stores. Run after pnpm so its executable remains available until then.
+# Keep root metadata (e.g. lastKnownGood.json); only versioned download dirs go.
+corepack_cache_root="${COREPACK_HOME:-${XDG_CACHE_HOME:-${LOCALAPPDATA:-$HOME/.cache}}/node/corepack}"
+if [[ "$corepack_cache_root" != /* || "$corepack_cache_root" = / ]]; then
+    echo "Cannot identify the Corepack cache: $corepack_cache_root" >&2
+    exit 1
+fi
+for corepack_cache in "$corepack_cache_root"/v*; do
+    [ -d "$corepack_cache" ] && [ ! -L "$corepack_cache" ] || continue
+    [[ "${corepack_cache##*/}" =~ ^v[0-9]+$ ]] || continue
+    clear_cache "$corepack_cache" "Corepack package-manager downloads (${corepack_cache##*/})"
+done
 
 # pre-commit hook envs — gc only drops envs no longer referenced by any known repo config
 if command -v pre-commit &> /dev/null; then
