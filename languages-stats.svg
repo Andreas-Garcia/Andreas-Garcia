@@ -3,29 +3,29 @@
   <rect width="495" height="195" fill="#0d1117" rx="8" />
   <rect x="10" y="10" width="475" height="175" fill="#161b22" rx="6" />
   <text x="247" y="35" text-anchor="middle" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="18" font-weight="700" fill="#ff6e96">Most Used Languages</text>
-  <rect x="20" y="60" width="218.35953012050032" height="10" fill="#3776ab" rx="2" />
-  <rect x="238.35953012050032" y="60" width="146.96256756818596" height="10" fill="#3178c6" rx="2" />
-  <rect x="385.3220976886863" y="60" width="23.32983342290731" height="10" fill="#ed8b00" rx="2" />
-  <rect x="408.6519311115936" y="60" width="22.810025540024313" height="10" fill="#89e051" rx="2" />
-  <rect x="431.4619566516179" y="60" width="14.015895525385709" height="10" fill="#f7df1e" rx="2" />
-  <rect x="445.4778521770036" y="60" width="8.760886797642975" height="10" fill="#e34c26" rx="2" />
-  <rect x="454.2387389746466" y="60" width="8.59041743168946" height="10" fill="#1572b6" rx="2" />
-  <rect x="462.82915640633604" y="60" width="4.7375499372812655" height="10" fill="#3776ab" rx="2" />
-  <rect x="467.5667063436173" y="60" width="4.604790623155238" height="10" fill="#89e051" rx="2" />
+  <rect x="20" y="60" width="219.0104305381854" height="10" fill="#3776ab" rx="2" />
+  <rect x="239.0104305381854" y="60" width="146.34844073580865" height="10" fill="#3178c6" rx="2" />
+  <rect x="385.35887127399405" y="60" width="23.23234276976359" height="10" fill="#ed8b00" rx="2" />
+  <rect x="408.59121404375765" y="60" width="23.05136786887902" height="10" fill="#89e051" rx="2" />
+  <rect x="431.6425819126367" y="60" width="13.95732593406482" height="10" fill="#f7df1e" rx="2" />
+  <rect x="445.5999078467015" y="60" width="8.724276824458094" height="10" fill="#e34c26" rx="2" />
+  <rect x="454.3241846711596" y="60" width="8.554519815490869" height="10" fill="#1572b6" rx="2" />
+  <rect x="462.8787044866505" y="60" width="4.7177526747241725" height="10" fill="#3776ab" rx="2" />
+  <rect x="467.5964571613747" y="60" width="4.585548134908379" height="10" fill="#89e051" rx="2" />
   <circle cx="26.0" cy="96" r="5" fill="#3776ab" />
-  <text x="38.0" y="100" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#c9d1d9">Python 47.99%</text>
+  <text x="38.0" y="100" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#c9d1d9">Python 48.13%</text>
   <circle cx="177.66666666666666" cy="96" r="5" fill="#3178c6" />
-  <text x="189.66666666666666" y="100" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#c9d1d9">TypeScript 32.30%</text>
+  <text x="189.66666666666666" y="100" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#c9d1d9">TypeScript 32.16%</text>
   <circle cx="329.3333333333333" cy="96" r="5" fill="#ed8b00" />
-  <text x="341.3333333333333" y="100" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#c9d1d9">Java 5.13%</text>
+  <text x="341.3333333333333" y="100" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#c9d1d9">Java 5.11%</text>
   <circle cx="26.0" cy="121" r="5" fill="#89e051" />
-  <text x="38.0" y="125" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#c9d1d9">Shell 5.01%</text>
+  <text x="38.0" y="125" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#c9d1d9">Shell 5.07%</text>
   <circle cx="177.66666666666666" cy="121" r="5" fill="#f7df1e" />
-  <text x="189.66666666666666" y="125" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#c9d1d9">JavaScript 3.08%</text>
+  <text x="189.66666666666666" y="125" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#c9d1d9">JavaScript 3.07%</text>
   <circle cx="329.3333333333333" cy="121" r="5" fill="#e34c26" />
-  <text x="341.3333333333333" y="125" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#c9d1d9">HTML 1.93%</text>
+  <text x="341.3333333333333" y="125" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#c9d1d9">HTML 1.92%</text>
   <circle cx="26.0" cy="146" r="5" fill="#1572b6" />
-  <text x="38.0" y="150" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#c9d1d9">CSS 1.89%</text>
+  <text x="38.0" y="150" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#c9d1d9">CSS 1.88%</text>
   <circle cx="177.66666666666666" cy="146" r="5" fill="#3776ab" />
   <text x="189.66666666666666" y="150" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#c9d1d9">PLpgSQL 1.04%</text>
   <circle cx="329.3333333333333" cy="146" r="5" fill="#89e051" />
