@@ -593,14 +593,13 @@ fi
 # Keep the release the `current` symlink points to; remove the other entries of the directory,
 # except one a running process still executes from (a daemon stays on its old version until restarted).
 prune_superseded_releases() {
-    local releases_dir=$1 current_link=$2 label=$3 current v size_kb
+    local releases_dir=$1 current_link=$2 label=$3 v size_kb
     [ -d "$releases_dir" ] && [ -L "$current_link" ] || return 0
-    current=$(readlink "$current_link")
     for v in "$releases_dir"/*; do
         [ -e "$v" ] || continue
-        [ "$v" = "$current" ] && continue
+        [ "$v" -ef "$current_link" ] && continue
         pgrep -f "$v" > /dev/null && continue
-        size_kb=$(get_size_bytes "$v")
+        size_kb=$(du -sk "$v" 2>/dev/null | awk '{print $1 + 0}')
         act rm -rf "$v"
         TOTAL_FREED_KB=$((TOTAL_FREED_KB + size_kb))
         echo -e "${GREEN}  ✓ Removed old $label ${v##*/} ($((size_kb / 1024))MB)${NC}"
