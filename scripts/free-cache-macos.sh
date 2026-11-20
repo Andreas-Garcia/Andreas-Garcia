@@ -594,7 +594,8 @@ fi
 # except one a running process still executes from (a daemon stays on its old version until restarted).
 prune_superseded_releases() {
     local releases_dir=$1 current_link=$2 label=$3 v size_kb
-    [ -d "$releases_dir" ] && [ -L "$current_link" ] || return 0
+    # -e follows the link: a dangling `current` would make every release look superseded.
+    [ -d "$releases_dir" ] && [ -L "$current_link" ] && [ -e "$current_link" ] || return 0
     for v in "$releases_dir"/*; do
         [ -e "$v" ] || continue
         [ "$v" -ef "$current_link" ] && continue
@@ -651,7 +652,7 @@ clear_cache "$HOME/.claude/debug" "Claude Code Debug Logs"
 CODEX_DIR="$HOME/.codex"
 if [ -d "$CODEX_DIR" ]; then
     clear_cache "$CODEX_DIR/cache/remote_plugin_catalog" "Codex Plugin Catalog Cache"
-    if pgrep -f "$CODEX_DIR/packages/" > /dev/null || pgrep -x Codex > /dev/null; then
+    if pgrep -f "$CODEX_DIR/packages/" > /dev/null || pgrep -x Codex > /dev/null || pgrep -x codex > /dev/null; then
         echo -e "${YELLOW}⚠️  Codex is running: skipping its .tmp, shell snapshots and logs. Quit it and re-run to free them.${NC}"
         echo ""
     else
@@ -816,7 +817,7 @@ fi
 # Final alert: Codex session transcripts older than CODEX_CONV_PURGE_DAYS (opt-in, never automatic).
 # Skipped while Codex runs: its thread index (thread_history_*.sqlite) may reference these files.
 old_codex=()
-if [ -d "$HOME/.codex/sessions" ] && ! pgrep -f "$HOME/.codex/packages/" > /dev/null && ! pgrep -x Codex > /dev/null; then
+if [ -d "$HOME/.codex/sessions" ] && ! pgrep -f "$HOME/.codex/packages/" > /dev/null && ! pgrep -x Codex > /dev/null && ! pgrep -x codex > /dev/null; then
     while IFS= read -r -d '' f; do
         old_codex+=("$f")
     done < <(find "$HOME/.codex/sessions" -name "rollout-*.jsonl" -mtime "+${CODEX_CONV_PURGE_DAYS}" -print0 2>/dev/null)
