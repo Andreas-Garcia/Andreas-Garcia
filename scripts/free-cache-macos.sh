@@ -36,6 +36,9 @@ ask() {
 # files are targeted — memory notes (memory/*.md) are untouched either way.
 CLAUDE_CONV_PURGE_DAYS=7
 
+# Same for Codex rollout transcripts (~/.codex/sessions/**/rollout-*.jsonl).
+CODEX_CONV_PURGE_DAYS=14
+
 # Root scanned for repo-local build caches (Nx, Turbo, Next, node_modules/.cache, Python tool caches)
 CODE_ROOT="$HOME/git"
 
@@ -587,17 +590,26 @@ fi
 
 # Superseded versions: old Claude Code binaries (keep the one ~/.local/bin/claude points to)
 # and VS Code extensions it already marked obsolete
-CLAUDE_VERSIONS_DIR="$HOME/.local/share/claude/versions"
-if [ -d "$CLAUDE_VERSIONS_DIR" ] && [ -L "$HOME/.local/bin/claude" ]; then
-    current_claude=$(readlink "$HOME/.local/bin/claude")
-    for v in "$CLAUDE_VERSIONS_DIR"/*; do
-        [ "$v" = "$current_claude" ] && continue
-        size_kb=$(get_file_kb "$v")
+# Keep the release the `current` symlink points to; remove the other entries of the directory,
+# except one a running process still executes from (a daemon stays on its old version until restarted).
+prune_superseded_releases() {
+    local releases_dir=$1 current_link=$2 label=$3 v size_kb
+    # -e follows the link: a dangling `current` would make every release look superseded.
+    [ -d "$releases_dir" ] && [ -L "$current_link" ] && [ -e "$current_link" ] || return 0
+    for v in "$releases_dir"/*; do
+        [ -e "$v" ] || continue
+        [ "$v" -ef "$current_link" ] && continue
+        pgrep -f "$v" > /dev/null && continue
+        size_kb=$(du -sk "$v" 2>/dev/null | awk '{print $1 + 0}')
         act rm -rf "$v"
         TOTAL_FREED_KB=$((TOTAL_FREED_KB + size_kb))
-        echo -e "${GREEN}  ✓ Removed old Claude Code ${v##*/} ($((size_kb / 1024))MB)${NC}"
+        echo -e "${GREEN}  ✓ Removed old $label ${v##*/} ($((size_kb / 1024))MB)${NC}"
     done
-fi
+}
+prune_superseded_releases "$HOME/.local/share/claude/versions" "$HOME/.local/bin/claude" "Claude Code"
+for pkg in app-server-daemon standalone; do
+    prune_superseded_releases "$HOME/.codex/packages/$pkg/releases" "$HOME/.codex/packages/$pkg/current" "Codex $pkg"
+done
 VSCODE_EXT_DIR="$HOME/.vscode/extensions"
 if [ -f "$VSCODE_EXT_DIR/.obsolete" ]; then
     while IFS= read -r ext; do
@@ -633,6 +645,29 @@ clear_cache "$HOME/.claude/cache" "Claude Code Cache"
 clear_cache "$HOME/.claude/paste-cache" "Claude Code Paste Cache"
 clear_cache "$HOME/.claude/shell-snapshots" "Claude Code Shell Snapshots"
 clear_cache "$HOME/.claude/debug" "Claude Code Debug Logs"
+
+# Codex (OpenAI) regenerable data. The plugin catalog is re-downloaded on demand; .tmp, shell
+# snapshots and the SQLite logs are only touched when Codex is not running (lock files, open DBs:
+# deleting a SQLite file under a live writer can corrupt it). History DBs are never touched.
+CODEX_DIR="$HOME/.codex"
+if [ -d "$CODEX_DIR" ]; then
+    clear_cache "$CODEX_DIR/cache/remote_plugin_catalog" "Codex Plugin Catalog Cache"
+    if pgrep -f "$CODEX_DIR/packages/" > /dev/null || pgrep -x Codex > /dev/null || pgrep -x codex > /dev/null; then
+        echo -e "${YELLOW}⚠️  Codex is running: skipping its .tmp, shell snapshots and logs. Quit it and re-run to free them.${NC}"
+        echo ""
+    else
+        clear_cache "$CODEX_DIR/.tmp" "Codex Temp (plugin clones)"
+        clear_cache "$CODEX_DIR/shell_snapshots" "Codex Shell Snapshots"
+        for f in "$CODEX_DIR"/logs_*.sqlite "$CODEX_DIR"/logs_*.sqlite-wal "$CODEX_DIR"/logs_*.sqlite-shm; do
+            [ -f "$f" ] || continue
+            size_kb=$(get_file_kb "$f")
+            act rm -f "$f"
+            TOTAL_FREED_KB=$((TOTAL_FREED_KB + size_kb))
+            echo -e "${GREEN}  ✓ Removed Codex log ${f##*/} ($((size_kb / 1024))MB)${NC}"
+        done
+        echo ""
+    fi
+fi
 
 # Detect Claude Code project transcripts (~/.claude/projects) whose source repo is
 # gone. Not cleared above: these hold real conversation history and any saved memory
@@ -775,6 +810,41 @@ if [ "${#old_convs[@]}" -gt 0 ]; then
         echo -e "${GREEN}  ✓ Deleted ${#old_convs[@]} conversation transcript(s)${NC}"
     else
         echo -e "${YELLOW}  Skipped. Adjust CLAUDE_CONV_PURGE_DAYS at the top of the script to change the threshold.${NC}"
+    fi
+    echo ""
+fi
+
+# Final alert: Codex session transcripts older than CODEX_CONV_PURGE_DAYS (opt-in, never automatic).
+# Skipped while Codex runs: its thread index (thread_history_*.sqlite) may reference these files.
+old_codex=()
+if [ -d "$HOME/.codex/sessions" ] && ! pgrep -f "$HOME/.codex/packages/" > /dev/null && ! pgrep -x Codex > /dev/null && ! pgrep -x codex > /dev/null; then
+    while IFS= read -r -d '' f; do
+        old_codex+=("$f")
+    done < <(find "$HOME/.codex/sessions" -name "rollout-*.jsonl" -mtime "+${CODEX_CONV_PURGE_DAYS}" -print0 2>/dev/null)
+fi
+
+if [ "${#old_codex[@]}" -gt 0 ]; then
+    echo -e "${RED}========================================${NC}"
+    echo -e "${RED}⚠️  Codex sessions older than ${CODEX_CONV_PURGE_DAYS} days${NC}"
+    echo -e "${RED}========================================${NC}"
+    echo -e "${YELLOW}Deleting them removes the ability to resume those sessions.${NC}"
+    echo ""
+    total_kb=0
+    for f in "${old_codex[@]}"; do
+        size_kb=$(du -sk "$f" 2>/dev/null | awk '{print $1}')
+        total_kb=$((total_kb + ${size_kb:-0}))
+    done
+    echo -e "${YELLOW}Total: $((total_kb / 1024))MB across ${#old_codex[@]} session(s)${NC}"
+    echo ""
+    ask "Delete all of these now? [y/N] "
+    if [[ "$confirm" =~ ^[Yy]$ ]]; then
+        for f in "${old_codex[@]}"; do
+            act rm -f "$f"
+        done
+        TOTAL_FREED_KB=$((TOTAL_FREED_KB + total_kb))
+        echo -e "${GREEN}  ✓ Deleted ${#old_codex[@]} Codex session(s)${NC}"
+    else
+        echo -e "${YELLOW}  Skipped. Adjust CODEX_CONV_PURGE_DAYS at the top of the script to change the threshold.${NC}"
     fi
     echo ""
 fi
